@@ -20,7 +20,7 @@ public class StartScreen extends AppCompatActivity {
         Button draw = findViewById(R.id.start);
         draw.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent myIntent = new Intent(StartScreen.this, CardScren.class);
+                Intent myIntent = new Intent(StartScreen.this, CardInitializer.class);
                 StartScreen.this.startActivity(myIntent);
             }
         });
