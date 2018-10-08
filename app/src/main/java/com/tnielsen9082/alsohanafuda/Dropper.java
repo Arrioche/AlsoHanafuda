@@ -16,16 +16,19 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 //this is the class that the receptacles get
-public final class MyDragListener implements View.OnDragListener {
+public final class Dropper implements View.OnDragListener {
     private CharSequence clip;
     private static final String TAG = "MainActivity";
     private LinearLayout tricks;
     private LinearLayout deck;
     private TextView score;
-    public void id(LinearLayout tag, LinearLayout tag2, TextView tag3){
+    private int handNum =0;
+    private LinearLayout[] hands;
+    public void id(LinearLayout tag, LinearLayout tag2, TextView tag3, LinearLayout[] tag4){
         tricks = tag;
         deck = tag2;
         score = tag3;
+        hands= tag4;
     }
     @Override
     //when a drag is started this activates
@@ -89,6 +92,9 @@ public final class MyDragListener implements View.OnDragListener {
                     sco+=dropPoints;
                     sco+=dragPoints;
                     score.setText(sco+"");
+                    hands[handNum%3].setVisibility(View.GONE);
+                    hands[(handNum+1)%3].setVisibility(View.VISIBLE);
+                    handNum=(handNum+1)%3;
                 }
                 else {
                     boolean match = false;
@@ -100,6 +106,9 @@ public final class MyDragListener implements View.OnDragListener {
                     if(!match){
                         owner.removeView(dragger);
                         container.addView(dragger);
+                        hands[handNum%3].setVisibility(View.GONE);
+                        hands[(handNum+1)%3].setVisibility(View.VISIBLE);
+                        handNum=(handNum+1)%3;
                     }
                 }
                 break;

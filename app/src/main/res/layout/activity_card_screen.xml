@@ -398,46 +398,6 @@
             app:srcCompat="@drawable/rainpoet"
             android:visibility="visible" />
 
-        <ImageView
-            android:id="@+id/peonyButterfly"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/f10"
-            android:src="@drawable/peonybutterfly"
-            app:srcCompat="@drawable/peonybutterfly"
-            android:visibility="visible" />
-
-        <ImageView
-            android:id="@+id/chrysCup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/i10"
-            android:src="@drawable/chryscup"
-            app:srcCompat="@drawable/chryscup"
-            android:visibility="visible" />
-
-        <ImageView
-            android:id="@+id/pampasMoon"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/h20"
-            android:src="@drawable/pampasmoon"
-            app:srcCompat="@drawable/pampasmoon"
-            android:visibility="visible" />
-
-        <ImageView
-            android:id="@+id/cloverTanzaku"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/g05"
-            android:src="@drawable/clovertanzaku"
-            app:srcCompat="@drawable/clovertanzaku"
-            android:visibility="visible" />
-
     </LinearLayout>
 
     <HorizontalScrollView
@@ -514,42 +474,105 @@
         app:layout_constraintTop_toBottomOf="@+id/table">
 
         <LinearLayout
-            android:id="@+id/hand"
+            android:id="@+id/handWrapper"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:minWidth="750dp"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/irisTanzaku"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:id="@+id/handOne"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:contentDescription="@string/e05"
-                android:src="@drawable/iristanzaku"
-                app:srcCompat="@drawable/iristanzaku"
-                android:visibility="visible" />
+                android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/pineTanzaku"
-                android:layout_width="65dp"
-                android:layout_height="104dp"
-                android:layout_weight="0"
-                android:contentDescription="@string/a05"
-                android:cropToPadding="false"
-                android:src="@drawable/pinetanzaku"
-                app:srcCompat="@drawable/pinetanzaku"
-                android:visibility="visible" />
+                <ImageView
+                    android:id="@+id/irisTanzaku"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:contentDescription="@string/e05"
+                    android:src="@drawable/iristanzaku"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/iristanzaku" />
 
-            <ImageView
-                android:id="@+id/plumTanzaku"
+                <ImageView
+                    android:id="@+id/pineTanzaku"
+                    android:layout_width="65dp"
+                    android:layout_height="104dp"
+                    android:layout_weight="0"
+                    android:contentDescription="@string/a05"
+                    android:cropToPadding="false"
+                    android:src="@drawable/pinetanzaku"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/pinetanzaku" />
+
+                <ImageView
+                    android:id="@+id/plumTanzaku"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:contentDescription="@string/b05"
+                    android:src="@drawable/plumtanzaku"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/plumtanzaku" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/handTwo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:contentDescription="@string/b05"
-                android:src="@drawable/plumtanzaku"
-                app:srcCompat="@drawable/plumtanzaku"
-                android:visibility="visible" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/chrysCup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/i10"
+                    android:src="@drawable/chryscup"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/chryscup" />
+
+                <ImageView
+                    android:id="@+id/peonyButterfly"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/f10"
+                    android:src="@drawable/peonybutterfly"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/peonybutterfly" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/handThree"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/pampasMoon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/h20"
+                    android:src="@drawable/pampasmoon"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/pampasmoon" />
+
+                <ImageView
+                    android:id="@+id/cloverTanzaku"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/g05"
+                    android:src="@drawable/clovertanzaku"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/clovertanzaku" />
+            </LinearLayout>
+
         </LinearLayout>
     </HorizontalScrollView>
 

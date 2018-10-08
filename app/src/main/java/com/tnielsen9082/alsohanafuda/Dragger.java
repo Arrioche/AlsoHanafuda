@@ -9,16 +9,20 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 
-public final class MyTouchListener implements View.OnTouchListener {
+public final class Dragger implements View.OnTouchListener {
     private static final String TAG = "MainActivity";
-    private LinearLayout hand;
+    private LinearLayout[] hand;
     private LinearLayout second;
-    public void id(LinearLayout tag3, LinearLayout tag){
+    private int handNum =0;
+    public void id(LinearLayout[] tag3, LinearLayout tag){
         hand = tag3;
         second = tag;
     }
+    public void increase(){
+        handNum=(handNum+1)%3;
+    }
     //the action that the class performs
-    public MyTouchListener(LinearLayout tag1, LinearLayout tag2){
+    public Dragger(LinearLayout[] tag1, LinearLayout tag2){
         hand = tag1;
         second = tag2;
     }
@@ -37,7 +41,7 @@ public final class MyTouchListener implements View.OnTouchListener {
             //make a custom drag shadow
             //once I create it
             View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
-            if(view.getParent()==hand||view.getParent()==second){
+            if(view.getParent()==hand[handNum]||view.getParent()==second){
                 view.startDrag(data, shadowBuilder, view, 1);
                 Log.e("TAG",""+data);
             }

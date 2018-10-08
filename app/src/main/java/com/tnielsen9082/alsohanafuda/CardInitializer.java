@@ -84,12 +84,18 @@ public class CardInitializer extends AppCompatActivity {
         cards.add(findViewById(R.id.paulNormalThree));
         cards.add(findViewById(R.id.paulPhoenix));
 
+        //put the hands in an array
+        LinearLayout[] hands =new LinearLayout[3];
+        hands[0]=findViewById(R.id.handOne);
+        hands[1]=findViewById(R.id.handTwo);
+        hands[2]=findViewById(R.id.handThree);
+
         //initialize the touch listener
-        MyTouchListener touch = new MyTouchListener((LinearLayout)findViewById(R.id.hand), (LinearLayout)findViewById(R.id.cardTwo));
+        Dropper card = new Dropper();
+        Dragger touch = new Dragger(hands, (LinearLayout)findViewById(R.id.cardTwo), card);
 
         //initialize the drag listener
-        MyDragListener card = new MyDragListener();
-        card.id((LinearLayout)findViewById(R.id.tricks),(LinearLayout)findViewById(R.id.board),(TextView) findViewById(R.id.score));
+        card.id((LinearLayout)findViewById(R.id.tricks),(LinearLayout)findViewById(R.id.board),(TextView) findViewById(R.id.score), hands, touch);
 
         //give all the cards touch listeners and drag listeners
         for (int i = 0; i < cards.size(); i++) {
@@ -98,8 +104,8 @@ public class CardInitializer extends AppCompatActivity {
         }
         //make the draw button
         Button draw = findViewById(R.id.draw);
-        MyClickListener drawButton = new MyClickListener();
-        drawButton.id((LinearLayout)findViewById(R.id.drawPile),(LinearLayout)findViewById(R.id.hand),(Button)findViewById(R.id.draw));
+        Clicker drawButton = new Clicker();
+        drawButton.id((LinearLayout)findViewById(R.id.drawPile),hands,(Button)findViewById(R.id.draw));
         draw.setOnClickListener(drawButton);
         //oh
         //intents
