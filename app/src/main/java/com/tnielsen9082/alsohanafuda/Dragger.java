@@ -13,18 +13,21 @@ public final class Dragger implements View.OnTouchListener {
     private static final String TAG = "MainActivity";
     private LinearLayout[] hand;
     private LinearLayout second;
+    private Dropper dropper;
     private int handNum =0;
-    public void id(LinearLayout[] tag3, LinearLayout tag){
+    public void id(LinearLayout[] tag3, LinearLayout tag,Dropper tag1){
         hand = tag3;
         second = tag;
+        dropper=tag1;
     }
     public void increase(){
         handNum=(handNum+1)%3;
     }
     //the action that the class performs
-    public Dragger(LinearLayout[] tag1, LinearLayout tag2){
+    public Dragger(LinearLayout[] tag1, LinearLayout tag2, Dropper tag3){
         hand = tag1;
         second = tag2;
+        dropper=tag3;
     }
     public boolean onTouch(View view, MotionEvent motionEvent) {
         //makes the class motionEvent perform the getAction function

@@ -93,18 +93,19 @@ public class CardInitializer extends AppCompatActivity {
         //initialize the touch listener
         Dropper card = new Dropper();
         Dragger touch = new Dragger(hands, (LinearLayout)findViewById(R.id.cardTwo), card);
+        Clicker drawButton = new Clicker();
 
         //initialize the drag listener
-        card.id((LinearLayout)findViewById(R.id.tricks),(LinearLayout)findViewById(R.id.board),(TextView) findViewById(R.id.score), hands, touch);
+        card.id((LinearLayout)findViewById(R.id.tricks),(LinearLayout)findViewById(R.id.board),(TextView) findViewById(R.id.score), hands,touch,drawButton);
 
         //give all the cards touch listeners and drag listeners
         for (int i = 0; i < cards.size(); i++) {
             cards.get(i).setOnTouchListener(touch);
             cards.get(i).setOnDragListener(card);
         }
+        findViewById(R.id.board).setOnDragListener(card);
         //make the draw button
         Button draw = findViewById(R.id.draw);
-        Clicker drawButton = new Clicker();
         drawButton.id((LinearLayout)findViewById(R.id.drawPile),hands,(Button)findViewById(R.id.draw));
         draw.setOnClickListener(drawButton);
         //oh

@@ -528,7 +528,7 @@
                     android:id="@+id/chrysCup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="0"
                     android:contentDescription="@string/i10"
                     android:src="@drawable/chryscup"
                     android:visibility="visible"
@@ -538,7 +538,7 @@
                     android:id="@+id/peonyButterfly"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="0"
                     android:contentDescription="@string/f10"
                     android:src="@drawable/peonybutterfly"
                     android:visibility="visible"
@@ -566,7 +566,7 @@
                     android:id="@+id/cloverTanzaku"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="0"
                     android:contentDescription="@string/g05"
                     android:src="@drawable/clovertanzaku"
                     android:visibility="visible"
@@ -593,7 +593,7 @@
         android:id="@+id/tricks"
         android:layout_width="wrap_content"
         android:layout_height="107dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="84dp"
         android:divider="@drawable/regular_divider"
         android:orientation="horizontal"
         android:showDividers="middle"
@@ -613,5 +613,15 @@
         app:layout_constraintBottom_toTopOf="@+id/handScroll"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/table"></LinearLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Edn Turn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

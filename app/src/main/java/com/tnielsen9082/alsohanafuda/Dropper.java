@@ -1,19 +1,11 @@
 package com.tnielsen9082.alsohanafuda;
 
 import android.content.ClipData;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.view.DragEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import java.util.ArrayList;
-import java.util.Stack;
 
 //this is the class that the receptacles get
 public final class Dropper implements View.OnDragListener {
@@ -22,13 +14,17 @@ public final class Dropper implements View.OnDragListener {
     private LinearLayout tricks;
     private LinearLayout deck;
     private TextView score;
+    private Dragger drag;
+    private Clicker click;
     private int handNum =0;
     private LinearLayout[] hands;
-    public void id(LinearLayout tag, LinearLayout tag2, TextView tag3, LinearLayout[] tag4){
+    public void id(LinearLayout tag, LinearLayout tag2, TextView tag3, LinearLayout[] tag4, Dragger tag5, Clicker tag6){
         tricks = tag;
         deck = tag2;
         score = tag3;
         hands= tag4;
+        drag = tag5;
+        click = tag6;
     }
     @Override
     //when a drag is started this activates
@@ -95,6 +91,9 @@ public final class Dropper implements View.OnDragListener {
                     hands[handNum%3].setVisibility(View.GONE);
                     hands[(handNum+1)%3].setVisibility(View.VISIBLE);
                     handNum=(handNum+1)%3;
+                    (drag).increase();
+                    click.onClick(score);
+                    click.increase();
                 }
                 else {
                     boolean match = false;
@@ -109,6 +108,9 @@ public final class Dropper implements View.OnDragListener {
                         hands[handNum%3].setVisibility(View.GONE);
                         hands[(handNum+1)%3].setVisibility(View.VISIBLE);
                         handNum=(handNum+1)%3;
+                        (drag).increase();
+                        click.onClick(score);
+                        click.increase();
                     }
                 }
                 break;
