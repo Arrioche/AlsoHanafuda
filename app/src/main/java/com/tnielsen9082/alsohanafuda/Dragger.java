@@ -11,9 +11,13 @@ import android.widget.LinearLayout;
 
 public final class Dragger implements View.OnTouchListener {
     private static final String TAG = "MainActivity";
+    //this is the hand
     private LinearLayout[] hand;
+    //this is the place where the second drawn card will go
     private LinearLayout second;
+    //this is so it can connect to the dropper
     private Dropper dropper;
+    //to keep track of the current player
     private int handNum =0;
     public void id(LinearLayout[] tag3, LinearLayout tag,Dropper tag1){
         hand = tag3;
@@ -21,6 +25,7 @@ public final class Dragger implements View.OnTouchListener {
         dropper=tag1;
     }
     public void increase(){
+        //this rotates the players when called
         handNum=(handNum+1)%3;
     }
     //the action that the class performs
@@ -33,7 +38,6 @@ public final class Dragger implements View.OnTouchListener {
         //makes the class motionEvent perform the getAction function
         //motionEvents track what is touching the screen
         //ACTION_DOWN means that someone just started touching it
-        //so this if is checking if the square has been tapped
         if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
             //makes a clipData
             //since we are just using pictures there is no data
@@ -45,6 +49,7 @@ public final class Dragger implements View.OnTouchListener {
             //once I create it
             View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
             if(view.getParent()==hand[handNum]||view.getParent()==second){
+                //if the card is in the current hand or the secondary spot
                 view.startDrag(data, shadowBuilder, view, 1);
                 Log.e("TAG",""+data);
             }
@@ -54,5 +59,13 @@ public final class Dragger implements View.OnTouchListener {
             return false;
         }
     }
+    //in summation:
+    //this is the function that lets you pick up and move cards
+    //it only takes them from the current hand or the second-drawn card
+    //it puts the content description in the clipdata
+    //so that the dropper knows what card is coming to it
+    //and it could probably fit more in there too
+    //as the first of four methods...
+    //it's an important method
 }
 

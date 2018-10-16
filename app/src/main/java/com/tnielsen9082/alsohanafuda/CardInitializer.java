@@ -12,7 +12,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class CardInitializer extends AppCompatActivity {
+    //the list of all the cards
     ArrayList<View> cards = new ArrayList<>();
+    //in case I ever use logs
+    private static final String TAG = "MainActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +23,7 @@ public class CardInitializer extends AppCompatActivity {
         setContentView(R.layout.activity_card_screen);
         //and the color
         getWindow().getDecorView().setBackgroundColor(Color.LTGRAY);
+        //lock in landscape mode
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         //SO IT BEGINS
@@ -83,6 +87,8 @@ public class CardInitializer extends AppCompatActivity {
         cards.add(findViewById(R.id.paulNormalTwo));
         cards.add(findViewById(R.id.paulNormalThree));
         cards.add(findViewById(R.id.paulPhoenix));
+        //each card needs to be individually put into the card list
+        //but only once
 
         //put the hands in an array
         LinearLayout[] hands =new LinearLayout[3];
@@ -92,24 +98,38 @@ public class CardInitializer extends AppCompatActivity {
 
         //initialize the touch listener
         Dropper card = new Dropper();
-        Dragger touch = new Dragger(hands, (LinearLayout)findViewById(R.id.cardTwo), card);
-        Clicker drawButton = new Clicker();
-
         //initialize the drag listener
+        //and give it the touch listener
+        Dragger touch = new Dragger(hands, (LinearLayout)findViewById(R.id.cardTwo), card);
+        //initialize the clicker
+        Clicker drawButton = new Clicker();
+        //send the data to the touch listener
         card.id((LinearLayout)findViewById(R.id.tricks),(LinearLayout)findViewById(R.id.board),(TextView) findViewById(R.id.score), hands,touch,drawButton);
+        //it has to be done in this order so that the dragger and dropper can access each other
 
         //give all the cards touch listeners and drag listeners
         for (int i = 0; i < cards.size(); i++) {
+            //nice and easy
             cards.get(i).setOnTouchListener(touch);
             cards.get(i).setOnDragListener(card);
         }
+        //give the board a dropper as well
         findViewById(R.id.board).setOnDragListener(card);
+
         //make the draw button
         Button draw = findViewById(R.id.draw);
         drawButton.id((LinearLayout)findViewById(R.id.drawPile),hands,(Button)findViewById(R.id.draw));
         draw.setOnClickListener(drawButton);
-        //oh
-        //intents
-        //oh
     }
+    //in summation:
+    //this is the function that sets up the main parts of the game
+    //it creates the dragger, dropper, clicker, and all the cards
+    //it links those all together
+    //it gives them all the data they need
+    //this happens by creating the custom class
+    //then calling id on it, which will take the right data
+    //this is the core of the data management in this code
+    //it also switches the display over to the main board
+    //as the first of four methods...
+    //it's an important method
 }
