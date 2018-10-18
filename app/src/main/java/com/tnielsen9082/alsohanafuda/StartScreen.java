@@ -16,7 +16,7 @@ public class StartScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //sets the display to the start screen
         setContentView(R.layout.start_scree);
-        //locks it as landscapre
+        //locks it as landscape
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         //creates the start button
