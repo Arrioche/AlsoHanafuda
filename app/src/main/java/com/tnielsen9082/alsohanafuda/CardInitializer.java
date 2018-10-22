@@ -3,6 +3,7 @@ package com.tnielsen9082.alsohanafuda;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -91,10 +92,7 @@ public class CardInitializer extends AppCompatActivity {
         //but only once
 
         //put the hands in an array
-        LinearLayout[] hands =new LinearLayout[3];
-        hands[0]=findViewById(R.id.handOne);
-        hands[1]=findViewById(R.id.handTwo);
-        hands[2]=findViewById(R.id.handThree);
+        LinearLayout[] hands ={findViewById(R.id.handOne),findViewById(R.id.handTwo),findViewById(R.id.handThree)};
 
         //initialize the touch listener
         Dropper card = new Dropper();
@@ -102,9 +100,12 @@ public class CardInitializer extends AppCompatActivity {
         //and give it the touch listener
         Dragger touch = new Dragger(hands, (LinearLayout)findViewById(R.id.cardTwo), card);
         //initialize the clicker
+        //initialize the clicker
         Clicker drawButton = new Clicker();
+        //make an array of the scoreboards
+        TextView[] scores = {findViewById(R.id.score1),findViewById(R.id.score2),findViewById(R.id.score3)};
         //send the data to the touch listener
-        card.id((LinearLayout)findViewById(R.id.tricks),(LinearLayout)findViewById(R.id.board),(TextView) findViewById(R.id.score), hands,touch,drawButton);
+        card.id((LinearLayout)findViewById(R.id.tricks),(LinearLayout)findViewById(R.id.board),scores, hands,touch,drawButton,(ConstraintLayout) findViewById(R.id.turnSplitter));
         //it has to be done in this order so that the dragger and dropper can access each other
 
         //give all the cards touch listeners and drag listeners
@@ -120,6 +121,17 @@ public class CardInitializer extends AppCompatActivity {
         Button draw = findViewById(R.id.draw);
         drawButton.id((LinearLayout)findViewById(R.id.drawPile),hands,(Button)findViewById(R.id.draw));
         draw.setOnClickListener(drawButton);
+
+        //make the end turn button
+        Button end = findViewById(R.id.endTurn);
+        TurnClicker ender = new TurnClicker(card,false);
+        end.setOnClickListener(ender);
+
+        //make the turn splitter button
+        Button turn = findViewById(R.id.nextTurn);
+        TurnClicker turner = new TurnClicker(card,true);
+        turn.setOnClickListener(turner);
+
     }
     //in summation:
     //this is the function that sets up the main parts of the game

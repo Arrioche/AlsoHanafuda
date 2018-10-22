@@ -1,6 +1,7 @@
 package com.tnielsen9082.alsohanafuda;
 
 import android.content.ClipData;
+import android.support.constraint.ConstraintLayout;
 import android.util.Log;
 import android.view.DragEvent;
 import android.view.View;
@@ -16,19 +17,24 @@ public final class Dropper implements View.OnDragListener {
     private static final String TAG = "MainActivity";
     //where the taken cards go
     private LinearLayout tricks;
+    private boolean done=true;
     //actually the board
     private LinearLayout deck;
     //displays the score
-    private TextView score;
+    private TextView[] score;
     //the dragger
     private Dragger drag;
     //the clicker
     private Clicker click;
     //to keep track of the current player
     private int handNum =0;
+    private int scoreNum=0;
     //the array of player hands
     private LinearLayout[] hands;
-    public void id(LinearLayout tag, LinearLayout tag2, TextView tag3, LinearLayout[] tag4, Dragger tag5, Clicker tag6){
+    //the screen that breaks up turns
+    private ConstraintLayout splitter;
+
+    public void id(LinearLayout tag, LinearLayout tag2, TextView[] tag3, LinearLayout[] tag4, Dragger tag5, Clicker tag6, ConstraintLayout tag7){
         //initializing all those variables
         tricks = tag;
         deck = tag2;
@@ -36,6 +42,7 @@ public final class Dropper implements View.OnDragListener {
         hands= tag4;
         drag = tag5;
         click = tag6;
+        splitter= tag7;
     }
     @Override
     //when a drag is started this activates
@@ -65,7 +72,7 @@ public final class Dropper implements View.OnDragListener {
                 //change the look back
                 break;
             case DragEvent.ACTION_DROP:
-                int sco =Integer.parseInt(String.valueOf(score.getText()));
+                int sco =Integer.parseInt(String.valueOf(score[scoreNum].getText()));
                 // Gets the item containing the dragged data
                 ClipData.Item item = event.getClipData().getItemAt(0);
                 // Gets the text data from the item.
@@ -97,7 +104,7 @@ public final class Dropper implements View.OnDragListener {
 
                     //if you are not dropping in your own container
                     //and the suits are the same
-                    if(container==deck&&dropMonth==dragMonth) {
+                    if(container==deck&&dropMonth==dragMonth&&done) {
                         owner.removeView(dragger);
                         container.removeView(dropper);
 
@@ -107,20 +114,8 @@ public final class Dropper implements View.OnDragListener {
                         //update the score
                         sco+=dropPoints;
                         sco+=dragPoints;
-                        score.setText(sco+"");
-                        //switch to the next player
-                        //hide the old hand
-                        hands[handNum%3].setVisibility(View.GONE);
-                        //reveal the new hand
-                        hands[(handNum+1)%3].setVisibility(View.VISIBLE);
-                        //rotate the dropper
-                        handNum=(handNum+1)%3;
-                        //rotate the dragger
-                        (drag).increase();
-                        //puts a random layout in the clicker to make it draw a card to the PREVIOUS hand
-                        click.onClick(score);
-                        //rotate the clicker
-                        click.increase();
+                        score[scoreNum].setText(sco+"");
+                        done=false;
                     }
                     else {
                         boolean match = false;
@@ -133,22 +128,11 @@ public final class Dropper implements View.OnDragListener {
                             }
                         }
                         //if there are no matches
-                        if(!match){
+                        if(!match&&done){
                             //put the card in the board
                             owner.removeView(dragger);
                             container.addView(dragger);
-                            //hide the old hand
-                            hands[handNum%3].setVisibility(View.GONE);
-                            //show the new hand
-                            hands[(handNum+1)%3].setVisibility(View.VISIBLE);
-                            //rotate the dropper
-                            handNum=(handNum+1)%3;
-                            //rotate the dragger
-                            (drag).increase();
-                            //draw a card to the PREVIOUS hand
-                            click.onClick(score);
-                            //rotate the clicker
-                            click.increase();
+                            done=false;
                         }
                         //there is no need to add code for if there are indirect matches
                         //the card will either be a direct match, and be placed
@@ -161,21 +145,10 @@ public final class Dropper implements View.OnDragListener {
                    container=(LinearLayout)dropper;
                    //if the container is empty
                     //put the card in it
-                   if(container.getChildCount()==0){
+                   if(container.getChildCount()==0&&done){
                        owner.removeView(dragger);
                        container.addView(dragger);
-                       //hide the old hand
-                       hands[handNum%3].setVisibility(View.GONE);
-                       //show the new hand
-                       hands[(handNum+1)%3].setVisibility(View.VISIBLE);
-                       //rotate the dropper
-                       handNum=(handNum+1)%3;
-                       //rotate the dragger
-                       (drag).increase();
-                       //draw a card to the PREVIOUS hand
-                       click.onClick(score);
-                       //rotate the clicker
-                       click.increase();
+                       done=false;
                    }
                 }
 
@@ -213,6 +186,29 @@ public final class Dropper implements View.OnDragListener {
 
         //if the board is empty
         //the card goes to the board
+    }
+    public void turnRotator(){
+        //hide the old hand
+        hands[handNum%3].setVisibility(View.GONE);
+        //show the new hand
+        hands[(handNum+1)%3].setVisibility(View.VISIBLE);
+        //rotate the dropper
+        handNum=(handNum+1)%3;
+        //hide the old score
+        score[scoreNum%3].setVisibility(View.GONE);
+        //show the new score
+        score[(scoreNum+1)%3].setVisibility(View.VISIBLE);
+        //rotate the dropper
+        scoreNum=(scoreNum+1)%3;
+        //rotate the dragger
+        (drag).increase();
+        //draw a card to the PREVIOUS hand
+        click.onClick(score[0]);
+        //rotate the clicker
+        click.increase();
+        splitter.setVisibility(View.VISIBLE);
+        //reset the turn
+        done=true;
     }
 }
 

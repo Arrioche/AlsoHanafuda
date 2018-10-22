@@ -22,10 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Splitter"
-            android:label="singleTask launchMode"
-            android:launchMode="singleTask"/>
     </application>
 
 </manifest>

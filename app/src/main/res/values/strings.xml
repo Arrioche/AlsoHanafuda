@@ -40,4 +40,7 @@
     <string name="a01">a01</string>
     <string name="draw">Draw</string>
     <string name="_0">0</string>
+    <string name="turnback">turnBack</string>
+    <string name="next_turn">Next Turn</string>
+    <string name="end_turn">End Turn</string>
 </resources>
