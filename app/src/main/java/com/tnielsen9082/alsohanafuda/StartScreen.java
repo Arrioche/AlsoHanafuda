@@ -25,7 +25,12 @@ public class StartScreen extends AppCompatActivity {
             public void onClick(View v) {
                 //starts the cardInitializer
                 Intent myIntent = new Intent(StartScreen.this, CardInitializer.class);
+                //you can put data in the intent
+                myIntent.putExtra("scoreOne",0);
+                myIntent.putExtra("scoreTwo",0);
+                myIntent.putExtra("scoreThree",0);
                 StartScreen.this.startActivity(myIntent);
+                StartScreen.this.finish();
             }
         });
         //THERE IS NO CODE FOR THE RULES BUTTON YET

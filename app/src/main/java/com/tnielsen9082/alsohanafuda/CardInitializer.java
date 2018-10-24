@@ -1,10 +1,12 @@
 package com.tnielsen9082.alsohanafuda;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -17,6 +19,7 @@ public class CardInitializer extends AppCompatActivity {
     ArrayList<View> cards = new ArrayList<>();
     //in case I ever use logs
     private static final String TAG = "MainActivity";
+    private Intent intention;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +29,14 @@ public class CardInitializer extends AppCompatActivity {
         getWindow().getDecorView().setBackgroundColor(Color.LTGRAY);
         //lock in landscape mode
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        //gets the intent that started the activity
+        intention=getIntent();
+        Bundle bundle = intention.getExtras();
+        String[] scoresInit =new String[3];
+        scoresInit[0] =bundle.get("scoreOne")+"";
+        scoresInit[1] =bundle.get("scoreTwo")+"";
+        scoresInit[2] =bundle.get("scoreThree")+"";
+
 
         //SO IT BEGINS
         //pine
@@ -88,6 +99,7 @@ public class CardInitializer extends AppCompatActivity {
         cards.add(findViewById(R.id.paulNormalTwo));
         cards.add(findViewById(R.id.paulNormalThree));
         cards.add(findViewById(R.id.paulPhoenix));
+
         //each card needs to be individually put into the card list
         //but only once
 
@@ -104,6 +116,9 @@ public class CardInitializer extends AppCompatActivity {
         Clicker drawButton = new Clicker();
         //make an array of the scoreboards
         TextView[] scores = {findViewById(R.id.score1),findViewById(R.id.score2),findViewById(R.id.score3)};
+        for (int i = 0; i < 3; i++) {
+            scores[i].setText(scoresInit[i]);
+        }
         //send the data to the touch listener
         card.id((LinearLayout)findViewById(R.id.tricks),(LinearLayout)findViewById(R.id.board),scores, hands,touch,drawButton,(ConstraintLayout) findViewById(R.id.turnSplitter));
         //it has to be done in this order so that the dragger and dropper can access each other
@@ -132,6 +147,10 @@ public class CardInitializer extends AppCompatActivity {
         TurnClicker turner = new TurnClicker(card,true);
         turn.setOnClickListener(turner);
 
+    }
+    @Override
+    public void onBackPressed() {
+        //do nothing
     }
     //in summation:
     //this is the function that sets up the main parts of the game

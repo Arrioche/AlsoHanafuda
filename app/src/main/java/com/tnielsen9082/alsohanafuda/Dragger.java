@@ -51,7 +51,6 @@ public final class Dragger implements View.OnTouchListener {
             if(view.getParent()==hand[handNum]||view.getParent()==second){
                 //if the card is in the current hand or the secondary spot
                 view.startDrag(data, shadowBuilder, view, 1);
-                Log.e("TAG",""+data);
             }
             return true;
         }

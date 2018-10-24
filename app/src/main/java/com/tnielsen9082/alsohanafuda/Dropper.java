@@ -201,7 +201,7 @@ public final class Dropper implements View.OnDragListener {
         //rotate the dropper
         scoreNum=(scoreNum+1)%3;
         //rotate the dragger
-        (drag).increase();
+        drag.increase();
         //draw a card to the PREVIOUS hand
         click.onClick(score[0]);
         //rotate the clicker
