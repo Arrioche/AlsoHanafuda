@@ -35,6 +35,10 @@ public class StartScreen extends AppCompatActivity {
         });
         //THERE IS NO CODE FOR THE RULES BUTTON YET
     }
+    @Override
+    public void onBackPressed() {
+        //do nothing
+    }
     //in summation:
     //this is the activity that you first see when you open the game
     //it has the title and the start button and the button to open the rules

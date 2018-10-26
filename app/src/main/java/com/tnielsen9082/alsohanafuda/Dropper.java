@@ -33,8 +33,10 @@ public final class Dropper implements View.OnDragListener {
     private LinearLayout[] hands;
     //the screen that breaks up turns
     private ConstraintLayout splitter;
+    //the activity that spawns this
+    private CardInitializer cardInitializer;
 
-    public void id(LinearLayout tag, LinearLayout tag2, TextView[] tag3, LinearLayout[] tag4, Dragger tag5, Clicker tag6, ConstraintLayout tag7){
+    public void id(LinearLayout tag, LinearLayout tag2, TextView[] tag3, LinearLayout[] tag4, Dragger tag5, Clicker tag6, ConstraintLayout tag7, CardInitializer tag8){
         //initializing all those variables
         tricks = tag;
         deck = tag2;
@@ -43,6 +45,7 @@ public final class Dropper implements View.OnDragListener {
         drag = tag5;
         click = tag6;
         splitter= tag7;
+        cardInitializer = tag8;
     }
     @Override
     //when a drag is started this activates
