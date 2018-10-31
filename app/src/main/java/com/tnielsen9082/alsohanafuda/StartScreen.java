@@ -24,11 +24,7 @@ public class StartScreen extends AppCompatActivity {
         draw.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //starts the cardInitializer
-                Intent myIntent = new Intent(StartScreen.this, CardInitializer.class);
-                //you can put data in the intent
-                myIntent.putExtra("scoreOne",0);
-                myIntent.putExtra("scoreTwo",0);
-                myIntent.putExtra("scoreThree",0);
+                Intent myIntent = new Intent(StartScreen.this, Namer.class);
                 StartScreen.this.startActivity(myIntent);
                 StartScreen.this.finish();
             }
