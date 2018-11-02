@@ -399,6 +399,117 @@
             app:srcCompat="@drawable/rainpoet"
             android:visibility="visible" />
 
+        <ImageView
+            android:id="@+id/peonyButterfly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/f10"
+            android:src="@drawable/peonybutterfly"
+            android:visibility="visible"
+            app:srcCompat="@drawable/peonybutterfly" />
+
+        <ImageView
+            android:id="@+id/plumNormalOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/b01"
+            android:src="@drawable/plumnormalone"
+            android:visibility="visible"
+            app:srcCompat="@drawable/plumnormalone" />
+
+        <ImageView
+            android:id="@+id/pineTanzaku"
+            android:layout_width="65dp"
+            android:layout_height="104dp"
+            android:layout_weight="0"
+            android:contentDescription="@string/a05"
+            android:cropToPadding="false"
+            android:src="@drawable/pinetanzaku"
+            android:visibility="visible"
+            app:srcCompat="@drawable/pinetanzaku" />
+
+        <ImageView
+            android:id="@+id/pampasMoon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/h20"
+            android:src="@drawable/pampasmoon"
+            android:visibility="visible"
+            app:srcCompat="@drawable/pampasmoon" />
+
+        <ImageView
+            android:id="@+id/chrysCup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/i10"
+            android:src="@drawable/chryscup"
+            android:visibility="visible"
+            app:srcCompat="@drawable/chryscup" />
+
+        <ImageView
+            android:id="@+id/cloverTanzaku"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/g05"
+            android:src="@drawable/clovertanzaku"
+            android:visibility="visible"
+            app:srcCompat="@drawable/clovertanzaku" />
+
+        <ImageView
+            android:id="@+id/plumTanzaku"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/b05"
+            android:src="@drawable/plumtanzaku"
+            android:visibility="visible"
+            app:srcCompat="@drawable/plumtanzaku" />
+
+        <ImageView
+            android:id="@+id/cloverBoar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/g10"
+            android:src="@drawable/cloverboar"
+            android:visibility="visible"
+            app:srcCompat="@drawable/cloverboar" />
+
+        <ImageView
+            android:id="@+id/paulNormalOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/l01"
+            android:src="@drawable/paulnormalone"
+            android:visibility="visible"
+            app:srcCompat="@drawable/paulnormalone" />
+
+        <ImageView
+            android:id="@+id/pampasNormalOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/h01"
+            android:src="@drawable/pampasnormalone"
+            android:visibility="visible"
+            app:srcCompat="@drawable/pampasnormalone" />
+
+        <ImageView
+            android:id="@+id/irisTanzaku"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/e05"
+            android:src="@drawable/iristanzaku"
+            android:visibility="visible"
+            app:srcCompat="@drawable/iristanzaku" />
+
     </LinearLayout>
 
     <HorizontalScrollView
@@ -423,45 +534,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/pampasNormalOne"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:contentDescription="@string/h01"
-                android:src="@drawable/pampasnormalone"
-                app:srcCompat="@drawable/pampasnormalone"
-                android:visibility="visible" />
-
-            <ImageView
-                android:id="@+id/paulNormalOne"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:contentDescription="@string/l01"
-                android:src="@drawable/paulnormalone"
-                app:srcCompat="@drawable/paulnormalone"
-                android:visibility="visible" />
-
-            <ImageView
-                android:id="@+id/plumNormalOne"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:contentDescription="@string/b01"
-                android:src="@drawable/plumnormalone"
-                app:srcCompat="@drawable/plumnormalone"
-                android:visibility="visible" />
-
-            <ImageView
-                android:id="@+id/cloverBoar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:contentDescription="@string/g10"
-                android:src="@drawable/cloverboar"
-                app:srcCompat="@drawable/cloverboar"
-                android:visibility="visible" />
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -486,36 +558,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/irisTanzaku"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:contentDescription="@string/e05"
-                    android:src="@drawable/iristanzaku"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/iristanzaku" />
-
-                <ImageView
-                    android:id="@+id/pineTanzaku"
-                    android:layout_width="65dp"
-                    android:layout_height="104dp"
-                    android:layout_weight="0"
-                    android:contentDescription="@string/a05"
-                    android:cropToPadding="false"
-                    android:src="@drawable/pinetanzaku"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/pinetanzaku" />
-
-                <ImageView
-                    android:id="@+id/plumTanzaku"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:contentDescription="@string/b05"
-                    android:src="@drawable/plumtanzaku"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/plumtanzaku" />
             </LinearLayout>
 
             <LinearLayout
@@ -525,25 +567,6 @@
                 android:orientation="horizontal"
                 android:visibility="gone">
 
-                <ImageView
-                    android:id="@+id/chrysCup"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:contentDescription="@string/i10"
-                    android:src="@drawable/chryscup"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/chryscup" />
-
-                <ImageView
-                    android:id="@+id/peonyButterfly"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:contentDescription="@string/f10"
-                    android:src="@drawable/peonybutterfly"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/peonybutterfly" />
             </LinearLayout>
 
             <LinearLayout
@@ -553,25 +576,6 @@
                 android:orientation="horizontal"
                 android:visibility="gone">
 
-                <ImageView
-                    android:id="@+id/pampasMoon"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:contentDescription="@string/h20"
-                    android:src="@drawable/pampasmoon"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/pampasmoon" />
-
-                <ImageView
-                    android:id="@+id/cloverTanzaku"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:contentDescription="@string/g05"
-                    android:src="@drawable/clovertanzaku"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/clovertanzaku" />
             </LinearLayout>
 
         </LinearLayout>

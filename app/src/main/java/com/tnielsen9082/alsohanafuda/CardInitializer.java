@@ -21,6 +21,7 @@ public class CardInitializer extends AppCompatActivity {
     private Intent intention;
     private String[] scoresInit =new String[3];
     private TextView[] scores = new TextView[3];
+    private String[] names= new String[3];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,11 +38,17 @@ public class CardInitializer extends AppCompatActivity {
             scoresInit[0] = bundle.get("scoreOne") + "";
             scoresInit[1] = bundle.get("scoreTwo") + "";
             scoresInit[2] = bundle.get("scoreThree") + "";
+            names[0]=bundle.get("pOne")+"";
+            names[1]=bundle.get("pTwo")+"";
+            names[2]=bundle.get("pThree")+"";
         }
         else{
             scoresInit[0] = 0+"";
             scoresInit[1] = 0+"";
             scoresInit[2] = 0+"";
+            names[0]="Player One";
+            names[1]="Player Two";
+            names[2]="Player Three";
         }
         for (int i = 0; i < scoresInit.length; i++) {
             if(scoresInit[i]==null){
@@ -161,6 +168,8 @@ public class CardInitializer extends AppCompatActivity {
         TurnClicker turner = new TurnClicker(card,true,this);
         turn.setOnClickListener(turner);
 
+        drawCards(hands);
+
     }
     @Override
     public void onBackPressed() {
@@ -172,8 +181,33 @@ public class CardInitializer extends AppCompatActivity {
         myIntent.putExtra("scoreOne",Integer.parseInt(String.valueOf((scores[0]).getText())));
         myIntent.putExtra("scoreTwo",Integer.parseInt(String.valueOf((scores[1]).getText())));
         myIntent.putExtra("scoreThree",Integer.parseInt(String.valueOf((scores[2]).getText())));
+        myIntent.putExtra("pOne",names[0]);
+        myIntent.putExtra("pTwo",names[1]);
+        myIntent.putExtra("pThree",names[2]);
         CardInitializer.this.startActivity(myIntent);
         CardInitializer.this.finish();
+    }
+    public void drawCards(LinearLayout[] hand){
+        LinearLayout drawPile = findViewById(R.id.drawPile);
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 7; j++) {
+                View card;
+                card= drawPile.getChildAt((int)(Math.random()*(drawPile.getChildCount()-1)));
+                //remove it from the draw pile
+                drawPile.removeView(card);
+                //put it in the current hand
+                hand[i].addView(card);
+            }
+        }
+        for (int i = 0; i < 6; i++) {
+            View card;
+            LinearLayout board = findViewById(R.id.board);
+            card = drawPile.getChildAt((int) (Math.random() * (drawPile.getChildCount() - 1)));
+            //remove it from the draw pile
+            drawPile.removeView(card);
+            //put it in the current hand
+            board.addView(card);
+        }
     }
     //in summation:
     //this is the function that sets up the main parts of the game
