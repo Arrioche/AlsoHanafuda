@@ -46,6 +46,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="Name"
+
         android:autofillHints="Player Three" />
 
     <TextView
