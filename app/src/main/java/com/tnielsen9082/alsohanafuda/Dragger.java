@@ -11,6 +11,8 @@ import android.widget.LinearLayout;
 
 public final class Dragger implements View.OnTouchListener {
     private static final String TAG = "MainActivity";
+    //this decides what is available to draw from
+    private int rotate=0;
     //this is the hand
     private LinearLayout[] hand;
     //this is the place where the second drawn card will go
@@ -48,15 +50,31 @@ public final class Dragger implements View.OnTouchListener {
             //make a custom drag shadow
             //once I create it
             View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
-            if(view.getParent()==hand[handNum]||view.getParent()==second){
+            //if rotate is ZERO
+            //play from the hand
+            if(view.getParent()==hand[handNum]&&rotate==0){
                 //if the card is in the current hand or the secondary spot
                 view.startDrag(data, shadowBuilder, view, 1);
             }
+            //if rotate is ONE
+            //play from the second
+            else if(view.getParent()==second&&rotate==1){
+                //if the card is in the current hand or the secondary spot
+                view.startDrag(data, shadowBuilder, view, 1);
+            }
+            //if rotate is NEITHER
+            //turn over
             return true;
         }
         else {
             return false;
         }
+    }
+    public void advancer(int num){
+        rotate=num;
+    }
+    public int getAdvancer(){
+        return rotate;
     }
     //in summation:
     //this is the function that lets you pick up and move cards

@@ -17,7 +17,6 @@ public final class Dropper implements View.OnDragListener {
     private static final String TAG = "MainActivity";
     //where the taken cards go
     private LinearLayout tricks;
-    private boolean done=true;
     //actually the board
     private LinearLayout deck;
     //displays the score
@@ -33,10 +32,12 @@ public final class Dropper implements View.OnDragListener {
     private LinearLayout[] hands;
     //the screen that breaks up turns
     private ConstraintLayout splitter;
-    //the activity that spawns this
-    private CardInitializer cardInitializer;
+    //the layout where the second card goes
+    private LinearLayout second;
+    //the draw pile
+    private LinearLayout draw;
 
-    public void id(LinearLayout tag, LinearLayout tag2, TextView[] tag3, LinearLayout[] tag4, Dragger tag5, Clicker tag6, ConstraintLayout tag7, CardInitializer tag8){
+    public void id(LinearLayout tag, LinearLayout tag2, TextView[] tag3, LinearLayout[] tag4, Dragger tag5, Clicker tag6, ConstraintLayout tag7, LinearLayout tag8, LinearLayout tag9){
         //initializing all those variables
         tricks = tag;
         deck = tag2;
@@ -45,7 +46,9 @@ public final class Dropper implements View.OnDragListener {
         drag = tag5;
         click = tag6;
         splitter= tag7;
-        cardInitializer = tag8;
+        second = tag8;
+        draw=tag9;
+
     }
     @Override
     //when a drag is started this activates
@@ -107,7 +110,7 @@ public final class Dropper implements View.OnDragListener {
 
                     //if you are not dropping in your own container
                     //and the suits are the same
-                    if(container==deck&&dropMonth==dragMonth&&done) {
+                    if(container==deck&&dropMonth==dragMonth) {
                         owner.removeView(dragger);
                         container.removeView(dropper);
 
@@ -118,7 +121,12 @@ public final class Dropper implements View.OnDragListener {
                         sco+=dropPoints;
                         sco+=dragPoints;
                         score[scoreNum].setText(sco+"");
-                        done=false;
+                        if(drag.getAdvancer()==0) {
+                            secondCard();
+                        }
+                        else{
+                            drag.advancer(3);
+                        }
                     }
                     else {
                         boolean match = false;
@@ -131,15 +139,20 @@ public final class Dropper implements View.OnDragListener {
                             }
                         }
                         //if there are no matches
-                        if(!match&&done){
+                        if(!match){
                             //put the card in the board
                             owner.removeView(dragger);
                             container.addView(dragger);
-                            done=false;
+                            if(drag.getAdvancer()==0) {
+                                secondCard();
+                            }
+                            else{
+                                drag.advancer(3);
+                            }
                         }
                         //there is no need to add code for if there are indirect matches
                         //the card will either be a direct match, and be placed
-                        //or it will have no matches, and be place
+                        //or it will have no matches, and be placed
                         //we can just end the code and the card will return in the third situation
                         //of indirect matches
                     }
@@ -148,10 +161,15 @@ public final class Dropper implements View.OnDragListener {
                    container=(LinearLayout)dropper;
                    //if the container is empty
                     //put the card in it
-                   if(container.getChildCount()==0&&done){
+                   if(container.getChildCount()==0){
                        owner.removeView(dragger);
                        container.addView(dragger);
-                       done=false;
+                       if(drag.getAdvancer()==0) {
+                           secondCard();
+                       }
+                       else{
+                           drag.advancer(3);
+                       }
                    }
                 }
 
@@ -210,8 +228,22 @@ public final class Dropper implements View.OnDragListener {
         //rotate the clicker
         click.increase();
         splitter.setVisibility(View.VISIBLE);
-        //reset the turn
-        done=true;
+        drag.advancer(0);
+    }
+    public void secondCard(){
+        //draws a card to the second slot
+        View card;
+        if(draw.getChildCount()!=0) {
+            card = draw.getChildAt((int) (Math.random() * (draw.getChildCount() - 1)));
+            //remove it from the draw pile
+            draw.removeView(card);
+            //put it in the current hand
+            second.addView(card);
+            drag.advancer(1);
+        }
+        else{
+            drag.advancer(3);
+        }
     }
 }
 

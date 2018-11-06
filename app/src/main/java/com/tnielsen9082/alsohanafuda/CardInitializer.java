@@ -141,7 +141,7 @@ public class CardInitializer extends AppCompatActivity {
             scores[i].setText(scoresInit[i]);
         }
         //send the data to the touch listener
-        card.id((LinearLayout)findViewById(R.id.tricks),(LinearLayout)findViewById(R.id.board),scores, hands,touch,drawButton,(ConstraintLayout) findViewById(R.id.turnSplitter), this);
+        card.id((LinearLayout)findViewById(R.id.tricks),(LinearLayout)findViewById(R.id.board),scores, hands,touch,drawButton,(ConstraintLayout) findViewById(R.id.turnSplitter),(LinearLayout) findViewById(R.id.cardTwo),(LinearLayout)findViewById(R.id.drawPile));
         //it has to be done in this order so that the dragger and dropper can access each other
 
         //give all the cards touch listeners and drag listeners
@@ -160,12 +160,12 @@ public class CardInitializer extends AppCompatActivity {
 
         //make the end turn button
         Button end = findViewById(R.id.endTurn);
-        TurnClicker ender = new TurnClicker(card,false,this);
+        TurnClicker ender = new TurnClicker(card,false,this,(LinearLayout) findViewById(R.id.cardTwo));
         end.setOnClickListener(ender);
 
         //make the turn splitter button
         Button turn = findViewById(R.id.nextTurn);
-        TurnClicker turner = new TurnClicker(card,true,this);
+        TurnClicker turner = new TurnClicker(card,true,this,(LinearLayout) findViewById(R.id.cardTwo));
         turn.setOnClickListener(turner);
 
         drawCards(hands);
@@ -175,6 +175,7 @@ public class CardInitializer extends AppCompatActivity {
     public void onBackPressed() {
         //do nothing
     }
+    //this is called from turnClicker
     public void goToScore(){
         Intent myIntent = new Intent(CardInitializer.this, Scorer.class);
         //you can put data in the intent
