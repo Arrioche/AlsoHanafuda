@@ -27,38 +27,6 @@
         app:layout_constraintTop_toTopOf="@+id/draw">
 
         <ImageView
-            android:id="@+id/pineNormalOne"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/a01"
-            android:src="@drawable/pinenormalone"
-            app:srcCompat="@drawable/pinenormalone"
-            android:visibility="visible"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="160dp" />
-
-        <ImageView
-            android:id="@+id/pineNormalTwo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/a01"
-            android:src="@drawable/pinenormaltwo"
-            app:srcCompat="@drawable/pinenormaltwo"
-            android:visibility="visible" />
-
-        <ImageView
-            android:id="@+id/pineCrane"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/a20"
-            android:src="@drawable/pinecrane"
-            app:srcCompat="@drawable/pinecrane"
-            android:visibility="visible" />
-
-        <ImageView
             android:id="@+id/plumNormalTwo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -421,17 +389,6 @@
             app:srcCompat="@drawable/plumnormalone" />
 
         <ImageView
-            android:id="@+id/pineTanzaku"
-            android:layout_width="65dp"
-            android:layout_height="104dp"
-            android:layout_weight="0"
-            android:contentDescription="@string/a05"
-            android:cropToPadding="false"
-            android:src="@drawable/pinetanzaku"
-            android:visibility="visible"
-            app:srcCompat="@drawable/pinetanzaku" />
-
-        <ImageView
             android:id="@+id/pampasMoon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -490,6 +447,49 @@
             android:src="@drawable/paulnormalone"
             android:visibility="visible"
             app:srcCompat="@drawable/paulnormalone" />
+
+        <ImageView
+            android:id="@+id/pineNormalOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/a01"
+            android:src="@drawable/pinenormalone"
+            android:visibility="visible"
+            app:srcCompat="@drawable/pinenormalone"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="160dp" />
+
+        <ImageView
+            android:id="@+id/pineCrane"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/a20"
+            android:src="@drawable/pinecrane"
+            android:visibility="visible"
+            app:srcCompat="@drawable/pinecrane" />
+
+        <ImageView
+            android:id="@+id/pineTanzaku"
+            android:layout_width="65dp"
+            android:layout_height="104dp"
+            android:layout_weight="0"
+            android:contentDescription="@string/a05"
+            android:cropToPadding="false"
+            android:src="@drawable/pinetanzaku"
+            android:visibility="visible"
+            app:srcCompat="@drawable/pinetanzaku" />
+
+        <ImageView
+            android:id="@+id/pineNormalTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/a01"
+            android:src="@drawable/pinenormaltwo"
+            android:visibility="visible"
+            app:srcCompat="@drawable/pinenormaltwo" />
 
         <ImageView
             android:id="@+id/pampasNormalOne"
@@ -698,6 +698,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.464" />
+
+        <TextView
+            android:id="@+id/nextPlayerAnnounce"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/nextTurn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 

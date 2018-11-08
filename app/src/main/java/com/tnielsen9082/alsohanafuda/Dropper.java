@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 //this is the class that the receptacles get
 public final class Dropper implements View.OnDragListener {
     //the clip that will be received from the dropper
@@ -111,16 +113,36 @@ public final class Dropper implements View.OnDragListener {
                     //if you are not dropping in your own container
                     //and the suits are the same
                     if(container==deck&&dropMonth==dragMonth) {
-                        owner.removeView(dragger);
-                        container.removeView(dropper);
+                        int same =0;
+                        ArrayList<View> indices = new ArrayList<>();
+                        for (int i = 0; i < container.getChildCount(); i++) {
+                            if(container.getChildAt(i).getContentDescription().charAt(0)==dragMonth){
+                                same++;
+                                indices.add(container.getChildAt(i));
+                            }
+                        }
+                        if(same<3) {
+                            owner.removeView(dragger);
+                            container.removeView(dropper);
 
-                        //add the views to the middle
-                        tricks.addView(dragger);
-                        tricks.addView(dropper);
-                        //update the score
-                        sco+=dropPoints;
-                        sco+=dragPoints;
-                        score[scoreNum].setText(sco+"");
+                            //add the views to the middle
+                            tricks.addView(dragger);
+                            tricks.addView(dropper);
+                            //update the score
+                            sco += dropPoints;
+                            sco += dragPoints;
+                            score[scoreNum].setText(sco + "");
+                        }
+                        else{
+                            owner.removeView(dragger);
+                            container.removeView(indices.get(0));
+                            container.removeView(indices.get(1));
+                            container.removeView(indices.get(2));
+                            tricks.addView(dragger);
+                            tricks.addView(indices.get(0));
+                            tricks.addView(indices.get(1));
+                            tricks.addView(indices.get(2));
+                        }
                         if(drag.getAdvancer()==0) {
                             secondCard();
                         }
