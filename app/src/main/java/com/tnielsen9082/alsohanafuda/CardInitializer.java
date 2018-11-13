@@ -58,6 +58,7 @@ public class CardInitializer extends AppCompatActivity {
 
 
         //SO IT BEGINS
+        cardImage cardsss = findViewById(R.id.mapleNormalOne);
         //pine
         cards.add(findViewById(R.id.pineCrane));
         cards.add(findViewById(R.id.pineNormalOne));
