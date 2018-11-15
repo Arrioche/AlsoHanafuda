@@ -632,6 +632,7 @@
         android:divider="@drawable/regular_divider"
         android:orientation="horizontal"
         android:showDividers="middle"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/handScroll"
         app:layout_constraintStart_toEndOf="@+id/score3"
         app:layout_constraintTop_toBottomOf="@+id/table">

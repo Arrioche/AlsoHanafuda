@@ -161,12 +161,12 @@ public class CardInitializer extends AppCompatActivity {
 
         //make the end turn button
         Button end = findViewById(R.id.endTurn);
-        TurnClicker ender = new TurnClicker(card,false,this,(LinearLayout) findViewById(R.id.cardTwo),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce));
+        TurnClicker ender = new TurnClicker(card,false,this,(LinearLayout) findViewById(R.id.cardTwo),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end);
         end.setOnClickListener(ender);
 
         //make the turn splitter button
         Button turn = findViewById(R.id.nextTurn);
-        TurnClicker turner = new TurnClicker(card,true,this,(LinearLayout) findViewById(R.id.cardTwo),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce));
+        TurnClicker turner = new TurnClicker(card,true,this,(LinearLayout) findViewById(R.id.cardTwo),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end);
         turn.setOnClickListener(turner);
 
         drawCards(hands);
