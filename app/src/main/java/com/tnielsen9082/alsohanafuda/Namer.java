@@ -42,6 +42,7 @@ public class Namer extends AppCompatActivity {
             }
         });
         EditText playerOne = findViewById(R.id.playerOneName);
+        playerOne.setText("Player One");
         playerOne.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -59,6 +60,7 @@ public class Namer extends AppCompatActivity {
             }
         });
         EditText playerTwo = findViewById(R.id.playerTwoName);
+        playerTwo.setText("Player Two");
         playerTwo.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -76,6 +78,7 @@ public class Namer extends AppCompatActivity {
             }
         });
         EditText playerThree = findViewById(R.id.playerThreeName);
+        playerThree.setText("Player Three");
         playerThree.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

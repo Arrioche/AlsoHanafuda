@@ -58,7 +58,6 @@ public class CardInitializer extends AppCompatActivity {
 
 
         //SO IT BEGINS
-        cardImage cardsss = findViewById(R.id.mapleNormalOne);
         //pine
         cards.add(findViewById(R.id.pineCrane));
         cards.add(findViewById(R.id.pineNormalOne));
@@ -142,7 +141,7 @@ public class CardInitializer extends AppCompatActivity {
             scores[i].setText(scoresInit[i]);
         }
         //send the data to the touch listener
-        card.id((LinearLayout)findViewById(R.id.tricks),(LinearLayout)findViewById(R.id.board),scores, hands,touch,drawButton,(ConstraintLayout) findViewById(R.id.turnSplitter),(LinearLayout) findViewById(R.id.cardTwo),(LinearLayout)findViewById(R.id.drawPile));
+        card.id((LinearLayout)findViewById(R.id.tricks),(LinearLayout)findViewById(R.id.board),scores, hands,touch,drawButton,(ConstraintLayout) findViewById(R.id.turnSplitter),(LinearLayout) findViewById(R.id.cardTwo),(LinearLayout)findViewById(R.id.drawPile),names,(TextView)findViewById(R.id.playerNameMain));
         //it has to be done in this order so that the dragger and dropper can access each other
 
         //give all the cards touch listeners and drag listeners
@@ -168,7 +167,7 @@ public class CardInitializer extends AppCompatActivity {
         Button turn = findViewById(R.id.nextTurn);
         TurnClicker turner = new TurnClicker(card,true,this,(LinearLayout) findViewById(R.id.cardTwo),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end);
         turn.setOnClickListener(turner);
-
+        ((TextView) findViewById(R.id.playerNameMain)).setText(names[0]);
         drawCards(hands);
 
     }
@@ -178,7 +177,16 @@ public class CardInitializer extends AppCompatActivity {
     }
     //this is called from turnClicker
     public void goToScore(){
-        Intent myIntent = new Intent(CardInitializer.this, Scorer.class);
+        int total = Integer.parseInt(String.valueOf((scores[0]).getText()))+
+        Integer.parseInt(String.valueOf((scores[1]).getText()))+
+        Integer.parseInt(String.valueOf((scores[2]).getText()));
+        Intent myIntent;
+        if(total!=3168) {
+            myIntent = new Intent(CardInitializer.this, Scorer.class);
+        }
+        else{
+            myIntent = new Intent(CardInitializer.this, FinalScorer.class);
+        }
         //you can put data in the intent
         myIntent.putExtra("scoreOne",Integer.parseInt(String.valueOf((scores[0]).getText())));
         myIntent.putExtra("scoreTwo",Integer.parseInt(String.valueOf((scores[1]).getText())));

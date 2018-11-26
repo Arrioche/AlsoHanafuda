@@ -28,8 +28,7 @@ public final class Dropper implements View.OnDragListener {
     //the clicker
     private Clicker click;
     //to keep track of the current player
-    private int handNum =0;
-    private int scoreNum=0;
+    private int playerNum =0;
     //the array of player hands
     private LinearLayout[] hands;
     //the screen that breaks up turns
@@ -38,8 +37,12 @@ public final class Dropper implements View.OnDragListener {
     private LinearLayout second;
     //the draw pile
     private LinearLayout draw;
+    //the array of player names
+    private String[] names;
+    //the place where names are displayed
+    private TextView nameDisp;
 
-    public void id(LinearLayout tag, LinearLayout tag2, TextView[] tag3, LinearLayout[] tag4, Dragger tag5, Clicker tag6, ConstraintLayout tag7, LinearLayout tag8, LinearLayout tag9){
+    public void id(LinearLayout tag, LinearLayout tag2, TextView[] tag3, LinearLayout[] tag4, Dragger tag5, Clicker tag6, ConstraintLayout tag7, LinearLayout tag8, LinearLayout tag9,String[] tag10,TextView tag11){
         //initializing all those variables
         tricks = tag;
         deck = tag2;
@@ -50,6 +53,8 @@ public final class Dropper implements View.OnDragListener {
         splitter= tag7;
         second = tag8;
         draw=tag9;
+        names = tag10;
+        nameDisp = tag11;
 
     }
     @Override
@@ -80,7 +85,7 @@ public final class Dropper implements View.OnDragListener {
                 //change the look back
                 break;
             case DragEvent.ACTION_DROP:
-                int sco =Integer.parseInt(String.valueOf(score[scoreNum].getText()));
+                int sco =Integer.parseInt(String.valueOf(score[playerNum].getText()));
                 // Gets the item containing the dragged data
                 ClipData.Item item = event.getClipData().getItemAt(0);
                 // Gets the text data from the item.
@@ -131,7 +136,7 @@ public final class Dropper implements View.OnDragListener {
                             //update the score
                             sco += dropPoints;
                             sco += dragPoints;
-                            score[scoreNum].setText(sco + "");
+                            score[playerNum].setText(sco + "");
                         }
                         else{
                             owner.removeView(dragger);
@@ -232,17 +237,17 @@ public final class Dropper implements View.OnDragListener {
     }
     public void turnRotator(){
         //hide the old hand
-        hands[handNum%3].setVisibility(View.GONE);
-        //show the new hand
-        hands[(handNum+1)%3].setVisibility(View.VISIBLE);
-        //rotate the dropper
-        handNum=(handNum+1)%3;
+        hands[playerNum %3].setVisibility(View.GONE);
         //hide the old score
-        score[scoreNum%3].setVisibility(View.GONE);
-        //show the new score
-        score[(scoreNum+1)%3].setVisibility(View.VISIBLE);
+        score[playerNum%3].setVisibility(View.INVISIBLE);
         //rotate the dropper
-        scoreNum=(scoreNum+1)%3;
+        playerNum=(playerNum+1)%3;
+        //rotate the names
+        nameDisp.setText(names[playerNum]);
+        //show the new hand
+        hands[(playerNum)].setVisibility(View.VISIBLE);
+        //show the new score
+        score[(playerNum)].setVisibility(View.VISIBLE);
         //rotate the dragger
         drag.increase();
         //rotate the clicker
