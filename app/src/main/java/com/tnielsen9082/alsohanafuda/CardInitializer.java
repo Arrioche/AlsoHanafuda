@@ -55,8 +55,61 @@ public class CardInitializer extends AppCompatActivity {
                 scoresInit[i]=0+"";
             }
         }
-
-
+        drawCards(setUp());
+    }
+    @Override
+    public void onBackPressed() {
+        //do nothing
+    }
+    //this is called from turnClicker
+    public void goToScore(){
+        int total = Integer.parseInt(String.valueOf((scores[0]).getText()))+
+        Integer.parseInt(String.valueOf((scores[1]).getText()))+
+        Integer.parseInt(String.valueOf((scores[2]).getText()));
+        Intent myIntent;
+        if(total!=3168) {
+            myIntent = new Intent(CardInitializer.this, Scorer.class);
+        }
+        else{
+            myIntent = new Intent(CardInitializer.this, FinalScorer.class);
+        }
+        //you can put data in the intent
+        myIntent.putExtra("scoreOne",Integer.parseInt(String.valueOf((scores[0]).getText())));
+        myIntent.putExtra("scoreTwo",Integer.parseInt(String.valueOf((scores[1]).getText())));
+        myIntent.putExtra("scoreThree",Integer.parseInt(String.valueOf((scores[2]).getText())));
+        myIntent.putExtra("pOne",names[0]);
+        myIntent.putExtra("pTwo",names[1]);
+        myIntent.putExtra("pThree",names[2]);
+        CardInitializer.this.startActivity(myIntent);
+        CardInitializer.this.finish();
+    }
+    public void drawCards(LinearLayout[] hand){
+        LinearLayout drawPile = findViewById(R.id.drawPile);
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 7; j++) {
+                View card;
+                card= drawPile.getChildAt((int)(Math.random()*(drawPile.getChildCount()-1)));
+                //remove it from the draw pile
+                drawPile.removeView(card);
+                //put it in the current hand
+                hand[i].addView(card);
+            }
+        }
+        for (int i = 0; i < 6; i++) {
+            View card;
+            LinearLayout board = findViewById(R.id.board);
+            card = drawPile.getChildAt((int) (Math.random() * (drawPile.getChildCount() - 1)));
+            //remove it from the draw pile
+            drawPile.removeView(card);
+            //put it in the current hand
+            board.addView(card);
+        }
+    }
+    public LinearLayout[] setUp(){
+        //this initializes all the cards
+        //makes all the droppers and buttons and whatnot and gives them their data
+        //DOES NOT draw the cards to start the game
+        //returns the array of player hands
         //SO IT BEGINS
         //pine
         cards.add(findViewById(R.id.pineCrane));
@@ -168,56 +221,7 @@ public class CardInitializer extends AppCompatActivity {
         TurnClicker turner = new TurnClicker(card,true,this,(LinearLayout) findViewById(R.id.cardTwo),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end);
         turn.setOnClickListener(turner);
         ((TextView) findViewById(R.id.playerNameMain)).setText(names[0]);
-        drawCards(hands);
-
-    }
-    @Override
-    public void onBackPressed() {
-        //do nothing
-    }
-    //this is called from turnClicker
-    public void goToScore(){
-        int total = Integer.parseInt(String.valueOf((scores[0]).getText()))+
-        Integer.parseInt(String.valueOf((scores[1]).getText()))+
-        Integer.parseInt(String.valueOf((scores[2]).getText()));
-        Intent myIntent;
-        if(total!=3168) {
-            myIntent = new Intent(CardInitializer.this, Scorer.class);
-        }
-        else{
-            myIntent = new Intent(CardInitializer.this, FinalScorer.class);
-        }
-        //you can put data in the intent
-        myIntent.putExtra("scoreOne",Integer.parseInt(String.valueOf((scores[0]).getText())));
-        myIntent.putExtra("scoreTwo",Integer.parseInt(String.valueOf((scores[1]).getText())));
-        myIntent.putExtra("scoreThree",Integer.parseInt(String.valueOf((scores[2]).getText())));
-        myIntent.putExtra("pOne",names[0]);
-        myIntent.putExtra("pTwo",names[1]);
-        myIntent.putExtra("pThree",names[2]);
-        CardInitializer.this.startActivity(myIntent);
-        CardInitializer.this.finish();
-    }
-    public void drawCards(LinearLayout[] hand){
-        LinearLayout drawPile = findViewById(R.id.drawPile);
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 7; j++) {
-                View card;
-                card= drawPile.getChildAt((int)(Math.random()*(drawPile.getChildCount()-1)));
-                //remove it from the draw pile
-                drawPile.removeView(card);
-                //put it in the current hand
-                hand[i].addView(card);
-            }
-        }
-        for (int i = 0; i < 6; i++) {
-            View card;
-            LinearLayout board = findViewById(R.id.board);
-            card = drawPile.getChildAt((int) (Math.random() * (drawPile.getChildCount() - 1)));
-            //remove it from the draw pile
-            drawPile.removeView(card);
-            //put it in the current hand
-            board.addView(card);
-        }
+        return hands;
     }
     //in summation:
     //this is the function that sets up the main parts of the game

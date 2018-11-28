@@ -2,6 +2,7 @@ package com.tnielsen9082.alsohanafuda;
 
 import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
@@ -13,13 +14,13 @@ public class TurnClicker implements View.OnClickListener{
     private boolean swich;
     private LinearLayout second;
     private Dropper drop;
-    private CardInitializer cardInitializer;
+    private AppCompatActivity cardInitializer;
     private int count =1;
     private LinearLayout[] hands;
     private String[] names;
     private TextView nameDisplay;
     private Button disable;
-    public TurnClicker(Dropper tag3,boolean tag2, CardInitializer tag1, LinearLayout tag4,LinearLayout[] tag5,String[] tag6,TextView tag7, Button tag8){
+    public TurnClicker(Dropper tag3, boolean tag2, AppCompatActivity tag1, LinearLayout tag4, LinearLayout[] tag5, String[] tag6, TextView tag7, Button tag8){
         drop=tag3;
         swich=tag2;
         second =tag4;
@@ -44,7 +45,7 @@ public class TurnClicker implements View.OnClickListener{
                 }
             }
             if(done) {
-                cardInitializer.goToScore();
+                ((CardInitializer)cardInitializer).goToScore();
             }
 
         }

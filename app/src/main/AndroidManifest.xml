@@ -43,6 +43,7 @@
             <category android:name="android.intent.category.OPENABLE" />
         </intent-filter>
         </activity>
+        <activity android:name=".Tutorial" />
     </application>
 
 </manifest>

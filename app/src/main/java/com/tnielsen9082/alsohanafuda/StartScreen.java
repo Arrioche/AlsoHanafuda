@@ -29,7 +29,15 @@ public class StartScreen extends AppCompatActivity {
                 StartScreen.this.finish();
             }
         });
-        //THERE IS NO CODE FOR THE RULES BUTTON YET
+        Button rules = findViewById(R.id.rules);
+        rules.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //starts the cardInitializer
+                Intent myIntent = new Intent(StartScreen.this, Tutorial.class);
+                StartScreen.this.startActivity(myIntent);
+                StartScreen.this.finish();
+            }
+        });
     }
     @Override
     public void onBackPressed() {
