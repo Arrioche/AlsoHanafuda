@@ -16,7 +16,6 @@ public class Scorer extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //we definitely want to change the default contentView later
         setContentView(R.layout.scorer_layout);
         //set the background color
         getWindow().getDecorView().setBackgroundColor(Color.GREEN);
@@ -41,6 +40,10 @@ public class Scorer extends AppCompatActivity {
             names[0]="Player One";
             names[1]="Player Two";
             names[2]="Player Three";
+        }
+        for (int i = 0; i < 3; i++) {
+            ComboList combo= new ComboList();
+            scores[i]+=combo.checker();
         }
         for (int i = 0; i < 3; i++) {
             scoresDisplay[i].setText(scores[i]);

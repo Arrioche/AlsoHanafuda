@@ -18,7 +18,7 @@ public final class Dropper implements View.OnDragListener {
     //in case I ever use logs
     private static final String TAG = "MainActivity";
     //where the taken cards go
-    private LinearLayout tricks;
+    private LinearLayout[] tricks;
     //actually the board
     private LinearLayout deck;
     //displays the score
@@ -42,7 +42,7 @@ public final class Dropper implements View.OnDragListener {
     //the place where names are displayed
     private TextView nameDisp;
 
-    public void id(LinearLayout tag, LinearLayout tag2, TextView[] tag3, LinearLayout[] tag4, Dragger tag5, Clicker tag6, ConstraintLayout tag7, LinearLayout tag8, LinearLayout tag9,String[] tag10,TextView tag11){
+    public void id(LinearLayout[] tag, LinearLayout tag2, TextView[] tag3, LinearLayout[] tag4, Dragger tag5, Clicker tag6, ConstraintLayout tag7, LinearLayout tag8, LinearLayout tag9,String[] tag10,TextView tag11){
         //initializing all those variables
         tricks = tag;
         deck = tag2;
@@ -131,8 +131,8 @@ public final class Dropper implements View.OnDragListener {
                             container.removeView(dropper);
 
                             //add the views to the middle
-                            tricks.addView(dragger);
-                            tricks.addView(dropper);
+                            tricks[playerNum].addView(dragger);
+                            tricks[playerNum].addView(dropper);
                             //update the score
                             sco += dropPoints;
                             sco += dragPoints;
@@ -143,10 +143,10 @@ public final class Dropper implements View.OnDragListener {
                             container.removeView(indices.get(0));
                             container.removeView(indices.get(1));
                             container.removeView(indices.get(2));
-                            tricks.addView(dragger);
-                            tricks.addView(indices.get(0));
-                            tricks.addView(indices.get(1));
-                            tricks.addView(indices.get(2));
+                            tricks[playerNum].addView(dragger);
+                            tricks[playerNum].addView(indices.get(0));
+                            tricks[playerNum].addView(indices.get(1));
+                            tricks[playerNum].addView(indices.get(2));
                         }
                         if(drag.getAdvancer()==0) {
                             secondCard();
@@ -237,7 +237,7 @@ public final class Dropper implements View.OnDragListener {
     }
     public void turnRotator(){
         //hide the old hand
-        hands[playerNum %3].setVisibility(View.GONE);
+        hands[playerNum%3].setVisibility(View.GONE);
         //hide the old score
         score[playerNum%3].setVisibility(View.INVISIBLE);
         //rotate the dropper

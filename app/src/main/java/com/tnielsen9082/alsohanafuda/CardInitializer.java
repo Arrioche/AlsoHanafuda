@@ -22,6 +22,7 @@ public class CardInitializer extends AppCompatActivity {
     private String[] scoresInit =new String[3];
     private TextView[] scores = new TextView[3];
     private String[] names= new String[3];
+    private LinearLayout[] tricks=new LinearLayout[3];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +75,7 @@ public class CardInitializer extends AppCompatActivity {
             myIntent = new Intent(CardInitializer.this, FinalScorer.class);
         }
         //you can put data in the intent
+
         myIntent.putExtra("scoreOne",Integer.parseInt(String.valueOf((scores[0]).getText())));
         myIntent.putExtra("scoreTwo",Integer.parseInt(String.valueOf((scores[1]).getText())));
         myIntent.putExtra("scoreThree",Integer.parseInt(String.valueOf((scores[2]).getText())));
@@ -177,6 +179,10 @@ public class CardInitializer extends AppCompatActivity {
 
         //put the hands in an array
         LinearLayout[] hands ={findViewById(R.id.handOne),findViewById(R.id.handTwo),findViewById(R.id.handThree)};
+        //put the tricks in an array
+        tricks[0]=findViewById(R.id.tricks);
+        tricks[1]=findViewById(R.id.tricksTwo);
+        tricks[2]=findViewById(R.id.tricksThree);
 
         //initialize the touch listener
         Dropper card = new Dropper();
@@ -194,7 +200,7 @@ public class CardInitializer extends AppCompatActivity {
             scores[i].setText(scoresInit[i]);
         }
         //send the data to the touch listener
-        card.id((LinearLayout)findViewById(R.id.tricks),(LinearLayout)findViewById(R.id.board),scores, hands,touch,drawButton,(ConstraintLayout) findViewById(R.id.turnSplitter),(LinearLayout) findViewById(R.id.cardTwo),(LinearLayout)findViewById(R.id.drawPile),names,(TextView)findViewById(R.id.playerNameMain));
+        card.id(tricks,(LinearLayout)findViewById(R.id.board),scores, hands,touch,drawButton,(ConstraintLayout) findViewById(R.id.turnSplitter),(LinearLayout) findViewById(R.id.cardTwo),(LinearLayout)findViewById(R.id.drawPile),names,(TextView)findViewById(R.id.playerNameMain));
         //it has to be done in this order so that the dragger and dropper can access each other
 
         //give all the cards touch listeners and drag listeners
@@ -222,6 +228,15 @@ public class CardInitializer extends AppCompatActivity {
         turn.setOnClickListener(turner);
         ((TextView) findViewById(R.id.playerNameMain)).setText(names[0]);
         return hands;
+    }
+    public ArrayList<ArrayList<cardImage>> countUp(){
+        ArrayList<ArrayList<cardImage>> cards = new ArrayList<>();
+        ArrayList<cardImage> cardsOne = new ArrayList<>();
+        for (int i = 0; i < tricks[0].getChildCount(); i++) {
+            cardImage images = new cardImage(tricks[0].getChildAt(i).getContentDescription().charAt(0)+"",Integer.parseInt(String.valueOf(tricks[0].getChildAt(i).getContentDescription().subSequence(1,3))));
+            cardsOne.add(images);
+        }
+        return cards;
     }
     //in summation:
     //this is the function that sets up the main parts of the game

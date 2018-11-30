@@ -625,6 +625,36 @@
         app:layout_constraintTop_toBottomOf="@+id/table" />
 
     <LinearLayout
+        android:id="@+id/tricksTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="107dp"
+        android:layout_marginStart="84dp"
+        android:divider="@drawable/regular_divider"
+        android:orientation="horizontal"
+        android:showDividers="middle"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/handScroll"
+        app:layout_constraintStart_toEndOf="@+id/score3"
+        app:layout_constraintTop_toBottomOf="@+id/table">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tricksThree"
+        android:layout_width="wrap_content"
+        android:layout_height="107dp"
+        android:layout_marginStart="84dp"
+        android:divider="@drawable/regular_divider"
+        android:orientation="horizontal"
+        android:showDividers="middle"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/handScroll"
+        app:layout_constraintStart_toEndOf="@+id/score3"
+        app:layout_constraintTop_toBottomOf="@+id/table">
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/tricks"
         android:layout_width="wrap_content"
         android:layout_height="107dp"
@@ -650,7 +680,9 @@
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/handScroll"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/table"></LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/table">
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/endTurn"
@@ -668,7 +700,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/score1"
         app:layout_constraintStart_toStartOf="parent" />
 
