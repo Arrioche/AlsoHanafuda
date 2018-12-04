@@ -1,5 +1,7 @@
 package com.tnielsen9082.alsohanafuda;
 
+import java.util.ArrayList;
+
 public class ComboList {
     //the list of combeaux
     /*
@@ -18,7 +20,7 @@ public class ComboList {
     l20 l01 l01 l01 -10
     k20 k10 k05 k01 -10, may invalidate other combos
      */
-    public int checker(cardImage[] hand,boolean wipe){
+    public int checker(ArrayList hand, boolean wipe){
         int tanzakuTot =0;
         int brights =0;
         int threeBright=0;
@@ -32,8 +34,8 @@ public class ComboList {
         int cpm=0;
         int bdb=0;
         int tanzakuG =0;
-        for (int i = 0; i < hand.length; i++) {
-            cardImage card =hand[i];
+        for (int i = 0; i < hand.size(); i++) {
+            cardImage card =(cardImage)(hand.toArray())[i];
             //counts if the card is a wisteria
             if(card.compare("d")){
                 wisteria++;
@@ -116,7 +118,7 @@ public class ComboList {
             int tanzakuG,
                         boolean wipe){
         int total =0;
-        if(tanzakuTot==7){
+        if(tanzakuTot>=7){
             total+=40;
         }
         if(tanzakuTot==6){

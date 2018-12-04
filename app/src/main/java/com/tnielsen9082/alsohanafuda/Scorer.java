@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class Scorer extends AppCompatActivity {
     private Intent intention;
     private String[] names = new String[3];
@@ -40,10 +42,6 @@ public class Scorer extends AppCompatActivity {
             names[0]="Player One";
             names[1]="Player Two";
             names[2]="Player Three";
-        }
-        for (int i = 0; i < 3; i++) {
-            ComboList combo= new ComboList();
-            scores[i]+=combo.checker();
         }
         for (int i = 0; i < 3; i++) {
             scoresDisplay[i].setText(scores[i]);

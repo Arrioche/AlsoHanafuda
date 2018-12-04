@@ -19,7 +19,6 @@ public class CardInitializer extends AppCompatActivity {
     //in case I ever use logs
     private static final String TAG = "MainActivity";
     private Intent intention;
-    private String[] scoresInit =new String[3];
     private TextView[] scores = new TextView[3];
     private String[] names= new String[3];
     private LinearLayout[] tricks=new LinearLayout[3];
@@ -35,6 +34,7 @@ public class CardInitializer extends AppCompatActivity {
         //gets the intent that started the activity
         intention=getIntent();
         Bundle bundle = intention.getExtras();
+        String[] scoresInit = new String[3];
         if(bundle!=null) {
             scoresInit[0] = bundle.get("scoreOne") + "";
             scoresInit[1] = bundle.get("scoreTwo") + "";
@@ -56,7 +56,7 @@ public class CardInitializer extends AppCompatActivity {
                 scoresInit[i]=0+"";
             }
         }
-        drawCards(setUp());
+        drawCards(setUp(scoresInit));
     }
     @Override
     public void onBackPressed() {
@@ -75,7 +75,7 @@ public class CardInitializer extends AppCompatActivity {
             myIntent = new Intent(CardInitializer.this, FinalScorer.class);
         }
         //you can put data in the intent
-
+        countUp();
         myIntent.putExtra("scoreOne",Integer.parseInt(String.valueOf((scores[0]).getText())));
         myIntent.putExtra("scoreTwo",Integer.parseInt(String.valueOf((scores[1]).getText())));
         myIntent.putExtra("scoreThree",Integer.parseInt(String.valueOf((scores[2]).getText())));
@@ -107,7 +107,7 @@ public class CardInitializer extends AppCompatActivity {
             board.addView(card);
         }
     }
-    public LinearLayout[] setUp(){
+    public LinearLayout[] setUp(String[] scoresInit){
         //this initializes all the cards
         //makes all the droppers and buttons and whatnot and gives them their data
         //DOES NOT draw the cards to start the game
@@ -229,14 +229,28 @@ public class CardInitializer extends AppCompatActivity {
         ((TextView) findViewById(R.id.playerNameMain)).setText(names[0]);
         return hands;
     }
-    public ArrayList<ArrayList<cardImage>> countUp(){
+    public void countUp(){
+        //this should add the combo points to each player's score
+        ComboList combo = new ComboList();
         ArrayList<ArrayList<cardImage>> cards = new ArrayList<>();
         ArrayList<cardImage> cardsOne = new ArrayList<>();
         for (int i = 0; i < tricks[0].getChildCount(); i++) {
             cardImage images = new cardImage(tricks[0].getChildAt(i).getContentDescription().charAt(0)+"",Integer.parseInt(String.valueOf(tricks[0].getChildAt(i).getContentDescription().subSequence(1,3))));
             cardsOne.add(images);
         }
-        return cards;
+        scores[0].setText( Integer.parseInt(String.valueOf((scores[0]).getText()))+ combo.checker(cardsOne,false)+"");
+        ArrayList<cardImage> cardsTwo = new ArrayList<>();
+        for (int i = 0; i < tricks[1].getChildCount(); i++) {
+            cardImage images = new cardImage(tricks[1].getChildAt(i).getContentDescription().charAt(0)+"",Integer.parseInt(String.valueOf(tricks[1].getChildAt(i).getContentDescription().subSequence(1,3))));
+            cardsTwo.add(images);
+        }
+        scores[1].setText( Integer.parseInt(String.valueOf((scores[1]).getText()))+ combo.checker(cardsTwo,false)+"");
+        ArrayList<cardImage> cardsThree = new ArrayList<>();
+        for (int i = 0; i < tricks[2].getChildCount(); i++) {
+            cardImage images = new cardImage(tricks[2].getChildAt(i).getContentDescription().charAt(0)+"",Integer.parseInt(String.valueOf(tricks[2].getChildAt(i).getContentDescription().subSequence(1,3))));
+            cardsThree.add(images);
+        }
+        scores[2].setText( Integer.parseInt(String.valueOf((scores[2]).getText()))+ combo.checker(cardsThree,false)+"");
     }
     //in summation:
     //this is the function that sets up the main parts of the game
