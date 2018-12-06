@@ -147,6 +147,11 @@ public final class Dropper implements View.OnDragListener {
                             tricks[playerNum].addView(indices.get(0));
                             tricks[playerNum].addView(indices.get(1));
                             tricks[playerNum].addView(indices.get(2));
+                            sco += dragPoints;
+                            sco+= Integer.parseInt(String.valueOf(indices.get(0).getContentDescription().subSequence(1,3)));
+                            sco+= Integer.parseInt(String.valueOf(indices.get(1).getContentDescription().subSequence(1,3)));
+                            sco+= Integer.parseInt(String.valueOf(indices.get(2).getContentDescription().subSequence(1,3)));
+                            score[playerNum].setText(sco + "");
                         }
                         if(drag.getAdvancer()==0) {
                             secondCard();

@@ -164,7 +164,7 @@ public class ComboList {
         }
         if (rain==4){
             if(wipe){
-                total=0;
+                total=-1;
             }
             else{
                 total+=10;

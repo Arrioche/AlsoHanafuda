@@ -37,16 +37,6 @@
             android:visibility="visible" />
 
         <ImageView
-            android:id="@+id/rainLightning"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/k01"
-            android:src="@drawable/rainlightning"
-            app:srcCompat="@drawable/rainlightning"
-            android:visibility="visible" />
-
-        <ImageView
             android:id="@+id/pampasGeese"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -94,16 +84,6 @@
             android:contentDescription="@string/l01"
             android:src="@drawable/paulnormaltwo"
             app:srcCompat="@drawable/paulnormaltwo"
-            android:visibility="visible" />
-
-        <ImageView
-            android:id="@+id/rainBird"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/k10"
-            android:src="@drawable/rainbird"
-            app:srcCompat="@drawable/rainbird"
             android:visibility="visible" />
 
         <ImageView
@@ -229,16 +209,6 @@
             android:visibility="visible" />
 
         <ImageView
-            android:id="@+id/rainTanzaku"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/k05"
-            android:src="@drawable/raintanzaku"
-            app:srcCompat="@drawable/raintanzaku"
-            android:visibility="visible" />
-
-        <ImageView
             android:id="@+id/peonyTanzaku"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -359,16 +329,6 @@
             android:visibility="visible" />
 
         <ImageView
-            android:id="@+id/rainPoet"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/k20"
-            android:src="@drawable/rainpoet"
-            app:srcCompat="@drawable/rainpoet"
-            android:visibility="visible" />
-
-        <ImageView
             android:id="@+id/peonyButterfly"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -429,6 +389,26 @@
             app:srcCompat="@drawable/plumtanzaku" />
 
         <ImageView
+            android:id="@+id/rainTanzaku"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/k05"
+            android:src="@drawable/raintanzaku"
+            android:visibility="visible"
+            app:srcCompat="@drawable/raintanzaku" />
+
+        <ImageView
+            android:id="@+id/rainPoet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/k20"
+            android:src="@drawable/rainpoet"
+            android:visibility="visible"
+            app:srcCompat="@drawable/rainpoet" />
+
+        <ImageView
             android:id="@+id/cloverBoar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -437,6 +417,16 @@
             android:src="@drawable/cloverboar"
             android:visibility="visible"
             app:srcCompat="@drawable/cloverboar" />
+
+        <ImageView
+            android:id="@+id/rainLightning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/k01"
+            android:src="@drawable/rainlightning"
+            android:visibility="visible"
+            app:srcCompat="@drawable/rainlightning" />
 
         <ImageView
             android:id="@+id/paulNormalOne"
@@ -459,6 +449,16 @@
             app:srcCompat="@drawable/pinenormalone"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="160dp" />
+
+        <ImageView
+            android:id="@+id/rainBird"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/k10"
+            android:src="@drawable/rainbird"
+            android:visibility="visible"
+            app:srcCompat="@drawable/rainbird" />
 
         <ImageView
             android:id="@+id/pineCrane"

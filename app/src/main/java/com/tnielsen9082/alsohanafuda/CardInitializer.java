@@ -22,11 +22,12 @@ public class CardInitializer extends AppCompatActivity {
     private TextView[] scores = new TextView[3];
     private String[] names= new String[3];
     private LinearLayout[] tricks=new LinearLayout[3];
+    private boolean wipe =false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //we definitely want to change the default contentView later
-        setContentView(R.layout.activity_card_screen);
+        setContentView(R.layout.main_game);
         //and the color
         getWindow().getDecorView().setBackgroundColor(Color.LTGRAY);
         //lock in landscape mode
@@ -232,25 +233,36 @@ public class CardInitializer extends AppCompatActivity {
     public void countUp(){
         //this should add the combo points to each player's score
         ComboList combo = new ComboList();
-        ArrayList<ArrayList<cardImage>> cards = new ArrayList<>();
+        int[] rain = new int[3];
         ArrayList<cardImage> cardsOne = new ArrayList<>();
         for (int i = 0; i < tricks[0].getChildCount(); i++) {
             cardImage images = new cardImage(tricks[0].getChildAt(i).getContentDescription().charAt(0)+"",Integer.parseInt(String.valueOf(tricks[0].getChildAt(i).getContentDescription().subSequence(1,3))));
             cardsOne.add(images);
         }
-        scores[0].setText( Integer.parseInt(String.valueOf((scores[0]).getText()))+ combo.checker(cardsOne,false)+"");
+        rain[0]=combo.checker(cardsOne,wipe);
         ArrayList<cardImage> cardsTwo = new ArrayList<>();
         for (int i = 0; i < tricks[1].getChildCount(); i++) {
             cardImage images = new cardImage(tricks[1].getChildAt(i).getContentDescription().charAt(0)+"",Integer.parseInt(String.valueOf(tricks[1].getChildAt(i).getContentDescription().subSequence(1,3))));
             cardsTwo.add(images);
         }
-        scores[1].setText( Integer.parseInt(String.valueOf((scores[1]).getText()))+ combo.checker(cardsTwo,false)+"");
+        rain[1]=combo.checker(cardsTwo,wipe);
         ArrayList<cardImage> cardsThree = new ArrayList<>();
         for (int i = 0; i < tricks[2].getChildCount(); i++) {
             cardImage images = new cardImage(tricks[2].getChildAt(i).getContentDescription().charAt(0)+"",Integer.parseInt(String.valueOf(tricks[2].getChildAt(i).getContentDescription().subSequence(1,3))));
             cardsThree.add(images);
         }
-        scores[2].setText( Integer.parseInt(String.valueOf((scores[2]).getText()))+ combo.checker(cardsThree,false)+"");
+        rain[2]=combo.checker(cardsThree,wipe);
+        boolean rainEffect = false;
+        for (int i = 0; i < 3; i++) {
+            if(rain[i]==-1){
+                rainEffect=true;
+            }
+        }
+        if(!rainEffect){
+            scores[0].setText( Integer.parseInt(String.valueOf((scores[0]).getText()))+ combo.checker(cardsOne,false)+"");
+            scores[1].setText( Integer.parseInt(String.valueOf((scores[1]).getText()))+ combo.checker(cardsTwo,false)+"");
+            scores[2].setText( Integer.parseInt(String.valueOf((scores[2]).getText()))+ combo.checker(cardsThree,false)+"");
+        }
     }
     //in summation:
     //this is the function that sets up the main parts of the game

@@ -37,17 +37,6 @@ public class TurnClicker implements View.OnClickListener{
             ConstraintLayout parent = (ConstraintLayout) v.getParent();
             parent.setVisibility(View.GONE);
             disable.setEnabled(true);
-            //it also will change to the scoring screen at the end
-            boolean done = true;
-            for (int i = 0; i < 3; i++) {
-                if(hands[i].getChildCount()!=0){
-                    done=false;
-                }
-            }
-            if(done) {
-                ((CardInitializer)cardInitializer).goToScore();
-            }
-
         }
         else{
             //this ends the current turn
@@ -56,7 +45,19 @@ public class TurnClicker implements View.OnClickListener{
                 nameDisplay.setText("Next Up: "+names[count]);
                 count= (count+1)%3;
                 disable.setEnabled(false);
-                drop.turnRotator();
+                //it also will change to the scoring screen at the end
+                boolean done = true;
+                for (int i = 0; i < 3; i++) {
+                    if(hands[i].getChildCount()!=0){
+                        done=false;
+                    }
+                }
+                if(done) {
+                    ((CardInitializer)cardInitializer).goToScore();
+                }
+                else {
+                    drop.turnRotator();
+                }
             }
         }
     }

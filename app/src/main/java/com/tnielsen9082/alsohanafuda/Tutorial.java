@@ -4,11 +4,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -25,7 +21,7 @@ public class Tutorial extends CardInitializer {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //we definitely want to change the default contentView later
-        setContentView(R.layout.activity_card_screen);
+        setContentView(R.layout.main_game);
         //and the color
         getWindow().getDecorView().setBackgroundColor(Color.LTGRAY);
         //lock in landscape mode
@@ -39,6 +35,7 @@ public class Tutorial extends CardInitializer {
         names[1]="Player Two";
         names[2]="Player Three";
         ArrayList<cardImage> cardTest = new ArrayList<>();
+        ArrayList<cardImage> cardTestTwo = new ArrayList<>();
         //five brights
         //two views
         //crane-phoenix-moon
@@ -56,15 +53,15 @@ public class Tutorial extends CardInitializer {
         //red w/ writing
         //six
         //working
-        /*cardTest.add(new cardImage("a",5));
-        cardTest.add(new cardImage("b",5));
-        cardTest.add(new cardImage("c",5));
-        cardTest.add(new cardImage("d",5));
-        cardTest.add(new cardImage("e",5));
-        cardTest.add(new cardImage("f",5));
-        cardTest.add(new cardImage("g",5));
-        cardTest.add(new cardImage("i",5));
-        cardTest.add(new cardImage("j",5));*/
+        /*cardTestTwo.add(new cardImage("a",5));
+        cardTestTwo.add(new cardImage("b",5));
+        cardTestTwo.add(new cardImage("c",5));
+        cardTestTwo.add(new cardImage("d",5));
+        cardTestTwo.add(new cardImage("e",5));
+        cardTestTwo.add(new cardImage("f",5));
+        cardTestTwo.add(new cardImage("g",5));
+        cardTestTwo.add(new cardImage("i",5));
+        cardTestTwo.add(new cardImage("j",5));*/
 
         //views
         //working
@@ -93,7 +90,9 @@ public class Tutorial extends CardInitializer {
         /*cardTest.add(new cardImage("k",20));
         cardTest.add(new cardImage("k",10));
         cardTest.add(new cardImage("k",5));
-        cardTest.add(new cardImage("k",1));*/
+        cardTest.add(new cardImage("k",1));
+        scoresInit[0]=comboList.checker(cardTest,true)+"";
+        scoresInit[1]=comboList.checker(cardTestTwo,true)+"";*/
 
         drawCards(setUp(scoresInit));
     }
