@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class FinalScorer extends AppCompatActivity {
@@ -53,6 +55,15 @@ public class FinalScorer extends AppCompatActivity {
         ((TextView)findViewById(R.id.POneFSNum)).setText(scoresInit[0]);
         ((TextView)findViewById(R.id.PTwoFSNum)).setText(scoresInit[1]);
         ((TextView)findViewById(R.id.PThreeFSNum)).setText(scoresInit[2]);
+        Button nextRound = findViewById(R.id.restart);
+        nextRound.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //starts the cardInitializer
+                Intent myIntent = new Intent(FinalScorer.this, StartScreen.class);
+                FinalScorer.this.startActivity(myIntent);
+                FinalScorer.this.finish();
+            }
+        });
     }
     @Override
     public void onBackPressed() {

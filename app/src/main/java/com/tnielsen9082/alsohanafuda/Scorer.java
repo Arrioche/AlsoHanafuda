@@ -59,6 +59,8 @@ public class Scorer extends AppCompatActivity {
                 myIntent.putExtra("pOne",names[0]);
                 myIntent.putExtra("pTwo",names[1]);
                 myIntent.putExtra("pThree",names[2]);
+                myIntent.putExtra("rainStatus",(boolean)bundle.get("rainStatus"));
+                myIntent.putExtra("turnCounter",(int)bundle.get("turnCounter")+1);
                 Scorer.this.startActivity(myIntent);
                 Scorer.this.finish();
             }

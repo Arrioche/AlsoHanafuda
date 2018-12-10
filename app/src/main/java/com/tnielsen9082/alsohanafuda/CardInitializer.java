@@ -23,6 +23,7 @@ public class CardInitializer extends AppCompatActivity {
     private String[] names= new String[3];
     private LinearLayout[] tricks=new LinearLayout[3];
     private boolean wipe =false;
+    private int turnCount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +35,19 @@ public class CardInitializer extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         //gets the intent that started the activity
         intention=getIntent();
-        Bundle bundle = intention.getExtras();
+        final Bundle bundle = intention.getExtras();
+        //pulls all the data out of the intent
+        String[] scoresInit =bundleExtractor(bundle);
+        //sets up the objects
+        //draws the cards to hand and board
+        drawCards(setUp(scoresInit));
+    }
+    @Override
+    public void onBackPressed() {
+        //do nothing
+        //this disables the back button
+    }
+    public String[] bundleExtractor(Bundle bundle){
         String[] scoresInit = new String[3];
         if(bundle!=null) {
             scoresInit[0] = bundle.get("scoreOne") + "";
@@ -57,33 +70,47 @@ public class CardInitializer extends AppCompatActivity {
                 scoresInit[i]=0+"";
             }
         }
-        drawCards(setUp(scoresInit));
-    }
-    @Override
-    public void onBackPressed() {
-        //do nothing
+        wipe=(boolean)bundle.get("rainStatus");
+        turnCount=(int)bundle.get("turnCounter");
+
     }
     //this is called from turnClicker
     public void goToScore(){
-        int total = Integer.parseInt(String.valueOf((scores[0]).getText()))+
-        Integer.parseInt(String.valueOf((scores[1]).getText()))+
-        Integer.parseInt(String.valueOf((scores[2]).getText()));
+        //this ends the cardInitializer activity
+        //and takes us to the scoring screen
+        //or the final scoring screen
+        //convetr
         Intent myIntent;
-        if(total!=3168) {
+        //end it at <11 to get 12 rounds
+        if(turnCount<2) {
+            //if there are still rounds remaining
+            //go to the regular scorer
             myIntent = new Intent(CardInitializer.this, Scorer.class);
         }
         else{
+            //if it's the last round
+            //go to the final scorer
             myIntent = new Intent(CardInitializer.this, FinalScorer.class);
         }
-        //you can put data in the intent
+        //this counts the combos and adds the points to each player
         countUp();
+        //you can put data in the intent
+        //this is
+        //each player's score
         myIntent.putExtra("scoreOne",Integer.parseInt(String.valueOf((scores[0]).getText())));
         myIntent.putExtra("scoreTwo",Integer.parseInt(String.valueOf((scores[1]).getText())));
         myIntent.putExtra("scoreThree",Integer.parseInt(String.valueOf((scores[2]).getText())));
+        //each player's name
         myIntent.putExtra("pOne",names[0]);
         myIntent.putExtra("pTwo",names[1]);
         myIntent.putExtra("pThree",names[2]);
+        //whether or not the rain combo activates
+        myIntent.putExtra("rainStatus",wipe);
+        //how many turns it's been
+        myIntent.putExtra("turnCounter",turnCount);
+        //start the new activity
         CardInitializer.this.startActivity(myIntent);
+        //end this activity
         CardInitializer.this.finish();
     }
     public void drawCards(LinearLayout[] hand){
@@ -102,10 +129,21 @@ public class CardInitializer extends AppCompatActivity {
             View card;
             LinearLayout board = findViewById(R.id.board);
             card = drawPile.getChildAt((int) (Math.random() * (drawPile.getChildCount() - 1)));
-            //remove it from the draw pile
-            drawPile.removeView(card);
-            //put it in the current hand
-            board.addView(card);
+            boolean four = false;
+            for (int j = 0; j < board.getChildCount(); j++) {
+                if (board.getChildAt(j).getContentDescription().charAt(0)==card.getContentDescription().charAt(0)){
+                    four = true;
+                }
+            }
+            if (four){
+                i--;
+            }
+            else{
+                //remove it from the draw pile
+                drawPile.removeView(card);
+                //put it in the current hand
+                board.addView(card);
+            }
         }
     }
     public LinearLayout[] setUp(String[] scoresInit){
@@ -233,36 +271,25 @@ public class CardInitializer extends AppCompatActivity {
     public void countUp(){
         //this should add the combo points to each player's score
         ComboList combo = new ComboList();
-        int[] rain = new int[3];
         ArrayList<cardImage> cardsOne = new ArrayList<>();
         for (int i = 0; i < tricks[0].getChildCount(); i++) {
             cardImage images = new cardImage(tricks[0].getChildAt(i).getContentDescription().charAt(0)+"",Integer.parseInt(String.valueOf(tricks[0].getChildAt(i).getContentDescription().subSequence(1,3))));
             cardsOne.add(images);
         }
-        rain[0]=combo.checker(cardsOne,wipe);
         ArrayList<cardImage> cardsTwo = new ArrayList<>();
         for (int i = 0; i < tricks[1].getChildCount(); i++) {
             cardImage images = new cardImage(tricks[1].getChildAt(i).getContentDescription().charAt(0)+"",Integer.parseInt(String.valueOf(tricks[1].getChildAt(i).getContentDescription().subSequence(1,3))));
             cardsTwo.add(images);
         }
-        rain[1]=combo.checker(cardsTwo,wipe);
         ArrayList<cardImage> cardsThree = new ArrayList<>();
         for (int i = 0; i < tricks[2].getChildCount(); i++) {
             cardImage images = new cardImage(tricks[2].getChildAt(i).getContentDescription().charAt(0)+"",Integer.parseInt(String.valueOf(tricks[2].getChildAt(i).getContentDescription().subSequence(1,3))));
             cardsThree.add(images);
         }
-        rain[2]=combo.checker(cardsThree,wipe);
-        boolean rainEffect = false;
-        for (int i = 0; i < 3; i++) {
-            if(rain[i]==-1){
-                rainEffect=true;
-            }
-        }
-        if(!rainEffect){
-            scores[0].setText( Integer.parseInt(String.valueOf((scores[0]).getText()))+ combo.checker(cardsOne,false)+"");
-            scores[1].setText( Integer.parseInt(String.valueOf((scores[1]).getText()))+ combo.checker(cardsTwo,false)+"");
-            scores[2].setText( Integer.parseInt(String.valueOf((scores[2]).getText()))+ combo.checker(cardsThree,false)+"");
-        }
+        scores[0].setText( Integer.parseInt(String.valueOf((scores[0]).getText()))+ combo.checker(cardsOne,wipe)+"");
+        scores[1].setText( Integer.parseInt(String.valueOf((scores[1]).getText()))+ combo.checker(cardsTwo,wipe)+"");
+        scores[2].setText( Integer.parseInt(String.valueOf((scores[2]).getText()))+ combo.checker(cardsThree,wipe)+"");
+
     }
     //in summation:
     //this is the function that sets up the main parts of the game

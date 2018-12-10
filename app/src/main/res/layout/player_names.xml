@@ -110,7 +110,7 @@
         app:layout_constraintTop_toBottomOf="@+id/instructions" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/rainSwitch"
         android:layout_width="100dp"
         android:layout_height="31dp"
         android:layout_marginStart="8dp"

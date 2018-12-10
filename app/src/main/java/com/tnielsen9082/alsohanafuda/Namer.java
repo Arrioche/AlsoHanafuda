@@ -10,18 +10,22 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
+import android.widget.ToggleButton;
 
 public class Namer extends AppCompatActivity {
     String nameOne="Player One";
     String nameTwo="Player Two";
     String nameThree="Player Three";
+    boolean rain = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.player_names);
         //and the color
-        getWindow().getDecorView().setBackgroundColor(Color.BLUE);
+        getWindow().getDecorView().setBackgroundColor(Color.WHITE);
         //lock in landscape mode
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
@@ -37,6 +41,8 @@ public class Namer extends AppCompatActivity {
                 myIntent.putExtra("pOne",nameOne);
                 myIntent.putExtra("pTwo",nameTwo);
                 myIntent.putExtra("pThree",nameThree);
+                myIntent.putExtra("rainStatus",rain);
+                myIntent.putExtra("turnCounter",0);
                 Namer.this.startActivity(myIntent);
                 Namer.this.finish();
             }
@@ -95,7 +101,16 @@ public class Namer extends AppCompatActivity {
                 nameThree=s+"";
             }
         });
-
+        Switch toggle = findViewById(R.id.rainSwitch);
+        toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    rain =true;
+                } else {
+                    rain = false;
+                }
+            }
+        });
 
     }
     @Override
