@@ -18,124 +18,176 @@ public class CardInitializer extends AppCompatActivity {
     ArrayList<View> cards = new ArrayList<>();
     //in case I ever use logs
     private static final String TAG = "MainActivity";
-    private Intent intention;
+    //the views displaying the players' scores
     private TextView[] scores = new TextView[3];
+    //the players' names
     private String[] names= new String[3];
+    //the layouts where the cards taken by the players go
     private LinearLayout[] tricks=new LinearLayout[3];
+    //by default the rain combo is turned off
+    //see countUp for more details
     private boolean wipe =false;
+    //the number of turns
     private int turnCount;
+    //the method that triggers when the activity is created
+    //it sets up the graphics
+    //and calls all the other setting-up methods
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //we definitely want to change the default contentView later
+        //set the xml layout file
         setContentView(R.layout.main_game);
-        //and the color
+        //set temporary background
         getWindow().getDecorView().setBackgroundColor(Color.LTGRAY);
-        //lock in landscape mode
+        //lock it in landscape mode
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        //gets the intent that started the activity
-        intention=getIntent();
+        //get the intent that started the activity
+        Intent intention = getIntent();
+        //extract the bundle of data that came with it
         final Bundle bundle = intention.getExtras();
-        //pulls all the data out of the intent
+        //pull all the data out of the bundle
+        //the bits that aren't scoresInit are assigned to global variables
         String[] scoresInit =bundleExtractor(bundle);
         //sets up the objects
         //draws the cards to hand and board
+        //setUp returns the array of player hands that gets passed into drawCards
         drawCards(setUp(scoresInit));
     }
+    //this disables the back button
     @Override
     public void onBackPressed() {
         //do nothing
-        //this disables the back button
     }
+    //this pulls all the data out of the bundle
+    //this is called from onCreate
+    //in the same class
     public String[] bundleExtractor(Bundle bundle){
+        //create the array of player's starting scores
         String[] scoresInit = new String[3];
+        //if there is a bundle
         if(bundle!=null) {
+            //extract the player's scores
             scoresInit[0] = bundle.get("scoreOne") + "";
             scoresInit[1] = bundle.get("scoreTwo") + "";
             scoresInit[2] = bundle.get("scoreThree") + "";
+            //and their names
+            //which get set to a global variable
             names[0]=bundle.get("pOne")+"";
             names[1]=bundle.get("pTwo")+"";
             names[2]=bundle.get("pThree")+"";
         }
+        //if there is no bundle passed in
         else{
+            //set default scores o 0
             scoresInit[0] = 0+"";
             scoresInit[1] = 0+"";
             scoresInit[2] = 0+"";
+            //and default names
             names[0]="Player One";
             names[1]="Player Two";
             names[2]="Player Three";
         }
+        //be really sure that our scores are not null
+        //because setting a textView to null crashes the game
         for (int i = 0; i < scoresInit.length; i++) {
             if(scoresInit[i]==null){
                 scoresInit[i]=0+"";
             }
         }
+        //set whether the rain combo is on or not
+        //see countUp for more info on that
         wipe=(boolean)bundle.get("rainStatus");
+        //gets the number of turns that it has been
         turnCount=(int)bundle.get("turnCounter");
+        //return the scores
+        return scoresInit;
 
     }
-    //this is called from turnClicker
+    //this ends the activity
+    //and calls the next one
+    //it transfers over all the data
+    //this is called from onClick
+    //in the TurnClicker class
     public void goToScore(){
         //this ends the cardInitializer activity
         //and takes us to the scoring screen
         //or the final scoring screen
-        //convetr
+        //create the intent
         Intent myIntent;
         //end it at <11 to get 12 rounds
         if(turnCount<2) {
             //if there are still rounds remaining
-            //go to the regular scorer
+            //aim the intent to the regular scorer
             myIntent = new Intent(CardInitializer.this, Scorer.class);
         }
         else{
             //if it's the last round
-            //go to the final scorer
+            //aim the intent to the final scorer
             myIntent = new Intent(CardInitializer.this, FinalScorer.class);
         }
-        //this counts the combos and adds the points to each player
-        countUp();
+        //this counts the combos and returns an array of each player's points
+        int[] bonusPoints =countUp();
         //you can put data in the intent
-        //this is
+        //this is:
         //each player's score
-        myIntent.putExtra("scoreOne",Integer.parseInt(String.valueOf((scores[0]).getText())));
-        myIntent.putExtra("scoreTwo",Integer.parseInt(String.valueOf((scores[1]).getText())));
-        myIntent.putExtra("scoreThree",Integer.parseInt(String.valueOf((scores[2]).getText())));
+        //plus combo
+        myIntent.putExtra("scoreOne",Integer.parseInt(String.valueOf((scores[0]).getText()))+bonusPoints[0]);
+        myIntent.putExtra("scoreTwo",Integer.parseInt(String.valueOf((scores[1]).getText()))+bonusPoints[1]);
+        myIntent.putExtra("scoreThree",Integer.parseInt(String.valueOf((scores[2]).getText()))+bonusPoints[2]);
         //each player's name
         myIntent.putExtra("pOne",names[0]);
         myIntent.putExtra("pTwo",names[1]);
         myIntent.putExtra("pThree",names[2]);
         //whether or not the rain combo activates
         myIntent.putExtra("rainStatus",wipe);
-        //how many turns it's been
+        //and how many turns it's been
         myIntent.putExtra("turnCounter",turnCount);
         //start the new activity
         CardInitializer.this.startActivity(myIntent);
         //end this activity
         CardInitializer.this.finish();
     }
+    //this takes the cards from the hidden deck layout
+    //and puts them in each player's hand and the board
+    //it's called from onCreate
+    //in the same class
+    //the array of player's hands is passed into it
     public void drawCards(LinearLayout[] hand){
+        //initialize the deck layout
         LinearLayout drawPile = findViewById(R.id.drawPile);
+        //for each player's hand
         for (int i = 0; i < 3; i++) {
+            //and for their seven cards
             for (int j = 0; j < 7; j++) {
-                View card;
-                card= drawPile.getChildAt((int)(Math.random()*(drawPile.getChildCount()-1)));
+                //select a random imageView from the deck
+                View card= drawPile.getChildAt((int)(Math.random()*(drawPile.getChildCount()-1)));
                 //remove it from the draw pile
                 drawPile.removeView(card);
                 //put it in the current hand
                 hand[i].addView(card);
             }
         }
+        //for the board
         for (int i = 0; i < 6; i++) {
-            View card;
+            //initialize the board
             LinearLayout board = findViewById(R.id.board);
-            card = drawPile.getChildAt((int) (Math.random() * (drawPile.getChildCount() - 1)));
-            boolean four = false;
+            //take a random card from the deck
+            View card = drawPile.getChildAt((int) (Math.random()*(drawPile.getChildCount() - 1)));
+            //this all checks if there will be all of one suit on the board
+            //this would make the game unwinnable so we want to avoid it
+            int four =0;
             for (int j = 0; j < board.getChildCount(); j++) {
+                //for each card on the board that is the same suit as the randomly selected card
                 if (board.getChildAt(j).getContentDescription().charAt(0)==card.getContentDescription().charAt(0)){
-                    four = true;
+                    //add one to the counter
+                    four++;
                 }
             }
-            if (four){
+            //if three cards match the fourth card
+            if (four==3){
+                //subtract one from i
+                //and run the loop again
+                //do not put the fourth card in the board
                 i--;
             }
             else{
@@ -146,6 +198,11 @@ public class CardInitializer extends AppCompatActivity {
             }
         }
     }
+    //this is the big nasty class where I have to individually initialize each card and button and dragger and dropper
+    //it's called from onCreate
+    //in the same class
+    //it returns the array of player's hands
+    //which gets passed directly into the drawCards method
     public LinearLayout[] setUp(String[] scoresInit){
         //this initializes all the cards
         //makes all the droppers and buttons and whatnot and gives them their data
@@ -268,38 +325,61 @@ public class CardInitializer extends AppCompatActivity {
         ((TextView) findViewById(R.id.playerNameMain)).setText(names[0]);
         return hands;
     }
-    public void countUp(){
-        //this should add the combo points to each player's score
+    //this adds the combo points to each player's score
+    //this is called from goToScore
+    //in the same class
+    public int[] countUp(){
+        //make a custom comboList
         ComboList combo = new ComboList();
-        ArrayList<cardImage> cardsOne = new ArrayList<>();
+        //make an arrayList of cards for the first player
+        ArrayList<CardImage> cardsOne = new ArrayList<>();
+        //tricks is the array of layouts where each player's taken cards go
         for (int i = 0; i < tricks[0].getChildCount(); i++) {
-            cardImage images = new cardImage(tricks[0].getChildAt(i).getContentDescription().charAt(0)+"",Integer.parseInt(String.valueOf(tricks[0].getChildAt(i).getContentDescription().subSequence(1,3))));
+            //create a cardImage for each card image in the layout
+            //mon is the letter corresponding to the month of the card
+            //sco is the point value of the card
+            CardImage images = new CardImage(tricks[0].getChildAt(i).getContentDescription().charAt(0)+"",Integer.parseInt(String.valueOf(tricks[0].getChildAt(i).getContentDescription().subSequence(1,3))));
+            //add it to the array
             cardsOne.add(images);
         }
-        ArrayList<cardImage> cardsTwo = new ArrayList<>();
+        //make player two's array
+        ArrayList<CardImage> cardsTwo = new ArrayList<>();
         for (int i = 0; i < tricks[1].getChildCount(); i++) {
-            cardImage images = new cardImage(tricks[1].getChildAt(i).getContentDescription().charAt(0)+"",Integer.parseInt(String.valueOf(tricks[1].getChildAt(i).getContentDescription().subSequence(1,3))));
+            //card image to cardImage
+            CardImage images = new CardImage(tricks[1].getChildAt(i).getContentDescription().charAt(0)+"",Integer.parseInt(String.valueOf(tricks[1].getChildAt(i).getContentDescription().subSequence(1,3))));
+            //add it
             cardsTwo.add(images);
         }
-        ArrayList<cardImage> cardsThree = new ArrayList<>();
+        //do it for the third player
+        ArrayList<CardImage> cardsThree = new ArrayList<>();
         for (int i = 0; i < tricks[2].getChildCount(); i++) {
-            cardImage images = new cardImage(tricks[2].getChildAt(i).getContentDescription().charAt(0)+"",Integer.parseInt(String.valueOf(tricks[2].getChildAt(i).getContentDescription().subSequence(1,3))));
+            CardImage images = new CardImage(tricks[2].getChildAt(i).getContentDescription().charAt(0)+"",Integer.parseInt(String.valueOf(tricks[2].getChildAt(i).getContentDescription().subSequence(1,3))));
             cardsThree.add(images);
         }
-        scores[0].setText( Integer.parseInt(String.valueOf((scores[0]).getText()))+ combo.checker(cardsOne,wipe)+"");
-        scores[1].setText( Integer.parseInt(String.valueOf((scores[1]).getText()))+ combo.checker(cardsTwo,wipe)+"");
-        scores[2].setText( Integer.parseInt(String.valueOf((scores[2]).getText()))+ combo.checker(cardsThree,wipe)+"");
+        //add the points that each player gets from combos to their current scores
+        //combo.checker + a cardImage array goes through and sees if there are any combos
+        //the wipe boolean is to specify if the rain combo invalidates all combos
+        //if it's true and a player has all four rain cards
+        //the method returns -1
+        //okay
+        //make an array of the bonus points that each player earned
+        int[] comboPlus= {combo.checker(cardsOne,wipe),combo.checker(cardsTwo,wipe),combo.checker(cardsThree,wipe)};
+        //check if any of them had the rain combo while it's activated
+        boolean rain = false;
+        for (int comboPlu : comboPlus) {
+            if (comboPlu == -1) {
+                rain = true;
+            }
+        }
+        //if none of them had it
+        //return the combo points
+        if(!rain){
+            return comboPlus;
+        }
+        //else return an array of zeros
+        else{
+            return new int[]{0,0,0};
+        }
 
     }
-    //in summation:
-    //this is the function that sets up the main parts of the game
-    //it creates the dragger, dropper, clicker, and all the cards
-    //it links those all together
-    //it gives them all the data they need
-    //this happens by creating the custom class
-    //then calling id on it, which will take the right data
-    //this is the core of the data management in this code
-    //it also switches the display over to the main board
-    //as the first of four methods...
-    //it's an important method
 }

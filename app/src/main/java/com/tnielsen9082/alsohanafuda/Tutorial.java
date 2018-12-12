@@ -34,17 +34,17 @@ public class Tutorial extends CardInitializer {
         names[0]="Player One";
         names[1]="Player Two";
         names[2]="Player Three";
-        ArrayList<cardImage> cardTest = new ArrayList<>();
-        ArrayList<cardImage> cardTestTwo = new ArrayList<>();
+        ArrayList<CardImage> cardTest = new ArrayList<>();
+        ArrayList<CardImage> cardTestTwo = new ArrayList<>();
         //five brights
         //two views
         //crane-phoenix-moon
         //working
-        /*cardTest.add(new cardImage("a",20));
-        cardTest.add(new cardImage("c",20));
-        cardTest.add(new cardImage("h",20));
-        cardTest.add(new cardImage("k",20));
-        cardTest.add(new cardImage("l",20));*/
+        /*cardTest.add(new CardImage("a",20));
+        cardTest.add(new CardImage("c",20));
+        cardTest.add(new CardImage("h",20));
+        cardTest.add(new CardImage("k",20));
+        cardTest.add(new CardImage("l",20));*/
 
         //tanzaku
         //seven
@@ -53,33 +53,33 @@ public class Tutorial extends CardInitializer {
         //red w/ writing
         //six
         //working
-        /*cardTestTwo.add(new cardImage("a",5));
-        cardTestTwo.add(new cardImage("b",5));
-        cardTestTwo.add(new cardImage("c",5));
-        cardTestTwo.add(new cardImage("d",5));
-        cardTestTwo.add(new cardImage("e",5));
-        cardTestTwo.add(new cardImage("f",5));
-        cardTestTwo.add(new cardImage("g",5));
-        cardTestTwo.add(new cardImage("i",5));
-        cardTestTwo.add(new cardImage("j",5));*/
+        /*cardTestTwo.add(new CardImage("a",5));
+        cardTestTwo.add(new CardImage("b",5));
+        cardTestTwo.add(new CardImage("c",5));
+        cardTestTwo.add(new CardImage("d",5));
+        cardTestTwo.add(new CardImage("e",5));
+        cardTestTwo.add(new CardImage("f",5));
+        cardTestTwo.add(new CardImage("g",5));
+        cardTestTwo.add(new CardImage("i",5));
+        cardTestTwo.add(new CardImage("j",5));*/
 
         //views
         //working
-        /*cardTest.add(new cardImage("h",20));
-        cardTest.add(new cardImage("i",10));
-        cardTest.add(new cardImage("c",20));*/
+        /*cardTest.add(new CardImage("h",20));
+        cardTest.add(new CardImage("i",10));
+        cardTest.add(new CardImage("c",20));*/
 
         //three bright
         //working
-        /*cardTest.add(new cardImage("a",20));
-        cardTest.add(new cardImage("b",10));
-        cardTest.add(new cardImage("c",20));*/
+        /*cardTest.add(new CardImage("a",20));
+        cardTest.add(new CardImage("b",10));
+        cardTest.add(new CardImage("c",20));*/
 
         //boar-deer-butterfly
         //working
-        /*cardTest.add(new cardImage("g",10));
-        cardTest.add(new cardImage("j",10));
-        cardTest.add(new cardImage("f",10));*/
+        /*cardTest.add(new CardImage("g",10));
+        cardTest.add(new CardImage("j",10));
+        cardTest.add(new CardImage("f",10));*/
 
         //straights
         //wisteria
@@ -87,10 +87,10 @@ public class Tutorial extends CardInitializer {
         //rain
         //rain with wiping
         //working
-        /*cardTest.add(new cardImage("k",20));
-        cardTest.add(new cardImage("k",10));
-        cardTest.add(new cardImage("k",5));
-        cardTest.add(new cardImage("k",1));
+        /*cardTest.add(new CardImage("k",20));
+        cardTest.add(new CardImage("k",10));
+        cardTest.add(new CardImage("k",5));
+        cardTest.add(new CardImage("k",1));
         scoresInit[0]=comboList.checker(cardTest,true)+"";
         scoresInit[1]=comboList.checker(cardTestTwo,true)+"";*/
 

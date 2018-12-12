@@ -5,10 +5,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-public final class cardImage {
+public final class CardImage {
     public String  month;
     public int score;
-    public cardImage (String mon, int sco){
+    public CardImage (String mon, int sco){
         month = mon;
         score =sco;
     }

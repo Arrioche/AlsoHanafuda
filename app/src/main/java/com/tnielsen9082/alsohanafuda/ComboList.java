@@ -35,7 +35,7 @@ public class ComboList {
         int bdb=0;
         int tanzakuG =0;
         for (int i = 0; i < hand.size(); i++) {
-            cardImage card =(cardImage)(hand.toArray())[i];
+            CardImage card =(CardImage)(hand.toArray())[i];
             //counts if the card is a wisteria
             if(card.compare("d")){
                 wisteria++;
