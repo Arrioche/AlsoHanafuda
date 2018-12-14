@@ -13,6 +13,65 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+//this is the main activity
+//so let's define some terms
+//you play the game by matching cards from your hand with cards from the board that have the same suit
+//suit can also be called "month" or "flower," but here it is usually month
+//you drag the cards and drop them on the matching cards
+//you draw cards from the deck, too
+
+//a "game" is 12 rounds
+//a "round" consists of
+//laying out all the cards
+//and then taking cards until there are none left
+//a "turn" is a player playing a card from their hand
+//and then a card that they drew
+
+
+//the board is the layout on top of the screen
+//in a physical game it would be laid out between the players
+//you take cards from there to get points
+//you put cards in there if you have no matches
+
+//the hand is the layout on the bottom of the screen
+//you press and drag cards from there onto the board
+//if the card matches the card it's dropped on
+//you get the points for those cards
+//if the card does not match its location
+//but does match at least one different card in the board
+//the card returns to your hand and you have to play it on the correct one(s)
+
+//the end turn button ends the turn as expected
+//BUT it also handles ending the round
+//see the TurnClicker class for details
+
+//when a round ends, the "turn splitter" screen shows up
+//this fills the whole screen and has a dismissal button in the middle
+//it says which player is up next
+//the intended use is to pass the phone to the next person while the screen is up
+//so that nobody else can see their hand
+
+//"tricks" are what the pair of taken cards are called
+//it is also the term for the hidden layouts that the cards go to once taken
+
+//then there are combos
+//if you have certain combinations of cards you get more points
+//see the countUp method for details
+
+//the "dragger" and the "dropper" are the two classes that deal with dragging
+//the dragger is assigned to all cards
+//if the card is touched and held, the dragger activates
+//you can now drag the card around
+//the dropper is assigned to all cards and the board
+//if a dragged card is dropped (released) on top of a View with a dropper
+//the dropper activates
+//and either accepts the card, putting it into the new layout
+//or rejects it
+//see the Dragger and Dropper classes for more details
+
+//this activity's total goal is to set up the layouts, the buttons, the dragger, and the dropper
+//add the combo points at the end
+//and transfer all necessary data to the next activity
 public class CardInitializer extends AppCompatActivity {
     //the list of all the cards
     ArrayList<View> cards = new ArrayList<>();
@@ -199,6 +258,9 @@ public class CardInitializer extends AppCompatActivity {
         }
     }
     //this is the big nasty class where I have to individually initialize each card and button and dragger and dropper
+    //its main data sharing method is to create an object
+    //and then call the method "id" on the object
+    //which has receptors for all the data that the object needs
     //it's called from onCreate
     //in the same class
     //it returns the array of player's hands
@@ -209,6 +271,7 @@ public class CardInitializer extends AppCompatActivity {
         //DOES NOT draw the cards to start the game
         //returns the array of player hands
         //SO IT BEGINS
+        //here we take each ImageView of each card and put them in an array for easy access
         //pine
         cards.add(findViewById(R.id.pineCrane));
         cards.add(findViewById(R.id.pineNormalOne));
@@ -273,33 +336,46 @@ public class CardInitializer extends AppCompatActivity {
         //each card needs to be individually put into the card list
         //but only once
 
-        //put the hands in an array
+        //put the hand layouts in an array
         LinearLayout[] hands ={findViewById(R.id.handOne),findViewById(R.id.handTwo),findViewById(R.id.handThree)};
-        //put the tricks in an array
+        //put the tricks (layout) in an array
         tricks[0]=findViewById(R.id.tricks);
         tricks[1]=findViewById(R.id.tricksTwo);
         tricks[2]=findViewById(R.id.tricksThree);
 
-        //initialize the touch listener
+        //initialize the dropper
         Dropper card = new Dropper();
-        //initialize the drag listener
-        //and give it the touch listener
-        Dragger touch = new Dragger(hands, (LinearLayout)findViewById(R.id.cardTwo), card);
-        //initialize the clicker
-        //initialize the clicker
-        Clicker drawButton = new Clicker();
+        //initialize the dragger
+        //give it the array of players' hands
+        //and the dropper
+        //and secondCard
+        //which is the layout where the second card that you draw is placed before you play it
+        Dragger touch = new Dragger(hands, (LinearLayout)findViewById(R.id.secondCard), card);
+
         //make an array of the scoreboards
         scores[0] = findViewById(R.id.score1);
         scores[1] = findViewById(R.id.score2);
         scores[2] = findViewById(R.id.score3);
+        //set the scoreboards to display the correct scores
         for (int i = 0; i < 3; i++) {
             scores[i].setText(scoresInit[i]);
         }
-        //send the data to the touch listener
-        card.id(tricks,(LinearLayout)findViewById(R.id.board),scores, hands,touch,drawButton,(ConstraintLayout) findViewById(R.id.turnSplitter),(LinearLayout) findViewById(R.id.cardTwo),(LinearLayout)findViewById(R.id.drawPile),names,(TextView)findViewById(R.id.playerNameMain));
+        //send the data to the dropper
+        //okay
+        //give it the array of tricks (layout)
+        //the board layout
+        //the array of score TextViews
+        //the array of player hands (layout)
+        //the dragger
+        //the turn splitter
+        //the layout where the second card goes
+        //the draw pile (hidden)
+        //the array of player names (String)
+        //and the TextView where the player names get displayed
+        card.id(tricks,(LinearLayout)findViewById(R.id.board),scores, hands,touch,(ConstraintLayout) findViewById(R.id.turnSplitter),(LinearLayout) findViewById(R.id.secondCard),(LinearLayout)findViewById(R.id.drawPile),names,(TextView)findViewById(R.id.playerNameMain));
         //it has to be done in this order so that the dragger and dropper can access each other
 
-        //give all the cards touch listeners and drag listeners
+        //give all the cards draggers and droppers
         for (int i = 0; i < cards.size(); i++) {
             //nice and easy
             cards.get(i).setOnTouchListener(touch);
@@ -308,21 +384,35 @@ public class CardInitializer extends AppCompatActivity {
         //give the board a dropper as well
         findViewById(R.id.board).setOnDragListener(card);
 
-        //make the draw button
-        Button draw = findViewById(R.id.draw);
-        drawButton.id((LinearLayout)findViewById(R.id.drawPile),hands,(Button)findViewById(R.id.draw));
-        draw.setOnClickListener(drawButton);
-
-        //make the end turn button
+        //make the end turn/round button
         Button end = findViewById(R.id.endTurn);
-        TurnClicker ender = new TurnClicker(card,false,this,(LinearLayout) findViewById(R.id.cardTwo),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end);
+        //make the code that ties to the button
+        //give it the dropper
+        //the tag saying it's the end turn/round button and not the turn splitter dismissal button
+        //the second card layout
+        //the array of player hands (layout)
+        //the array of player names (String)
+        //the TextView that displays which player is up next
+        //and the button itself
+        TurnClicker ender = new TurnClicker(card,false,this,(LinearLayout) findViewById(R.id.secondCard),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end);
         end.setOnClickListener(ender);
 
-        //make the turn splitter button
+        //make the turn splitter dismissal button
         Button turn = findViewById(R.id.nextTurn);
-        TurnClicker turner = new TurnClicker(card,true,this,(LinearLayout) findViewById(R.id.cardTwo),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end);
+        //make the code that ties to the button
+        //give it the dropper
+        //the tag saying it's the turn splitter dismissal button and not the end turn/round button
+        //the second card layout
+        //the array of player hands (layout)
+        //the array of player names (String)
+        //the TextView that displays which player is up next
+        //and the button that ends the round
+        TurnClicker turner = new TurnClicker(card,true,this,(LinearLayout) findViewById(R.id.secondCard),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end);
         turn.setOnClickListener(turner);
+
+        //preset the TextView to the first player's name
         ((TextView) findViewById(R.id.playerNameMain)).setText(names[0]);
+        //return the LinearLayout[] of hands for passage to drawCards
         return hands;
     }
     //this adds the combo points to each player's score

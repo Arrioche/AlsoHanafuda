@@ -20,6 +20,10 @@ public class TurnClicker implements View.OnClickListener{
     private String[] names;
     private TextView nameDisplay;
     private Button disable;
+    //okay
+    //this is the button that ends the turn
+    //and brings up the turn splitter screen
+    //OR ends the round
     public TurnClicker(Dropper tag3, boolean tag2, AppCompatActivity tag1, LinearLayout tag4, LinearLayout[] tag5, String[] tag6, TextView tag7, Button tag8){
         drop=tag3;
         swich=tag2;

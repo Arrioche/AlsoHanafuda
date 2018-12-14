@@ -42,14 +42,13 @@ public final class Dropper implements View.OnDragListener {
     //the place where names are displayed
     private TextView nameDisp;
 
-    public void id(LinearLayout[] tag, LinearLayout tag2, TextView[] tag3, LinearLayout[] tag4, Dragger tag5, Clicker tag6, ConstraintLayout tag7, LinearLayout tag8, LinearLayout tag9,String[] tag10,TextView tag11){
+    public void id(LinearLayout[] tag, LinearLayout tag2, TextView[] tag3, LinearLayout[] tag4, Dragger tag5, ConstraintLayout tag7, LinearLayout tag8, LinearLayout tag9,String[] tag10,TextView tag11){
         //initializing all those variables
         tricks = tag;
         deck = tag2;
         score = tag3;
         hands= tag4;
         drag = tag5;
-        click = tag6;
         splitter= tag7;
         second = tag8;
         draw=tag9;
