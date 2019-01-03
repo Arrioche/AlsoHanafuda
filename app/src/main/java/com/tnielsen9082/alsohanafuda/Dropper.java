@@ -13,20 +13,18 @@ import java.util.ArrayList;
 
 //this is the class that the receptacles get
 public final class Dropper implements View.OnDragListener {
-    //the clip that will be received from the dropper
+    //the clipData that will be received from the dropper
     private CharSequence clip;
     //in case I ever use logs
     private static final String TAG = "MainActivity";
     //where the taken cards go
     private LinearLayout[] tricks;
-    //actually the board
-    private LinearLayout deck;
+    //the board
+    private LinearLayout board;
     //displays the score
     private TextView[] score;
     //the dragger
     private Dragger drag;
-    //the clicker
-    private Clicker click;
     //to keep track of the current player
     private int playerNum =0;
     //the array of player hands
@@ -45,7 +43,7 @@ public final class Dropper implements View.OnDragListener {
     public void id(LinearLayout[] tag, LinearLayout tag2, TextView[] tag3, LinearLayout[] tag4, Dragger tag5, ConstraintLayout tag7, LinearLayout tag8, LinearLayout tag9,String[] tag10,TextView tag11){
         //initializing all those variables
         tricks = tag;
-        deck = tag2;
+        board = tag2;
         score = tag3;
         hands= tag4;
         drag = tag5;
@@ -116,7 +114,7 @@ public final class Dropper implements View.OnDragListener {
 
                     //if you are not dropping in your own container
                     //and the suits are the same
-                    if(container==deck&&dropMonth==dragMonth) {
+                    if(container==board&&dropMonth==dragMonth) {
                         int same =0;
                         ArrayList<View> indices = new ArrayList<>();
                         for (int i = 0; i < container.getChildCount(); i++) {
@@ -170,7 +168,7 @@ public final class Dropper implements View.OnDragListener {
                             }
                         }
                         //if there are no matches
-                        if(!match){
+                        if(container==board&&!match){
                             //put the card in the board
                             owner.removeView(dragger);
                             container.addView(dragger);
@@ -200,6 +198,27 @@ public final class Dropper implements View.OnDragListener {
                        }
                        else{
                            drag.advancer(3);
+                       }
+                   }
+                   else{
+                       boolean match = false;
+                       for (int i = 0; i < container.getChildCount(); i++) {
+                           for (int j = 0; j < ((ViewGroup) dragger.getParent()).getChildCount(); j++) {
+                               //checks if there are any matching cards between the hand and the board
+                               if(container.getChildAt(i).getContentDescription().charAt(0)==((ViewGroup) dragger.getParent()).getChildAt(j).getContentDescription().charAt(0)){
+                                   match=true;
+                               }
+                           }
+                       }
+                       if(!match){
+                           owner.removeView(dragger);
+                           container.addView(dragger);
+                           if(drag.getAdvancer()==0) {
+                               secondCard();
+                           }
+                           else{
+                               drag.advancer(3);
+                           }
                        }
                    }
                 }
@@ -254,8 +273,6 @@ public final class Dropper implements View.OnDragListener {
         score[(playerNum)].setVisibility(View.VISIBLE);
         //rotate the dragger
         drag.increase();
-        //rotate the clicker
-        click.increase();
         splitter.setVisibility(View.VISIBLE);
         drag.advancer(0);
     }

@@ -47,6 +47,9 @@ import java.util.ArrayList;
 
 //when a round ends, the "turn splitter" screen shows up
 //this fills the whole screen and has a dismissal button in the middle
+//it is a layout that covers the whole screen
+//and contains an imageView and the button
+//not a new activity
 //it says which player is up next
 //the intended use is to pass the phone to the next person while the screen is up
 //so that nobody else can see their hand
@@ -55,10 +58,10 @@ import java.util.ArrayList;
 //it is also the term for the hidden layouts that the cards go to once taken
 
 //then there are combos
-//if you have certain combinations of cards you get more points
+//if you have certain combinations of cards you get extra points
 //see the countUp method for details
 
-//the "dragger" and the "dropper" are the two classes that deal with dragging
+//the "dragger" and the "dropper" are the two classes that deal with dragging and dropping
 //the dragger is assigned to all cards
 //if the card is touched and held, the dragger activates
 //you can now drag the card around

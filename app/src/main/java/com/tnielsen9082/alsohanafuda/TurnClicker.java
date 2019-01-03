@@ -10,45 +10,75 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+//this is
+//in retrospect
+//a bad way to organize the buttons
+//okay
+//this is the button that ends the turn
+//and brings up the turn splitter screen
+//OR dismisses the turn splitter screen
+//OR ends the round
+
+
 public class TurnClicker implements View.OnClickListener{
-    private boolean swich;
+    //the boolean that determines if the button closes the turn splitter screen or opens it
+    //if true
+    //close
+    //if false
+    //open
+    private boolean dismissal;
+    //the layout that the second drawn card goes to
     private LinearLayout second;
+    //the dropper
     private Dropper drop;
+    //the main activity
     private AppCompatActivity cardInitializer;
-    private int count =1;
+    //tracking which player's turn it is
+    private int playerTurn =1;
+    //the player hands
     private LinearLayout[] hands;
+    //the player names
     private String[] names;
+    //the name display
     private TextView nameDisplay;
-    private Button disable;
-    //okay
-    //this is the button that ends the turn
-    //and brings up the turn splitter screen
-    //OR ends the round
+    //the "end turn" button
+    private Button endTurn;
+    //this assigns all of those variables
+    //it is called from the CardInitializer class
     public TurnClicker(Dropper tag3, boolean tag2, AppCompatActivity tag1, LinearLayout tag4, LinearLayout[] tag5, String[] tag6, TextView tag7, Button tag8){
         drop=tag3;
-        swich=tag2;
+        dismissal=tag2;
         second =tag4;
         cardInitializer =tag1;
         hands=tag5;
         names=tag6;
         nameDisplay = tag7;
-        disable = tag8;
+        endTurn = tag8;
     }
     @Override
+    //this is what happens if you click the button
     public void onClick(View v) {
-        if(swich) {
+        if(dismissal) {
             //this dismisses the turn splitter screen
+            //get the parent of the button
+            //which is the entire turn splitter
             ConstraintLayout parent = (ConstraintLayout) v.getParent();
+            //hide it
             parent.setVisibility(View.GONE);
-            disable.setEnabled(true);
+            //turn the end turn button back on
+            endTurn.setEnabled(true);
         }
         else{
             //this ends the current turn
             //and brings up the turn splitter screen
+            //or ends the round if the cards have all been taken
+
+            //if there is no card in the second card layout
+
             if(second.getChildCount()==0) {
-                nameDisplay.setText("Next Up: "+names[count]);
-                count= (count+1)%3;
-                disable.setEnabled(false);
+                nameDisplay.setText("Next Up: "+names[playerTurn]);
+                playerTurn= (playerTurn+1)%3;
+                endTurn.setEnabled(false);
                 //it also will change to the scoring screen at the end
                 boolean done = true;
                 for (int i = 0; i < 3; i++) {
@@ -65,12 +95,5 @@ public class TurnClicker implements View.OnClickListener{
             }
         }
     }
-    //this is the button that closes the turn splitter screen
-    //if true
-    //it also ends the turn
-    //if false
-    //it also activates the scoring screen activity
-    //as the first of four methods...
-    //it's an important method
 }
 

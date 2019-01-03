@@ -42,9 +42,6 @@ public final class Dragger implements View.OnTouchListener {
         //ACTION_DOWN means that someone just started touching it
         if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
             //makes a clipData
-            //since we are just using pictures there is no data
-            //but there could be data
-            //this is how you copy/paste things
             ClipData data;
             data = ClipData.newPlainText("", view.getContentDescription()+"");
             //make a custom drag shadow
