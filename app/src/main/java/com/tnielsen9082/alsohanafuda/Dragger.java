@@ -26,12 +26,12 @@ public final class Dragger implements View.OnTouchListener {
         second = tag;
         dropper=tag1;
     }
-    public void increase(){
+    void increase(){
         //this rotates the players when called
         handNum=(handNum+1)%3;
     }
     //the action that the class performs
-    public Dragger(LinearLayout[] tag1, LinearLayout tag2, Dropper tag3){
+    Dragger(LinearLayout[] tag1, LinearLayout tag2, Dropper tag3){
         hand = tag1;
         second = tag2;
         dropper=tag3;
@@ -52,12 +52,14 @@ public final class Dragger implements View.OnTouchListener {
             if(view.getParent()==hand[handNum]&&rotate==0){
                 //if the card is in the current hand or the secondary spot
                 view.startDrag(data, shadowBuilder, view, 1);
+                view.setVisibility(View.INVISIBLE);
             }
             //if rotate is ONE
             //play from the second
             else if(view.getParent()==second&&rotate==1){
                 //if the card is in the current hand or the secondary spot
                 view.startDrag(data, shadowBuilder, view, 1);
+                view.setVisibility(View.INVISIBLE);
             }
             //if rotate is NEITHER
             //turn over
@@ -67,10 +69,10 @@ public final class Dragger implements View.OnTouchListener {
             return false;
         }
     }
-    public void advancer(int num){
+    void advancer(int num){
         rotate=num;
     }
-    public int getAdvancer(){
+    int getAdvancer(){
         return rotate;
     }
     //in summation:

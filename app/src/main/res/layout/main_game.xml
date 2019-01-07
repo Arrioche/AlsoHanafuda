@@ -419,17 +419,6 @@
             app:srcCompat="@drawable/cloverboar" />
 
         <ImageView
-            android:id="@+id/pineTanzaku"
-            android:layout_width="65dp"
-            android:layout_height="104dp"
-            android:layout_weight="0"
-            android:contentDescription="@string/a05"
-            android:cropToPadding="false"
-            android:src="@drawable/pinetanzaku"
-            android:visibility="visible"
-            app:srcCompat="@drawable/pinetanzaku" />
-
-        <ImageView
             android:id="@+id/rainLightning"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
@@ -438,16 +427,6 @@
             android:src="@drawable/rainlightning"
             android:visibility="visible"
             app:srcCompat="@drawable/rainlightning" />
-
-        <ImageView
-            android:id="@+id/pineNormalTwo"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/a01"
-            android:src="@drawable/pinenormaltwo"
-            android:visibility="visible"
-            app:srcCompat="@drawable/pinenormaltwo" />
 
         <ImageView
             android:id="@+id/irisTanzaku"
@@ -469,14 +448,25 @@
             app:srcCompat="@drawable/pampasnormalone" />
 
         <ImageView
-            android:id="@+id/paulNormalOne"
+            android:id="@+id/pineCrane"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:contentDescription="@string/l01"
-            android:src="@drawable/paulnormalone"
+            android:contentDescription="@string/a20"
+            android:src="@drawable/pinecrane"
             android:visibility="visible"
-            app:srcCompat="@drawable/paulnormalone" />
+            app:srcCompat="@drawable/pinecrane" />
+
+        <ImageView
+            android:id="@+id/pineTanzaku"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/a05"
+            android:cropToPadding="false"
+            android:src="@drawable/pinetanzaku"
+            android:visibility="visible"
+            app:srcCompat="@drawable/pinetanzaku" />
 
         <ImageView
             android:id="@+id/pineNormalOne"
@@ -491,6 +481,26 @@
             tools:layout_editor_absoluteY="160dp" />
 
         <ImageView
+            android:id="@+id/paulNormalOne"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/l01"
+            android:src="@drawable/paulnormalone"
+            android:visibility="visible"
+            app:srcCompat="@drawable/paulnormalone" />
+
+        <ImageView
+            android:id="@+id/pineNormalTwo"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/a01"
+            android:src="@drawable/pinenormaltwo"
+            android:visibility="visible"
+            app:srcCompat="@drawable/pinenormaltwo" />
+
+        <ImageView
             android:id="@+id/rainBird"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
@@ -500,23 +510,15 @@
             android:visibility="visible"
             app:srcCompat="@drawable/rainbird" />
 
-        <ImageView
-            android:id="@+id/pineCrane"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/a20"
-            android:src="@drawable/pinecrane"
-            android:visibility="visible"
-            app:srcCompat="@drawable/pinecrane" />
-
     </LinearLayout>
 
     <HorizontalScrollView
         android:id="@+id/handScroll"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="123dp"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/table">

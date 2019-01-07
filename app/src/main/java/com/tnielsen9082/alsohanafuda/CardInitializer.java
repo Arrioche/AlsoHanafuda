@@ -18,7 +18,10 @@ import java.util.ArrayList;
 //you play the game by matching cards from your hand with cards from the board that have the same suit
 //suit can also be called "month" or "flower," but here it is usually month
 //you drag the cards and drop them on the matching cards
-//you draw cards from the deck, too
+//you play one card from your hand
+//you draw and play one card from the (hidden) deck per turn
+//each player needs to play both cards to keep the pattern going
+//else not everyone gets an equal number of turns
 
 //a "game" is 12 rounds
 //a "round" consists of
@@ -236,7 +239,7 @@ public class CardInitializer extends AppCompatActivity {
             //take a random card from the deck
             View card = drawPile.getChildAt((int) (Math.random()*(drawPile.getChildCount() - 1)));
             //this all checks if there will be all of one suit on the board
-            //this would make the game unwinnable so we want to avoid it
+            //this would softlock the game so we want to avoid it
             int four =0;
             for (int j = 0; j < board.getChildCount(); j++) {
                 //for each card on the board that is the same suit as the randomly selected card
@@ -347,13 +350,13 @@ public class CardInitializer extends AppCompatActivity {
         tricks[2]=findViewById(R.id.tricksThree);
 
         //initialize the dropper
-        Dropper card = new Dropper();
+        Dropper dropper = new Dropper();
         //initialize the dragger
         //give it the array of players' hands
         //and the dropper
         //and secondCard
         //which is the layout where the second card that you draw is placed before you play it
-        Dragger touch = new Dragger(hands, (LinearLayout)findViewById(R.id.secondCard), card);
+        Dragger dragger = new Dragger(hands, (LinearLayout)findViewById(R.id.secondCard), dropper);
 
         //make an array of the scoreboards
         scores[0] = findViewById(R.id.score1);
@@ -375,17 +378,17 @@ public class CardInitializer extends AppCompatActivity {
         //the draw pile (hidden)
         //the array of player names (String)
         //and the TextView where the player names get displayed
-        card.id(tricks,(LinearLayout)findViewById(R.id.board),scores, hands,touch,(ConstraintLayout) findViewById(R.id.turnSplitter),(LinearLayout) findViewById(R.id.secondCard),(LinearLayout)findViewById(R.id.drawPile),names,(TextView)findViewById(R.id.playerNameMain));
+        dropper.id(tricks,(LinearLayout)findViewById(R.id.board),scores, hands,dragger,(ConstraintLayout) findViewById(R.id.turnSplitter),(LinearLayout) findViewById(R.id.secondCard),(LinearLayout)findViewById(R.id.drawPile),names,(TextView)findViewById(R.id.playerNameMain));
         //it has to be done in this order so that the dragger and dropper can access each other
 
         //give all the cards draggers and droppers
         for (int i = 0; i < cards.size(); i++) {
             //nice and easy
-            cards.get(i).setOnTouchListener(touch);
-            cards.get(i).setOnDragListener(card);
+            cards.get(i).setOnTouchListener(dragger);
+            cards.get(i).setOnDragListener(dropper);
         }
         //give the board a dropper as well
-        findViewById(R.id.board).setOnDragListener(card);
+        findViewById(R.id.board).setOnDragListener(dropper);
 
         //make the end turn/round button
         Button end = findViewById(R.id.endTurn);
@@ -397,8 +400,12 @@ public class CardInitializer extends AppCompatActivity {
         //the array of player names (String)
         //the TextView that displays which player is up next
         //and the button itself
-        TurnClicker ender = new TurnClicker(card,false,this,(LinearLayout) findViewById(R.id.secondCard),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end);
+        TurnClicker ender = new TurnClicker(dropper,false,this,(LinearLayout) findViewById(R.id.secondCard),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end);
         end.setOnClickListener(ender);
+        //then we pass it to the dropper
+        //so that the dropper can signal it that the player had played a card
+        //and the player cannot just skip their turn
+        dropper.setTurnClicker(ender);
 
         //make the turn splitter dismissal button
         Button turn = findViewById(R.id.nextTurn);
@@ -410,7 +417,7 @@ public class CardInitializer extends AppCompatActivity {
         //the array of player names (String)
         //the TextView that displays which player is up next
         //and the button that ends the round
-        TurnClicker turner = new TurnClicker(card,true,this,(LinearLayout) findViewById(R.id.secondCard),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end);
+        TurnClicker turner = new TurnClicker(dropper,true,this,(LinearLayout) findViewById(R.id.secondCard),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end);
         turn.setOnClickListener(turner);
 
         //preset the TextView to the first player's name

@@ -39,6 +39,8 @@ public final class Dropper implements View.OnDragListener {
     private String[] names;
     //the place where names are displayed
     private TextView nameDisp;
+    //the turnClicker
+    private TurnClicker turnClicker;
 
     public void id(LinearLayout[] tag, LinearLayout tag2, TextView[] tag3, LinearLayout[] tag4, Dragger tag5, ConstraintLayout tag7, LinearLayout tag8, LinearLayout tag9,String[] tag10,TextView tag11){
         //initializing all those variables
@@ -53,6 +55,9 @@ public final class Dropper implements View.OnDragListener {
         names = tag10;
         nameDisp = tag11;
 
+    }
+    void setTurnClicker(TurnClicker turner){
+        turnClicker=turner;
     }
     @Override
     //when a drag is started this activates
@@ -89,6 +94,7 @@ public final class Dropper implements View.OnDragListener {
                 clip = item.getText();
                 clip=clip.toString();
                 View dragger = (View) event.getLocalState();
+                dragger.setVisibility(View.VISIBLE);
                 //get the layouts that each card comes from
                 ViewGroup owner = (ViewGroup) dragger.getParent();
                 CharSequence dragID = dragger.getContentDescription();
@@ -156,6 +162,7 @@ public final class Dropper implements View.OnDragListener {
                         else{
                             drag.advancer(3);
                         }
+                        turnClicker.hasPlayed();
                     }
                     else {
                         boolean match = false;
@@ -178,6 +185,7 @@ public final class Dropper implements View.OnDragListener {
                             else{
                                 drag.advancer(3);
                             }
+                            turnClicker.hasPlayed();
                         }
                         //there is no need to add code for if there are indirect matches
                         //the card will either be a direct match, and be placed
@@ -199,6 +207,7 @@ public final class Dropper implements View.OnDragListener {
                        else{
                            drag.advancer(3);
                        }
+                       turnClicker.hasPlayed();
                    }
                    else{
                        boolean match = false;
@@ -219,13 +228,15 @@ public final class Dropper implements View.OnDragListener {
                            else{
                                drag.advancer(3);
                            }
+                           turnClicker.hasPlayed();
                        }
                    }
                 }
 
                 break;
             case DragEvent.ACTION_DRAG_ENDED:
-
+                View dragg = (View) event.getLocalState();
+                dragg.setVisibility(View.VISIBLE);
             default:
                 //stops if there is no more dragging
                 break;
