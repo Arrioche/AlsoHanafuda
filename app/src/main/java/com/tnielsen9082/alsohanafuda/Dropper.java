@@ -16,7 +16,7 @@ public final class Dropper implements View.OnDragListener {
     //the clipData that will be received from the dropper
     private CharSequence clip;
     //in case I ever use logs
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "Dropper";
     //where the taken cards go
     private LinearLayout[] tricks;
     //the board
@@ -76,6 +76,8 @@ public final class Dropper implements View.OnDragListener {
         //a new Java syntax appeared!
         //it looks for the action like I said
         //and then performs whichever case matches that action
+        View dragger = (View) event.getLocalState();
+        ViewGroup owner = (ViewGroup) dragger.getParent();
         switch (event.getAction()) {
             case DragEvent.ACTION_DRAG_STARTED:
                 //stop the code
@@ -93,10 +95,7 @@ public final class Dropper implements View.OnDragListener {
                 // Gets the text data from the item.
                 clip = item.getText();
                 clip=clip.toString();
-                View dragger = (View) event.getLocalState();
-                dragger.setVisibility(View.VISIBLE);
                 //get the layouts that each card comes from
-                ViewGroup owner = (ViewGroup) dragger.getParent();
                 CharSequence dragID = dragger.getContentDescription();
                 CharSequence dropID = dropper.getContentDescription();
                 Log.w("TAG",dropID+"");
@@ -160,9 +159,11 @@ public final class Dropper implements View.OnDragListener {
                             secondCard();
                         }
                         else{
-                            drag.advancer(3);
+                            drag.setAdvancer(3);
                         }
-                        turnClicker.hasPlayed();
+                        if(owner==second){
+                            turnClicker.hasPlayed();
+                        }
                     }
                     else {
                         boolean match = false;
@@ -183,9 +184,11 @@ public final class Dropper implements View.OnDragListener {
                                 secondCard();
                             }
                             else{
-                                drag.advancer(3);
+                                drag.setAdvancer(3);
                             }
-                            turnClicker.hasPlayed();
+                            if(owner==second){
+                                turnClicker.hasPlayed();
+                            }
                         }
                         //there is no need to add code for if there are indirect matches
                         //the card will either be a direct match, and be placed
@@ -205,9 +208,11 @@ public final class Dropper implements View.OnDragListener {
                            secondCard();
                        }
                        else{
-                           drag.advancer(3);
+                           drag.setAdvancer(3);
                        }
-                       turnClicker.hasPlayed();
+                       if(owner==second){
+                           turnClicker.hasPlayed();
+                       }
                    }
                    else{
                        boolean match = false;
@@ -226,17 +231,22 @@ public final class Dropper implements View.OnDragListener {
                                secondCard();
                            }
                            else{
-                               drag.advancer(3);
+                               drag.setAdvancer(3);
                            }
-                           turnClicker.hasPlayed();
+                           if(owner==second){
+                               turnClicker.hasPlayed();
+                           }
                        }
                    }
                 }
-
                 break;
             case DragEvent.ACTION_DRAG_ENDED:
-                View dragg = (View) event.getLocalState();
-                dragg.setVisibility(View.VISIBLE);
+                if(dropper.getContentDescription()==null){
+                    dragger.setVisibility(View.VISIBLE);
+                    for (int i = 0; i < owner.getChildCount(); i++) {
+                        owner.getChildAt(i).setVisibility(View.VISIBLE);
+                    }
+                }
             default:
                 //stops if there is no more dragging
                 break;
@@ -285,7 +295,7 @@ public final class Dropper implements View.OnDragListener {
         //rotate the dragger
         drag.increase();
         splitter.setVisibility(View.VISIBLE);
-        drag.advancer(0);
+        drag.setAdvancer(0);
     }
     public void secondCard(){
         //draws a card to the second slot
@@ -296,10 +306,10 @@ public final class Dropper implements View.OnDragListener {
             draw.removeView(card);
             //put it in the current hand
             second.addView(card);
-            drag.advancer(1);
+            drag.setAdvancer(1);
         }
         else{
-            drag.advancer(3);
+            drag.setAdvancer(3);
         }
     }
 }

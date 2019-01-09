@@ -32,6 +32,8 @@ import android.widget.TextView;
 //if a player was allowed to skip turns it would mess up the pattern of the cards
 
 public class TurnClicker implements View.OnClickListener{
+    //in case I use logs
+    private static final String TAG = "TurnClicker";
     //the boolean that determines if the button closes the turn splitter screen or opens it
     //if true
     //close
@@ -54,8 +56,6 @@ public class TurnClicker implements View.OnClickListener{
     private TextView nameDisplay;
     //the "end turn" button
     private Button endTurn;
-    //to make sure the player actually plays a card
-    private boolean played = false;
     //this assigns all of those variables
     //it is called from the CardInitializer class
     TurnClicker(Dropper tag3, boolean tag2, AppCompatActivity tag1, LinearLayout tag4, LinearLayout[] tag5, String[] tag6, TextView tag7, Button tag8){
@@ -71,7 +71,8 @@ public class TurnClicker implements View.OnClickListener{
     //this is called from Dropper
     //when the current player plays a card
     void hasPlayed(){
-        played=true;
+        //turn the button on
+        endTurn.setEnabled(true);
     }
     @Override
     //this is what happens if you click the button
@@ -83,8 +84,8 @@ public class TurnClicker implements View.OnClickListener{
             ConstraintLayout parent = (ConstraintLayout) v.getParent();
             //hide it
             parent.setVisibility(View.GONE);
-            //turn the end turn button back on
-            endTurn.setEnabled(true);
+            //keep the button turned off
+            //since it will only activate once the next player has gone
         }
         else{
             //this ends the current turn
@@ -93,7 +94,7 @@ public class TurnClicker implements View.OnClickListener{
 
             //if there is no card in the second card layout
             //and the player had played a card
-            if(second.getChildCount()==0&&played) {
+            if(second.getChildCount()==0) {
                 //set the text on the turn splitter
                 nameDisplay.setText("Next Up: "+names[playerTurn]);
                 //advance the players' turns
@@ -101,8 +102,6 @@ public class TurnClicker implements View.OnClickListener{
                 //disable the end turn button
                 //otherwise you can click it through the turn splitter
                 endTurn.setEnabled(false);
-                //reset played for the next player
-                played=false;
                 //if all the hands are out of cards
                 //it also will change to the scoring screen at the end
                 boolean done = true;

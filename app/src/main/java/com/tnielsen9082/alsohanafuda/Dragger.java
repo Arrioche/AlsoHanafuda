@@ -10,31 +10,25 @@ import android.widget.LinearLayout;
 
 
 public final class Dragger implements View.OnTouchListener {
-    private static final String TAG = "MainActivity";
-    //this decides what is available to draw from
+    //in case I use logs
+    private static final String TAG = "Dragger";
+    //this decides which of the hand and the second is available to draw from
     private int rotate=0;
-    //this is the hand
+    //this is the array of hands
     private LinearLayout[] hand;
     //this is the place where the second drawn card will go
     private LinearLayout second;
-    //this is so it can connect to the dropper
-    private Dropper dropper;
     //to keep track of the current player
     private int handNum =0;
-    public void id(LinearLayout[] tag3, LinearLayout tag,Dropper tag1){
+    public void id(LinearLayout[] tag3, LinearLayout tag){
         hand = tag3;
         second = tag;
-        dropper=tag1;
     }
+    //this rotates the players when called
+    //it is called from TurnRotator
+    //in the Dropper class
     void increase(){
-        //this rotates the players when called
         handNum=(handNum+1)%3;
-    }
-    //the action that the class performs
-    Dragger(LinearLayout[] tag1, LinearLayout tag2, Dropper tag3){
-        hand = tag1;
-        second = tag2;
-        dropper=tag3;
     }
     public boolean onTouch(View view, MotionEvent motionEvent) {
         //makes the class motionEvent perform the getAction function
@@ -69,7 +63,7 @@ public final class Dragger implements View.OnTouchListener {
             return false;
         }
     }
-    void advancer(int num){
+    void setAdvancer(int num){
         rotate=num;
     }
     int getAdvancer(){

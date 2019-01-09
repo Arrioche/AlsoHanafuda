@@ -353,10 +353,10 @@ public class CardInitializer extends AppCompatActivity {
         Dropper dropper = new Dropper();
         //initialize the dragger
         //give it the array of players' hands
-        //and the dropper
         //and secondCard
         //which is the layout where the second card that you draw is placed before you play it
-        Dragger dragger = new Dragger(hands, (LinearLayout)findViewById(R.id.secondCard), dropper);
+        Dragger dragger = new Dragger();
+        dragger.id(hands, (LinearLayout)findViewById(R.id.secondCard));
 
         //make an array of the scoreboards
         scores[0] = findViewById(R.id.score1);
@@ -401,7 +401,10 @@ public class CardInitializer extends AppCompatActivity {
         //the TextView that displays which player is up next
         //and the button itself
         TurnClicker ender = new TurnClicker(dropper,false,this,(LinearLayout) findViewById(R.id.secondCard),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end);
+        //give the click listener to the button
         end.setOnClickListener(ender);
+        //disable the button to begin with
+        end.setEnabled(false);
         //then we pass it to the dropper
         //so that the dropper can signal it that the player had played a card
         //and the player cannot just skip their turn
