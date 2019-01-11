@@ -179,16 +179,6 @@
             android:visibility="visible" />
 
         <ImageView
-            android:id="@+id/peonyNormalOne"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/f01"
-            android:src="@drawable/peonynormalone"
-            app:srcCompat="@drawable/peonynormalone"
-            android:visibility="visible" />
-
-        <ImageView
             android:id="@+id/cherryTanzaku"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
@@ -209,16 +199,6 @@
             android:visibility="visible" />
 
         <ImageView
-            android:id="@+id/peonyTanzaku"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/f05"
-            android:src="@drawable/peonytanzaku"
-            app:srcCompat="@drawable/peonytanzaku"
-            android:visibility="visible" />
-
-        <ImageView
             android:id="@+id/irisBridge"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
@@ -226,16 +206,6 @@
             android:contentDescription="@string/e10"
             android:src="@drawable/irisbridge"
             app:srcCompat="@drawable/irisbridge"
-            android:visibility="visible" />
-
-        <ImageView
-            android:id="@+id/peonyNormalTwo"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/f01"
-            android:src="@drawable/peonynormaltwo"
-            app:srcCompat="@drawable/peonynormaltwo"
             android:visibility="visible" />
 
         <ImageView
@@ -327,16 +297,6 @@
             android:src="@drawable/cherrycurtain"
             app:srcCompat="@drawable/cherrycurtain"
             android:visibility="visible" />
-
-        <ImageView
-            android:id="@+id/peonyButterfly"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/f10"
-            android:src="@drawable/peonybutterfly"
-            android:visibility="visible"
-            app:srcCompat="@drawable/peonybutterfly" />
 
         <ImageView
             android:id="@+id/plumNormalOne"
@@ -469,6 +429,46 @@
             app:srcCompat="@drawable/pinetanzaku" />
 
         <ImageView
+            android:id="@+id/peonyTanzaku"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/f05"
+            android:src="@drawable/peonytanzaku"
+            android:visibility="visible"
+            app:srcCompat="@drawable/peonytanzaku" />
+
+        <ImageView
+            android:id="@+id/peonyNormalTwo"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/f01"
+            android:src="@drawable/peonynormaltwo"
+            android:visibility="visible"
+            app:srcCompat="@drawable/peonynormaltwo" />
+
+        <ImageView
+            android:id="@+id/peonyNormalOne"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/f01"
+            android:src="@drawable/peonynormalone"
+            android:visibility="visible"
+            app:srcCompat="@drawable/peonynormalone" />
+
+        <ImageView
+            android:id="@+id/peonyButterfly"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/f10"
+            android:src="@drawable/peonybutterfly"
+            android:visibility="visible"
+            app:srcCompat="@drawable/peonybutterfly" />
+
+        <ImageView
             android:id="@+id/pineNormalOne"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
@@ -526,7 +526,7 @@
         <LinearLayout
             android:id="@+id/handWrapper"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -687,6 +687,14 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/playerNameMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/score1"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
         android:id="@+id/endTurn"
         android:layout_width="wrap_content"
@@ -697,14 +705,6 @@
         android:text="@string/end_turn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/playerNameMain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/score1"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/turnSplitter"

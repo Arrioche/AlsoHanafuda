@@ -247,6 +247,7 @@ public final class Dropper implements View.OnDragListener {
                         owner.getChildAt(i).setVisibility(View.VISIBLE);
                     }
                 }
+                break;
             default:
                 //stops if there is no more dragging
                 break;
@@ -310,6 +311,7 @@ public final class Dropper implements View.OnDragListener {
         }
         else{
             drag.setAdvancer(3);
+            turnClicker.hasPlayed();
         }
     }
 }

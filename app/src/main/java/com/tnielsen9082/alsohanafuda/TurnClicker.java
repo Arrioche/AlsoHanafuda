@@ -69,7 +69,11 @@ public class TurnClicker implements View.OnClickListener{
         endTurn = tag8;
     }
     //this is called from Dropper
-    //when the current player plays a card
+    //in the general onDrag method in many places
+    //when the current player plays their second card
+    //if the deck runs out prematurely
+    //then it gets called anyway from the secondCard method
+
     void hasPlayed(){
         //turn the button on
         endTurn.setEnabled(true);
