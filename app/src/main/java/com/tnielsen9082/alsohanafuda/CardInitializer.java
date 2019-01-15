@@ -8,6 +8,7 @@ import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -349,6 +350,10 @@ public class CardInitializer extends AppCompatActivity {
         tricks[1]=findViewById(R.id.tricksTwo);
         tricks[2]=findViewById(R.id.tricksThree);
 
+        ImageView cardInspect = findViewById(R.id.cardInspect);
+        Dismisser dismisser = new Dismisser();
+        cardInspect.setOnClickListener(dismisser);
+
         //initialize the dropper
         Dropper dropper = new Dropper();
         //initialize the dragger
@@ -356,7 +361,7 @@ public class CardInitializer extends AppCompatActivity {
         //and secondCard
         //which is the layout where the second card that you draw is placed before you play it
         Dragger dragger = new Dragger();
-        dragger.id(hands, (LinearLayout)findViewById(R.id.secondCard));
+        dragger.id(hands, (LinearLayout)findViewById(R.id.secondCard),cardInspect);
 
         //make an array of the scoreboards
         scores[0] = findViewById(R.id.score1);
