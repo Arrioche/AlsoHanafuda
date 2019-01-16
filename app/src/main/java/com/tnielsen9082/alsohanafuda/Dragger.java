@@ -8,6 +8,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import java.util.ArrayList;
 //the dragged and drop system in Android consists of two objects
 //the dragger
 //and the dropper
@@ -35,14 +37,16 @@ public final class Dragger implements View.OnTouchListener {
     //to keep track of the current player
     private int handNum =0;
     private boolean dragged;
-    private ImageView inspect;
+    private ArrayList<View> inspect;
+    private ArrayList<View> cards;
     //this assigns those variable to the right layouts
     //it is called from CardInitializer
     //in the setUp method
-    public void id(LinearLayout[] tag3, LinearLayout tag,ImageView tag2){
+    public void id(LinearLayout[] tag3, LinearLayout tag, ArrayList<View> tag2,ArrayList<View> tag4){
         hand = tag3;
         second = tag;
         inspect=tag2;
+        cards=tag4;
     }
     private float x;
     private float y;
@@ -78,7 +82,6 @@ public final class Dragger implements View.OnTouchListener {
                     //if advancer is ZERO
                     //play from the hand
                     if (view.getParent() == hand[handNum] && advancer == 0) {
-                        //if the card is in the current hand or the secondary spot
                         dragged =true;
                         view.startDrag(data, shadowBuilder, view, 1);
                         view.setVisibility(View.INVISIBLE);
@@ -87,34 +90,24 @@ public final class Dragger implements View.OnTouchListener {
                     //if advancer is ONE
                     //play from the second
                     else if (view.getParent() == second && advancer == 1) {
-                        //if the card is in the current hand or the secondary spot
                         dragged =true;
                         view.startDrag(data, shadowBuilder, view, 1);
                         view.setVisibility(View.INVISIBLE);
-                        return false;
                     }
                     //if advancer is NEITHER
-                    //turn over
-                    return true;
+                    //the turn is over
                 }
+                break;
             case MotionEvent.ACTION_UP:
-                if(dragged){
-                    Log.e(TAG, "hewwo");
-                    return true;
+               if(motionEvent.getAction()==1&&!dragged){
+                    for (int i = 0; i < inspect.size(); i++) {
+                        inspect.get(i).setVisibility(View.GONE);
+                        if(cards.get(i)==view){
+                            inspect.get(i).setVisibility(View.VISIBLE);
+                        }
+                    }
                 }
-                else if(motionEvent.getAction()==1){
-                    Log.e(TAG, "HEWWO");
-                    inspect.setVisibility(View.VISIBLE);
-                }
-            case MotionEvent.ACTION_CANCEL:
-                if(dragged){
-                    Log.e(TAG, "hewwo");
-                    return true;
-                }
-                else{
-                    Log.e(TAG, "HEWWO");
-                    inspect.setVisibility(View.VISIBLE);
-                }
+                break;
             default:
                 //stops if there is no more dragging
                 break;
@@ -131,11 +124,6 @@ public final class Dragger implements View.OnTouchListener {
     private float absoluteDistance(float X, float Y){
         float xDist = Math.abs(x-X);
         float yDist = Math.abs(y-Y);
-        /*Log.e(TAG,y+", "+Y);
-        Log.e(TAG,x+", "+X);
-        Log.e(TAG,yDist+" y");
-        Log.e(TAG,xDist+ " x");
-        Log.e(TAG,(float)(Math.sqrt((double)(yDist*yDist+xDist*xDist)))+" tot");*/
         return (float)(Math.sqrt((double)(yDist*yDist+xDist*xDist)));
     }
 }

@@ -1,12 +1,13 @@
 package com.tnielsen9082.alsohanafuda;
 
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
-public class Dismisser implements View.OnClickListener {
+public class Dismisser implements View.OnTouchListener {
     @Override
-    //this is what happens if you click the button
-    public void onClick(View v) {
+    public boolean onTouch(View v, MotionEvent event) {
         v.setVisibility(View.GONE);
+        return true;
     }
 }

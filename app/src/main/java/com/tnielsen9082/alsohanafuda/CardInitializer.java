@@ -82,6 +82,8 @@ import java.util.ArrayList;
 public class CardInitializer extends AppCompatActivity {
     //the list of all the cards
     ArrayList<View> cards = new ArrayList<>();
+    //the list of the cards that display when you click on a card
+    ArrayList<View> cardsDisp = new ArrayList<>();
     //in case I ever use logs
     private static final String TAG = "MainActivity";
     //the views displaying the players' scores
@@ -339,6 +341,66 @@ public class CardInitializer extends AppCompatActivity {
         cards.add(findViewById(R.id.paulNormalTwo));
         cards.add(findViewById(R.id.paulNormalThree));
         cards.add(findViewById(R.id.paulPhoenix));
+        //pine
+        cardsDisp.add(findViewById(R.id.pineCrane2));
+        cardsDisp.add(findViewById(R.id.pineNormalOne2));
+        cardsDisp.add(findViewById(R.id.pineNormalTwo2));
+        cardsDisp.add(findViewById(R.id.pineTanzaku2));
+        //plum
+        cardsDisp.add(findViewById(R.id.plumBird2));
+        cardsDisp.add(findViewById(R.id.plumNormalOne2));
+        cardsDisp.add(findViewById(R.id.plumNormalTwo2));
+        cardsDisp.add(findViewById(R.id.plumTanzaku2));
+        //cherry
+        cardsDisp.add(findViewById(R.id.cherryCurtain2));
+        cardsDisp.add(findViewById(R.id.cherryNormalOne2));
+        cardsDisp.add(findViewById(R.id.cherryNormalTwo2));
+        cardsDisp.add(findViewById(R.id.cherryTanzaku2));
+        //wisteria
+        cardsDisp.add(findViewById(R.id.wisteriaCuckoo2));
+        cardsDisp.add(findViewById(R.id.wisteriaNormalOne2));
+        cardsDisp.add(findViewById(R.id.wisteriaNormalTwo2));
+        cardsDisp.add(findViewById(R.id.wisteriaTanzaku2));
+        //iris
+        cardsDisp.add(findViewById(R.id.irisBridge2));
+        cardsDisp.add(findViewById(R.id.irisNormalOne2));
+        cardsDisp.add(findViewById(R.id.irisNormalTwo2));
+        cardsDisp.add(findViewById(R.id.irisTanzaku2));
+        //peony
+        cardsDisp.add(findViewById(R.id.peonyButterfly2));
+        cardsDisp.add(findViewById(R.id.peonyNormalOne2));
+        cardsDisp.add(findViewById(R.id.peonyNormalTwo2));
+        cardsDisp.add(findViewById(R.id.peonyTanzaku2));
+        //clover
+        cardsDisp.add(findViewById(R.id.cloverBoar2));
+        cardsDisp.add(findViewById(R.id.cloverNormalOne2));
+        cardsDisp.add(findViewById(R.id.cloverNormalTwo2));
+        cardsDisp.add(findViewById(R.id.cloverTanzaku2));
+        //pampas
+        cardsDisp.add(findViewById(R.id.pampasGeese2));
+        cardsDisp.add(findViewById(R.id.pampasMoon2));
+        cardsDisp.add(findViewById(R.id.pampasNormalOne2));
+        cardsDisp.add(findViewById(R.id.pampasNormalTwo2));
+        //chrysanthemum
+        cardsDisp.add(findViewById(R.id.chrysCup2));
+        cardsDisp.add(findViewById(R.id.chrysNormalOne2));
+        cardsDisp.add(findViewById(R.id.chrysNormalTwo2));
+        cardsDisp.add(findViewById(R.id.chrysTanzaku2));
+        //maple
+        cardsDisp.add(findViewById(R.id.mapleDeer2));
+        cardsDisp.add(findViewById(R.id.mapleNormalOne2));
+        cardsDisp.add(findViewById(R.id.mapleNormalTwo2));
+        cardsDisp.add(findViewById(R.id.mapleTanzaku2));
+        //rain
+        cardsDisp.add(findViewById(R.id.rainBird2));
+        cardsDisp.add(findViewById(R.id.rainLightning2));
+        cardsDisp.add(findViewById(R.id.rainPoet2));
+        cardsDisp.add(findViewById(R.id.rainTanzaku2));
+        //paulownia
+        cardsDisp.add(findViewById(R.id.paulNormalOne2));
+        cardsDisp.add(findViewById(R.id.paulNormalTwo2));
+        cardsDisp.add(findViewById(R.id.paulNormalThree2));
+        cardsDisp.add(findViewById(R.id.paulPhoenix2));
 
         //each card needs to be individually put into the card list
         //but only once
@@ -350,18 +412,22 @@ public class CardInitializer extends AppCompatActivity {
         tricks[1]=findViewById(R.id.tricksTwo);
         tricks[2]=findViewById(R.id.tricksThree);
 
-        ImageView cardInspect = findViewById(R.id.cardInspect);
+
         Dismisser dismisser = new Dismisser();
-        cardInspect.setOnClickListener(dismisser);
+        for (int i = 0; i < cardsDisp.size(); i++) {
+            cardsDisp.get(i).setOnTouchListener(dismisser);
+        }
 
         //initialize the dropper
         Dropper dropper = new Dropper();
         //initialize the dragger
         //give it the array of players' hands
-        //and secondCard
+        //secondCard
         //which is the layout where the second card that you draw is placed before you play it
+        //the array of card images that will be displayed full size
+        //and the array of regular card images to compare the prior one too
         Dragger dragger = new Dragger();
-        dragger.id(hands, (LinearLayout)findViewById(R.id.secondCard),cardInspect);
+        dragger.id(hands, (LinearLayout)findViewById(R.id.secondCard),cardsDisp,cards);
 
         //make an array of the scoreboards
         scores[0] = findViewById(R.id.score1);

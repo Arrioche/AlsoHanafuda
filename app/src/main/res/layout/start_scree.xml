@@ -8,18 +8,19 @@
     <ImageView
         android:id="@+id/background"
         android:layout_width="0dp"
-        android:layout_height="385dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:color/holo_red_dark" />
+        app:srcCompat="@drawable/cherrynormaltwo" />
 
     <Button
         android:id="@+id/start"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="60dp"
         android:text="Start"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -41,7 +42,7 @@
         android:id="@+id/title"
         android:layout_width="326dp"
         android:layout_height="50dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
