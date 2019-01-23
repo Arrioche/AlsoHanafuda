@@ -73,11 +73,12 @@ public class TurnClicker implements View.OnClickListener{
     //when the current player plays their second card
     //if the deck runs out prematurely
     //then it gets called anyway from the secondCard method
-
+    //also in Dropper
     void hasPlayed(){
         //turn the button on
         endTurn.setEnabled(true);
     }
+
     @Override
     //this is what happens if you click the button
     public void onClick(View v) {

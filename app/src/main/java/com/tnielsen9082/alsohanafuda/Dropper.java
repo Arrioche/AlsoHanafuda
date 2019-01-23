@@ -102,7 +102,7 @@ public final class Dropper implements View.OnDragListener {
                 LinearLayout container;
                 if(dropID!=null){
                     //get the ids of each card
-                    //which are hacked around via the ContentView
+                    //which are hacked around via the ContentDescription
                     //in a move that I am sure is programming crime
                     //but it worked fine for solitaire, so
                     container = (LinearLayout)dropper.getParent();

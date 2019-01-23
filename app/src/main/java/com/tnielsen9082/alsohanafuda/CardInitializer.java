@@ -31,7 +31,6 @@ import java.util.ArrayList;
 //a "turn" is a player playing a card from their hand
 //and then a card that they drew
 
-
 //the board is the layout on top of the screen
 //in a physical game it would be laid out between the players
 //you take cards from there to get points
@@ -75,6 +74,11 @@ import java.util.ArrayList;
 //and either accepts the card, putting it into the new layout
 //or rejects it
 //see the Dragger and Dropper classes for more details
+
+//if you tap on a card instead of dragging it
+//a larger version of that card's image will appear
+//as well as a description of the card
+//tap on this to dismiss it
 
 //this activity's total goal is to set up the layouts, the buttons, the dragger, and the dropper
 //add the combo points at the end
@@ -341,6 +345,9 @@ public class CardInitializer extends AppCompatActivity {
         cards.add(findViewById(R.id.paulNormalTwo));
         cards.add(findViewById(R.id.paulNormalThree));
         cards.add(findViewById(R.id.paulPhoenix));
+
+        //here are the imageViews of the cards that will be displayed full-size
+        //for easy viewing
         //pine
         cardsDisp.add(findViewById(R.id.pineCrane2));
         cardsDisp.add(findViewById(R.id.pineNormalOne2));
@@ -412,8 +419,9 @@ public class CardInitializer extends AppCompatActivity {
         tricks[1]=findViewById(R.id.tricksTwo);
         tricks[2]=findViewById(R.id.tricksThree);
 
-
+        //this is the touchListener that dismisses the cards that are displayed full-screen
         Dismisser dismisser = new Dismisser();
+        //assign that to every display card
         for (int i = 0; i < cardsDisp.size(); i++) {
             cardsDisp.get(i).setOnTouchListener(dismisser);
         }
