@@ -628,6 +628,7 @@
         app:layout_constraintTop_toBottomOf="@+id/table" />
 
     <LinearLayout
+        android:id="@+id/takenTricks"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -641,17 +642,21 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/dismisser1"
+            android:id="@+id/dismisser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:text="Dismiss" />
 
         <HorizontalScrollView
+            android:id="@+id/trickScroll"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false">
 
             <LinearLayout
+                android:id="@+id/trickCorrall"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
@@ -710,6 +715,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
+            style="?android:attr/buttonBarButtonStyle"
             android:text="Your Cards"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -723,6 +729,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
+            android:style="?android:attr/buttonBarButtonStyle"
             android:text="'s Cards"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
