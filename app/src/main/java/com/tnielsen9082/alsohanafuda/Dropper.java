@@ -11,7 +11,26 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-//this is the class that the receptacles get
+//this is the second half of the drag and drop functionality
+//
+
+//if you put a card on another card of the same month
+//they go to the scoring pile
+
+//if the card doesn't match the month
+//but it matches another card in the board
+//the card returns for your hand for you to play again
+
+//if the card doesn't match anything on the board
+//but another card in your hand does
+//the card returns for your hand for you to play again
+
+//if no cards match anywhere
+//the card goes to the board
+
+//if the board is empty
+//the card goes to the board
+
 public final class Dropper implements View.OnDragListener {
     //the clipData that will be received from the dropper
     private CharSequence clip;
@@ -262,23 +281,6 @@ public final class Dropper implements View.OnDragListener {
         //it also manages the turn rotation
         //as the first of four methods...
         //it's an important method
-
-        //if you put a card on another card of the same month
-        //they go to the scoring pile
-
-        //if the card doesn't match the month
-        //but it matches another card in the board
-        //the card returns for your hand for you to play again
-
-        //if the card doesn't match anything on the board
-        //but another card in your hand does
-        //the card returns for your hand for you to play again
-
-        //if no cards match anywhere
-        //the card goes to the board
-
-        //if the board is empty
-        //the card goes to the board
     }
     public void turnRotator(){
         //hide the old hand

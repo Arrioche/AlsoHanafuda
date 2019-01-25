@@ -105,6 +105,7 @@ public final class Dragger implements View.OnTouchListener {
             case MotionEvent.ACTION_MOVE:
                 //if you move your finger further than 10 units in any direction
                 if(absoluteDistance(motionEvent.getX(),motionEvent.getY())>10) {
+                    dragged =true;
                     //initiate the drag
                     //makes a clipData
                     ClipData data;

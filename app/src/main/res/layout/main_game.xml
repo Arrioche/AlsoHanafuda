@@ -491,16 +491,6 @@
             app:srcCompat="@drawable/paulnormalone" />
 
         <ImageView
-            android:id="@+id/pineNormalTwo"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/a01"
-            android:src="@drawable/pinenormaltwo"
-            android:visibility="visible"
-            app:srcCompat="@drawable/pinenormaltwo" />
-
-        <ImageView
             android:id="@+id/rainBird"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
@@ -509,6 +499,16 @@
             android:src="@drawable/rainbird"
             android:visibility="visible"
             app:srcCompat="@drawable/rainbird" />
+
+        <ImageView
+            android:id="@+id/pineNormalTwo"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/a01"
+            android:src="@drawable/pinenormaltwo"
+            android:visibility="visible"
+            app:srcCompat="@drawable/pinenormaltwo" />
 
     </LinearLayout>
 
@@ -628,47 +628,119 @@
         app:layout_constraintTop_toBottomOf="@+id/table" />
 
     <LinearLayout
-        android:id="@+id/tricksTwo"
-        android:layout_width="wrap_content"
-        android:layout_height="107dp"
-        android:layout_marginStart="84dp"
-        android:divider="@drawable/regular_divider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:showDividers="middle"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/handScroll"
-        app:layout_constraintStart_toEndOf="@+id/score3"
-        app:layout_constraintTop_toBottomOf="@+id/table">
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/secondCard"
+        app:layout_constraintStart_toEndOf="@+id/playerNameMain"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/dismisser1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dismiss" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/tricks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/regular_divider"
+                    android:orientation="horizontal"
+                    android:showDividers="middle"
+                    android:visibility="visible">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tricksThree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="107dp"
+                    android:divider="@drawable/regular_divider"
+                    android:orientation="horizontal"
+                    android:showDividers="middle"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/tricksTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="107dp"
+                    android:divider="@drawable/regular_divider"
+                    android:orientation="horizontal"
+                    android:showDividers="middle"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/tricksThree"
-        android:layout_width="wrap_content"
-        android:layout_height="107dp"
-        android:layout_marginStart="84dp"
-        android:divider="@drawable/regular_divider"
+        android:id="@+id/trickButtons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:orientation="horizontal"
-        android:showDividers="middle"
         android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/handScroll"
-        app:layout_constraintStart_toEndOf="@+id/score3"
-        app:layout_constraintTop_toBottomOf="@+id/table">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    </LinearLayout>
+        <Button
+            android:id="@+id/dispYou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Your Cards"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/tricks"
-        android:layout_width="wrap_content"
-        android:layout_height="107dp"
-        android:layout_marginStart="84dp"
-        android:divider="@drawable/regular_divider"
-        android:orientation="horizontal"
-        android:showDividers="middle"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/handScroll"
-        app:layout_constraintStart_toEndOf="@+id/score3"
-        app:layout_constraintTop_toBottomOf="@+id/table">
+        <Button
+            android:id="@+id/dispOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="'s Cards"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="104dp" />
+
+        <Button
+            android:id="@+id/dispTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="'s Cards"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/dispOne"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </LinearLayout>
 
@@ -689,7 +761,7 @@
 
     <TextView
         android:id="@+id/playerNameMain"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         app:layout_constraintBottom_toTopOf="@+id/score1"
