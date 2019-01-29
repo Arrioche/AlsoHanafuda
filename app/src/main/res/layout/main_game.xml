@@ -642,12 +642,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/dismisser"
+            android:id="@+id/dismissal"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:text="Dismiss" />
+            android:text="Dismiss"
+            android:visibility="gone" />
 
         <HorizontalScrollView
             android:id="@+id/trickScroll"
@@ -669,14 +671,14 @@
                     android:divider="@drawable/regular_divider"
                     android:orientation="horizontal"
                     android:showDividers="middle"
-                    android:visibility="visible">
+                    android:visibility="gone">
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/tricksThree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="107dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:divider="@drawable/regular_divider"
                     android:orientation="horizontal"
                     android:showDividers="middle"
@@ -684,8 +686,8 @@
 
                 <LinearLayout
                     android:id="@+id/tricksTwo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="107dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:divider="@drawable/regular_divider"
                     android:orientation="horizontal"
                     android:showDividers="middle"
@@ -702,7 +704,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -710,12 +712,12 @@
 
         <Button
             android:id="@+id/dispYou"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            style="?android:attr/buttonBarButtonStyle"
             android:text="Your Cards"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -729,7 +731,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:style="?android:attr/buttonBarButtonStyle"
+            style="?android:attr/buttonBarButtonStyle"
             android:text="'s Cards"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -743,6 +745,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
+            style="?android:attr/buttonBarButtonStyle"
             android:text="'s Cards"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -781,6 +784,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:stateListAnimator="@null"
+        style="?android:attr/buttonBarButtonStyle"
         android:text="@string/end_turn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

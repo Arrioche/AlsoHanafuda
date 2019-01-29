@@ -56,9 +56,13 @@ public class TurnClicker implements View.OnClickListener{
     private TextView nameDisplay;
     //the "end turn" button
     private Button endTurn;
+    //the buttons that bring up the taken cards
+    private Button[] trickButtons;
+    //
+    private DisplayClicker displayClicker;
     //this assigns all of those variables
     //it is called from the CardInitializer class
-    TurnClicker(Dropper tag3, boolean tag2, AppCompatActivity tag1, LinearLayout tag4, LinearLayout[] tag5, String[] tag6, TextView tag7, Button tag8){
+    TurnClicker(Dropper tag3, boolean tag2, AppCompatActivity tag1, LinearLayout tag4, LinearLayout[] tag5, String[] tag6, TextView tag7, Button tag8,Button[] tag9, DisplayClicker tag10){
         drop=tag3;
         dismissal=tag2;
         second =tag4;
@@ -67,6 +71,8 @@ public class TurnClicker implements View.OnClickListener{
         names=tag6;
         nameDisplay = tag7;
         endTurn = tag8;
+        trickButtons = tag9;
+        displayClicker =tag10;
     }
     //this is called from Dropper
     //in the general onDrag method in many places
@@ -77,6 +83,9 @@ public class TurnClicker implements View.OnClickListener{
     void hasPlayed(){
         //turn the button on
         endTurn.setEnabled(true);
+    }
+    int getHandNum(){
+        return playerTurn;
     }
 
     @Override
@@ -102,6 +111,19 @@ public class TurnClicker implements View.OnClickListener{
             if(second.getChildCount()==0) {
                 //set the text on the turn splitter
                 nameDisplay.setText("Next Up: "+names[playerTurn]);
+                if((names[(playerTurn+1)%3].toLowerCase().charAt(names[(playerTurn+1)%3].length()-1))=="s".charAt(0)){
+                    trickButtons[1].setText(names[(playerTurn+1)%3]+"' Cards");
+                }
+                else {
+                    trickButtons[1].setText(names[(playerTurn+1)%3]+"'s Cards");
+                }
+                if((names[(playerTurn+2)%3].toLowerCase().charAt(names[(playerTurn+2)%3].length()-1))=="s".charAt(0)){
+                    trickButtons[2].setText(names[(playerTurn+2)%3]+"' Cards");
+                }
+                else {
+                    trickButtons[2].setText(names[(playerTurn+2)%3]+"'s Cards");
+                }
+                displayClicker.wipe();
                 //advance the players' turns
                 playerTurn= (playerTurn+1)%3;
                 //disable the end turn button

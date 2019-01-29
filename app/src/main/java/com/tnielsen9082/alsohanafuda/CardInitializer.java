@@ -468,6 +468,21 @@ public class CardInitializer extends AppCompatActivity {
         }
         //give the board a dropper as well
         findViewById(R.id.board).setOnDragListener(dropper);
+        Button[] trickButtons={findViewById(R.id.dispYou),findViewById(R.id.dispOne),findViewById(R.id.dispTwo)};
+        if((names[1].toLowerCase().charAt(names[1].length()-1))=="s".charAt(0)){
+            trickButtons[1].setText(names[1]+"' Cards");
+        }
+        else {
+            trickButtons[1].setText(names[1]+"'s Cards");
+        }
+        if((names[2].toLowerCase().charAt(names[2].length()-1))=="s".charAt(0)){
+            trickButtons[2].setText(names[2]+"' Cards");
+        }
+        else {
+            trickButtons[2].setText(names[2]+"'s Cards");
+        }
+        DisplayClicker displayClickerTwo = new DisplayClicker();
+        findViewById(R.id.dismissal).setOnClickListener(displayClickerTwo);
 
         //make the end turn/round button
         Button end = findViewById(R.id.endTurn);
@@ -479,7 +494,7 @@ public class CardInitializer extends AppCompatActivity {
         //the array of player names (String)
         //the TextView that displays which player is up next
         //and the button itself
-        TurnClicker ender = new TurnClicker(dropper,false,this,(LinearLayout) findViewById(R.id.secondCard),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end);
+        TurnClicker ender = new TurnClicker(dropper,false,this,(LinearLayout) findViewById(R.id.secondCard),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end,trickButtons,displayClickerTwo);
         //give the click listener to the button
         end.setOnClickListener(ender);
         //disable the button to begin with
@@ -488,6 +503,10 @@ public class CardInitializer extends AppCompatActivity {
         //so that the dropper can signal it that the player had played a card
         //and the player cannot just skip their turn
         dropper.setTurnClicker(ender);
+        for (int i = 0; i < trickButtons.length; i++) {
+            trickButtons[i].setOnClickListener(new DisplayClicker((LinearLayout)findViewById(R.id.trickButtons), tricks, true,(Button)findViewById(R.id.dismissal),i,ender));
+        }
+        displayClickerTwo.id((LinearLayout)findViewById(R.id.trickButtons), tricks, false,(Button)findViewById(R.id.dismissal),ender);
 
         //make the turn splitter dismissal button
         Button turn = findViewById(R.id.nextTurn);
@@ -499,7 +518,7 @@ public class CardInitializer extends AppCompatActivity {
         //the array of player names (String)
         //the TextView that displays which player is up next
         //and the button that ends the round
-        TurnClicker turner = new TurnClicker(dropper,true,this,(LinearLayout) findViewById(R.id.secondCard),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end);
+        TurnClicker turner = new TurnClicker(dropper,true,this,(LinearLayout) findViewById(R.id.secondCard),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end, trickButtons,displayClickerTwo);
         turn.setOnClickListener(turner);
 
         //preset the TextView to the first player's name
