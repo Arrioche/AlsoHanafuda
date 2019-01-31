@@ -144,7 +144,7 @@ public final class Dragger implements View.OnTouchListener {
                 //it doesn't. It just activates whenever it feels like it
                 //so we've got two layers of checking
                 if(motionEvent.getAction()==1){
-                    //set the view to visiblr when you release it
+                    //set the view to visible when you release it
                     //if this doesn't happen you can't interact with the view again at all
                     //and it softlocks the game sometimes
                     view.setVisibility(View.VISIBLE);
@@ -160,6 +160,7 @@ public final class Dragger implements View.OnTouchListener {
                             //display that regular card's counterpart
                             //both arrays have the cards in the same order so this works
                             inspect.get(i).setVisibility(View.VISIBLE);
+                            ((View)inspect.get(i).getParent()).setVisibility(View.VISIBLE);
                         }
                     }
                 }

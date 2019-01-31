@@ -422,9 +422,8 @@ public class CardInitializer extends AppCompatActivity {
         //this is the touchListener that dismisses the cards that are displayed full-screen
         Dismisser dismisser = new Dismisser();
         //assign that to every display card
-        for (int i = 0; i < cardsDisp.size(); i++) {
-            cardsDisp.get(i).setOnTouchListener(dismisser);
-        }
+        findViewById(R.id.cardDisps).setOnTouchListener(dismisser);
+
 
         //initialize the dropper
         Dropper dropper = new Dropper();
