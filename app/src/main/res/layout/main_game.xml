@@ -794,6 +794,7 @@
         android:id="@+id/cardDisps"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@android:color/black"
         android:gravity="center_horizontal|center_vertical"
         android:orientation="horizontal"
         android:visibility="visible"
@@ -804,7 +805,7 @@
 
         <ImageView
             android:id="@+id/mapleTanzaku2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -819,7 +820,7 @@
 
         <ImageView
             android:id="@+id/pineCrane2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -834,7 +835,7 @@
 
         <ImageView
             android:id="@+id/paulNormalThree2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -849,7 +850,7 @@
 
         <ImageView
             android:id="@+id/peonyButterfly2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -864,7 +865,7 @@
 
         <ImageView
             android:id="@+id/wisteriaTanzaku2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -879,7 +880,7 @@
 
         <ImageView
             android:id="@+id/wisteriaCuckoo2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -894,7 +895,7 @@
 
         <ImageView
             android:id="@+id/plumBird2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -909,7 +910,7 @@
 
         <ImageView
             android:id="@+id/paulNormalTwo2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -924,7 +925,7 @@
 
         <ImageView
             android:id="@+id/irisBridge2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -939,7 +940,7 @@
 
         <ImageView
             android:id="@+id/cherryCurtain2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -954,7 +955,7 @@
 
         <ImageView
             android:id="@+id/rainPoet2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -969,7 +970,7 @@
 
         <ImageView
             android:id="@+id/cherryNormalOne2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -984,7 +985,7 @@
 
         <ImageView
             android:id="@+id/pampasNormalOne2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -999,7 +1000,7 @@
 
         <ImageView
             android:id="@+id/chrysTanzaku2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1014,7 +1015,7 @@
 
         <ImageView
             android:id="@+id/mapleNormalTwo2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1029,7 +1030,7 @@
 
         <ImageView
             android:id="@+id/irisNormalOne2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1044,7 +1045,7 @@
 
         <ImageView
             android:id="@+id/irisTanzaku2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1059,7 +1060,7 @@
 
         <ImageView
             android:id="@+id/cherryTanzaku2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1074,7 +1075,7 @@
 
         <ImageView
             android:id="@+id/wisteriaNormalOne2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1089,7 +1090,7 @@
 
         <ImageView
             android:id="@+id/rainTanzaku2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1104,7 +1105,7 @@
 
         <ImageView
             android:id="@+id/peonyNormalOne2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1119,7 +1120,7 @@
 
         <ImageView
             android:id="@+id/paulPhoenix2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1134,7 +1135,7 @@
 
         <ImageView
             android:id="@+id/cloverTanzaku2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1149,7 +1150,7 @@
 
         <ImageView
             android:id="@+id/chrysNormalTwo2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1164,7 +1165,7 @@
 
         <ImageView
             android:id="@+id/mapleNormalOne2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1179,7 +1180,7 @@
 
         <ImageView
             android:id="@+id/pineTanzaku2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1194,7 +1195,7 @@
 
         <ImageView
             android:id="@+id/cloverNormalTwo2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1209,7 +1210,7 @@
 
         <ImageView
             android:id="@+id/cloverNormalOne2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1224,7 +1225,7 @@
 
         <ImageView
             android:id="@+id/plumNormalTwo2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1239,7 +1240,7 @@
 
         <ImageView
             android:id="@+id/peonyNormalTwo2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1254,7 +1255,7 @@
 
         <ImageView
             android:id="@+id/cloverBoar2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1269,7 +1270,7 @@
 
         <ImageView
             android:id="@+id/pineNormalOne2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1284,7 +1285,7 @@
 
         <ImageView
             android:id="@+id/pampasNormalTwo2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1295,12 +1296,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-
             app:srcCompat="@drawable/pampasnormaltwo" />
 
         <ImageView
             android:id="@+id/paulNormalOne2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1315,7 +1315,7 @@
 
         <ImageView
             android:id="@+id/plumNormalOne2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1330,7 +1330,7 @@
 
         <ImageView
             android:id="@+id/irisNormalTwo2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1345,7 +1345,7 @@
 
         <ImageView
             android:id="@+id/wisteriaNormalTwo2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1360,7 +1360,7 @@
 
         <ImageView
             android:id="@+id/peonyTanzaku2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1375,7 +1375,7 @@
 
         <ImageView
             android:id="@+id/chrysCup2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1390,7 +1390,7 @@
 
         <ImageView
             android:id="@+id/pampasGeese2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1405,7 +1405,7 @@
 
         <ImageView
             android:id="@+id/mapleDeer2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1435,7 +1435,7 @@
 
         <ImageView
             android:id="@+id/rainLightning2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1450,7 +1450,7 @@
 
         <ImageView
             android:id="@+id/plumTanzaku2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1465,7 +1465,7 @@
 
         <ImageView
             android:id="@+id/pampasMoon2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1480,7 +1480,7 @@
 
         <ImageView
             android:id="@+id/cherryNormalTwo2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1495,7 +1495,7 @@
 
         <ImageView
             android:id="@+id/rainBird2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1510,7 +1510,7 @@
 
         <ImageView
             android:id="@+id/chrysNormalOne2"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -1527,9 +1527,12 @@
             android:id="@+id/cardInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_green_light"
-            android:text="@string/g10desc"
-            android:textSize="25sp" />
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="hhh"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="25sp"
+            android:visibility="visible" />
 
     </LinearLayout>
 

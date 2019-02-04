@@ -88,6 +88,8 @@ public class CardInitializer extends AppCompatActivity {
     ArrayList<View> cards = new ArrayList<>();
     //the list of the cards that display when you click on a card
     ArrayList<View> cardsDisp = new ArrayList<>();
+    //the list of the descriptions that display when you click on a card
+    ArrayList<String> cardDescs = new ArrayList<>();
     //in case I ever use logs
     private static final String TAG = "MainActivity";
     //the views displaying the players' scores
@@ -411,6 +413,66 @@ public class CardInitializer extends AppCompatActivity {
 
         //each card needs to be individually put into the card list
         //but only once
+        cardDescs.add(getResources().getString(R.string.a20desc));
+        cardDescs.add(getResources().getString(R.string.a01desc));
+        cardDescs.add(getResources().getString(R.string.a01desc));
+        cardDescs.add(getResources().getString(R.string.a05desc));
+
+        cardDescs.add(getResources().getString(R.string.b10desc));
+        cardDescs.add(getResources().getString(R.string.b01desc));
+        cardDescs.add(getResources().getString(R.string.b01desc));
+        cardDescs.add(getResources().getString(R.string.b05desc));
+
+        cardDescs.add(getResources().getString(R.string.c20desc));
+        cardDescs.add(getResources().getString(R.string.c01desc));
+        cardDescs.add(getResources().getString(R.string.c01desc));
+        cardDescs.add(getResources().getString(R.string.c05desc));
+
+        cardDescs.add(getResources().getString(R.string.d10desc));
+        cardDescs.add(getResources().getString(R.string.d01desc));
+        cardDescs.add(getResources().getString(R.string.d01desc));
+        cardDescs.add(getResources().getString(R.string.d05desc));
+
+        cardDescs.add(getResources().getString(R.string.e10desc));
+        cardDescs.add(getResources().getString(R.string.e01desc));
+        cardDescs.add(getResources().getString(R.string.e01desc));
+        cardDescs.add(getResources().getString(R.string.e05desc));
+
+        cardDescs.add(getResources().getString(R.string.f10desc));
+        cardDescs.add(getResources().getString(R.string.f01desc));
+        cardDescs.add(getResources().getString(R.string.f01desc));
+        cardDescs.add(getResources().getString(R.string.f05desc));
+
+        cardDescs.add(getResources().getString(R.string.g10desc));
+        cardDescs.add(getResources().getString(R.string.g01desc));
+        cardDescs.add(getResources().getString(R.string.g01desc));
+        cardDescs.add(getResources().getString(R.string.g05desc));
+
+        cardDescs.add(getResources().getString(R.string.h10desc));
+        cardDescs.add(getResources().getString(R.string.h20desc));
+        cardDescs.add(getResources().getString(R.string.h01desc));
+        cardDescs.add(getResources().getString(R.string.h01desc));
+
+        cardDescs.add(getResources().getString(R.string.i10desc));
+        cardDescs.add(getResources().getString(R.string.i01desc));
+        cardDescs.add(getResources().getString(R.string.i01desc));
+        cardDescs.add(getResources().getString(R.string.i05desc));
+
+        cardDescs.add(getResources().getString(R.string.j10desc));
+        cardDescs.add(getResources().getString(R.string.j01desc));
+        cardDescs.add(getResources().getString(R.string.j01desc));
+        cardDescs.add(getResources().getString(R.string.j05desc));
+
+        cardDescs.add(getResources().getString(R.string.k10desc));
+        cardDescs.add(getResources().getString(R.string.k01desc));
+        cardDescs.add(getResources().getString(R.string.k20desc));
+        cardDescs.add(getResources().getString(R.string.k05desc));
+
+        cardDescs.add(getResources().getString(R.string.l01desc));
+        cardDescs.add(getResources().getString(R.string.l01desc));
+        cardDescs.add(getResources().getString(R.string.l01desc));
+        cardDescs.add(getResources().getString(R.string.l20desc));
+
 
         //put the hand layouts in an array
         LinearLayout[] hands ={findViewById(R.id.handOne),findViewById(R.id.handTwo),findViewById(R.id.handThree)};
@@ -434,7 +496,7 @@ public class CardInitializer extends AppCompatActivity {
         //the array of card images that will be displayed full size
         //and the array of regular card images to compare the prior one too
         Dragger dragger = new Dragger();
-        dragger.id(hands, (LinearLayout)findViewById(R.id.secondCard),cardsDisp,cards);
+        dragger.id(hands, (LinearLayout)findViewById(R.id.secondCard),cardsDisp,cards,cardDescs,(TextView)findViewById(R.id.cardInfo));
 
         //make an array of the scoreboards
         scores[0] = findViewById(R.id.score1);
