@@ -2,41 +2,52 @@
     <string name="app_name">Hanafuda</string>
     <string name="card">card</string>
     <string name="a01desc">January: Plain Pine Tree\n\nValue: 1 point\n\nThis card is used in no combos.</string>
-    <string name="a05desc">January: Pine Tree &amp; Tanzaku\n\nValue: 5 points\n\nThis card is used in no combos.</string>
-    <string name="a20desc">January: Pine Tree &amp; Crane\n\nValue: 20 points\n\nThis card is used in no combos.</string>
-    <string name="b01desc">February: Plain Plum Blossom\n\nValue: 1 point\n\nThis card is used in no combos</string>
-    <string name="b05desc">February: Plum Blossom &amp; Tanzaku\n\nValue: 5 points\n\nThis card is used in no combos</string>
-    <string name="b10desc">February: Plum Blossom &amp; Nightingale\n\nValue: 10 points\n\nThis card is used in no combos</string>
-    <string name="c01desc">March: Plain Cherry Blossom\n\nValue: 1 point\n\nThis card is used in no combos</string>
-    <string name="c05desc">March: Cherry Blossom &amp; Tanzaku\n\nValue: 5 points\n\nThis card is used in no combos</string>
-    <string name="c20desc">March: Cherry Blossom &amp; Curtain\n\nValue: 20 points\n\nThis card is used in no combos</string>
-    <string name="d01desc">April: Plain Wisteria\n\nValue: 1 point\n\nThis card is used in no combos</string>
-    <string name="d05desc">April: Wisteria &amp; Tanzaku\n\nValue: 5 points\n\nThis card is used in no combos</string>
-    <string name="d10desc">April: Wisteria &amp; Cuckoo\n\nValue: 10 points\n\nThis card is used in no combos</string>
-    <string name="e01desc">May: Plain Iris\n\nValue: 1 point\n\nThis card is used in no combos</string>
-    <string name="e05desc">May: Iris &amp; Tanzaku\n\nValue: 5 points\n\nThis card is used in no combos</string>
-    <string name="e10desc">May: Iris &amp; Bridge\n\nValue: 10 points\n\nThis card is used in no combos</string>
-    <string name="f01desc">June: Plain Peony\n\nValue: 1 point\n\nThis card is used in no combos</string>
-    <string name="f05desc">June: Peony &amp; Tanzaku\n\nValue: 5 points\n\nThis card is used in no combos</string>
-    <string name="f10desc">June: Peony &amp; Butterflies\n\nValue: 10 points\n\nThis card is used in no combos</string>
-    <string name="g01desc">July: Plain Bush Clover\n\nValue: 1 point\n\nThis card is used in no combos</string>
-    <string name="g05desc">July: Bush Clover &amp; Tanzaku\n\nValue: 5 points\n\nThis card is used in no combos</string>
-    <string name="g10desc">July: Bush Clover &amp; Wild Boar\n\nValue: 10 points\n\nThis card is used in no combos</string>
-    <string name="h01desc">August: Plain Pampas Grass\n\nValue: 1 point\n\nThis card is used in no combos</string>
-    <string name="h10desc">August: Pampas Grass &amp; Wild Geese\n\nValue: 10 points\n\nThis card is used in no combos</string>
-    <string name="h20desc">August: Pampas Grass &amp; Full Moon\n\nValue: 20 points\n\nThis card is used in no combos</string>
-    <string name="i01desc">September: Plain Chrysanthemum\n\nValue: 1 point\n\nThis card is used in no combos</string>
-    <string name="i05desc">September: Chrysanthemum &amp; Tanzaku\n\nValue: 5 points\n\nThis card is used in no combos</string>
-    <string name="i10desc">September: Chrysanthemum &amp; Cup\n\nValue: 10 points\n\nThis card is used in no combos</string>
-    <string name="j01desc">October: Plain Maple Leaves\n\n Value: 1 point\n\nThis card is used in no combos</string>
-    <string name="j05desc">October: Maple Leaves &amp; Tanzaku\n\n Value: 5 points\n\nThis card is used in no combos</string>
-    <string name="j10desc">October: Maple Leaves &amp; Wild Deer\n\n Value: 10 points\n\nThis card is used in no combos</string>
-    <string name="k01desc">November: Rain &amp; Lightning\n\nValue: 1 point\n\nThis card is used in no combos</string>
-    <string name="k05desc">November: Rain &amp; Tanzaku\n\nValue: 5 points\n\nThis card is used in no combos</string>
-    <string name="k10desc">November: Rain &amp; Swallow\n\nValue: 10 points\n\nThis card is used in no combos</string>
-    <string name="k20desc">November: Rain &amp; Poet\n\nValue:20 points\n\nThis card is used in no combos</string>
-    <string name="l01desc">December: Plain Paulownia\n\nValue: 1 point\n\nThis card is used in no combos</string>
-    <string name="l20desc">December: Paulownia &amp; Phoenix\n\nValue: 1 point\n\nThis card is used in no combos</string>
+    <string name="a05desc">January: Pine Tree &amp; Tanzaku\n\nValue: 5 points\n\nThis card is used in the Seven Tanzaku, Six Tanzaku, and Red Lettered Tanzaku combos.</string>
+    <string name="a20desc">January: Pine Tree &amp; Crane\n\nValue: 20 points\n\nThis card is used in the Five Bright, Four Bright, Three Bright, and Crane-Phoenix-Moon combos.</string>
+
+    <string name="b01desc">February: Plain Plum Blossom\n\nValue: 1 point\n\nThis card is used in no combos.</string>
+    <string name="b05desc">February: Plum Blossom &amp; Tanzaku\n\nValue: 5 points\n\nThis card is used in the Seven Tanzaku, Six Tanzaku, and Red Lettered Tanzaku combos.</string>
+    <string name="b10desc">February: Plum Blossom &amp; Nightingale\n\nValue: 10 points\n\nThis card is used in the Three Bright combo.</string>
+
+    <string name="c01desc">March: Plain Cherry Blossom\n\nValue: 1 point\n\nThis card is used in no combos.</string>
+    <string name="c05desc">March: Cherry Blossom &amp; Tanzaku\n\nValue: 5 points\n\nThis card is used in the Seven Tanzaku, Six Tanzaku, and Red Lettered Tanzaku combos.</string>
+    <string name="c20desc">March: Cherry Blossom &amp; Curtain\n\nValue: 20 points\n\nThis card is used in the Five Bright, Four Bright, Three Bright, and Views combos.</string>
+
+    <string name="d01desc">April: Plain Wisteria\n\nValue: 1 point\n\nThis card is used in the Straight Wisteria combo.</string>
+    <string name="d05desc">April: Wisteria &amp; Tanzaku\n\nValue: 5 points\n\nThis card is used in the Seven Tanzaku, Six Tanzaku, and Grass Tanzaku combos.</string>
+    <string name="d10desc">April: Wisteria &amp; Cuckoo\n\nValue: 10 points\n\nThis card is used in no combos.</string>
+
+    <string name="e01desc">May: Plain Iris\n\nValue: 1 point\n\nThis card is used in no combos.</string>
+    <string name="e05desc">May: Iris &amp; Tanzaku\n\nValue: 5 points\n\nThis card is used in the Seven Tanzaku, Six Tanzaku, and Grass Tanzaku combos.</string>
+    <string name="e10desc">May: Iris &amp; Bridge\n\nValue: 10 points\n\nThis card is used in no combos.</string>
+
+    <string name="f01desc">June: Plain Peony\n\nValue: 1 point\n\nThis card is used in no combos.</string>
+    <string name="f05desc">June: Peony &amp; Tanzaku\n\nValue: 5 points\n\nThis card is used in the Seven Tanzaku, Six Tanzaku, and Blue Tanzaku combos.</string>
+    <string name="f10desc">June: Peony &amp; Butterflies\n\nValue: 10 points\n\nThis card is used in the Boar-Deer-Butterfly combo.</string>
+
+    <string name="g01desc">July: Plain Bush Clover\n\nValue: 1 point\n\nThis card is used in no combos.</string>
+    <string name="g05desc">July: Bush Clover &amp; Tanzaku\n\nValue: 5 points\n\nThis card is used in the Seven Tanzaku, Six Tanzaku, and Grass Tanzaku combos.</string>
+    <string name="g10desc">July: Bush Clover &amp; Wild Boar\n\nValue: 10 points\n\nThis card is used in the Boar-Deer-Butterfly combo.</string>
+
+    <string name="h01desc">August: Plain Pampas Grass\n\nValue: 1 point\n\nThis card is used in no combos.</string>
+    <string name="h10desc">August: Pampas Grass &amp; Wild Geese\n\nValue: 10 points\n\nThis card is used in no combos.</string>
+    <string name="h20desc">August: Pampas Grass &amp; Full Moon\n\nValue: 20 points\n\nThis card is used in the Five Bright, Four Bright, Views, and Crane-Phoenix-Moon combos.</string>
+
+    <string name="i01desc">September: Plain Chrysanthemum\n\nValue: 1 point\n\nThis card is used in no combos.</string>
+    <string name="i05desc">September: Chrysanthemum &amp; Tanzaku\n\nValue: 5 points\n\nThis card is used in the Seven Tanzaku, Six Tanzaku, and Blue Tanzaku combos.</string>
+    <string name="i10desc">September: Chrysanthemum &amp; Cup\n\nValue: 10 points\n\nThis card is used in the Views combo.</string>
+
+    <string name="j01desc">October: Plain Maple Leaves\n\n Value: 1 point\n\nThis card is used in no combos.</string>
+    <string name="j05desc">October: Maple Leaves &amp; Tanzaku\n\n Value: 5 points\n\nThis card is used in the Seven Tanzaku, Six Tanzaku, and Blue Tanzaku combos.</string>
+    <string name="j10desc">October: Maple Leaves &amp; Wild Deer\n\n Value: 10 points\n\nThis card is used in the Boar-Deer-Butterfly combo.</string>
+
+    <string name="k01desc">November: Rain &amp; Lightning\n\nValue: 1 point\n\nThis card is used in the Straight Rain combo.</string>
+    <string name="k05desc">November: Rain &amp; Tanzaku\n\nValue: 5 points\n\nThis card is used in the Straight Rain combo.</string>
+    <string name="k10desc">November: Rain &amp; Swallow\n\nValue: 10 points\n\nThis card is used in the Straight Rain combo.</string>
+    <string name="k20desc">November: Rain &amp; Poet\n\nValue: 20 points\n\nThis card is used in the Five Bright and Straight Rain combos.</string>
+
+    <string name="l01desc">December: Plain Paulownia\n\nValue: 1 point\n\nThis card is used in the Straight Paulownia combo.</string>
+    <string name="l20desc">December: Paulownia &amp; Phoenix\n\nValue: 1 point\n\nThis card is used in the Five Bright, Four Bright, Crane-Phoenix-Moon, and Straight Paulownia combos.</string>
     <string name="draw">Draw</string>
     <string name="h20">h20</string>
     <string name="l20">l20</string>
