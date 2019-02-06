@@ -3,6 +3,7 @@ package com.tnielsen9082.alsohanafuda;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -87,7 +88,7 @@ public class CardInitializer extends AppCompatActivity {
     //the list of all the cards
     ArrayList<View> cards = new ArrayList<>();
     //the list of the cards that display when you click on a card
-    ArrayList<View> cardsDisp = new ArrayList<>();
+    ArrayList<Drawable> cardsDisp = new ArrayList<>();
     //the list of the descriptions that display when you click on a card
     ArrayList<String> cardDescs = new ArrayList<>();
     //in case I ever use logs
@@ -351,65 +352,65 @@ public class CardInitializer extends AppCompatActivity {
         //here are the imageViews of the cards that will be displayed full-size
         //for easy viewing
         //pine
-        cardsDisp.add(findViewById(R.id.pineCrane2));
-        cardsDisp.add(findViewById(R.id.pineNormalOne2));
-        cardsDisp.add(findViewById(R.id.pineNormalTwo2));
-        cardsDisp.add(findViewById(R.id.pineTanzaku2));
+        cardsDisp.add(getResources().getDrawable(R.drawable.pinecrane));
+        cardsDisp.add(getResources().getDrawable(R.drawable.pinenormalone));
+        cardsDisp.add(getResources().getDrawable(R.drawable.pinenormaltwo));
+        cardsDisp.add(getResources().getDrawable(R.drawable.pinetanzaku));
         //plum
-        cardsDisp.add(findViewById(R.id.plumBird2));
-        cardsDisp.add(findViewById(R.id.plumNormalOne2));
-        cardsDisp.add(findViewById(R.id.plumNormalTwo2));
-        cardsDisp.add(findViewById(R.id.plumTanzaku2));
+        cardsDisp.add(getResources().getDrawable(R.drawable.plumbird));
+        cardsDisp.add(getResources().getDrawable(R.drawable.plumnormalone));
+        cardsDisp.add(getResources().getDrawable(R.drawable.plumnormaltwo));
+        cardsDisp.add(getResources().getDrawable(R.drawable.plumtanzaku));
         //cherry
-        cardsDisp.add(findViewById(R.id.cherryCurtain2));
-        cardsDisp.add(findViewById(R.id.cherryNormalOne2));
-        cardsDisp.add(findViewById(R.id.cherryNormalTwo2));
-        cardsDisp.add(findViewById(R.id.cherryTanzaku2));
+        cardsDisp.add(getResources().getDrawable(R.drawable.cherrycurtain));
+        cardsDisp.add(getResources().getDrawable(R.drawable.cherrynormalone));
+        cardsDisp.add(getResources().getDrawable(R.drawable.cherrynormaltwo));
+        cardsDisp.add(getResources().getDrawable(R.drawable.cherrytanzaku));
         //wisteria
-        cardsDisp.add(findViewById(R.id.wisteriaCuckoo2));
-        cardsDisp.add(findViewById(R.id.wisteriaNormalOne2));
-        cardsDisp.add(findViewById(R.id.wisteriaNormalTwo2));
-        cardsDisp.add(findViewById(R.id.wisteriaTanzaku2));
+        cardsDisp.add(getResources().getDrawable(R.drawable.wisteriacuckoo));
+        cardsDisp.add(getResources().getDrawable(R.drawable.wisterianormalone));
+        cardsDisp.add(getResources().getDrawable(R.drawable.wisterianormaltwo));
+        cardsDisp.add(getResources().getDrawable(R.drawable.wisteriatanzaku));
         //iris
-        cardsDisp.add(findViewById(R.id.irisBridge2));
-        cardsDisp.add(findViewById(R.id.irisNormalOne2));
-        cardsDisp.add(findViewById(R.id.irisNormalTwo2));
-        cardsDisp.add(findViewById(R.id.irisTanzaku2));
+        cardsDisp.add(getResources().getDrawable(R.drawable.irisbridge));
+        cardsDisp.add(getResources().getDrawable(R.drawable.irisnormalone));
+        cardsDisp.add(getResources().getDrawable(R.drawable.irisnormaltwo));
+        cardsDisp.add(getResources().getDrawable(R.drawable.iristanzaku));
         //peony
-        cardsDisp.add(findViewById(R.id.peonyButterfly2));
-        cardsDisp.add(findViewById(R.id.peonyNormalOne2));
-        cardsDisp.add(findViewById(R.id.peonyNormalTwo2));
-        cardsDisp.add(findViewById(R.id.peonyTanzaku2));
+        cardsDisp.add(getResources().getDrawable(R.drawable.peonybutterfly));
+        cardsDisp.add(getResources().getDrawable(R.drawable.peonynormalone));
+        cardsDisp.add(getResources().getDrawable(R.drawable.peonynormaltwo));
+        cardsDisp.add(getResources().getDrawable(R.drawable.peonytanzaku));
         //clover
-        cardsDisp.add(findViewById(R.id.cloverBoar2));
-        cardsDisp.add(findViewById(R.id.cloverNormalOne2));
-        cardsDisp.add(findViewById(R.id.cloverNormalTwo2));
-        cardsDisp.add(findViewById(R.id.cloverTanzaku2));
+        cardsDisp.add(getResources().getDrawable(R.drawable.cloverboar));
+        cardsDisp.add(getResources().getDrawable(R.drawable.clovernormalone));
+        cardsDisp.add(getResources().getDrawable(R.drawable.clovernormaltwo));
+        cardsDisp.add(getResources().getDrawable(R.drawable.clovertanzaku));
         //pampas
-        cardsDisp.add(findViewById(R.id.pampasGeese2));
-        cardsDisp.add(findViewById(R.id.pampasMoon2));
-        cardsDisp.add(findViewById(R.id.pampasNormalOne2));
-        cardsDisp.add(findViewById(R.id.pampasNormalTwo2));
+        cardsDisp.add(getResources().getDrawable(R.drawable.pampasgeese));
+        cardsDisp.add(getResources().getDrawable(R.drawable.pampasmoon));
+        cardsDisp.add(getResources().getDrawable(R.drawable.pampasnormalone));
+        cardsDisp.add(getResources().getDrawable(R.drawable.pampasnormaltwo));
         //chrysanthemum
-        cardsDisp.add(findViewById(R.id.chrysCup2));
-        cardsDisp.add(findViewById(R.id.chrysNormalOne2));
-        cardsDisp.add(findViewById(R.id.chrysNormalTwo2));
-        cardsDisp.add(findViewById(R.id.chrysTanzaku2));
+        cardsDisp.add(getResources().getDrawable(R.drawable.chryscup));
+        cardsDisp.add(getResources().getDrawable(R.drawable.chrysnormalone));
+        cardsDisp.add(getResources().getDrawable(R.drawable.chrysnormaltwo));
+        cardsDisp.add(getResources().getDrawable(R.drawable.chrystanzaku));
         //maple
-        cardsDisp.add(findViewById(R.id.mapleDeer2));
-        cardsDisp.add(findViewById(R.id.mapleNormalOne2));
-        cardsDisp.add(findViewById(R.id.mapleNormalTwo2));
-        cardsDisp.add(findViewById(R.id.mapleTanzaku2));
+        cardsDisp.add(getResources().getDrawable(R.drawable.mapledeer));
+        cardsDisp.add(getResources().getDrawable(R.drawable.maplenormalone));
+        cardsDisp.add(getResources().getDrawable(R.drawable.maplenormaltwo));
+        cardsDisp.add(getResources().getDrawable(R.drawable.mapletanzaku));
         //rain
-        cardsDisp.add(findViewById(R.id.rainBird2));
-        cardsDisp.add(findViewById(R.id.rainLightning2));
-        cardsDisp.add(findViewById(R.id.rainPoet2));
-        cardsDisp.add(findViewById(R.id.rainTanzaku2));
+        cardsDisp.add(getResources().getDrawable(R.drawable.rainbird));
+        cardsDisp.add(getResources().getDrawable(R.drawable.rainlightning));
+        cardsDisp.add(getResources().getDrawable(R.drawable.rainpoet));
+        cardsDisp.add(getResources().getDrawable(R.drawable.raintanzaku));
         //paulownia
-        cardsDisp.add(findViewById(R.id.paulNormalOne2));
-        cardsDisp.add(findViewById(R.id.paulNormalTwo2));
-        cardsDisp.add(findViewById(R.id.paulNormalThree2));
-        cardsDisp.add(findViewById(R.id.paulPhoenix2));
+        cardsDisp.add(getResources().getDrawable(R.drawable.paulnormalone));
+        cardsDisp.add(getResources().getDrawable(R.drawable.paulnormaltwo));
+        cardsDisp.add(getResources().getDrawable(R.drawable.paulnormalthree));
+        cardsDisp.add(getResources().getDrawable(R.drawable.paulphoenix));
 
         //each card needs to be individually put into the card list
         //but only once
@@ -496,7 +497,7 @@ public class CardInitializer extends AppCompatActivity {
         //the array of card images that will be displayed full size
         //and the array of regular card images to compare the prior one too
         Dragger dragger = new Dragger();
-        dragger.id(hands, (LinearLayout)findViewById(R.id.secondCard),cardsDisp,cards,cardDescs,(TextView)findViewById(R.id.cardInfo));
+        dragger.id(hands, (LinearLayout)findViewById(R.id.secondCard),cardsDisp,cards,cardDescs,(TextView)findViewById(R.id.cardInfo),(ImageView)findViewById(R.id.showCard));
 
         //make an array of the scoreboards
         scores[0] = findViewById(R.id.score1);

@@ -3,6 +3,7 @@ package com.tnielsen9082.alsohanafuda;
 
 import android.content.ClipData;
 
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -57,14 +58,16 @@ public final class Dragger implements View.OnTouchListener {
     private int handNum =0;
     //the way to tell if the card is being dragged or tapped
     private boolean dragged;
-    //the list of cards that display full-size
-    private ArrayList<View> inspect;
+    //the list of images that display full-size
+    private ArrayList<Drawable> inspect;
     //the list of cards to compare the prior list to
     private ArrayList<View> cards;
     //the list of card descriptions that display full-size
     private ArrayList<String> cardDescs;
     //the place where the descriptions show up
     private TextView desc;
+    //the card that displays
+    private ImageView showCard;
     //this is the variable that tracks how far you move your finger in the x-axis
     private float x;
     //this is the variable that tracks how far you move your finger in the y-axis
@@ -73,13 +76,14 @@ public final class Dragger implements View.OnTouchListener {
     //this assigns all those variables
     //it is called from CardInitializer
     //in the setUp method
-    public void id(LinearLayout[] tag3, LinearLayout tag, ArrayList<View> tag2, ArrayList<View> tag4, ArrayList<String> tag5, TextView tag6){
+    public void id(LinearLayout[] tag3, LinearLayout tag, ArrayList<Drawable> tag2, ArrayList<View> tag4, ArrayList<String> tag5, TextView tag6, ImageView tag7){
         hand = tag3;
         second = tag;
         inspect=tag2;
         cards=tag4;
         cardDescs=tag5;
         desc = tag6;
+        showCard = tag7;
     }
 
     //this rotates the players when called
@@ -160,15 +164,13 @@ public final class Dragger implements View.OnTouchListener {
                if(motionEvent.getAction()==1&&!dragged){
                     //go through the arrays of regular and display cards
                     for (int i = 0; i < inspect.size(); i++) {
-                        //hide any display card that might already have been up
-                        inspect.get(i).setVisibility(View.GONE);
                         //if the touched card matches a regular card
                         if(cards.get(i)==view){
                             //display that regular card's counterpart
                             //both arrays have the cards in the same order so this works
-                            inspect.get(i).setVisibility(View.VISIBLE);
+                            showCard.setImageDrawable(inspect.get(i));
                             desc.setText(cardDescs.get(i));
-                            ((View)inspect.get(i).getParent()).setVisibility(View.VISIBLE);
+                            ((View)showCard.getParent()).setVisibility(View.VISIBLE);
                         }
                     }
                 }
