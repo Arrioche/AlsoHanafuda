@@ -1,12 +1,9 @@
 package com.tnielsen9082.alsohanafuda;
 
-import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -59,10 +56,10 @@ public class TurnClicker implements View.OnClickListener{
     //the buttons that bring up the taken cards
     private Button[] trickButtons;
     //
-    private DisplayClicker displayClicker;
+    private TricksDisplayClicker tricksDisplay;
     //this assigns all of those variables
     //it is called from the CardInitializer class
-    TurnClicker(Dropper tag3, boolean tag2, AppCompatActivity tag1, LinearLayout tag4, LinearLayout[] tag5, String[] tag6, TextView tag7, Button tag8,Button[] tag9, DisplayClicker tag10){
+    public void id(Dropper tag3, boolean tag2, AppCompatActivity tag1, LinearLayout tag4, LinearLayout[] tag5, String[] tag6, TextView tag7, Button tag8,Button[] tag9, TricksDisplayClicker tag10){
         drop=tag3;
         dismissal=tag2;
         second =tag4;
@@ -72,7 +69,7 @@ public class TurnClicker implements View.OnClickListener{
         nameDisplay = tag7;
         endTurn = tag8;
         trickButtons = tag9;
-        displayClicker =tag10;
+        tricksDisplay =tag10;
     }
     //this is called from Dropper
     //in the general onDrag method in many places
@@ -123,7 +120,7 @@ public class TurnClicker implements View.OnClickListener{
                 else {
                     trickButtons[2].setText(names[(playerTurn+2)%3]+"'s Cards");
                 }
-                displayClicker.wipe();
+                tricksDisplay.wipe();
                 //advance the players' turns
                 playerTurn= (playerTurn+1)%3;
                 //disable the end turn button

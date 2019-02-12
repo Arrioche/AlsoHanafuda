@@ -93,8 +93,9 @@ public class Tutorial extends CardInitializer {
         cardTest.add(new CardImage("k",1));
         scoresInit[0]=comboList.checker(cardTest,true)+"";
         scoresInit[1]=comboList.checker(cardTestTwo,true)+"";*/
-
-        drawCards(setUp(scoresInit));
+        arraySetup();
+        classSetUp(scoresInit);
+        drawCards();
     }
     @Override
     public void onBackPressed() {

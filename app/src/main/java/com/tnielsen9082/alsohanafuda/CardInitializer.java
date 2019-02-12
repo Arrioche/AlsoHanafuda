@@ -26,11 +26,8 @@ import java.util.ArrayList;
 //else not everyone gets an equal number of turns
 
 //a "game" is 12 rounds
-//a "round" consists of
-//laying out all the cards
-//and then taking cards until there are none left
-//a "turn" is a player playing a card from their hand
-//and then a card that they drew
+//a "round" consists of laying out all the cards and then taking cards until there are none left
+//a "turn" is a player playing a card from their hand and then a card that they drew
 
 //the board is the layout on top of the screen
 //in a physical game it would be laid out between the players
@@ -39,8 +36,7 @@ import java.util.ArrayList;
 
 //the hand is the layout on the bottom of the screen
 //you press and drag cards from there onto the board
-//if the card matches the card it's dropped on
-//you get the points for those cards
+//if the card matches the card it's dropped on you get the points for those cards
 //if the card does not match its location
 //but does match at least one different card in the board
 //the card returns to your hand and you have to play it on the correct one(s)
@@ -51,9 +47,7 @@ import java.util.ArrayList;
 
 //when a round ends, the "turn splitter" screen shows up
 //this fills the whole screen and has a dismissal button in the middle
-//it is a layout that covers the whole screen
-//and contains an imageView and the button
-//not a new activity
+//it is a layout that contains an imageView and the button
 //it says which player is up next
 //the intended use is to pass the phone to the next person while the screen is up
 //so that nobody else can see their hand
@@ -70,10 +64,8 @@ import java.util.ArrayList;
 //if the card is touched and held, the dragger activates
 //you can now drag the card around
 //the dropper is assigned to all cards and the board
-//if a dragged card is dropped (released) on top of a View with a dropper
-//the dropper activates
-//and either accepts the card, putting it into the new layout
-//or rejects it
+//if a dragged card is dropped (released) on top of a View with a dropper the dropper activates
+//and either accepts the card, putting it into the new layout or rejects it
 //see the Dragger and Dropper classes for more details
 
 //if you tap on a card instead of dragging it
@@ -99,6 +91,8 @@ public class CardInitializer extends AppCompatActivity {
     private String[] names= new String[3];
     //the layouts where the cards taken by the players go
     private LinearLayout[] tricks=new LinearLayout[3];
+    //the array of player hands
+    private LinearLayout[] hands = new LinearLayout[3];
     //by default the rain combo is turned off
     //see countUp for more details
     private boolean wipe =false;
@@ -123,10 +117,12 @@ public class CardInitializer extends AppCompatActivity {
         //pull all the data out of the bundle
         //the bits that aren't scoresInit are assigned to global variables
         String[] scoresInit =bundleExtractor(bundle);
-        //sets up the objects
-        //draws the cards to hand and board
-        //setUp returns the array of player hands that gets passed into drawCards
-        drawCards(setUp(scoresInit));
+        //sets up the card images and descriptions
+        arraySetup();
+        //sets up the listeners
+        classSetUp(scoresInit);
+        //draws the cards
+        drawCards();
     }
     //this disables the back button
     @Override
@@ -134,8 +130,7 @@ public class CardInitializer extends AppCompatActivity {
         //do nothing
     }
     //this pulls all the data out of the bundle
-    //this is called from onCreate
-    //in the same class
+    //this is called from onCreate in the same class
     public String[] bundleExtractor(Bundle bundle){
         //create the array of player's starting scores
         String[] scoresInit = new String[3];
@@ -153,7 +148,7 @@ public class CardInitializer extends AppCompatActivity {
         }
         //if there is no bundle passed in
         else{
-            //set default scores o 0
+            //set default scores to 0
             scoresInit[0] = 0+"";
             scoresInit[1] = 0+"";
             scoresInit[2] = 0+"";
@@ -178,32 +173,26 @@ public class CardInitializer extends AppCompatActivity {
         return scoresInit;
 
     }
-    //this ends the activity
-    //and calls the next one
+    //this ends the activity and calls the next one
     //it transfers over all the data
-    //this is called from onClick
-    //in the TurnClicker class
+    //this is called from onClick in the TurnClicker class
     public void goToScore(){
-        //this ends the cardInitializer activity
-        //and takes us to the scoring screen
+        //this ends the cardInitializer activity and takes us to the scoring screen
         //or the final scoring screen
         //create the intent
         Intent myIntent;
         //end it at <11 to get 12 rounds
         if(turnCount<2) {
-            //if there are still rounds remaining
-            //aim the intent to the regular scorer
+            //if there are still rounds remaining aim the intent to the regular scorer
             myIntent = new Intent(CardInitializer.this, Scorer.class);
         }
         else{
-            //if it's the last round
-            //aim the intent to the final scorer
+            //if it's the last round aim the intent to the final scorer
             myIntent = new Intent(CardInitializer.this, FinalScorer.class);
         }
         //this counts the combos and returns an array of each player's points
         int[] bonusPoints =countUp();
         //you can put data in the intent
-        //this is:
         //each player's score
         //plus combo
         myIntent.putExtra("scoreOne",Integer.parseInt(String.valueOf((scores[0]).getText()))+bonusPoints[0]);
@@ -215,7 +204,7 @@ public class CardInitializer extends AppCompatActivity {
         myIntent.putExtra("pThree",names[2]);
         //whether or not the rain combo activates
         myIntent.putExtra("rainStatus",wipe);
-        //and how many turns it's been
+        //how many turns it's been
         myIntent.putExtra("turnCounter",turnCount);
         //start the new activity
         CardInitializer.this.startActivity(myIntent);
@@ -224,10 +213,8 @@ public class CardInitializer extends AppCompatActivity {
     }
     //this takes the cards from the hidden deck layout
     //and puts them in each player's hand and the board
-    //it's called from onCreate
-    //in the same class
-    //the array of player's hands is passed into it
-    public void drawCards(LinearLayout[] hand){
+    //it's called from onCreate in the same class
+    public void drawCards(){
         //initialize the deck layout
         LinearLayout drawPile = findViewById(R.id.drawPile);
         //for each player's hand
@@ -239,7 +226,7 @@ public class CardInitializer extends AppCompatActivity {
                 //remove it from the draw pile
                 drawPile.removeView(card);
                 //put it in the current hand
-                hand[i].addView(card);
+                hands[i].addView(card);
             }
         }
         //for the board
@@ -273,20 +260,10 @@ public class CardInitializer extends AppCompatActivity {
             }
         }
     }
-    //this is the big nasty class where I have to individually initialize each card and button and dragger and dropper
-    //its main data sharing method is to create an object
-    //and then call the method "id" on the object
-    //which has receptors for all the data that the object needs
-    //it's called from onCreate
-    //in the same class
-    //it returns the array of player's hands
-    //which gets passed directly into the drawCards method
-    public LinearLayout[] setUp(String[] scoresInit){
-        //this initializes all the cards
-        //makes all the droppers and buttons and whatnot and gives them their data
-        //DOES NOT draw the cards to start the game
-        //returns the array of player hands
-        //SO IT BEGINS
+    //this sets up the arrays of card ImageViews, card Drawables, and card descriptions
+    //as well as the trick layouts and score TextViews
+    //it's called from onCreate in the same class
+    public void arraySetup(){
         //here we take each ImageView of each card and put them in an array for easy access
         //pine
         cards.add(findViewById(R.id.pineCrane));
@@ -349,8 +326,7 @@ public class CardInitializer extends AppCompatActivity {
         cards.add(findViewById(R.id.paulNormalThree));
         cards.add(findViewById(R.id.paulPhoenix));
 
-        //here are the imageViews of the cards that will be displayed full-size
-        //for easy viewing
+        //here are the imageViews of the cards that will be displayed full-size for easy viewing
         //pine
         cardsDisp.add(getResources().getDrawable(R.drawable.pinecrane));
         cardsDisp.add(getResources().getDrawable(R.drawable.pinenormalone));
@@ -414,124 +390,109 @@ public class CardInitializer extends AppCompatActivity {
 
         //each card needs to be individually put into the card list
         //but only once
+        //pine
         cardDescs.add(getResources().getString(R.string.a20desc));
         cardDescs.add(getResources().getString(R.string.a01desc));
         cardDescs.add(getResources().getString(R.string.a01desc));
         cardDescs.add(getResources().getString(R.string.a05desc));
-
+        //plum
         cardDescs.add(getResources().getString(R.string.b10desc));
         cardDescs.add(getResources().getString(R.string.b01desc));
         cardDescs.add(getResources().getString(R.string.b01desc));
         cardDescs.add(getResources().getString(R.string.b05desc));
-
+        //cherry
         cardDescs.add(getResources().getString(R.string.c20desc));
         cardDescs.add(getResources().getString(R.string.c01desc));
         cardDescs.add(getResources().getString(R.string.c01desc));
         cardDescs.add(getResources().getString(R.string.c05desc));
-
+        //wisteria
         cardDescs.add(getResources().getString(R.string.d10desc));
         cardDescs.add(getResources().getString(R.string.d01desc));
         cardDescs.add(getResources().getString(R.string.d01desc));
         cardDescs.add(getResources().getString(R.string.d05desc));
-
+        //iris
         cardDescs.add(getResources().getString(R.string.e10desc));
         cardDescs.add(getResources().getString(R.string.e01desc));
         cardDescs.add(getResources().getString(R.string.e01desc));
         cardDescs.add(getResources().getString(R.string.e05desc));
-
+        //peony
         cardDescs.add(getResources().getString(R.string.f10desc));
         cardDescs.add(getResources().getString(R.string.f01desc));
         cardDescs.add(getResources().getString(R.string.f01desc));
         cardDescs.add(getResources().getString(R.string.f05desc));
-
+        //clover
         cardDescs.add(getResources().getString(R.string.g10desc));
         cardDescs.add(getResources().getString(R.string.g01desc));
         cardDescs.add(getResources().getString(R.string.g01desc));
         cardDescs.add(getResources().getString(R.string.g05desc));
-
+        //pampas
         cardDescs.add(getResources().getString(R.string.h10desc));
         cardDescs.add(getResources().getString(R.string.h20desc));
         cardDescs.add(getResources().getString(R.string.h01desc));
         cardDescs.add(getResources().getString(R.string.h01desc));
-
+        //chrysanthemum
         cardDescs.add(getResources().getString(R.string.i10desc));
         cardDescs.add(getResources().getString(R.string.i01desc));
         cardDescs.add(getResources().getString(R.string.i01desc));
         cardDescs.add(getResources().getString(R.string.i05desc));
-
+        //maple
         cardDescs.add(getResources().getString(R.string.j10desc));
         cardDescs.add(getResources().getString(R.string.j01desc));
         cardDescs.add(getResources().getString(R.string.j01desc));
         cardDescs.add(getResources().getString(R.string.j05desc));
-
+        //rain
         cardDescs.add(getResources().getString(R.string.k10desc));
         cardDescs.add(getResources().getString(R.string.k01desc));
         cardDescs.add(getResources().getString(R.string.k20desc));
         cardDescs.add(getResources().getString(R.string.k05desc));
-
+        //paulownia
         cardDescs.add(getResources().getString(R.string.l01desc));
         cardDescs.add(getResources().getString(R.string.l01desc));
         cardDescs.add(getResources().getString(R.string.l01desc));
         cardDescs.add(getResources().getString(R.string.l20desc));
 
-
-        //put the hand layouts in an array
-        LinearLayout[] hands ={findViewById(R.id.handOne),findViewById(R.id.handTwo),findViewById(R.id.handThree)};
         //put the tricks (layout) in an array
         tricks[0]=findViewById(R.id.tricks);
         tricks[1]=findViewById(R.id.tricksTwo);
         tricks[2]=findViewById(R.id.tricksThree);
-
-        //this is the touchListener that dismisses the cards that are displayed full-screen
-        Dismisser dismisser = new Dismisser();
-        //assign that to every display card
-        findViewById(R.id.cardDisps).setOnTouchListener(dismisser);
-
-
-        //initialize the dropper
-        Dropper dropper = new Dropper();
-        //initialize the dragger
-        //give it the array of players' hands
-        //secondCard
-        //which is the layout where the second card that you draw is placed before you play it
-        //the array of card images that will be displayed full size
-        //and the array of regular card images to compare the prior one too
-        Dragger dragger = new Dragger();
-        dragger.id(hands, (LinearLayout)findViewById(R.id.secondCard),cardsDisp,cards,cardDescs,(TextView)findViewById(R.id.cardInfo),(ImageView)findViewById(R.id.showCard));
-
         //make an array of the scoreboards
         scores[0] = findViewById(R.id.score1);
         scores[1] = findViewById(R.id.score2);
         scores[2] = findViewById(R.id.score3);
-        //set the scoreboards to display the correct scores
-        for (int i = 0; i < 3; i++) {
-            scores[i].setText(scoresInit[i]);
-        }
-        //send the data to the dropper
-        //okay
-        //give it the array of tricks (layout)
-        //the board layout
-        //the array of score TextViews
-        //the array of player hands (layout)
-        //the dragger
-        //the turn splitter
-        //the layout where the second card goes
-        //the draw pile (hidden)
-        //the array of player names (String)
-        //and the TextView where the player names get displayed
-        dropper.id(tricks,(LinearLayout)findViewById(R.id.board),scores, hands,dragger,(ConstraintLayout) findViewById(R.id.turnSplitter),(LinearLayout) findViewById(R.id.secondCard),(LinearLayout)findViewById(R.id.drawPile),names,(TextView)findViewById(R.id.playerNameMain));
-        //it has to be done in this order so that the dragger and dropper can access each other
 
-        //give all the cards draggers and droppers
-        for (int i = 0; i < cards.size(); i++) {
-            //nice and easy
-            cards.get(i).setOnTouchListener(dragger);
-            cards.get(i).setOnDragListener(dropper);
-        }
-        //give the board a dropper as well
-        findViewById(R.id.board).setOnDragListener(dropper);
+    }
+    //this is the class where I have to individually initialize each button and dragger and dropper
+    //its data sharing method is to create an object
+    //and then call the method "id" on the object
+    //which has receptors for all the data that the object needs
+    //it's called from onCreate in the same class
+    public void classSetUp(String[] scoresInit){
+        //what hides the display cards
+        Dismisser dismisser = new Dismisser();
+        //what initiates drags
+        Dragger dragger = new Dragger();
+        //what accepts drags
+        Dropper dropper = new Dropper();
+        //what hides the cards that other people have taken
+        TricksDisplayClicker falseDisplayClicker = new TricksDisplayClicker();
+        //what ends the current turn
+        TurnClicker endTurn = new TurnClicker();
+        //what starts the next turn
+        TurnClicker startTurn = new TurnClicker();
+        //the button that ends the turn
+        Button end = findViewById(R.id.endTurn);
+        //the button that starts the next turn
+        Button turn = findViewById(R.id.nextTurn);
+
+        //set up the array of player's hands
+        hands[0]=findViewById(R.id.handOne);
+        hands[1]=findViewById(R.id.handTwo);
+        hands[2]=findViewById(R.id.handThree);
+        //set up the array of buttons
         Button[] trickButtons={findViewById(R.id.dispYou),findViewById(R.id.dispOne),findViewById(R.id.dispTwo)};
+        //set up the initial buttons to display tricks
         if((names[1].toLowerCase().charAt(names[1].length()-1))=="s".charAt(0)){
+            //and make sure they pluralize properly
             trickButtons[1].setText(names[1]+"' Cards");
         }
         else {
@@ -543,54 +504,41 @@ public class CardInitializer extends AppCompatActivity {
         else {
             trickButtons[2].setText(names[2]+"'s Cards");
         }
-        DisplayClicker displayClickerTwo = new DisplayClicker();
-        findViewById(R.id.dismissal).setOnClickListener(displayClickerTwo);
-
-        //make the end turn/round button
-        Button end = findViewById(R.id.endTurn);
-        //make the code that ties to the button
-        //give it the dropper
-        //the tag saying it's the end turn/round button and not the turn splitter dismissal button
-        //the second card layout
-        //the array of player hands (layout)
-        //the array of player names (String)
-        //the TextView that displays which player is up next
-        //and the button itself
-        TurnClicker ender = new TurnClicker(dropper,false,this,(LinearLayout) findViewById(R.id.secondCard),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end,trickButtons,displayClickerTwo);
-        //give the click listener to the button
-        end.setOnClickListener(ender);
-        //disable the button to begin with
-        end.setEnabled(false);
-        //then we pass it to the dropper
-        //so that the dropper can signal it that the player had played a card
-        //and the player cannot just skip their turn
-        dropper.setTurnClicker(ender);
-        for (int i = 0; i < trickButtons.length; i++) {
-            trickButtons[i].setOnClickListener(new DisplayClicker((LinearLayout)findViewById(R.id.trickButtons), tricks, true,(Button)findViewById(R.id.dismissal),i,ender));
+        //set the starting scores (this carries over between rounds)
+        for (int i = 0; i < 3; i++) {
+            scores[i].setText(scoresInit[i]);
         }
-        displayClickerTwo.id((LinearLayout)findViewById(R.id.trickButtons), tricks, false,(Button)findViewById(R.id.dismissal),ender);
-
-        //make the turn splitter dismissal button
-        Button turn = findViewById(R.id.nextTurn);
-        //make the code that ties to the button
-        //give it the dropper
-        //the tag saying it's the turn splitter dismissal button and not the end turn/round button
-        //the second card layout
-        //the array of player hands (layout)
-        //the array of player names (String)
-        //the TextView that displays which player is up next
-        //and the button that ends the round
-        TurnClicker turner = new TurnClicker(dropper,true,this,(LinearLayout) findViewById(R.id.secondCard),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end, trickButtons,displayClickerTwo);
-        turn.setOnClickListener(turner);
-
-        //preset the TextView to the first player's name
+        //set the text to the first player's name
         ((TextView) findViewById(R.id.playerNameMain)).setText(names[0]);
-        //return the LinearLayout[] of hands for passage to drawCards
-        return hands;
+
+        //give all the data to all the things that need it
+        dragger.id(hands, (LinearLayout)findViewById(R.id.secondCard),cardsDisp,cards,cardDescs,(TextView)findViewById(R.id.cardInfo),(ImageView)findViewById(R.id.showCard));
+        dropper.id(tricks,(LinearLayout)findViewById(R.id.board),scores, hands,dragger,(ConstraintLayout) findViewById(R.id.turnSplitter),(LinearLayout) findViewById(R.id.secondCard),(LinearLayout)findViewById(R.id.drawPile),names,(TextView)findViewById(R.id.playerNameMain));
+        falseDisplayClicker.id((LinearLayout)findViewById(R.id.trickButtons), tricks, false,(Button)findViewById(R.id.dismissal),endTurn);
+        endTurn.id(dropper,false,this,(LinearLayout) findViewById(R.id.secondCard),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end,trickButtons,falseDisplayClicker);
+        startTurn.id(dropper,true,this,(LinearLayout) findViewById(R.id.secondCard),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end, trickButtons,falseDisplayClicker);
+
+        //assign various listeners to their spots
+        findViewById(R.id.cardDisps).setOnTouchListener(dismisser);
+        findViewById(R.id.board).setOnDragListener(dropper);
+        findViewById(R.id.dismissal).setOnClickListener(falseDisplayClicker);
+        end.setOnClickListener(endTurn);
+        dropper.setTurnClicker(endTurn);
+        turn.setOnClickListener(startTurn);
+        for (int i = 0; i < trickButtons.length; i++) {
+            //this one has to be made within the for loop because it uses i
+            trickButtons[i].setOnClickListener(new TricksDisplayClicker((LinearLayout)findViewById(R.id.trickButtons), tricks, true,(Button)findViewById(R.id.dismissal),i,endTurn));
+        }
+        //give all the cards draggers and droppers
+        for (int i = 0; i < cards.size(); i++) {
+            cards.get(i).setOnTouchListener(dragger);
+            cards.get(i).setOnDragListener(dropper);
+        }
+        //turn off the end turn button
+        end.setEnabled(false);
     }
     //this adds the combo points to each player's score
-    //this is called from goToScore
-    //in the same class
+    //this is called from goToScore in the same class
     public int[] countUp(){
         //make a custom comboList
         ComboList combo = new ComboList();

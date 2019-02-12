@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 
 import java.util.zip.DeflaterInputStream;
 
-public class DisplayClicker implements View.OnClickListener{
+public class TricksDisplayClicker implements View.OnClickListener{
     //
     private LinearLayout[] takenTricks;
     //
@@ -28,7 +28,7 @@ public class DisplayClicker implements View.OnClickListener{
         dismiss=tag4;
         turnClicker=tag6;
     }
-    DisplayClicker(LinearLayout tag1, LinearLayout[] tag2, boolean tag3, Button tag4, int tag5, TurnClicker tag6){
+    TricksDisplayClicker(LinearLayout tag1, LinearLayout[] tag2, boolean tag3, Button tag4, int tag5, TurnClicker tag6){
         buttons = tag1;
         takenTricks = tag2;
         upDown=tag3;
@@ -37,7 +37,7 @@ public class DisplayClicker implements View.OnClickListener{
         turnClicker=tag6;
 
     }
-    DisplayClicker(){}
+    TricksDisplayClicker(){}
     public void wipe(){
         buttons.setVisibility(View.VISIBLE);
         for (int i = 0; i < 3; i++) {
