@@ -4,12 +4,13 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class Tutorial extends CardInitializer {
+public class Tutorial extends AppCompatActivity {
     //the list of all the cards
     ArrayList<View> cards = new ArrayList<>();
     //in case I ever use logs
@@ -21,7 +22,7 @@ public class Tutorial extends CardInitializer {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //we definitely want to change the default contentView later
-        setContentView(R.layout.main_game);
+        setContentView(R.layout.tutorial_game);
         //and the color
         getWindow().getDecorView().setBackgroundColor(Color.LTGRAY);
         //lock in landscape mode
@@ -34,72 +35,55 @@ public class Tutorial extends CardInitializer {
         names[0]="Player One";
         names[1]="Player Two";
         names[2]="Player Three";
-        ArrayList<CardImage> cardTest = new ArrayList<>();
-        ArrayList<CardImage> cardTestTwo = new ArrayList<>();
-        //five brights
-        //two views
-        //crane-phoenix-moon
-        //working
-        /*cardTest.add(new CardImage("a",20));
-        cardTest.add(new CardImage("c",20));
-        cardTest.add(new CardImage("h",20));
-        cardTest.add(new CardImage("k",20));
-        cardTest.add(new CardImage("l",20));*/
-
-        //tanzaku
-        //seven
-        //grass
-        //blue
-        //red w/ writing
-        //six
-        //working
-        /*cardTestTwo.add(new CardImage("a",5));
-        cardTestTwo.add(new CardImage("b",5));
-        cardTestTwo.add(new CardImage("c",5));
-        cardTestTwo.add(new CardImage("d",5));
-        cardTestTwo.add(new CardImage("e",5));
-        cardTestTwo.add(new CardImage("f",5));
-        cardTestTwo.add(new CardImage("g",5));
-        cardTestTwo.add(new CardImage("i",5));
-        cardTestTwo.add(new CardImage("j",5));*/
-
-        //views
-        //working
-        /*cardTest.add(new CardImage("h",20));
-        cardTest.add(new CardImage("i",10));
-        cardTest.add(new CardImage("c",20));*/
-
-        //three bright
-        //working
-        /*cardTest.add(new CardImage("a",20));
-        cardTest.add(new CardImage("b",10));
-        cardTest.add(new CardImage("c",20));*/
-
-        //boar-deer-butterfly
-        //working
-        /*cardTest.add(new CardImage("g",10));
-        cardTest.add(new CardImage("j",10));
-        cardTest.add(new CardImage("f",10));*/
-
-        //straights
-        //wisteria
-        //paulownia
-        //rain
-        //rain with wiping
-        //working
-        /*cardTest.add(new CardImage("k",20));
-        cardTest.add(new CardImage("k",10));
-        cardTest.add(new CardImage("k",5));
-        cardTest.add(new CardImage("k",1));
-        scoresInit[0]=comboList.checker(cardTest,true)+"";
-        scoresInit[1]=comboList.checker(cardTestTwo,true)+"";*/
         arraySetup();
-        classSetUp(scoresInit);
-        drawCards();
+        //classSetUp(scoresInit);
+        //drawCards();
     }
     @Override
     public void onBackPressed() {
         //do nothing
+    }
+    public void arraySetup() {
+        //here we take each ImageView of each card and put them in an array for easy access
+        //pine
+        cards.add(findViewById(R.id.pineCrane));
+        cards.add(findViewById(R.id.pineTanzaku));
+        //plum
+        cards.add(findViewById(R.id.plumBird));
+        cards.add(findViewById(R.id.plumTanzaku));
+        //cherry
+        cards.add(findViewById(R.id.cherryCurtain));
+        cards.add(findViewById(R.id.cherryTanzaku));
+        //wisteria
+        cards.add(findViewById(R.id.wisteriaCuckoo));
+        cards.add(findViewById(R.id.wisteriaTanzaku));
+        //iris
+        cards.add(findViewById(R.id.irisBridge));
+        cards.add(findViewById(R.id.irisNormalTwo));
+        cards.add(findViewById(R.id.irisTanzaku));
+        //peony
+        cards.add(findViewById(R.id.peonyButterfly));
+        cards.add(findViewById(R.id.peonyTanzaku));
+        //clover
+        cards.add(findViewById(R.id.cloverBoar));
+        cards.add(findViewById(R.id.cloverTanzaku));
+        //pampas
+        cards.add(findViewById(R.id.pampasGeese));
+        cards.add(findViewById(R.id.pampasMoon));
+        //chrysanthemum
+        cards.add(findViewById(R.id.chrysCup));
+        cards.add(findViewById(R.id.chrysTanzaku));
+        //maple
+        cards.add(findViewById(R.id.mapleDeer));
+        cards.add(findViewById(R.id.mapleTanzaku));
+        //rain
+        cards.add(findViewById(R.id.rainBird));
+        cards.add(findViewById(R.id.rainLightning));
+        cards.add(findViewById(R.id.rainPoet));
+        cards.add(findViewById(R.id.rainTanzaku));
+        //paulownia
+        cards.add(findViewById(R.id.paulNormalOne));
+        cards.add(findViewById(R.id.paulPhoenix));
     }
     /*
     brights a20 c20 h20 k20 l20 -100

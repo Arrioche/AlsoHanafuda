@@ -34,6 +34,14 @@ public class StartScreen extends AppCompatActivity {
             public void onClick(View v) {
                 //starts the cardInitializer
                 Intent myIntent = new Intent(StartScreen.this, Tutorial.class);
+                myIntent.putExtra("scoreOne",0);
+                myIntent.putExtra("scoreTwo",0);
+                myIntent.putExtra("scoreThree",0);
+                myIntent.putExtra("pOne","One");
+                myIntent.putExtra("pTwo","Two");
+                myIntent.putExtra("pThree","Three");
+                myIntent.putExtra("rainStatus",false);
+                myIntent.putExtra("turnCounter",0);
                 StartScreen.this.startActivity(myIntent);
                 StartScreen.this.finish();
             }
