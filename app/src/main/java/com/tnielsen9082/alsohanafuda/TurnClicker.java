@@ -55,11 +55,11 @@ public class TurnClicker implements View.OnClickListener{
     private Button endTurn;
     //the buttons that bring up the taken cards
     private Button[] trickButtons;
-    //
     private TricksDisplayClicker tricksDisplay;
+    private TurnRotator turnRotator;
     //this assigns all of those variables
     //it is called from the CardInitializer class
-    public void id(Dropper tag3, boolean tag2, AppCompatActivity tag1, LinearLayout tag4, LinearLayout[] tag5, String[] tag6, TextView tag7, Button tag8,Button[] tag9, TricksDisplayClicker tag10){
+    public void id(Dropper tag3, boolean tag2, AppCompatActivity tag1, LinearLayout tag4, LinearLayout[] tag5, String[] tag6, TextView tag7, Button tag8,Button[] tag9, TricksDisplayClicker tag10, TurnRotator turnRotatorTag){
         drop=tag3;
         dismissal=tag2;
         second =tag4;
@@ -70,6 +70,7 @@ public class TurnClicker implements View.OnClickListener{
         endTurn = tag8;
         trickButtons = tag9;
         tricksDisplay =tag10;
+        turnRotator = turnRotatorTag;
     }
     //this is called from Dropper
     //in the general onDrag method in many places
@@ -143,7 +144,7 @@ public class TurnClicker implements View.OnClickListener{
                 }
                 else {
                     //call the dropper's rotate turns function
-                    drop.turnRotator();
+                     turnRotator.rotate();
                 }
             }
         }

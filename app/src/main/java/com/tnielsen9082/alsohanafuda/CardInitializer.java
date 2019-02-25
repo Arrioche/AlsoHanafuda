@@ -483,6 +483,7 @@ public class CardInitializer extends AppCompatActivity {
         Button end = findViewById(R.id.endTurn);
         //the button that starts the next turn
         Button turn = findViewById(R.id.nextTurn);
+        TurnRotator turnRotator = new TurnRotator();
 
         //set up the array of player's hands
         hands[0]=findViewById(R.id.handOne);
@@ -513,10 +514,11 @@ public class CardInitializer extends AppCompatActivity {
 
         //give all the data to all the things that need it
         dragger.id(hands, (LinearLayout)findViewById(R.id.secondCard),cardsDisp,cards,cardDescs,(TextView)findViewById(R.id.cardInfo),(ImageView)findViewById(R.id.showCard));
-        dropper.id(tricks,(LinearLayout)findViewById(R.id.board),scores, hands,dragger,(ConstraintLayout) findViewById(R.id.turnSplitter),(LinearLayout) findViewById(R.id.secondCard),(LinearLayout)findViewById(R.id.drawPile),names,(TextView)findViewById(R.id.playerNameMain));
+        dropper.id(tricks,(LinearLayout)findViewById(R.id.board),scores,dragger,(LinearLayout) findViewById(R.id.secondCard),(LinearLayout)findViewById(R.id.drawPile),turnRotator);
         falseDisplayClicker.id((LinearLayout)findViewById(R.id.trickButtons), tricks, false,(Button)findViewById(R.id.dismissal),endTurn);
-        endTurn.id(dropper,false,this,(LinearLayout) findViewById(R.id.secondCard),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end,trickButtons,falseDisplayClicker);
-        startTurn.id(dropper,true,this,(LinearLayout) findViewById(R.id.secondCard),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end, trickButtons,falseDisplayClicker);
+        endTurn.id(dropper,false,this,(LinearLayout) findViewById(R.id.secondCard),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end,trickButtons,falseDisplayClicker, turnRotator);
+        startTurn.id(dropper,true,this,(LinearLayout) findViewById(R.id.secondCard),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end, trickButtons,falseDisplayClicker,turnRotator);
+        turnRotator.id(hands,(ConstraintLayout)findViewById(R.id.turnSplitter),scores,(TextView)findViewById(R.id.playerNameMain),dragger,names);
 
         //assign various listeners to their spots
         findViewById(R.id.cardDisps).setOnTouchListener(dismisser);
@@ -540,11 +542,9 @@ public class CardInitializer extends AppCompatActivity {
     //this adds the combo points to each player's score
     //this is called from goToScore in the same class
     public int[] countUp(){
-        //make a custom comboList
         ComboList combo = new ComboList();
         //make an arrayList of cards for the first player
         ArrayList<CardImage> cardsOne = new ArrayList<>();
-        //tricks is the array of layouts where each player's taken cards go
         for (int i = 0; i < tricks[0].getChildCount(); i++) {
             //create a cardImage for each card image in the layout
             //mon is the letter corresponding to the month of the card
