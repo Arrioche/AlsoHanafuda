@@ -468,17 +468,17 @@ public class CardInitializer extends AppCompatActivity {
     //it's called from onCreate in the same class
     public void classSetUp(String[] scoresInit){
         //what hides the display cards
-        Dismisser dismisser = new Dismisser();
+        CardDescDismisser dismisser = new CardDescDismisser();
         //what initiates drags
         Dragger dragger = new Dragger();
         //what accepts drags
         Dropper dropper = new Dropper();
         //what hides the cards that other people have taken
-        TricksDisplayClicker falseDisplayClicker = new TricksDisplayClicker();
+        HideTakenTricks TrickHider = new HideTakenTricks();
         //what ends the current turn
-        TurnClicker endTurn = new TurnClicker();
+        TurnEnder endTurn = new TurnEnder();
         //what starts the next turn
-        TurnClicker startTurn = new TurnClicker();
+        TurnStarter startTurn = new TurnStarter();
         //the button that ends the turn
         Button end = findViewById(R.id.endTurn);
         //the button that starts the next turn
@@ -513,30 +513,26 @@ public class CardInitializer extends AppCompatActivity {
         ((TextView) findViewById(R.id.playerNameMain)).setText(names[0]);
 
         //give all the data to all the things that need it
-        dragger.id(hands, (LinearLayout)findViewById(R.id.secondCard),cardsDisp,cards,cardDescs,(TextView)findViewById(R.id.cardInfo),(ImageView)findViewById(R.id.showCard));
-        dropper.id(tricks,(LinearLayout)findViewById(R.id.board),scores,dragger,(LinearLayout) findViewById(R.id.secondCard),(LinearLayout)findViewById(R.id.drawPile),turnRotator);
-        falseDisplayClicker.id((LinearLayout)findViewById(R.id.trickButtons), tricks, false,(Button)findViewById(R.id.dismissal),endTurn);
-        endTurn.id(dropper,false,this,(LinearLayout) findViewById(R.id.secondCard),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end,trickButtons,falseDisplayClicker, turnRotator);
-        startTurn.id(dropper,true,this,(LinearLayout) findViewById(R.id.secondCard),hands,names,(TextView)findViewById(R.id.nextPlayerAnnounce),end, trickButtons,falseDisplayClicker,turnRotator);
-        turnRotator.id(hands,(ConstraintLayout)findViewById(R.id.turnSplitter),scores,(TextView)findViewById(R.id.playerNameMain),dragger,names);
+        dragger.id(this, hands,cardsDisp,cards,cardDescs);
+        dropper.id(this, tricks, scores,dragger,turnRotator,endTurn);
+        TrickHider.id(this, tricks);
+        endTurn.id(this, dropper,false,hands,names,trickButtons,TrickHider, turnRotator);
+        turnRotator.id(this,hands,scores,dragger,names);
 
         //assign various listeners to their spots
         findViewById(R.id.cardDisps).setOnTouchListener(dismisser);
         findViewById(R.id.board).setOnDragListener(dropper);
-        findViewById(R.id.dismissal).setOnClickListener(falseDisplayClicker);
+        findViewById(R.id.dismissal).setOnClickListener(TrickHider);
         end.setOnClickListener(endTurn);
-        dropper.setTurnClicker(endTurn);
         turn.setOnClickListener(startTurn);
         for (int i = 0; i < trickButtons.length; i++) {
             //this one has to be made within the for loop because it uses i
-            trickButtons[i].setOnClickListener(new TricksDisplayClicker((LinearLayout)findViewById(R.id.trickButtons), tricks, true,(Button)findViewById(R.id.dismissal),i,endTurn));
+            trickButtons[i].setOnClickListener(new ShowTakenTricks(this, tricks,i, endTurn));
         }
-        //give all the cards draggers and droppers
         for (int i = 0; i < cards.size(); i++) {
             cards.get(i).setOnTouchListener(dragger);
             cards.get(i).setOnDragListener(dropper);
         }
-        //turn off the end turn button
         end.setEnabled(false);
     }
     //this adds the combo points to each player's score
@@ -553,7 +549,6 @@ public class CardInitializer extends AppCompatActivity {
             //add it to the array
             cardsOne.add(images);
         }
-        //make player two's array
         ArrayList<CardImage> cardsTwo = new ArrayList<>();
         for (int i = 0; i < tricks[1].getChildCount(); i++) {
             //card image to cardImage
@@ -561,7 +556,6 @@ public class CardInitializer extends AppCompatActivity {
             //add it
             cardsTwo.add(images);
         }
-        //do it for the third player
         ArrayList<CardImage> cardsThree = new ArrayList<>();
         for (int i = 0; i < tricks[2].getChildCount(); i++) {
             CardImage images = new CardImage(tricks[2].getChildAt(i).getContentDescription().charAt(0)+"",Integer.parseInt(String.valueOf(tricks[2].getChildAt(i).getContentDescription().subSequence(1,3))));
@@ -572,22 +566,16 @@ public class CardInitializer extends AppCompatActivity {
         //the wipe boolean is to specify if the rain combo invalidates all combos
         //if it's true and a player has all four rain cards
         //the method returns -1
-        //okay
-        //make an array of the bonus points that each player earned
         int[] comboPlus= {combo.checker(cardsOne,wipe),combo.checker(cardsTwo,wipe),combo.checker(cardsThree,wipe)};
-        //check if any of them had the rain combo while it's activated
         boolean rain = false;
         for (int comboPlu : comboPlus) {
             if (comboPlu == -1) {
                 rain = true;
             }
         }
-        //if none of them had it
-        //return the combo points
         if(!rain){
             return comboPlus;
         }
-        //else return an array of zeros
         else{
             return new int[]{0,0,0};
         }

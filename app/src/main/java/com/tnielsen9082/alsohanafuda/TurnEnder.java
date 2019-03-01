@@ -1,5 +1,6 @@
 package com.tnielsen9082.alsohanafuda;
 
+import android.app.Activity;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -28,7 +29,7 @@ import android.widget.TextView;
 //and their second card
 //if a player was allowed to skip turns it would mess up the pattern of the cards
 
-public class TurnClicker implements View.OnClickListener{
+public class TurnEnder implements View.OnClickListener{
     //in case I use logs
     private static final String TAG = "TurnClicker";
     //the boolean that determines if the button closes the turn splitter screen or opens it
@@ -55,22 +56,22 @@ public class TurnClicker implements View.OnClickListener{
     private Button endTurn;
     //the buttons that bring up the taken cards
     private Button[] trickButtons;
-    private TricksDisplayClicker tricksDisplay;
+    private HideTakenTricks trickHider;
     private TurnRotator turnRotator;
     //this assigns all of those variables
     //it is called from the CardInitializer class
-    public void id(Dropper tag3, boolean tag2, AppCompatActivity tag1, LinearLayout tag4, LinearLayout[] tag5, String[] tag6, TextView tag7, Button tag8,Button[] tag9, TricksDisplayClicker tag10, TurnRotator turnRotatorTag){
-        drop=tag3;
-        dismissal=tag2;
-        second =tag4;
-        cardInitializer =tag1;
-        hands=tag5;
-        names=tag6;
-        nameDisplay = tag7;
-        endTurn = tag8;
-        trickButtons = tag9;
-        tricksDisplay =tag10;
+    public void id(AppCompatActivity activity,Dropper dropperTag, boolean dismissalTag, LinearLayout[] handsTag, String[] namesTag, Button[] trickButtonsTag, HideTakenTricks trickHiderTag, TurnRotator turnRotatorTag){
+        cardInitializer =activity;
+        drop=dropperTag;
+        dismissal=dismissalTag;
+        hands=handsTag;
+        names=namesTag;
+        trickButtons = trickButtonsTag;
+        trickHider =trickHiderTag;
         turnRotator = turnRotatorTag;
+        endTurn = activity.findViewById(R.id.endTurn);
+        second =cardInitializer.findViewById(R.id.secondCard);
+        nameDisplay = cardInitializer.findViewById(R.id.nextPlayerAnnounce);
     }
     //this is called from Dropper
     //in the general onDrag method in many places
@@ -89,17 +90,6 @@ public class TurnClicker implements View.OnClickListener{
     @Override
     //this is what happens if you click the button
     public void onClick(View v) {
-        if(dismissal) {
-            //this dismisses the turn splitter screen
-            //get the parent of the button
-            //which is the entire turn splitter
-            ConstraintLayout parent = (ConstraintLayout) v.getParent();
-            //hide it
-            parent.setVisibility(View.GONE);
-            //keep the button turned off
-            //since it will only activate once the next player has gone
-        }
-        else{
             //this ends the current turn
             //and brings up the turn splitter screen
             //or ends the round if the cards have all been taken
@@ -121,7 +111,7 @@ public class TurnClicker implements View.OnClickListener{
                 else {
                     trickButtons[2].setText(names[(playerTurn+2)%3]+"'s Cards");
                 }
-                tricksDisplay.wipe();
+                trickHider.onClick(v);
                 //advance the players' turns
                 playerTurn= (playerTurn+1)%3;
                 //disable the end turn button
@@ -144,9 +134,8 @@ public class TurnClicker implements View.OnClickListener{
                 }
                 else {
                     //call the dropper's rotate turns function
-                     turnRotator.rotate();
+                    turnRotator.rotate();
                 }
-            }
         }
     }
 }

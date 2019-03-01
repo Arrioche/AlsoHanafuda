@@ -1,6 +1,7 @@
 package com.tnielsen9082.alsohanafuda;
 
 
+import android.app.Activity;
 import android.content.ClipData;
 
 import android.graphics.drawable.Drawable;
@@ -76,14 +77,14 @@ public final class Dragger implements View.OnTouchListener {
     //this assigns all those variables
     //it is called from CardInitializer
     //in the setUp method
-    public void id(LinearLayout[] tag3, LinearLayout tag, ArrayList<Drawable> tag2, ArrayList<View> tag4, ArrayList<String> tag5, TextView tag6, ImageView tag7){
-        hand = tag3;
-        second = tag;
-        inspect=tag2;
-        cards=tag4;
-        cardDescs=tag5;
-        desc = tag6;
-        showCard = tag7;
+    public void id(Activity activity,LinearLayout[] handsTag, ArrayList<Drawable> inspectTag, ArrayList<View> cardsTag, ArrayList<String> cardDescsTag){
+        hand = handsTag;
+        inspect=inspectTag;
+        cards=cardsTag;
+        cardDescs=cardDescsTag;
+        desc = activity.findViewById(R.id.cardInfo);
+        second =activity.findViewById(R.id.secondCard);
+        showCard= activity.findViewById(R.id.showCard);
     }
 
     //this rotates the players when called

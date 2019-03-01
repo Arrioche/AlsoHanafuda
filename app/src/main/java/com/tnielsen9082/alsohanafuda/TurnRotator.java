@@ -1,13 +1,12 @@
 package com.tnielsen9082.alsohanafuda;
 
+import android.app.Activity;
 import android.support.constraint.ConstraintLayout;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-public class TurnRotator {
+public class TurnRotator extends Activity {
     //the array of player hands
     private LinearLayout[] hands;
     //the screen that breaks up turns
@@ -22,13 +21,13 @@ public class TurnRotator {
     private int playerNum=0;
     //the array of player names
     private String[] names;
-    public void id(LinearLayout[] handTag, ConstraintLayout splitTag, TextView[] scoreTag, TextView nameDispTag, Dragger dragTag, String[] nameTag){
+    public void id(Activity activity,LinearLayout[] handTag, TextView[] scoreTag, Dragger dragTag, String[] nameTag){
         hands=handTag;
-        splitter=splitTag;
         score=scoreTag;
-        nameDisp=nameDispTag;
         drag=dragTag;
         names=nameTag;
+        splitter=activity.findViewById(R.id.turnSplitter);
+        nameDisp=activity.findViewById(R.id.playerNameMain);
     }
     public int getPlayerNum(){
         return playerNum;

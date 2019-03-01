@@ -1,5 +1,6 @@
 package com.tnielsen9082.alsohanafuda;
 
+import android.app.Activity;
 import android.content.ClipData;
 import android.support.constraint.ConstraintLayout;
 import android.util.Log;
@@ -46,8 +47,8 @@ public final class Dropper implements View.OnDragListener {
     private LinearLayout second;
     //the draw pile
     private LinearLayout draw;
-    //the turnClicker
-    private TurnClicker turnClicker;
+    //the turnEnder
+    private TurnEnder turnEnder;
     private TurnRotator turnRotator;
     private int player;
     private LinearLayout container;
@@ -62,18 +63,16 @@ public final class Dropper implements View.OnDragListener {
     private int dropPoints;
     private int sco;
 
-    public void id(LinearLayout[] tricksTag, LinearLayout boardTag, TextView[] scoreTag, Dragger dragTag, LinearLayout secondTag, LinearLayout drawTag, TurnRotator turnRotatorTag){
+    public void id(Activity activity,LinearLayout[] tricksTag,TextView[] scoreTag, Dragger dragTag,TurnRotator turnRotatorTag,TurnEnder turnEnderTag){
         //initializing all those variables
         tricks = tricksTag;
-        board = boardTag;
         score = scoreTag;
         drag = dragTag;
-        second = secondTag;
-        draw=drawTag;
         turnRotator = turnRotatorTag;
-    }
-    void setTurnClicker(TurnClicker turner){
-        turnClicker=turner;
+        board = activity.findViewById(R.id.board);
+        second = activity.findViewById(R.id.secondCard);
+        draw=activity.findViewById(R.id.drawPile);
+        turnEnder = turnEnderTag;
     }
     @Override
     //when a drag is started this activates
@@ -160,7 +159,7 @@ public final class Dropper implements View.OnDragListener {
                            drag.setAdvancer(3);
                        }
                        if(owner==second){
-                           turnClicker.hasPlayed();
+                           turnEnder.hasPlayed();
                        }
                    }
                    else{
@@ -183,7 +182,7 @@ public final class Dropper implements View.OnDragListener {
                                drag.setAdvancer(3);
                            }
                            if(owner==second){
-                               turnClicker.hasPlayed();
+                               turnEnder.hasPlayed();
                            }
                        }
                    }
@@ -237,7 +236,7 @@ public final class Dropper implements View.OnDragListener {
             drag.setAdvancer(3);
         }
         if(owner==second){
-            turnClicker.hasPlayed();
+            turnEnder.hasPlayed();
         }
     }
     private void sameSuitNotOnTarget(){
@@ -253,7 +252,7 @@ public final class Dropper implements View.OnDragListener {
             drag.setAdvancer(3);
         }
         if(owner==second){
-            turnClicker.hasPlayed();
+            turnEnder.hasPlayed();
         }
     }
     private void showCards(){
@@ -277,7 +276,7 @@ public final class Dropper implements View.OnDragListener {
         }
         else{
             drag.setAdvancer(3);
-            turnClicker.hasPlayed();
+            turnEnder.hasPlayed();
         }
     }
 }
