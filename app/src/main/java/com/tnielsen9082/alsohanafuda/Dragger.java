@@ -84,8 +84,7 @@ public final class Dragger implements View.OnTouchListener {
         cardDescs=cardDescsTag;
         desc = activity.findViewById(R.id.cardInfo);
         second =activity.findViewById(R.id.secondCard);
-        showCard= activity.findViewById(R.id.showCard);
-    }
+        showCard= activity.findViewById(R.id.showCard); }
 
     //this rotates the players when called
     //the system is that there are three layouts that are the player hands

@@ -32,16 +32,8 @@ import android.widget.TextView;
 public class TurnEnder implements View.OnClickListener{
     //in case I use logs
     private static final String TAG = "TurnClicker";
-    //the boolean that determines if the button closes the turn splitter screen or opens it
-    //if true
-    //close
-    //if false
-    //open
-    private boolean dismissal;
     //the layout that the second drawn card goes to
     private LinearLayout second;
-    //the dropper
-    private Dropper drop;
     //the main activity
     private AppCompatActivity cardInitializer;
     //tracking which player's turn it is
@@ -60,10 +52,8 @@ public class TurnEnder implements View.OnClickListener{
     private TurnRotator turnRotator;
     //this assigns all of those variables
     //it is called from the CardInitializer class
-    public void id(AppCompatActivity activity,Dropper dropperTag, boolean dismissalTag, LinearLayout[] handsTag, String[] namesTag, Button[] trickButtonsTag, HideTakenTricks trickHiderTag, TurnRotator turnRotatorTag){
+    public void id(AppCompatActivity activity, LinearLayout[] handsTag, String[] namesTag, Button[] trickButtonsTag, HideTakenTricks trickHiderTag, TurnRotator turnRotatorTag){
         cardInitializer =activity;
-        drop=dropperTag;
-        dismissal=dismissalTag;
         hands=handsTag;
         names=namesTag;
         trickButtons = trickButtonsTag;
@@ -97,31 +87,13 @@ public class TurnEnder implements View.OnClickListener{
             //if there is no card in the second card layout
             //and the player had played a card
             if(second.getChildCount()==0) {
-                //set the text on the turn splitter
-                nameDisplay.setText("Next Up: "+names[playerTurn]);
-                if((names[(playerTurn+1)%3].toLowerCase().charAt(names[(playerTurn+1)%3].length()-1))=="s".charAt(0)){
-                    trickButtons[1].setText(names[(playerTurn+1)%3]+"' Cards");
-                }
-                else {
-                    trickButtons[1].setText(names[(playerTurn+1)%3]+"'s Cards");
-                }
-                if((names[(playerTurn+2)%3].toLowerCase().charAt(names[(playerTurn+2)%3].length()-1))=="s".charAt(0)){
-                    trickButtons[2].setText(names[(playerTurn+2)%3]+"' Cards");
-                }
-                else {
-                    trickButtons[2].setText(names[(playerTurn+2)%3]+"'s Cards");
-                }
                 trickHider.onClick(v);
                 //advance the players' turns
                 playerTurn= (playerTurn+1)%3;
-                //disable the end turn button
-                //otherwise you can click it through the turn splitter
+                //disable itself
                 endTurn.setEnabled(false);
-                //if all the hands are out of cards
-                //it also will change to the scoring screen at the end
+                //if all the hands are out of cards it will change to the scoring screen at the end
                 boolean done = true;
-                //if any hand has cards left
-                //turn off done
                 for (int i = 0; i < 3; i++) {
                     if(hands[i].getChildCount()!=0){
                         done=false;

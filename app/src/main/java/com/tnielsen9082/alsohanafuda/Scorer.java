@@ -15,6 +15,7 @@ public class Scorer extends AppCompatActivity {
     private Intent intention;
     private String[] names = new String[3];
     private String[] scores= new String[3];
+    private String[] bonus = new String[3];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +28,7 @@ public class Scorer extends AppCompatActivity {
         final Bundle bundle = intention.getExtras();
         TextView[] scoresDisplay= {findViewById(R.id.scoreDisplay1),findViewById(R.id.scoreDisplay2),findViewById(R.id.scoreDisplay3)};
         TextView[] namesDisplay ={findViewById(R.id.titleOne),findViewById(R.id.titleTwo),findViewById(R.id.titleThree)};
+        TextView[] bonusDisplay ={findViewById(R.id.bonusPoints1),findViewById(R.id.bonusPoints2),findViewById(R.id.bonusPoints3)};
         if(bundle!=null) {
             scores[0]=(bundle.get("scoreOne") + "");
             scores[1]=(bundle.get("scoreTwo") + "");
@@ -34,18 +36,23 @@ public class Scorer extends AppCompatActivity {
             names[0]=bundle.get("pOne")+"";
             names[1]=bundle.get("pTwo")+"";
             names[2]=bundle.get("pThree")+"";
+            bonus[0]=(bundle.get("bonusOne") + "");
+            bonus[1]=(bundle.get("bonusTwo") + "");
+            bonus[2]=(bundle.get("bonusThree") + "");
         }
         else{
-            scores[0]=(0+"");
-            scores[1]=(0+"");
-            scores[2]=(0+"");
+            for (int i = 0; i < 3; i++) {
+                scores[i]=0+"";
+                bonus[0]=0+"";
+            }
             names[0]="Player One";
             names[1]="Player Two";
             names[2]="Player Three";
         }
         for (int i = 0; i < 3; i++) {
-            scoresDisplay[i].setText(scores[i]);
+            scoresDisplay[i].setText("Total Points: "+scores[i]);
             namesDisplay[i].setText(names[i]);
+            bonusDisplay[i].setText("Combo Points: "+bonus[i]);
         }
         Button nextRound = findViewById(R.id.nextRound);
         nextRound.setOnClickListener(new View.OnClickListener() {

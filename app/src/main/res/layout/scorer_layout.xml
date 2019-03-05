@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
@@ -87,5 +87,35 @@
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/scoreDisplay3"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/bonusPoints1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="72dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/scoreDisplay1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/bonusPoints2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="72dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/scoreDisplay2"
+        app:layout_constraintTop_toBottomOf="@+id/bonusPoints1" />
+
+    <TextView
+        android:id="@+id/bonusPoints3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="72dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/scoreDisplay3"
+        app:layout_constraintTop_toBottomOf="@+id/bonusPoints2" />
 
 </android.support.constraint.ConstraintLayout>

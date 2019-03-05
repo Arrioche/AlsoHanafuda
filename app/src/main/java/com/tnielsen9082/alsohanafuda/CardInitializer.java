@@ -73,9 +73,6 @@ import java.util.ArrayList;
 //as well as a description of the card
 //tap on this to dismiss it
 
-//this activity's total goal is to set up the layouts, the buttons, the dragger, and the dropper
-//add the combo points at the end
-//and transfer all necessary data to the next activity
 public class CardInitializer extends AppCompatActivity {
     //the list of all the cards
     ArrayList<View> cards = new ArrayList<>();
@@ -191,13 +188,17 @@ public class CardInitializer extends AppCompatActivity {
             myIntent = new Intent(CardInitializer.this, FinalScorer.class);
         }
         //this counts the combos and returns an array of each player's points
-        int[] bonusPoints =countUp();
+        ComboCounter comboCounter = new ComboCounter();
+        int[] bonusPoints =comboCounter.countUp(tricks,wipe);
         //you can put data in the intent
         //each player's score
-        //plus combo
         myIntent.putExtra("scoreOne",Integer.parseInt(String.valueOf((scores[0]).getText()))+bonusPoints[0]);
         myIntent.putExtra("scoreTwo",Integer.parseInt(String.valueOf((scores[1]).getText()))+bonusPoints[1]);
         myIntent.putExtra("scoreThree",Integer.parseInt(String.valueOf((scores[2]).getText()))+bonusPoints[2]);
+        //plus combo
+        myIntent.putExtra("bonusOne",bonusPoints[0]);
+        myIntent.putExtra("bonusTwo",bonusPoints[1]);
+        myIntent.putExtra("bonusThree",bonusPoints[2]);
         //each player's name
         myIntent.putExtra("pOne",names[0]);
         myIntent.putExtra("pTwo",names[1]);
@@ -474,7 +475,7 @@ public class CardInitializer extends AppCompatActivity {
         //what accepts drags
         Dropper dropper = new Dropper();
         //what hides the cards that other people have taken
-        HideTakenTricks TrickHider = new HideTakenTricks();
+        HideTakenTricks trickHider = new HideTakenTricks();
         //what ends the current turn
         TurnEnder endTurn = new TurnEnder();
         //what starts the next turn
@@ -515,18 +516,17 @@ public class CardInitializer extends AppCompatActivity {
         //give all the data to all the things that need it
         dragger.id(this, hands,cardsDisp,cards,cardDescs);
         dropper.id(this, tricks, scores,dragger,turnRotator,endTurn);
-        TrickHider.id(this, tricks);
-        endTurn.id(this, dropper,false,hands,names,trickButtons,TrickHider, turnRotator);
-        turnRotator.id(this,hands,scores,dragger,names);
+        trickHider.id(this, tricks);
+        endTurn.id(this,hands,names,trickButtons,trickHider, turnRotator);
+        turnRotator.id(this,hands,scores,dragger,names,trickButtons);
 
         //assign various listeners to their spots
         findViewById(R.id.cardDisps).setOnTouchListener(dismisser);
         findViewById(R.id.board).setOnDragListener(dropper);
-        findViewById(R.id.dismissal).setOnClickListener(TrickHider);
+        findViewById(R.id.dismissal).setOnClickListener(trickHider);
         end.setOnClickListener(endTurn);
-        turn.setOnClickListener(startTurn);
         for (int i = 0; i < trickButtons.length; i++) {
-            //this one has to be made within the for loop because it uses i
+            //this one has to be made within the for loop because it uses i]
             trickButtons[i].setOnClickListener(new ShowTakenTricks(this, tricks,i, endTurn));
         }
         for (int i = 0; i < cards.size(); i++) {
@@ -534,51 +534,5 @@ public class CardInitializer extends AppCompatActivity {
             cards.get(i).setOnDragListener(dropper);
         }
         end.setEnabled(false);
-    }
-    //this adds the combo points to each player's score
-    //this is called from goToScore in the same class
-    public int[] countUp(){
-        ComboList combo = new ComboList();
-        //make an arrayList of cards for the first player
-        ArrayList<CardImage> cardsOne = new ArrayList<>();
-        for (int i = 0; i < tricks[0].getChildCount(); i++) {
-            //create a cardImage for each card image in the layout
-            //mon is the letter corresponding to the month of the card
-            //sco is the point value of the card
-            CardImage images = new CardImage(tricks[0].getChildAt(i).getContentDescription().charAt(0)+"",Integer.parseInt(String.valueOf(tricks[0].getChildAt(i).getContentDescription().subSequence(1,3))));
-            //add it to the array
-            cardsOne.add(images);
-        }
-        ArrayList<CardImage> cardsTwo = new ArrayList<>();
-        for (int i = 0; i < tricks[1].getChildCount(); i++) {
-            //card image to cardImage
-            CardImage images = new CardImage(tricks[1].getChildAt(i).getContentDescription().charAt(0)+"",Integer.parseInt(String.valueOf(tricks[1].getChildAt(i).getContentDescription().subSequence(1,3))));
-            //add it
-            cardsTwo.add(images);
-        }
-        ArrayList<CardImage> cardsThree = new ArrayList<>();
-        for (int i = 0; i < tricks[2].getChildCount(); i++) {
-            CardImage images = new CardImage(tricks[2].getChildAt(i).getContentDescription().charAt(0)+"",Integer.parseInt(String.valueOf(tricks[2].getChildAt(i).getContentDescription().subSequence(1,3))));
-            cardsThree.add(images);
-        }
-        //add the points that each player gets from combos to their current scores
-        //combo.checker + a cardImage array goes through and sees if there are any combos
-        //the wipe boolean is to specify if the rain combo invalidates all combos
-        //if it's true and a player has all four rain cards
-        //the method returns -1
-        int[] comboPlus= {combo.checker(cardsOne,wipe),combo.checker(cardsTwo,wipe),combo.checker(cardsThree,wipe)};
-        boolean rain = false;
-        for (int comboPlu : comboPlus) {
-            if (comboPlu == -1) {
-                rain = true;
-            }
-        }
-        if(!rain){
-            return comboPlus;
-        }
-        else{
-            return new int[]{0,0,0};
-        }
-
     }
 }
