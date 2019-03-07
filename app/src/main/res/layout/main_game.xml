@@ -10,13 +10,12 @@
         style="?android:attr/buttonBarButtonStyle"
         android:layout_width="76dp"
         android:layout_height="35dp"
-        android:paddingLeft="6dp"
-        android:paddingTop="-5dp"
+        android:layout_marginStart="8dp"
         android:stateListAnimator="@null"
         android:text="Combos"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scoreStarter" />
+        app:layout_constraintTop_toBottomOf="@+id/score1" />
 
     <LinearLayout
         android:id="@+id/drawPile"
@@ -491,16 +490,6 @@
             app:srcCompat="@drawable/paulnormalone" />
 
         <ImageView
-            android:id="@+id/paulNormalTwo"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/l01"
-            android:src="@drawable/paulnormaltwo"
-            android:visibility="visible"
-            app:srcCompat="@drawable/paulnormaltwo" />
-
-        <ImageView
             android:id="@+id/paulNormalThree"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
@@ -509,6 +498,16 @@
             android:src="@drawable/paulnormalthree"
             android:visibility="visible"
             app:srcCompat="@drawable/paulnormalthree" />
+
+        <ImageView
+            android:id="@+id/paulNormalTwo"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/l01"
+            android:src="@drawable/paulnormaltwo"
+            android:visibility="visible"
+            app:srcCompat="@drawable/paulnormaltwo" />
 
     </LinearLayout>
 
@@ -588,55 +587,63 @@
 
     <TextView
         android:id="@+id/scoreStarter"
-        android:layout_width="wrap_content"
-        android:layout_height="25dp"
+        android:layout_width="87dp"
+        android:layout_height="18dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:paddingLeft="0dp"
-        android:text="Score: "
-        app:layout_constraintBottom_toTopOf="@+id/handScroll"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/table" />
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:paddingBottom="0dp"
+        android:text="@string/your_score"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintEnd_toStartOf="@+id/combosDisp"
+        app:layout_constraintStart_toEndOf="@+id/combosDisp"
+        app:layout_constraintTop_toBottomOf="@+id/playerNameMain" />
 
     <TextView
         android:id="@+id/score1"
         android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_weight="1"
+        android:gravity="bottom"
         android:text="@string/_0"
+        android:textColor="@android:color/darker_gray"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/handScroll"
-        app:layout_constraintStart_toEndOf="@+id/scoreStarter"
-        app:layout_constraintTop_toBottomOf="@+id/table" />
+        app:layout_constraintEnd_toStartOf="@+id/combosDisp"
+        app:layout_constraintStart_toEndOf="@+id/combosDisp"
+        app:layout_constraintTop_toBottomOf="@+id/scoreStarter" />
 
     <TextView
         android:id="@+id/score2"
         android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_weight="1"
+        android:gravity="bottom"
         android:text="@string/_0"
+        android:textColor="@android:color/darker_gray"
         android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/handScroll"
-        app:layout_constraintStart_toEndOf="@+id/scoreStarter"
-        app:layout_constraintTop_toBottomOf="@+id/table" />
+        app:layout_constraintEnd_toStartOf="@+id/combosDisp"
+        app:layout_constraintStart_toEndOf="@+id/combosDisp"
+        app:layout_constraintTop_toBottomOf="@+id/scoreStarter" />
 
     <TextView
         android:id="@+id/score3"
         android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_weight="1"
+        android:gravity="bottom"
         android:text="@string/_0"
+        android:textColor="@android:color/darker_gray"
         android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/handScroll"
-        app:layout_constraintStart_toEndOf="@+id/scoreStarter"
-        app:layout_constraintTop_toBottomOf="@+id/table" />
+        app:layout_constraintEnd_toStartOf="@+id/combosDisp"
+        app:layout_constraintStart_toEndOf="@+id/combosDisp"
+        app:layout_constraintTop_toBottomOf="@+id/scoreStarter" />
 
     <LinearLayout
         android:id="@+id/takenTricks"
@@ -715,16 +722,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:gravity="center_horizontal|center_vertical"
         android:orientation="horizontal"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/secondCard"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/playerNameMain"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498">
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/dispYou"
@@ -793,11 +797,15 @@
 
     <TextView
         android:id="@+id/playerNameMain"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/score1"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="player name"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintEnd_toStartOf="@+id/scoreStarter"
+        app:layout_constraintStart_toEndOf="@+id/scoreStarter"
+        app:layout_constraintTop_toBottomOf="@+id/table" />
 
     <Button
         android:id="@+id/endTurn"
@@ -852,5 +860,50 @@
             android:visibility="visible" />
 
     </LinearLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/turnSplitterLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/turnBack"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/turnback"
+            android:scaleType="centerCrop"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/rainbird" />
+
+        <Button
+            android:id="@+id/nextTurn"
+            android:layout_width="164dp"
+            android:layout_height="71dp"
+            android:text="@string/next_turn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.464" />
+
+        <TextView
+            android:id="@+id/nextPlayerAnnounce"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:text="hggfhgfhg"
+            android:textColor="@android:color/background_light"
+            app:layout_constraintBottom_toTopOf="@+id/nextTurn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

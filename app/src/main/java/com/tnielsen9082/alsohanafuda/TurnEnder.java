@@ -40,28 +40,19 @@ public class TurnEnder implements View.OnClickListener{
     private int playerTurn =1;
     //the player hands
     private LinearLayout[] hands;
-    //the player names
-    private String[] names;
-    //the name display
-    private TextView nameDisplay;
     //the "end turn" button
     private Button endTurn;
-    //the buttons that bring up the taken cards
-    private Button[] trickButtons;
     private HideTakenTricks trickHider;
     private TurnRotator turnRotator;
     //this assigns all of those variables
     //it is called from the CardInitializer class
-    public void id(AppCompatActivity activity, LinearLayout[] handsTag, String[] namesTag, Button[] trickButtonsTag, HideTakenTricks trickHiderTag, TurnRotator turnRotatorTag){
+    public void id(AppCompatActivity activity, LinearLayout[] handsTag,HideTakenTricks trickHiderTag, TurnRotator turnRotatorTag){
         cardInitializer =activity;
         hands=handsTag;
-        names=namesTag;
-        trickButtons = trickButtonsTag;
         trickHider =trickHiderTag;
         turnRotator = turnRotatorTag;
         endTurn = activity.findViewById(R.id.endTurn);
         second =cardInitializer.findViewById(R.id.secondCard);
-        nameDisplay = cardInitializer.findViewById(R.id.nextPlayerAnnounce);
     }
     //this is called from Dropper
     //in the general onDrag method in many places

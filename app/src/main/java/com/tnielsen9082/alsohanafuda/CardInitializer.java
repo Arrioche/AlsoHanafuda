@@ -5,11 +5,9 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -104,7 +102,7 @@ public class CardInitializer extends AppCompatActivity {
         //set the xml layout file
         setContentView(R.layout.main_game);
         //set temporary background
-        getWindow().getDecorView().setBackgroundColor(Color.LTGRAY);
+        getWindow().getDecorView().setBackgroundColor(Color.BLACK);
         //lock it in landscape mode
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         //get the intent that started the activity
@@ -516,8 +514,8 @@ public class CardInitializer extends AppCompatActivity {
         //give all the data to all the things that need it
         dragger.id(this, hands,cardsDisp,cards,cardDescs);
         dropper.id(this, tricks, scores,dragger,turnRotator,endTurn);
-        trickHider.id(this, tricks);
-        endTurn.id(this,hands,names,trickButtons,trickHider, turnRotator);
+        trickHider.id(this, tricks,turnRotator);
+        endTurn.id(this,hands,trickHider, turnRotator);
         turnRotator.id(this,hands,scores,dragger,names,trickButtons);
 
         //assign various listeners to their spots
@@ -525,6 +523,7 @@ public class CardInitializer extends AppCompatActivity {
         findViewById(R.id.board).setOnDragListener(dropper);
         findViewById(R.id.dismissal).setOnClickListener(trickHider);
         end.setOnClickListener(endTurn);
+        turn.setOnClickListener(startTurn);
         for (int i = 0; i < trickButtons.length; i++) {
             //this one has to be made within the for loop because it uses i]
             trickButtons[i].setOnClickListener(new ShowTakenTricks(this, tricks,i, endTurn));

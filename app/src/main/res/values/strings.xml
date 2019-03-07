@@ -91,4 +91,6 @@
     <string name="turnback">turnBack</string>
     <string name="next_turn">Next Turn</string>
     <string name="end_turn">End Turn</string>
+    <string name="your_score">Your Score:</string>
+    <string name="their_score">Their Score:</string>
 </resources>

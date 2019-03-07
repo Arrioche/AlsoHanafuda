@@ -25,7 +25,6 @@ public class TurnRotator extends Activity {
     private String[] names;
     private TextView nameDisplaySplitter;
     private Button[] trickButtons;
-    private Intent turnSplitterIntent;
     private Activity activity;
     public void id(Activity activityTag,LinearLayout[] handTag, TextView[] scoreTag, Dragger dragTag, String[] nameTag,Button[] trickButtonsTag){
         activity=activityTag;
@@ -37,15 +36,15 @@ public class TurnRotator extends Activity {
         splitter=activity.findViewById(R.id.turnSplitter);
         nameDisp=activity.findViewById(R.id.playerNameMain);
         trickButtons = trickButtonsTag;
-        turnSplitterIntent=new Intent(activity, TurnSplitter.class);
     }
     public int getPlayerNum(){
         return playerNum;
     }
 
     public void rotate() {
-        turnSplitterIntent.putExtra("nextPlayerName", names[(playerNum+1)%3]);
-        activity.startActivity(turnSplitterIntent);
+        nameDisplaySplitter.setText(names[(playerNum+1)%3]+ "'s Turn");
+        ((View)nameDisplaySplitter.getParent()).setVisibility(View.VISIBLE);
+
         //hide the old hand
         hands[playerNum % 3].setVisibility(View.GONE);
         //hide the old score
