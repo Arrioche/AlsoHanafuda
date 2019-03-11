@@ -172,9 +172,6 @@ public class CardInitializer extends AppCompatActivity {
     //it transfers over all the data
     //this is called from onClick in the TurnClicker class
     public void goToScore(){
-        //this ends the cardInitializer activity and takes us to the scoring screen
-        //or the final scoring screen
-        //create the intent
         Intent myIntent;
         //end it at <11 to get 12 rounds
         if(turnCount<2) {
@@ -482,7 +479,9 @@ public class CardInitializer extends AppCompatActivity {
         Button end = findViewById(R.id.endTurn);
         //the button that starts the next turn
         Button turn = findViewById(R.id.nextTurn);
+        Button combos =findViewById(R.id.combosDisp);
         TurnRotator turnRotator = new TurnRotator();
+        ComboButton comboButton = new ComboButton();
 
         //set up the array of player's hands
         hands[0]=findViewById(R.id.handOne);
@@ -517,6 +516,7 @@ public class CardInitializer extends AppCompatActivity {
         trickHider.id(this, tricks,turnRotator);
         endTurn.id(this,hands,trickHider, turnRotator);
         turnRotator.id(this,hands,scores,dragger,names,trickButtons);
+        comboButton.id(this);
 
         //assign various listeners to their spots
         findViewById(R.id.cardDisps).setOnTouchListener(dismisser);
@@ -524,6 +524,7 @@ public class CardInitializer extends AppCompatActivity {
         findViewById(R.id.dismissal).setOnClickListener(trickHider);
         end.setOnClickListener(endTurn);
         turn.setOnClickListener(startTurn);
+        combos.setOnClickListener(comboButton);
         for (int i = 0; i < trickButtons.length; i++) {
             //this one has to be made within the for loop because it uses i]
             trickButtons[i].setOnClickListener(new ShowTakenTricks(this, tricks,i, endTurn));

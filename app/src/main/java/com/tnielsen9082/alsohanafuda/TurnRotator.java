@@ -42,7 +42,7 @@ public class TurnRotator extends Activity {
     }
 
     public void rotate() {
-        nameDisplaySplitter.setText(names[(playerNum+1)%3]+ "'s Turn");
+        nameDisplaySplitter.setText("Next Up: "+names[(playerNum+1)%3]);
         ((View)nameDisplaySplitter.getParent()).setVisibility(View.VISIBLE);
 
         //hide the old hand

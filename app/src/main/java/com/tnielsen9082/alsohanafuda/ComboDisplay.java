@@ -2,6 +2,7 @@ package com.tnielsen9082.alsohanafuda;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -15,5 +16,6 @@ public class ComboDisplay extends AppCompatActivity {
         setContentView(R.layout.combo_list_display);
         //locks it as landscape
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        getWindow().getDecorView().setBackgroundColor(Color.BLACK);
     }
 }

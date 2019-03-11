@@ -14,8 +14,8 @@
     <string name="c20desc">March: Cherry Blossom &amp; Curtain\n\nValue: 20 points\n\nThis card is used in the Five Bright, Four Bright, Three Bright, and Views combos.</string>
 
     <string name="d01desc">April: Plain Wisteria\n\nValue: 1 point\n\nThis card is used in the Straight Wisteria combo.</string>
-    <string name="d05desc">April: Wisteria &amp; Tanzaku\n\nValue: 5 points\n\nThis card is used in the Seven Tanzaku, Six Tanzaku, and Grass Tanzaku combos.</string>
-    <string name="d10desc">April: Wisteria &amp; Cuckoo\n\nValue: 10 points\n\nThis card is used in no combos.</string>
+    <string name="d05desc">April: Wisteria &amp; Tanzaku\n\nValue: 5 points\n\nThis card is used in the Seven Tanzaku, Six Tanzaku, Grass Tanzaku, and Straight Wisteria combos.</string>
+    <string name="d10desc">April: Wisteria &amp; Cuckoo\n\nValue: 10 points\n\nThis card is used in the Straight Wisteria combo.</string>
 
     <string name="e01desc">May: Plain Iris\n\nValue: 1 point\n\nThis card is used in no combos.</string>
     <string name="e05desc">May: Iris &amp; Tanzaku\n\nValue: 5 points\n\nThis card is used in the Seven Tanzaku, Six Tanzaku, and Grass Tanzaku combos.</string>
@@ -93,4 +93,19 @@
     <string name="end_turn">End Turn</string>
     <string name="your_score">Your Score:</string>
     <string name="their_score">Their Score:</string>
+
+    <string name="five_bright">Five Bright: 100 points. Pine and Crane, Cherry and Curtain, Pampas Grass and Full Moon, Paulownia and Phoenix, and Rain and Poet.</string>
+    <string name="four_bright">Four Bright: 60 points. Pine and Crane, Cherry and Curtain, Pampas Grass and Full Moon, and Paulownia and Phoenix.</string>
+    <string name="three_bright">Three Bright: 30 points. Pine and Crane, Plum and Nightingale, and Cherry and Curtain.</string>
+    <string name="seven_tanzaku">Seven Tanzaku: 40 points. Any seven tanzaku, except for the Rain one.</string>
+    <string name="six_tanzaku">Six Tanzaku: 30 points. Any six tanzaku, except for the Rain one.</string>
+    <string name="red_lettered_tanzaku">Red Lettered Tanzaku: 40 points. The Pine, Plum, and Cherry tanzaku.</string>
+    <string name="blue_tanzaku">Blue Tanzaku: 40 points. The Peony, Chrysanthemum, and Maple tanzaku.</string>
+    <string name="grass_tanzaku">Grass Tanzaku: 20 points. The Wisteria, Iris, and Clover tanzaku.</string>
+    <string name="the_views">The Views: 20 points for two of them, 40 points for all three. Pampas and Full Moon, Chrysanthemum and Wine Cup, Cherry and Curtain.</string>
+    <string name="crane_phoenix_moon">Crane-Phoenix-Moon: 20 points. Pine and Crane, Paulownia and Phoenix, and Pampas Grass and Full Moon.</string>
+    <string name="boar_deer_butterfly">Boar-Deer-Butterfly: 20 points. Bush Clover and Boar, Maple Leaves and Deer, and Peony and Butterfly.</string>
+    <string name="straight_wisteria">Straight Wisteria: 10 points. All four Wisteria cards.</string>
+    <string name="straight_paulownia">Straight Paulownia: 10 points. All four Paulownia cards.</string>
+    <string name="straight_rain">Straight Rain: 10 points. All four Rain cards.</string>
 </resources>

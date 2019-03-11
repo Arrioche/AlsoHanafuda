@@ -1,6 +1,642 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fiveBrightText"
+                android:layout_width="match_parent"
+                android:textColor="@android:color/darker_gray"
+                android:layout_height="wrap_content"
+                android:text="@string/five_bright" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/fivebright1"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/pinecrane" />
+
+                <ImageView
+                    android:id="@+id/fivebright2"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/cherrycurtain" />
+
+                <ImageView
+                    android:id="@+id/fivebright3"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/pampasmoon" />
+
+                <ImageView
+                    android:id="@+id/fivebright4"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/paulphoenix" />
+
+                <ImageView
+                    android:id="@+id/fivebright5"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/rainpoet" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/fourBrightText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/four_bright"
+                android:textColor="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/fourbright1"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/pinecrane" />
+
+                <ImageView
+                    android:id="@+id/fourbright2"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/cherrycurtain" />
+
+                <ImageView
+                    android:id="@+id/fourbright3"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/pampasmoon" />
+
+                <ImageView
+                    android:id="@+id/fourbright4"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/paulphoenix" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/threeBrightText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/three_bright"
+                android:textColor="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/threebright1"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/pinecrane" />
+
+                <ImageView
+                    android:id="@+id/threebright2"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/plumbird" />
+
+                <ImageView
+                    android:id="@+id/threebright3"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/cherrycurtain" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/sevenTanzakuText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/seven_tanzaku"
+                android:textColor="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/seventanzaku"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/pinetanzaku" />
+
+                <ImageView
+                    android:id="@+id/seventanzaku1"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/plumtanzaku" />
+
+                <ImageView
+                    android:id="@+id/seventanzaku2"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/cherrytanzaku" />
+
+                <ImageView
+                    android:id="@+id/seventanzaku3"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/wisteriatanzaku" />
+
+                <ImageView
+                    android:id="@+id/seventanzaku4"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/iristanzaku" />
+
+                <ImageView
+                    android:id="@+id/seventanzaku5"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/peonytanzaku" />
+
+                <ImageView
+                    android:id="@+id/seventanzaku6"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/clovertanzaku" />
+
+                <ImageView
+                    android:id="@+id/seventanzaku7"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/chrystanzaku" />
+
+                <ImageView
+                    android:id="@+id/seventanzaku8"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/mapletanzaku" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/sixTanzakuText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/six_tanzaku"
+                android:textColor="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/seventanzaku9"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/pinetanzaku" />
+
+                <ImageView
+                    android:id="@+id/seventanzaku10"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/plumtanzaku" />
+
+                <ImageView
+                    android:id="@+id/seventanzaku11"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/cherrytanzaku" />
+
+                <ImageView
+                    android:id="@+id/seventanzaku12"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/wisteriatanzaku" />
+
+                <ImageView
+                    android:id="@+id/seventanzaku13"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/iristanzaku" />
+
+                <ImageView
+                    android:id="@+id/seventanzaku14"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/peonytanzaku" />
+
+                <ImageView
+                    android:id="@+id/seventanzaku15"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/clovertanzaku" />
+
+                <ImageView
+                    android:id="@+id/seventanzaku16"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/chrystanzaku" />
+
+                <ImageView
+                    android:id="@+id/seventanzaku17"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/mapletanzaku" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/redLetteredText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/red_lettered_tanzaku"
+                android:textColor="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/redlettered1"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/pinetanzaku" />
+
+                <ImageView
+                    android:id="@+id/redlettered2"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/plumtanzaku" />
+
+                <ImageView
+                    android:id="@+id/redlettered3"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/cherrytanzaku" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/blueText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/blue_tanzaku"
+                android:textColor="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/blue1"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/peonytanzaku" />
+
+                <ImageView
+                    android:id="@+id/blue2"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/chrystanzaku" />
+
+                <ImageView
+                    android:id="@+id/blue3"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/mapletanzaku" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/grassText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/grass_tanzaku"
+                android:textColor="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/grass1"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/wisteriatanzaku" />
+
+                <ImageView
+                    android:id="@+id/grass2"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/iristanzaku" />
+
+                <ImageView
+                    android:id="@+id/grass3"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/clovertanzaku" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/viewsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/the_views"
+                android:textColor="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/view3"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/pampasmoon" />
+
+                <ImageView
+                    android:id="@+id/view1"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/chryscup" />
+
+                <ImageView
+                    android:id="@+id/view2"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/cherrycurtain" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/bdbText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/boar_deer_butterfly"
+                android:textColor="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/bdb1"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/cloverboar" />
+
+                <ImageView
+                    android:id="@+id/bdb2"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/mapledeer" />
+
+                <ImageView
+                    android:id="@+id/bdb3"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/peonybutterfly" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/cpmText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/crane_phoenix_moon"
+                android:textColor="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/cpm1"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/pinecrane" />
+
+                <ImageView
+                    android:id="@+id/cpm2"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/paulphoenix" />
+
+                <ImageView
+                    android:id="@+id/cpm3"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/pampasmoon" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/straightWisteriaText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/straight_wisteria"
+                android:textColor="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/swisteria1"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/wisterianormalone" />
+
+                <ImageView
+                    android:id="@+id/swisteria2"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/wisterianormaltwo" />
+
+                <ImageView
+                    android:id="@+id/swisteria3"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/wisteriatanzaku" />
+
+                <ImageView
+                    android:id="@+id/swisteria4"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/wisteriacuckoo" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/straightPaulText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/straight_paulownia"
+                android:textColor="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/spaul1"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/paulnormalone" />
+
+                <ImageView
+                    android:id="@+id/spaul2"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/paulnormaltwo" />
+
+                <ImageView
+                    android:id="@+id/spaul3"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/paulnormalthree" />
+
+                <ImageView
+                    android:id="@+id/spaul4"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/paulphoenix" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/straightRainText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/straight_rain"
+                android:textColor="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/srain1"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/rainlightning" />
+
+                <ImageView
+                    android:id="@+id/srain2"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/raintanzaku" />
+
+                <ImageView
+                    android:id="@+id/srain3"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/rainbird" />
+
+                <ImageView
+                    android:id="@+id/srain4"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/rainpoet" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>

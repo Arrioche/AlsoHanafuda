@@ -15,6 +15,13 @@
                 <category android:name="android.intent.category.OPENABLE" />
             </intent-filter>
         </activity>
+        <activity android:name=".ComboDisplay">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.OPENABLE" />
+            </intent-filter>
+        </activity>
         <activity android:name=".StartScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
