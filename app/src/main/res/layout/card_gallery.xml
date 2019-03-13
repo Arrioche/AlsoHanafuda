@@ -6,33 +6,137 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TableLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <TableRow
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+                <ImageView
+                    android:id="@+id/pineCrane3"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/pinecrane"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/pinecrane" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </TableLayout>
+                <ImageView
+                    android:id="@+id/pineTanzaku3"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="false"
+                    android:src="@drawable/pinetanzaku"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/pinetanzaku" />
+
+                <ImageView
+                    android:id="@+id/pineNormalOne3"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/pinenormalone"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/pinenormalone"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="160dp" />
+
+                <ImageView
+                    android:id="@+id/pineNormalTwo3"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/pinenormaltwo"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/pinenormaltwo" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/pineCrane2"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/pinecrane"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/plumbird" />
+
+                <ImageView
+                    android:id="@+id/pineTanzaku2"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="false"
+                    android:src="@drawable/pinetanzaku"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/plumtanzaku" />
+
+                <ImageView
+                    android:id="@+id/pineNormalTwo2"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/pinenormaltwo"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/plumnormaltwo" />
+
+                <ImageView
+                    android:id="@+id/pineNormalOne2"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/pinenormalone"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/plumnormalone"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="160dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
 
     <Button
         android:id="@+id/button"

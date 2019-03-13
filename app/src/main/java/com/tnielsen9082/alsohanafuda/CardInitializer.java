@@ -527,7 +527,7 @@ public class CardInitializer extends AppCompatActivity {
         combos.setOnClickListener(comboButton);
         for (int i = 0; i < trickButtons.length; i++) {
             //this one has to be made within the for loop because it uses i]
-            trickButtons[i].setOnClickListener(new ShowTakenTricks(this, tricks,i, endTurn));
+            trickButtons[i].setOnClickListener(new ShowTakenTricks(this, tricks,i, endTurn, names));
         }
         for (int i = 0; i < cards.size(); i++) {
             cards.get(i).setOnTouchListener(dragger);

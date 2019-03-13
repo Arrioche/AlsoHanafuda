@@ -13,57 +13,65 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/plumbird" />
 
     <EditText
         android:id="@+id/playerOneName"
+        android:padding="8dp"
+        android:background="@android:color/darker_gray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:imeOptions="actionDone"
         android:layout_marginStart="32dp"
+        android:gravity="center"
         android:layout_marginTop="125dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Name"
+        tools:text="Enter Name"
         android:autofillHints="Player One" />
 
     <EditText
         android:id="@+id/playerTwoName"
+        android:padding="8dp"
+        android:background="@android:color/darker_gray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:imeOptions="actionDone"
         android:layout_marginTop="125dp"
         android:layout_marginEnd="32dp"
+        android:gravity="center"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Name"
+        tools:text="Enter Name"
         android:autofillHints="Player Two" />
 
     <EditText
         android:id="@+id/playerThreeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:imeOptions="actionDone"
         android:layout_marginBottom="32dp"
+        android:autofillHints="Player Three"
+        android:gravity="center"
+        android:padding="8dp"
+        android:background="@android:color/darker_gray"
         android:ems="10"
+        android:imeOptions="actionDone"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="Name"
-
-        android:autofillHints="Player Three" />
+        tools:text="Enter Name" />
 
     <TextView
         android:id="@+id/playerOneTitle"
+        android:padding="8dp"
+        android:background="@android:color/darker_gray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -76,6 +84,8 @@
 
     <Switch
         android:id="@+id/rainSwitch"
+        android:padding="8dp"
+        android:background="@android:color/darker_gray"
         android:layout_width="100dp"
         android:layout_height="31dp"
         android:layout_marginStart="8dp"
@@ -89,6 +99,8 @@
 
     <TextView
         android:id="@+id/playerTwoTitle"
+        android:padding="8dp"
+        android:background="@android:color/darker_gray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -101,6 +113,8 @@
 
     <TextView
         android:id="@+id/playerThreeTitle"
+        android:padding="8dp"
+        android:background="@android:color/darker_gray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -111,31 +125,58 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/instructions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Enter Names"
-        app:layout_constraintBottom_toTopOf="@+id/playersNamesDone"
-        app:layout_constraintEnd_toStartOf="@+id/playersNamesDone"
-        app:layout_constraintStart_toEndOf="@+id/playersNamesDone" />
-
     <Button
         android:id="@+id/playersNamesDone"
+        style="?android:attr/buttonBarButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:stateListAnimator="@null"
         android:text="Done"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.861"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/playerTwoName" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/loadingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/loading"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/peonytanzaku" />
+
+        <TextView
+            android:id="@+id/loadingText"
+            android:layout_width="243dp"
+            android:layout_height="119dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@android:color/holo_green_light"
+            android:gravity="center"
+            android:text="Loading"
+            android:textAllCaps="true"
+            android:textSize="50sp"
+            app:layout_constraintBottom_toBottomOf="@+id/loading"
+            app:layout_constraintEnd_toEndOf="@+id/loading"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

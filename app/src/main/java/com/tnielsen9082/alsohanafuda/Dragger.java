@@ -162,27 +162,13 @@ public final class Dragger implements View.OnTouchListener {
                 }
                 //now if no drag happened
                if(motionEvent.getAction()==1&&!dragged){
-                    //go through the arrays of regular and display cards
-                    for (int i = 0; i < inspect.size(); i++) {
-                        //if the touched card matches a regular card
-                        if(cards.get(i)==view){
-                            //display that regular card's counterpart
-                            //both arrays have the cards in the same order so this works
-                            showCard.setImageDrawable(inspect.get(i));
-                            desc.setText(cardDescs.get(i));
-                            ((View)showCard.getParent()).setVisibility(View.VISIBLE);
-                        }
-                    }
+                   showCard(view);
                 }
                 break;
             default:
                 //stops if there is no more dragging
                 break;
         }
-        //this allows you to receive updates on the status of the dragged thing
-        //essentially
-        //returning true means that it consumes that motionEvent and continues to use it
-        //returning false would mean the motionEvent is passed on to any other listeners on the view
         return true;
     }
 
@@ -198,7 +184,19 @@ public final class Dragger implements View.OnTouchListener {
     int getAdvancer(){
         return advancer;
     }
-
+    private void showCard(View view){
+        //go through the arrays of regular and display cards
+        for (int i = 0; i < inspect.size(); i++) {
+            //if the touched card matches a regular card
+            if(cards.get(i)==view){
+                //display that regular card's counterpart
+                //both arrays have the cards in the same order so this works
+                showCard.setImageDrawable(inspect.get(i));
+                desc.setText(cardDescs.get(i));
+                ((View)showCard.getParent()).setVisibility(View.VISIBLE);
+            }
+        }
+    }
     //this is the function that takes the x-distance and the y-distance
     //and turns it into absolute distance
     private float absoluteDistance(float X, float Y){

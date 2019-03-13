@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
+import android.text.Layout;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +23,7 @@ public class Namer extends AppCompatActivity {
     String nameTwo="Player Two";
     String nameThree="Player Three";
     boolean rain = false;
+    private Handler mHandler = new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,19 +36,24 @@ public class Namer extends AppCompatActivity {
         Button done = findViewById(R.id.playersNamesDone);
         done.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //starts the cardInitializer
-                Intent myIntent = new Intent(Namer.this, CardInitializer.class);
-                //you can put data in the intent
-                myIntent.putExtra("scoreOne",0);
-                myIntent.putExtra("scoreTwo",0);
-                myIntent.putExtra("scoreThree",0);
-                myIntent.putExtra("pOne",nameOne);
-                myIntent.putExtra("pTwo",nameTwo);
-                myIntent.putExtra("pThree",nameThree);
-                myIntent.putExtra("rainStatus",rain);
-                myIntent.putExtra("turnCounter",0);
-                Namer.this.startActivity(myIntent);
-                Namer.this.finish();
+                (findViewById(R.id.loadingLayout)).setVisibility(View.VISIBLE);
+                mHandler.postDelayed(new Runnable() {
+                    public void run() {
+                        //starts the cardInitializer
+                        Intent myIntent = new Intent(Namer.this, CardInitializer.class);
+                        //you can put data in the intent
+                        myIntent.putExtra("scoreOne",0);
+                        myIntent.putExtra("scoreTwo",0);
+                        myIntent.putExtra("scoreThree",0);
+                        myIntent.putExtra("pOne",nameOne);
+                        myIntent.putExtra("pTwo",nameTwo);
+                        myIntent.putExtra("pThree",nameThree);
+                        myIntent.putExtra("rainStatus",rain);
+                        myIntent.putExtra("turnCounter",0);
+                        Namer.this.startActivity(myIntent);
+                        Namer.this.finish();
+                    }
+                }, 10);
             }
         });
         EditText playerOne = findViewById(R.id.playerOneName);

@@ -15,7 +15,8 @@ public class ShowTakenTricks implements View.OnClickListener{
     private TextView[] scores= new TextView[3];
     private TurnEnder turnEnder;
     private TextView scoreStarter;
-    ShowTakenTricks(Activity activity,LinearLayout[] takenTricksTag,int playerTag, TurnEnder turnEnderTag){
+    private String[] names;
+    ShowTakenTricks(Activity activity,LinearLayout[] takenTricksTag,int playerTag, TurnEnder turnEnderTag, String[] namesTag){
         buttons = activity.findViewById(R.id.trickButtons);
         takenTricks = takenTricksTag;
         dismiss=activity.findViewById(R.id.dismissal);
@@ -25,7 +26,7 @@ public class ShowTakenTricks implements View.OnClickListener{
         scores[1]=activity.findViewById(R.id.score2);
         scores[2]=activity.findViewById(R.id.score3);
         scoreStarter=activity.findViewById(R.id.scoreStarter);
-
+        names=namesTag;
     }
     @Override
     public void onClick(View v) {
@@ -40,7 +41,7 @@ public class ShowTakenTricks implements View.OnClickListener{
         scores[(handNum+player+2)%3].setVisibility(View.VISIBLE);
         dismiss.setVisibility(View.VISIBLE);
         if((handNum+player)%3!=handNum){
-            scoreStarter.setText(R.string.their_score);
+            scoreStarter.setText(names[(handNum+player+2)%3]+"'s Score:");
         }
     }
 }

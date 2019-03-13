@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import static android.support.v4.content.ContextCompat.startActivity;
 
 public class StartScreen extends AppCompatActivity {
+    private Handler mHandler = new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,27 +25,35 @@ public class StartScreen extends AppCompatActivity {
         Button draw = findViewById(R.id.start);
         draw.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //starts the cardInitializer
-                Intent myIntent = new Intent(StartScreen.this, Namer.class);
-                StartScreen.this.startActivity(myIntent);
-                StartScreen.this.finish();
+                (findViewById(R.id.loadingLayoutStart)).setVisibility(View.VISIBLE);
+                mHandler.postDelayed(new Runnable() {
+                    public void run() {
+                        Intent myIntent = new Intent(StartScreen.this, Namer.class);
+                        StartScreen.this.startActivity(myIntent);
+                        StartScreen.this.finish();
+                    }
+                }, 10);
             }
         });
         Button rules = findViewById(R.id.rules);
         rules.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //starts the cardInitializer
-                Intent myIntent = new Intent(StartScreen.this, Tutorial.class);
-                myIntent.putExtra("scoreOne",0);
-                myIntent.putExtra("scoreTwo",0);
-                myIntent.putExtra("scoreThree",0);
-                myIntent.putExtra("pOne","One");
-                myIntent.putExtra("pTwo","Two");
-                myIntent.putExtra("pThree","Three");
-                myIntent.putExtra("rainStatus",false);
-                myIntent.putExtra("turnCounter",0);
-                StartScreen.this.startActivity(myIntent);
-                StartScreen.this.finish();
+                (findViewById(R.id.loadingLayoutStart)).setVisibility(View.VISIBLE);
+                mHandler.postDelayed(new Runnable() {
+                    public void run() {
+                        Intent myIntent = new Intent(StartScreen.this, Tutorial.class);
+                        myIntent.putExtra("scoreOne",0);
+                        myIntent.putExtra("scoreTwo",0);
+                        myIntent.putExtra("scoreThree",0);
+                        myIntent.putExtra("pOne","One");
+                        myIntent.putExtra("pTwo","Two");
+                        myIntent.putExtra("pThree","Three");
+                        myIntent.putExtra("rainStatus",false);
+                        myIntent.putExtra("turnCounter",0);
+                        StartScreen.this.startActivity(myIntent);
+                        StartScreen.this.finish();
+                    }
+                }, 10);
             }
         });
     }
