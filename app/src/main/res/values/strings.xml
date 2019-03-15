@@ -48,6 +48,7 @@
 
     <string name="l01desc">December: Plain Paulownia\n\nValue: 1 point\n\nThis card is used in the Straight Paulownia combo.</string>
     <string name="l20desc">December: Paulownia &amp; Phoenix\n\nValue: 20 points\n\nThis card is used in the Five Bright, Four Bright, Crane-Phoenix-Moon, and Straight Paulownia combos.</string>
+
     <string name="draw">Draw</string>
     <string name="h20">h20</string>
     <string name="l20">l20</string>
@@ -66,7 +67,6 @@
     <string name="g10">g10</string>
     <string name="h01">h01</string>
     <string name="g05">g05</string>
-    <string name="g0">g0`</string>
     <string name="g01">g01</string>
     <string name="f10">f10</string>
     <string name="f05">f05</string>
@@ -108,4 +108,19 @@
     <string name="straight_wisteria">Straight Wisteria: 10 points. All four Wisteria cards.</string>
     <string name="straight_paulownia">Straight Paulownia: 10 points. All four Paulownia cards.</string>
     <string name="straight_rain">Straight Rain: 10 points. All four Rain cards.</string>
+
+    <string name="pinedesc">January/Pine Tree: 1 Crane (20 points), 1 Tanzaku with Writing (5 points), and 2 Plain (1 point)</string>
+    <string name="plumdesc">February/Plum Tree: 1 Nightingale (10 points), 1 Tanzaku with Writing (5 points), and 2 Plain (1 point)</string>
+    <string name="cherrydesc">March/Cherry Tree: 1 Curtain (20 points), 1 Tanzaku with Writing (5 points), and 2 Plain (1 point)</string>
+    <string name="wistdesc">April/Wisteria Tree: 1 Cuckoo (10 points), 1 Plain Red Tanzaku (5 points), and 2 Plain (1 point)</string>
+    <string name="irisdesc">May/Iris: 1 Bridge (10 points), 1 Plain Red Tanzaku (5 points), and 2 Plain (1 point)</string>
+    <string name="peonydesc">June/Peony: 1 Butterflies (10 points), 1 Plain Blue Tanzaku (5 points), and 2 Plain (1 point)</string>
+    <string name="cloverdesc">July/Bush Clover: 1 Wild Boar (20 points), 1 Plain Red Tanzaku (5 points), and 2 Plain (1 point)</string>
+    <string name="pampasdesc">August/Pampas Grass: 1 Full Moon (20 points), 1 Wild Geese (10 points), and 2 Plain (1 point)</string>
+    <string name="chrysdesc">September/Chrysanthemum: 1 Wine Cup (20 points), 1 Plain Blue Tanzaku (5 points), and 2 Plain (1 point)</string>
+    <string name="mapledesc">October/Maple Tree: 1 Deer (20 points), 1 Plain Blue Tanzaku (5 points), and 2 Plain (1 point)</string>
+    <string name="raindesc">November/Willow or Rain: 1 Poet (20 points), 1 Swallow (10 points), 1 Tanzaku (5 points), and 1 Lightning (1 point)</string>
+    <string name="pauldesc">December/Paulownia Tree: 1 Phoenix (20 points) and 3 Plain (1 point)</string>
+
+
 </resources>

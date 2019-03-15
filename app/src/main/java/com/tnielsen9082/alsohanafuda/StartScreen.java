@@ -56,6 +56,19 @@ public class StartScreen extends AppCompatActivity {
                 }, 10);
             }
         });
+        Button cardGallery = findViewById(R.id.cardIntro);
+        cardGallery.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                (findViewById(R.id.loadingLayoutStart)).setVisibility(View.VISIBLE);
+                mHandler.postDelayed(new Runnable() {
+                    public void run() {
+                        Intent myIntent = new Intent(StartScreen.this, Gallery.class);
+                        StartScreen.this.startActivity(myIntent);
+                        StartScreen.this.finish();
+                    }
+                }, 10);
+            }
+        });
     }
     @Override
     public void onBackPressed() {
