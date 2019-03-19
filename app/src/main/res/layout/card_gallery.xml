@@ -6,11 +6,148 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/cardG37"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:adjustViewBounds="true"
+            android:cropToPadding="false"
+            android:src="@drawable/mapletanzaku"
+            android:visibility="visible"
+            app:srcCompat="@drawable/mapletanzaku" />
+
+        <ImageView
+            android:id="@+id/cardG39"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/maplenormaltwo"
+            android:visibility="visible"
+            app:srcCompat="@drawable/maplenormaltwo"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="160dp" />
+
+        <ImageView
+            android:id="@+id/cardG36"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/mapledeer"
+            android:visibility="visible"
+            app:srcCompat="@drawable/mapledeer" />
+
+        <ImageView
+            android:id="@+id/cardG38"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/maplenormalone"
+            android:visibility="visible"
+            app:srcCompat="@drawable/maplenormalone" />
+
+        <ImageView
+            android:id="@+id/cardG40"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/rainpoet"
+            android:visibility="visible"
+            app:srcCompat="@drawable/rainpoet" />
+
+        <ImageView
+            android:id="@+id/cardG42"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/raintanzaku"
+            android:visibility="visible"
+            app:srcCompat="@drawable/raintanzaku" />
+
+        <ImageView
+            android:id="@+id/cardG41"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:adjustViewBounds="true"
+            android:cropToPadding="false"
+            android:src="@drawable/rainbird"
+            android:visibility="visible"
+            app:srcCompat="@drawable/rainbird" />
+
+        <ImageView
+            android:id="@+id/cardG43"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/rainlightning"
+            android:visibility="visible"
+            app:srcCompat="@drawable/rainlightning"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="160dp" />
+
+        <ImageView
+            android:id="@+id/cardG45"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:adjustViewBounds="true"
+            android:cropToPadding="false"
+            android:src="@drawable/paulnormalone"
+            android:visibility="visible"
+            app:srcCompat="@drawable/paulnormalone" />
+
+        <ImageView
+            android:id="@+id/cardG47"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/paulnormalthree"
+            android:visibility="visible"
+            app:srcCompat="@drawable/paulnormalthree"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="160dp" />
+
+        <ImageView
+            android:id="@+id/cardG46"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/paulnormaltwo"
+            android:visibility="visible"
+            app:srcCompat="@drawable/paulnormaltwo" />
+
+        <ImageView
+            android:id="@+id/cardG44"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/paulphoenix"
+            android:visibility="visible"
+            app:srcCompat="@drawable/paulphoenix" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/galleryBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TableLayout
@@ -27,17 +164,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+
             <TableRow
+                android:id="@+id/janTitleRow"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center">
+                android:gravity="center"
+                android:visibility="visible">
 
                 <TextView
                     android:id="@+id/janTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
                     android:gravity="center"
-                    android:text="January or Pine Tree" />
+                    android:text="January and Pine Tree"
+                    android:textSize="30sp" />
             </TableRow>
 
             <TableRow
@@ -46,17 +188,22 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_weight="1"
-                android:gravity="center">
+                android:gravity="center"
+                android:visibility="visible">
 
                 <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
                     android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/cardG"
-                        android:layout_width="65dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:adjustViewBounds="true"
                         android:src="@drawable/pinecrane"
                         android:visibility="visible"
@@ -64,20 +211,25 @@
 
                     <TextView
                         android:id="@+id/textView2"
-                        android:layout_width="63dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Pine Tree and Crane ( 20 points)" />
+                        android:gravity="center"
+                        android:text="Pine Tree and Crane \n(20 points)" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
                     android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/cardG1"
-                        android:layout_width="65dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:adjustViewBounds="true"
                         android:src="@drawable/pinetanzaku"
                         android:visibility="visible"
@@ -87,18 +239,23 @@
                         android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:gravity="center"
+                        android:text="Pine Tree and Tanzaku\n(10 points)" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
                     android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/cardG2"
-                        android:layout_width="65dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:adjustViewBounds="true"
                         android:src="@drawable/pinenormalone"
                         android:visibility="visible"
@@ -108,17 +265,23 @@
                         android:id="@+id/textView6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:gravity="center"
+                        android:text="Plain Pine Tree\n(1 point)" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
                     android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/cardG3"
-                        android:layout_width="65dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:adjustViewBounds="true"
                         android:src="@drawable/pinenormaltwo"
                         android:visibility="visible"
@@ -128,27 +291,48 @@
                         android:id="@+id/textView7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:gravity="center"
+                        android:text="Plain Pine Tree\n(1 point)" />
                 </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/febTitleRow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/febTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    android:text="February and Plum Blossom"
+                    android:textSize="30sp" />
             </TableRow>
 
             <TableRow
                 android:id="@+id/row2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:gravity="center">
+                android:layout_weight="1"
+                android:gravity="center"
+                android:visibility="visible">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/cardG4"
-                        android:layout_width="65dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
+                        android:layout_margin="5dp"
                         android:adjustViewBounds="true"
                         android:src="@drawable/plumbird"
                         android:visibility="visible"
@@ -158,41 +342,107 @@
                         android:id="@+id/textView3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:gravity="center"
+                        android:text="Plum Blossom and Nightingale\n(10 points)" />
                 </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/cardG5"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:cropToPadding="false"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/plumtanzaku"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/plumtanzaku" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/cardG6"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/plumnormaltwo"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/plumnormaltwo" />
+                    <ImageView
+                        android:id="@+id/cardG5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="false"
+                        android:src="@drawable/plumtanzaku"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/plumtanzaku" />
 
-                <ImageView
-                    android:id="@+id/cardG7"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/plumnormalone"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/plumnormalone"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="160dp" />
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Plum Blossom and Tanzaku\n(5 points)" />
+                </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/cardG6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="false"
+                        android:src="@drawable/plumnormaltwo"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/plumnormaltwo" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Plain Plum Blossom\n(1 point)" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/cardG7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="false"
+                        android:src="@drawable/plumnormalone"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/plumnormalone"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="160dp" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Plain Plum Blossom\n(1 point)" />
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/marTitleRow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/marTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    android:text="March and Cherry Blossom"
+                    android:textSize="30sp" />
             </TableRow>
 
             <TableRow
@@ -200,49 +450,130 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:gravity="center">
+                android:layout_weight="1"
+                android:gravity="center"
+                android:visibility="visible">
 
-                <ImageView
-                    android:id="@+id/cardG8"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/cherrycurtain"
-                    android:visibility="visible"
-                    android:layout_marginRight="5dp"
-                    app:srcCompat="@drawable/cherrycurtain" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/cardG9"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:cropToPadding="false"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/cherrytanzaku"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/cherrytanzaku" />
+                    <ImageView
+                        android:id="@+id/cardG8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/cherrycurtain"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/cherrycurtain" />
 
-                <ImageView
-                    android:id="@+id/cardG10"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/cherrynormalone"
-                    android:layout_marginRight="5dp"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/cherrynormalone" />
+                    <TextView
+                        android:id="@+id/textView20"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Cherry Blossom and Curtain\n(20 points)" />
+                </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/cardG11"
-                    android:layout_width="65dp"
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/cardG9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="false"
+                        android:src="@drawable/cherrytanzaku"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/cherrytanzaku" />
+
+                    <TextView
+                        android:id="@+id/textView21"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Cherry Blossom and Tanzaku\n(5 points)" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/cardG10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/cherrynormalone"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/cherrynormalone" />
+
+                    <TextView
+                        android:id="@+id/textView22"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Plain Cherry Blossom\n(1 point)" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/cardG11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/cherrynormaltwo"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/cherrynormaltwo"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="160dp" />
+
+                    <TextView
+                        android:id="@+id/textView23"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Plain Cherry Blossom\n(1 point)" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/aprTitleRow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/aprTitle"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/cherrynormaltwo"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/cherrynormaltwo"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="160dp" />
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    android:text="April and Wisteria"
+                    android:textSize="30sp" />
             </TableRow>
 
             <TableRow
@@ -250,49 +581,129 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:gravity="center">
+                android:layout_weight="1"
+                android:gravity="center"
+                android:visibility="visible">
 
-                <ImageView
-                    android:id="@+id/cardG12"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/wisteriacuckoo"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/wisteriacuckoo" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/cardG13"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:cropToPadding="false"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/wisteriatanzaku"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/wisteriatanzaku" />
+                    <ImageView
+                        android:id="@+id/cardG12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/wisteriacuckoo"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/wisteriacuckoo" />
 
-                <ImageView
-                    android:id="@+id/cardG14"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/wisterianormalone"
-                    android:layout_marginRight="5dp"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/wisterianormalone" />
+                    <TextView
+                        android:id="@+id/textView24"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Wisteria and Cuckoo\n(10 points)" />
+                </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/cardG15"
-                    android:layout_width="65dp"
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/cardG13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="false"
+                        android:src="@drawable/wisteriatanzaku"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/wisteriatanzaku" />
+
+                    <TextView
+                        android:id="@+id/textView25"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Wisteria and Tanzaku\n(5 points)" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/cardG14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/wisterianormalone"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/wisterianormalone" />
+
+                    <TextView
+                        android:id="@+id/textView26"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Plain Wisteria\n(1 point)" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/cardG15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/wisterianormaltwo"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/wisterianormaltwo"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="160dp" />
+
+                    <TextView
+                        android:id="@+id/textView27"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Plain Wisteria\n(1 point)" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/mayTitleRow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/mayTitle"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/wisterianormaltwo"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/wisterianormaltwo"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="160dp" />
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    android:text="May and Iris"
+                    android:textSize="30sp" />
             </TableRow>
 
             <TableRow
@@ -300,48 +711,128 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:visibility="visible">
 
-                <ImageView
-                    android:id="@+id/cardG16"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/irisbridge"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/irisbridge" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/cardG17"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:layout_marginRight="5dp"
-                    android:cropToPadding="false"
-                    android:src="@drawable/iristanzaku"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/iristanzaku" />
+                    <ImageView
+                        android:id="@+id/cardG16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/irisbridge"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/irisbridge" />
 
-                <ImageView
-                    android:id="@+id/cardG18"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/irisnormalone"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/irisnormalone" />
+                    <TextView
+                        android:id="@+id/textView28"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Iris and Bridge\n(10 points)" />
+                </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/cardG19"
-                    android:layout_width="65dp"
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/cardG17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="false"
+                        android:src="@drawable/iristanzaku"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/iristanzaku" />
+
+                    <TextView
+                        android:id="@+id/textView29"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Iris and Tanzaku\n(5 points)" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/cardG18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/irisnormalone"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/irisnormalone" />
+
+                    <TextView
+                        android:id="@+id/textView30"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Plain Iris\n(1 point)" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/cardG19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/irisnormaltwo"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/irisnormaltwo"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="160dp" />
+
+                    <TextView
+                        android:id="@+id/textView31"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Plain Iris\n(1 point)" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/junTitleRow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/junTitle"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/irisnormaltwo"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/irisnormaltwo"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="160dp" />
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    android:text="June and Peony"
+                    android:textSize="30sp" />
             </TableRow>
 
             <TableRow
@@ -349,49 +840,128 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:visibility="visible">
 
-                <ImageView
-                    android:id="@+id/cardG20"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/peonybutterfly"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/peonybutterfly" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/cardG21"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:layout_marginRight="5dp"
-                    android:cropToPadding="false"
-                    android:src="@drawable/peonytanzaku"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/peonytanzaku" />
+                    <ImageView
+                        android:id="@+id/cardG20"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/peonybutterfly"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/peonybutterfly" />
 
-                <ImageView
-                    android:id="@+id/cardG22"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/peonynormalone"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/peonynormalone" />
+                    <TextView
+                        android:id="@+id/textView32"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Peony and Butterflies\n(10 points)" />
+                </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/cardG23"
-                    android:layout_width="65dp"
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/cardG21"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="false"
+                        android:src="@drawable/peonytanzaku"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/peonytanzaku" />
+
+                    <TextView
+                        android:id="@+id/textView33"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Peony and Tanzaku\n(5 points)" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/cardG22"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/peonynormalone"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/peonynormalone" />
+
+                    <TextView
+                        android:id="@+id/textView34"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Plain Peony\n(1 point)" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/cardG23"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/peonynormaltwo"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/peonynormaltwo"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="160dp" />
+
+                    <TextView
+                        android:id="@+id/textView35"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Plain Peony\n(1 point)" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/julTitleRow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/julTitle"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/peonynormaltwo"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/peonynormaltwo"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="160dp" />
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    android:text="July and Bush Clover"
+                    android:textSize="30sp" />
             </TableRow>
 
             <TableRow
@@ -399,62 +969,128 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:visibility="visible">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="visible">
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/cardG24"
-                        android:layout_width="65dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
+                        android:layout_margin="5dp"
                         android:adjustViewBounds="true"
                         android:src="@drawable/cloverboar"
                         android:visibility="visible"
                         app:srcCompat="@drawable/cloverboar" />
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:id="@+id/textView36"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:gravity="center"
+                        android:text="Bush Clover and Wild Boar\n(10 points)" />
                 </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/cardG25"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:adjustViewBounds="true"
-                    android:cropToPadding="false"
-                    android:src="@drawable/clovertanzaku"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/clovertanzaku" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/cardG26"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/clovernormalone"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/clovernormalone" />
+                    <ImageView
+                        android:id="@+id/cardG25"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="false"
+                        android:src="@drawable/clovertanzaku"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/clovertanzaku" />
 
-                <ImageView
-                    android:id="@+id/cardG27"
-                    android:layout_width="65dp"
+                    <TextView
+                        android:id="@+id/textView37"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Bush Clover and Tanzaku\n(5 points)" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/cardG26"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/clovernormalone"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/clovernormalone" />
+
+                    <TextView
+                        android:id="@+id/textView38"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Plain Bush Clover\n(1 point)" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/cardG27"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/clovernormaltwo"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/clovernormaltwo"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="160dp" />
+
+                    <TextView
+                        android:id="@+id/textView39"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Plain Bush Clover\n(1 point)" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/augTitleRow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/augTitle"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/clovernormaltwo"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/clovernormaltwo"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="160dp" />
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    android:text="August and Pampas Grass"
+                    android:textSize="30sp" />
             </TableRow>
 
             <TableRow
@@ -462,49 +1098,128 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:visibility="visible">
 
-                <ImageView
-                    android:id="@+id/cardG28"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/pampasmoon"
-                    android:visibility="visible"
-                    android:layout_marginRight="5dp"
-                    app:srcCompat="@drawable/pampasmoon" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/cardG29"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:cropToPadding="false"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/pampasgeese"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/pampasgeese" />
+                    <ImageView
+                        android:id="@+id/cardG28"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/pampasmoon"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/pampasmoon" />
 
-                <ImageView
-                    android:id="@+id/cardG30"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/pampasnormalone"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/pampasnormalone" />
+                    <TextView
+                        android:id="@+id/textView40"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Pampas Grass and Full Moon\n(20 points)" />
+                </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/cardG31"
-                    android:layout_width="65dp"
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/cardG29"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="false"
+                        android:src="@drawable/pampasgeese"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/pampasgeese" />
+
+                    <TextView
+                        android:id="@+id/textView41"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Pampas Grass and Geese\n(10 points)" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/cardG30"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/pampasnormalone"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/pampasnormalone" />
+
+                    <TextView
+                        android:id="@+id/textView42"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Plain Pampas Grass\n(1 point)" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/cardG31"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/pampasnormaltwo"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/pampasnormaltwo"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="160dp" />
+
+                    <TextView
+                        android:id="@+id/textView43"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Plain Pampas Grass\n(1 point)" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/sepTitleRow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/sepTitle"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/pampasnormaltwo"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/pampasnormaltwo"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="160dp" />
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    android:text="September and Chrysanthemum"
+                    android:textSize="30sp" />
             </TableRow>
 
             <TableRow
@@ -514,47 +1229,126 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center">
 
-                <ImageView
-                    android:id="@+id/cardG32"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/chryscup"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/chryscup" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/cardG33"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:cropToPadding="false"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/chrystanzaku"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/chrystanzaku" />
+                    <ImageView
+                        android:id="@+id/cardG32"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/chryscup"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/chryscup" />
 
-                <ImageView
-                    android:id="@+id/cardG34"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/chrysnormaltwo"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/chrysnormaltwo" />
+                    <TextView
+                        android:id="@+id/textView44"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:gravity="center"
+                        android:text="Chrysanthemum and Cup\n(10 points)" />
+                </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/cardG35"
-                    android:layout_width="65dp"
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/cardG33"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="false"
+                        android:src="@drawable/chrystanzaku"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/chrystanzaku" />
+
+                    <TextView
+                        android:id="@+id/textView45"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Chrysanthemum and Tanzaku\n(5 points)" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/cardG34"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/chrysnormaltwo"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/chrysnormaltwo" />
+
+                    <TextView
+                        android:id="@+id/textView46"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Plain Chrysanthemum\n(1 point)" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/cardG35"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/chrysnormalone"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/chrysnormalone"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="160dp" />
+
+                    <TextView
+                        android:id="@+id/textView47"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Plain Chrysanthemum\n(1 point)" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/octTitleRow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/octTitle"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/chrysnormalone"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/chrysnormalone"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="160dp" />
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    android:text="October and Maple Leaves"
+                    android:textSize="30sp" />
             </TableRow>
 
             <TableRow
@@ -564,47 +1358,22 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center">
 
-                <ImageView
-                    android:id="@+id/cardG36"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/mapledeer"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/mapledeer" />
+            </TableRow>
 
-                <ImageView
-                    android:id="@+id/cardG37"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:cropToPadding="false"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/mapletanzaku"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/mapletanzaku" />
+            <TableRow
+                android:id="@+id/novTitleRow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
-                <ImageView
-                    android:id="@+id/cardG38"
-                    android:layout_width="65dp"
+                <TextView
+                    android:id="@+id/novTitle"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/maplenormalone"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/maplenormalone" />
-
-                <ImageView
-                    android:id="@+id/cardG39"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/maplenormaltwo"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/maplenormaltwo"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="160dp" />
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    android:text="November and Willow or Rain"
+                    android:textSize="30sp" />
             </TableRow>
 
             <TableRow
@@ -614,47 +1383,22 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center">
 
-                <ImageView
-                    android:id="@+id/cardG40"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/rainpoet"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/rainpoet" />
+            </TableRow>
 
-                <ImageView
-                    android:id="@+id/cardG41"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:cropToPadding="false"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/rainbird"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/rainbird" />
+            <TableRow
+                android:id="@+id/decTitleRow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
-                <ImageView
-                    android:id="@+id/cardG42"
-                    android:layout_width="65dp"
+                <TextView
+                    android:id="@+id/decTitle"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/raintanzaku"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/raintanzaku" />
-
-                <ImageView
-                    android:id="@+id/cardG43"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/rainlightning"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/rainlightning"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="160dp" />
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    android:text="December and Paulownia"
+                    android:textSize="30sp" />
             </TableRow>
 
             <TableRow
@@ -665,47 +1409,6 @@
                 android:layout_marginBottom="10dp"
                 android:gravity="center">
 
-                <ImageView
-                    android:id="@+id/cardG44"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/paulphoenix"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/paulphoenix" />
-
-                <ImageView
-                    android:id="@+id/cardG45"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:adjustViewBounds="true"
-                    android:cropToPadding="false"
-                    android:src="@drawable/paulnormalone"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/paulnormalone" />
-
-                <ImageView
-                    android:id="@+id/cardG46"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/paulnormaltwo"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/paulnormaltwo" />
-
-                <ImageView
-                    android:id="@+id/cardG47"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/paulnormalthree"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/paulnormalthree"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="160dp" />
             </TableRow>
 
         </TableLayout>
