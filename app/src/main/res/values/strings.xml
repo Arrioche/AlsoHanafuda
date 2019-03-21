@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Hanafuda</string>
     <string name="card">card</string>
+
     <string name="a01desc">January: Plain Pine Tree\n\nValue: 1 point\n\nThis card is used in no combos.</string>
     <string name="a05desc">January: Pine Tree &amp; Tanzaku\n\nValue: 5 points\n\nThis card is used in the Seven Tanzaku, Six Tanzaku, and Red Lettered Tanzaku combos.</string>
     <string name="a20desc">January: Pine Tree &amp; Crane\n\nValue: 20 points\n\nThis card is used in the Five Bright, Four Bright, Three Bright, and Crane-Phoenix-Moon combos.</string>
@@ -88,6 +89,7 @@
     <string name="a01">a01</string>
 
     <string name="_0">0</string>
+    <string name="back">Back</string>
     <string name="turnback">turnBack</string>
     <string name="next_turn">Next Turn</string>
     <string name="end_turn">End Turn</string>
@@ -109,18 +111,55 @@
     <string name="straight_paulownia">Straight Paulownia: 10 points. All four Paulownia cards.</string>
     <string name="straight_rain">Straight Rain: 10 points. All four Rain cards.</string>
 
-    <string name="pinedesc">January/Pine Tree: 1 Crane (20 points), 1 Tanzaku with Writing (5 points), and 2 Plain (1 point)</string>
-    <string name="plumdesc">February/Plum Tree: 1 Nightingale (10 points), 1 Tanzaku with Writing (5 points), and 2 Plain (1 point)</string>
-    <string name="cherrydesc">March/Cherry Tree: 1 Curtain (20 points), 1 Tanzaku with Writing (5 points), and 2 Plain (1 point)</string>
-    <string name="wistdesc">April/Wisteria Tree: 1 Cuckoo (10 points), 1 Plain Red Tanzaku (5 points), and 2 Plain (1 point)</string>
-    <string name="irisdesc">May/Iris: 1 Bridge (10 points), 1 Plain Red Tanzaku (5 points), and 2 Plain (1 point)</string>
-    <string name="peonydesc">June/Peony: 1 Butterflies (10 points), 1 Plain Blue Tanzaku (5 points), and 2 Plain (1 point)</string>
-    <string name="cloverdesc">July/Bush Clover: 1 Wild Boar (20 points), 1 Plain Red Tanzaku (5 points), and 2 Plain (1 point)</string>
-    <string name="pampasdesc">August/Pampas Grass: 1 Full Moon (20 points), 1 Wild Geese (10 points), and 2 Plain (1 point)</string>
-    <string name="chrysdesc">September/Chrysanthemum: 1 Wine Cup (20 points), 1 Plain Blue Tanzaku (5 points), and 2 Plain (1 point)</string>
-    <string name="mapledesc">October/Maple Tree: 1 Deer (20 points), 1 Plain Blue Tanzaku (5 points), and 2 Plain (1 point)</string>
-    <string name="raindesc">November/Willow or Rain: 1 Poet (20 points), 1 Swallow (10 points), 1 Tanzaku (5 points), and 1 Lightning (1 point)</string>
-    <string name="pauldesc">December/Paulownia Tree: 1 Phoenix (20 points) and 3 Plain (1 point)</string>
+    <string name="january_and_pine_tree">January: Pine Tree</string>
+    <string name="february_and_plum_blossom">February: Plum Blossom</string>
+    <string name="march_and_cherry_blossom">March: Cherry Blossom</string>
+    <string name="april_and_wisteria">April: Wisteria</string>
+    <string name="may_and_iris">May: Iris</string>
+    <string name="june_and_peony">June: Peony</string>
+    <string name="july_and_bush_clover">July: Bush Clover</string>
+    <string name="august_and_pampas_grass">August: Pampas Grass</string>
+    <string name="september_and_chrysanthemum">September: Chrysanthemum</string>
+    <string name="october_and_maple_leaves">October: Maple Leaves</string>
+    <string name="november_and_willow_or_rain">November: Willow or Rain</string>
+    <string name="december_and_paulownia">December: Paulownia</string>
+
+    <string name="pinecranedesc">Pine Tree and Crane\n(20 points)</string>
+    <string name="pinetanzakudesc">Pine Tree and Tanzaku\n(10 points)</string>
+    <string name="plainpinedesc">Plain Pine Tree\n(1 point)</string>
+    <string name="plumbirdesc">Plum Blossom and Nightingale\n(10 points)</string>
+    <string name="plumtanzakudesc">Plum Blossom and Tanzaku\n(5 points)</string>
+    <string name="plainplumdesc">Plain Plum Blossom\n(1 point)</string>
+    <string name="cherrycurtaindesc">Cherry Blossom and Curtain\n(20 points)</string>
+    <string name="cherrytanzakudesc">Cherry Blossom and Tanzaku\n(5 points)</string>
+    <string name="plaincherrydesc">Plain Cherry Blossom\n(1 point)</string>
+    <string name="wistbirddesc">Wisteria and Cuckoo\n(10 points)</string>
+    <string name="wisttanzakudesc">Wisteria and Tanzaku\n(5 points)</string>
+    <string name="plainwistdesc">Plain Wisteria\n(1 point)</string>
+    <string name="irisbridgedesc">Iris and Bridge\n(10 points)</string>
+    <string name="iristanzakudesc">Iris and Tanzaku\n(5 points)</string>
+    <string name="plainirisdesc">Plain Iris\n(1 point)</string>
+    <string name="peonybutterfliesdesc">Peony and Butterflies\n(10 points)</string>
+    <string name="peonytanzakudesc">Peony and Tanzaku\n(5 points)</string>
+    <string name="plainpeonydesc">Plain Peony\n(1 point)</string>
+    <string name="cloverboardesc">Bush Clover and Wild Boar\n(10 points)</string>
+    <string name="clovertanzakudesc">Bush Clover and Tanzaku\n(5 points)</string>
+    <string name="plaincloverdesc">Plain Bush Clover\n(1 point)</string>
+    <string name="pampasmoondesc">Pampas Grass and Full Moon\n(20 points)</string>
+    <string name="pampasgeesedesc">Pampas Grass and Geese\n(10 points)</string>
+    <string name="plainpampasdesc">Plain Pampas Grass\n(1 point)</string>
+    <string name="chryscupdesc">Chrysanthemum and Cup\n(10 points)</string>
+    <string name="chrystanzakudesc">Chrysanthemum and Tanzaku\n(5 points)</string>
+    <string name="plainchrysdesc">Plain Chrysanthemum\n(1 point)</string>
+    <string name="mapledeerdesc">Maple Leaves and Deer\n(10 points)</string>
+    <string name="mapletanzakudesc">Maple Leaves and Tanzaku\n(5 points)</string>
+    <string name="plainmapledesc">Plain Maple Leaves\n(1 point)</string>
+    <string name="rainpoetdesc">Rain and Poet\n(20 points)</string>
+    <string name="rainbirddesc">Rain and Swallow\n(10 points)</string>
+    <string name="raintanzakudesc">Rain and Tanzaku\n(5 points)</string>
+    <string name="rainlightningdesc">Rain and Lightning\n(1 point)</string>
+    <string name="paulphoenixdesc">Paulownia and Phoenix\n(20 points)</string>
+    <string name="plainpauldesc">Plain Paulownia\n(1 point)</string>
 
 
 </resources>
