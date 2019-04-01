@@ -17,5 +17,14 @@ public class ComboDisplay extends AppCompatActivity {
         //locks it as landscape
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         getWindow().getDecorView().setBackgroundColor(Color.BLACK);
+        Button backs;
+        backs = findViewById(R.id.comboBack);
+        backs.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(ComboDisplay.this, StartScreen.class);
+                ComboDisplay.this.startActivity(i);
+                ComboDisplay.this.finish();
+            }
+        });
     }
 }

@@ -13,9 +13,7 @@ import android.widget.TextView;
 
 public class FinalScorer extends AppCompatActivity {
     private static final String TAG = "MainActivity";
-    private Intent intention;
     private String[] scoresInit =new String[3];
-    private TextView[] scores = new TextView[3];
     private String[] names= new String[3];
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,8 +24,8 @@ public class FinalScorer extends AppCompatActivity {
         getWindow().getDecorView().setBackgroundColor(Color.CYAN);
         //locks it as landscape
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        intention=getIntent();
-        Bundle bundle = intention.getExtras();
+        Intent intention = getIntent();
+        final Bundle bundle = intention.getExtras();
         if(bundle!=null) {
             scoresInit[0] = bundle.get("scoreOne") + "";
             scoresInit[1] = bundle.get("scoreTwo") + "";
@@ -57,6 +55,23 @@ public class FinalScorer extends AppCompatActivity {
         ((TextView)findViewById(R.id.PThreeFSNum)).setText(scoresInit[2]);
         Button nextRound = findViewById(R.id.restart);
         nextRound.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //starts the cardInitializer
+                Intent myIntent = new Intent(FinalScorer.this, CardInitializer.class);
+                myIntent.putExtra("scoreOne",0);
+                myIntent.putExtra("scoreTwo",0);
+                myIntent.putExtra("scoreThree",0);
+                myIntent.putExtra("pOne",names[0]);
+                myIntent.putExtra("pTwo",names[1]);
+                myIntent.putExtra("pThree",names[2]);
+                myIntent.putExtra("rainStatus",(boolean)bundle.get("rainStatus"));
+                myIntent.putExtra("turnCounter",0);
+                FinalScorer.this.startActivity(myIntent);
+                FinalScorer.this.finish();
+            }
+        });
+        Button mainMenu = findViewById(R.id.mainMenu);
+        mainMenu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //starts the cardInitializer
                 Intent myIntent = new Intent(FinalScorer.this, StartScreen.class);

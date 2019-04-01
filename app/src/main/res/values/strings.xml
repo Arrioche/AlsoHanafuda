@@ -160,6 +160,8 @@
     <string name="rainlightningdesc">Rain and Lightning\n(1 point)</string>
     <string name="paulphoenixdesc">Paulownia and Phoenix\n(20 points)</string>
     <string name="plainpauldesc">Plain Paulownia\n(1 point)</string>
+    <string name="card_gallery">Card Gallery</string>
+    <string name="combos">Combos</string>
 
 
 </resources>

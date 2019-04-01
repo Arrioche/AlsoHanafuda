@@ -7,6 +7,7 @@
     android:layout_height="match_parent">
 
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="32dp"
@@ -14,10 +15,12 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/customborder"
-        app:layout_constraintBottom_toTopOf="@+id/galleryBack"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/galleryBack">
 
         <TableLayout
             android:id="@+id/cardGrid"
@@ -1678,6 +1681,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
                     android:layout_weight="1"
                     android:gravity="center|top"
                     android:orientation="vertical">
@@ -1697,6 +1701,7 @@
                         android:id="@+id/textView17"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
                         android:gravity="center"
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp"
@@ -1707,6 +1712,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
                     android:layout_weight="1"
                     android:gravity="center|top"
                     android:orientation="vertical">
@@ -1727,6 +1733,7 @@
                         android:id="@+id/textView18"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
                         android:gravity="center"
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp"
@@ -1737,6 +1744,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
                     android:layout_weight="1"
                     android:gravity="center|top"
                     android:orientation="vertical">
@@ -1766,6 +1774,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
                     android:layout_weight="1"
                     android:gravity="center|top"
                     android:orientation="vertical">
@@ -1795,17 +1804,43 @@
                 </LinearLayout>
             </TableRow>
 
+            <TableRow
+                android:id="@+id/filler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center|top"></TableRow>
+
         </TableLayout>
     </ScrollView>
 
     <Button
         android:id="@+id/galleryBack"
         style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="64dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/back"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView50"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:text="@string/card_gallery"
+        android:textAllCaps="true"
+        android:textColor="@android:color/background_dark"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

@@ -119,17 +119,12 @@ public class CardInitializer extends AppCompatActivity {
         //draws the cards
         drawCards();
     }
-    //this disables the back button
     @Override
     public void onBackPressed() {
         //do nothing
     }
-    //this pulls all the data out of the bundle
-    //this is called from onCreate in the same class
     public String[] bundleExtractor(Bundle bundle){
-        //create the array of player's starting scores
         String[] scoresInit = new String[3];
-        //if there is a bundle
         if(bundle!=null) {
             //extract the player's scores
             scoresInit[0] = bundle.get("scoreOne") + "";
@@ -141,7 +136,6 @@ public class CardInitializer extends AppCompatActivity {
             names[1]=bundle.get("pTwo")+"";
             names[2]=bundle.get("pThree")+"";
         }
-        //if there is no bundle passed in
         else{
             //set default scores to 0
             scoresInit[0] = 0+"";
@@ -159,8 +153,6 @@ public class CardInitializer extends AppCompatActivity {
                 scoresInit[i]=0+"";
             }
         }
-        //set whether the rain combo is on or not
-        //see countUp for more info on that
         wipe=(boolean)bundle.get("rainStatus");
         //gets the number of turns that it has been
         turnCount=(int)bundle.get("turnCounter");
@@ -170,11 +162,10 @@ public class CardInitializer extends AppCompatActivity {
     }
     //this ends the activity and calls the next one
     //it transfers over all the data
-    //this is called from onClick in the TurnClicker class
     public void goToScore(){
         Intent myIntent;
         //end it at <11 to get 12 rounds
-        if(turnCount<2) {
+        if(turnCount<1) {
             //if there are still rounds remaining aim the intent to the regular scorer
             myIntent = new Intent(CardInitializer.this, Scorer.class);
         }
@@ -217,11 +208,8 @@ public class CardInitializer extends AppCompatActivity {
         for (int i = 0; i < 3; i++) {
             //and for their seven cards
             for (int j = 0; j < 7; j++) {
-                //select a random imageView from the deck
                 View card= drawPile.getChildAt((int)(Math.random()*(drawPile.getChildCount()-1)));
-                //remove it from the draw pile
                 drawPile.removeView(card);
-                //put it in the current hand
                 hands[i].addView(card);
             }
         }
@@ -235,30 +223,21 @@ public class CardInitializer extends AppCompatActivity {
             //this would softlock the game so we want to avoid it
             int four =0;
             for (int j = 0; j < board.getChildCount(); j++) {
-                //for each card on the board that is the same suit as the randomly selected card
                 if (board.getChildAt(j).getContentDescription().charAt(0)==card.getContentDescription().charAt(0)){
-                    //add one to the counter
                     four++;
                 }
             }
-            //if three cards match the fourth card
             if (four==3){
-                //subtract one from i
-                //and run the loop again
-                //do not put the fourth card in the board
                 i--;
             }
             else{
-                //remove it from the draw pile
                 drawPile.removeView(card);
-                //put it in the current hand
                 board.addView(card);
             }
         }
     }
     //this sets up the arrays of card ImageViews, card Drawables, and card descriptions
     //as well as the trick layouts and score TextViews
-    //it's called from onCreate in the same class
     public void arraySetup(){
         //here we take each ImageView of each card and put them in an array for easy access
         //pine
