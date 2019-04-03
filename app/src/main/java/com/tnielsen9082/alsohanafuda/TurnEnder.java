@@ -1,12 +1,9 @@
 package com.tnielsen9082.alsohanafuda;
 
-import android.app.Activity;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 //this is
 //in retrospect
@@ -45,7 +42,7 @@ public class TurnEnder implements View.OnClickListener{
     private HideTakenTricks trickHider;
     private TurnRotator turnRotator;
     //this assigns all of those variables
-    //it is called from the CardInitializer class
+    //it is called from the MainGame class
     public void id(AppCompatActivity activity, LinearLayout[] handsTag,HideTakenTricks trickHiderTag, TurnRotator turnRotatorTag){
         cardInitializer =activity;
         hands=handsTag;
@@ -93,7 +90,7 @@ public class TurnEnder implements View.OnClickListener{
                 //if no hand had cards left
                 if(done) {
                     //call the activity ender on cardInitializer
-                    ((CardInitializer)cardInitializer).goToScore();
+                    ((MainGame)cardInitializer).goToScore();
                 }
                 else {
                     //call the dropper's rotate turns function

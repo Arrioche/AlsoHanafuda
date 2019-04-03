@@ -9,8 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 public class Scorer extends AppCompatActivity {
     private Intent intention;
     private String[] names = new String[3];
@@ -58,7 +56,7 @@ public class Scorer extends AppCompatActivity {
         nextRound.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //starts the cardInitializer
-                Intent myIntent = new Intent(Scorer.this, CardInitializer.class);
+                Intent myIntent = new Intent(Scorer.this, MainGame.class);
                 //you can put data in the intent
                 myIntent.putExtra("scoreOne", scores[0]);
                 myIntent.putExtra("scoreTwo", scores[1]);
@@ -72,6 +70,14 @@ public class Scorer extends AppCompatActivity {
                 Scorer.this.finish();
             }
         });
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        View decorView = getWindow().getDecorView();
+        // Hide the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
     }
     @Override
     public void onBackPressed() {

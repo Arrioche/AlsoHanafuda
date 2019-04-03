@@ -5,23 +5,19 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
-import android.text.Layout;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
-import android.widget.ToggleButton;
 
 public class Namer extends AppCompatActivity {
-    String nameOne="Player One";
-    String nameTwo="Player Two";
-    String nameThree="Player Three";
+    String nameOne;
+    String nameTwo;
+    String nameThree;
     boolean rain = false;
     private Handler mHandler = new Handler();
     @Override
@@ -40,24 +36,38 @@ public class Namer extends AppCompatActivity {
                 mHandler.postDelayed(new Runnable() {
                     public void run() {
                         //starts the cardInitializer
-                        Intent myIntent = new Intent(Namer.this, CardInitializer.class);
+                        Intent myIntent = new Intent(Namer.this, MainGame.class);
                         //you can put data in the intent
                         myIntent.putExtra("scoreOne",0);
                         myIntent.putExtra("scoreTwo",0);
                         myIntent.putExtra("scoreThree",0);
-                        myIntent.putExtra("pOne",nameOne);
-                        myIntent.putExtra("pTwo",nameTwo);
-                        myIntent.putExtra("pThree",nameThree);
+                        if(nameOne.length()!=0){
+                            myIntent.putExtra("pOne",nameOne);
+                        }
+                        else{
+                            myIntent.putExtra("pOne","Player One");
+                        }
+                        if(nameTwo.length()!=0){
+                            myIntent.putExtra("pTwo",nameTwo);
+                        }
+                        else{
+                            myIntent.putExtra("pTwo","Player Two");
+                        }
+                        if(nameThree.length()!=0){
+                            myIntent.putExtra("pThree",nameThree);
+                        }
+                        else{
+                            myIntent.putExtra("pThree","Player Three");
+                        }
                         myIntent.putExtra("rainStatus",rain);
                         myIntent.putExtra("turnCounter",0);
                         Namer.this.startActivity(myIntent);
                         Namer.this.finish();
                     }
-                }, 10);
+                }, 20);
             }
         });
         EditText playerOne = findViewById(R.id.playerOneName);
-        playerOne.setText("Player One");
         playerOne.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -75,7 +85,6 @@ public class Namer extends AppCompatActivity {
             }
         });
         EditText playerTwo = findViewById(R.id.playerTwoName);
-        playerTwo.setText("Player Two");
         playerTwo.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -93,7 +102,6 @@ public class Namer extends AppCompatActivity {
             }
         });
         EditText playerThree = findViewById(R.id.playerThreeName);
-        playerThree.setText("Player Three");
         playerThree.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -121,6 +129,14 @@ public class Namer extends AppCompatActivity {
             }
         });
 
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        View decorView = getWindow().getDecorView();
+        // Hide the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
     }
     @Override
     public void onBackPressed() {

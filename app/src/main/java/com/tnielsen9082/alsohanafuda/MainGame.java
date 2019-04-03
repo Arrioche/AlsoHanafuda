@@ -71,7 +71,7 @@ import java.util.ArrayList;
 //as well as a description of the card
 //tap on this to dismiss it
 
-public class CardInitializer extends AppCompatActivity {
+public class MainGame extends AppCompatActivity {
     //the list of all the cards
     ArrayList<View> cards = new ArrayList<>();
     //the list of the cards that display when you click on a card
@@ -123,6 +123,14 @@ public class CardInitializer extends AppCompatActivity {
     public void onBackPressed() {
         //do nothing
     }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        View decorView = getWindow().getDecorView();
+        // Hide the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+    }
     public String[] bundleExtractor(Bundle bundle){
         String[] scoresInit = new String[3];
         if(bundle!=null) {
@@ -167,11 +175,11 @@ public class CardInitializer extends AppCompatActivity {
         //end it at <11 to get 12 rounds
         if(turnCount<1) {
             //if there are still rounds remaining aim the intent to the regular scorer
-            myIntent = new Intent(CardInitializer.this, Scorer.class);
+            myIntent = new Intent(MainGame.this, Scorer.class);
         }
         else{
             //if it's the last round aim the intent to the final scorer
-            myIntent = new Intent(CardInitializer.this, FinalScorer.class);
+            myIntent = new Intent(MainGame.this, FinalScorer.class);
         }
         //this counts the combos and returns an array of each player's points
         ComboCounter comboCounter = new ComboCounter();
@@ -194,9 +202,9 @@ public class CardInitializer extends AppCompatActivity {
         //how many turns it's been
         myIntent.putExtra("turnCounter",turnCount);
         //start the new activity
-        CardInitializer.this.startActivity(myIntent);
+        MainGame.this.startActivity(myIntent);
         //end this activity
-        CardInitializer.this.finish();
+        MainGame.this.finish();
     }
     //this takes the cards from the hidden deck layout
     //and puts them in each player's hand and the board

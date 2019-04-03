@@ -31,8 +31,7 @@
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Enter Name"
-        android:autofillHints="Player One" />
+        tools:text="Enter Name" />
 
     <EditText
         android:id="@+id/playerTwoName"
@@ -48,15 +47,13 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Enter Name"
-        android:autofillHints="Player Two" />
+        tools:text="Enter Name" />
 
     <EditText
         android:id="@+id/playerThreeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:autofillHints="Player Three"
         android:gravity="center"
         android:padding="8dp"
         android:background="@android:color/darker_gray"

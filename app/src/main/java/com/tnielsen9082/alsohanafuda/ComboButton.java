@@ -4,8 +4,8 @@ import android.content.Intent;
 import android.view.View;
 
 public class ComboButton implements View.OnClickListener {
-    private CardInitializer activity;
-    public void id(CardInitializer activityTag){
+    private MainGame activity;
+    public void id(MainGame activityTag){
         activity=activityTag;
     }
     @Override

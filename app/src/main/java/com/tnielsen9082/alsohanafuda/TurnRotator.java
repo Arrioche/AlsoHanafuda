@@ -33,7 +33,7 @@ public class TurnRotator extends Activity {
         drag=dragTag;
         names=nameTag;
         nameDisplaySplitter = activity.findViewById(R.id.nextPlayerAnnounce);
-        splitter=activity.findViewById(R.id.turnSplitter);
+        splitter=activity.findViewById(R.id.turnSplitterLayout);
         nameDisp=activity.findViewById(R.id.playerNameMain);
         trickButtons = trickButtonsTag;
     }

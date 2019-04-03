@@ -9,14 +9,13 @@
         android:id="@+id/combosDisp"
         style="?android:attr/buttonBarButtonStyle"
         android:layout_width="76dp"
-        android:layout_height="35dp"
-        android:paddingLeft="6dp"
-        android:paddingTop="-5dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="8dp"
         android:stateListAnimator="@null"
-        android:text="Combos"
+        android:text="@string/combos"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scoreStarter" />
+        app:layout_constraintTop_toBottomOf="@+id/score1" />
 
     <LinearLayout
         android:id="@+id/drawPile"
@@ -27,25 +26,26 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/pineCrane"
+            android:id="@+id/pineNormalTwo"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:contentDescription="@string/a20"
-            android:src="@drawable/pinecrane"
+            android:contentDescription="@string/a01"
+            android:src="@drawable/pinenormaltwo"
             android:visibility="visible"
-            app:srcCompat="@drawable/pinecrane" />
+            app:srcCompat="@drawable/pinenormaltwo" />
 
         <ImageView
-            android:id="@+id/pineTanzaku"
+            android:id="@+id/pineNormalOne"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:contentDescription="@string/a05"
-            android:cropToPadding="false"
-            android:src="@drawable/pinetanzaku"
+            android:contentDescription="@string/a01"
+            android:src="@drawable/pinenormalone"
             android:visibility="visible"
-            app:srcCompat="@drawable/pinetanzaku" />
+            app:srcCompat="@drawable/pinenormalone"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="160dp" />
 
         <ImageView
             android:id="@+id/plumBird"
@@ -68,6 +68,16 @@
             app:srcCompat="@drawable/plumtanzaku" />
 
         <ImageView
+            android:id="@+id/plumNormalOne"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/b01"
+            android:src="@drawable/plumnormalone"
+            android:visibility="visible"
+            app:srcCompat="@drawable/plumnormalone" />
+
+        <ImageView
             android:id="@+id/cherryCurtain"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
@@ -88,54 +98,16 @@
             app:srcCompat="@drawable/cherrytanzaku" />
 
         <ImageView
-            android:id="@+id/wisteriaCuckoo"
+            android:id="@+id/cherryNormalOne"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:contentDescription="@string/d10"
-            android:src="@drawable/wisteriacuckoo"
+            android:contentDescription="@string/c01"
+            android:src="@drawable/cherrynormalone"
             android:visibility="visible"
-            app:srcCompat="@drawable/wisteriacuckoo" />
-
-        <ImageView
-            android:id="@+id/wisteriaTanzaku"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/d05"
-            android:src="@drawable/wisteriatanzaku"
-            android:visibility="visible"
-            app:srcCompat="@drawable/wisteriatanzaku" />
-
-        <ImageView
-            android:id="@+id/irisBridge"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/e10"
-            android:src="@drawable/irisbridge"
-            android:visibility="visible"
-            app:srcCompat="@drawable/irisbridge" />
-
-        <ImageView
-            android:id="@+id/irisTanzaku"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/e05"
-            android:src="@drawable/iristanzaku"
-            android:visibility="visible"
-            app:srcCompat="@drawable/iristanzaku" />
-
-        <ImageView
-            android:id="@+id/irisNormalTwo"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/e01"
-            android:src="@drawable/irisnormaltwo"
-            android:visibility="visible"
-            app:srcCompat="@drawable/irisnormaltwo" />
+            app:srcCompat="@drawable/cherrynormalone"
+            tools:layout_editor_absoluteX="392dp"
+            tools:layout_editor_absoluteY="86dp" />
 
         <ImageView
             android:id="@+id/peonyButterfly"
@@ -158,6 +130,26 @@
             app:srcCompat="@drawable/peonytanzaku" />
 
         <ImageView
+            android:id="@+id/peonyNormalTwo"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/f01"
+            android:src="@drawable/peonynormaltwo"
+            android:visibility="visible"
+            app:srcCompat="@drawable/peonynormaltwo" />
+
+        <ImageView
+            android:id="@+id/peonyNormalOne"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/f01"
+            android:src="@drawable/peonynormalone"
+            android:visibility="visible"
+            app:srcCompat="@drawable/peonynormalone" />
+
+        <ImageView
             android:id="@+id/chrysCup"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
@@ -168,14 +160,14 @@
             app:srcCompat="@drawable/chryscup" />
 
         <ImageView
-            android:id="@+id/chrysTanzaku"
+            android:id="@+id/chrysNormalOne"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:contentDescription="@string/i05"
-            android:src="@drawable/chrystanzaku"
+            android:contentDescription="@string/i01"
+            android:src="@drawable/chrysnormalone"
             android:visibility="visible"
-            app:srcCompat="@drawable/chrystanzaku" />
+            app:srcCompat="@drawable/chrysnormalone" />
 
         <ImageView
             android:id="@+id/cloverBoar"
@@ -198,16 +190,6 @@
             app:srcCompat="@drawable/clovertanzaku" />
 
         <ImageView
-            android:id="@+id/pampasMoon"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/h20"
-            android:src="@drawable/pampasmoon"
-            android:visibility="visible"
-            app:srcCompat="@drawable/pampasmoon" />
-
-        <ImageView
             android:id="@+id/pampasGeese"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
@@ -216,6 +198,25 @@
             android:src="@drawable/pampasgeese"
             android:visibility="visible"
             app:srcCompat="@drawable/pampasgeese" />
+
+        <ImageView
+            android:id="@+id/pampasNormalOne"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/h01"
+            android:src="@drawable/pampasnormalone"
+            android:visibility="visible"
+            app:srcCompat="@drawable/pampasnormalone" />
+
+        <ImageView
+            android:id="@+id/pampasNormalTwo"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/h01"
+            android:src="@drawable/pampasnormaltwo"
+            android:visibility="visible"
+            app:srcCompat="@drawable/pampasnormaltwo" />
 
         <ImageView
             android:id="@+id/mapleDeer"
@@ -238,6 +239,16 @@
             app:srcCompat="@drawable/mapletanzaku" />
 
         <ImageView
+            android:id="@+id/mapleNormalTwo"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/j01"
+            android:src="@drawable/maplenormaltwo"
+            android:visibility="visible"
+            app:srcCompat="@drawable/maplenormaltwo" />
+
+        <ImageView
             android:id="@+id/rainPoet"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
@@ -256,6 +267,16 @@
             android:src="@drawable/rainbird"
             android:visibility="visible"
             app:srcCompat="@drawable/rainbird" />
+
+        <ImageView
+            android:id="@+id/chrysNormalTwo"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/i01"
+            android:src="@drawable/chrysnormaltwo"
+            android:visibility="visible"
+            app:srcCompat="@drawable/chrysnormaltwo" />
 
         <ImageView
             android:id="@+id/rainTanzaku"
@@ -278,16 +299,6 @@
             app:srcCompat="@drawable/rainlightning" />
 
         <ImageView
-            android:id="@+id/paulPhoenix"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/l20"
-            android:src="@drawable/paulphoenix"
-            android:visibility="visible"
-            app:srcCompat="@drawable/paulphoenix" />
-
-        <ImageView
             android:id="@+id/paulNormalOne"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
@@ -296,6 +307,16 @@
             android:src="@drawable/paulnormalone"
             android:visibility="visible"
             app:srcCompat="@drawable/paulnormalone" />
+
+        <ImageView
+            android:id="@+id/paulNormalThree"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/l01"
+            android:src="@drawable/paulnormalthree"
+            android:visibility="visible"
+            app:srcCompat="@drawable/paulnormalthree" />
 
     </LinearLayout>
 
@@ -320,16 +341,160 @@
                 android:id="@+id/handOne"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:divider="@drawable/regular_hand_divider"
+                android:orientation="horizontal"
+                android:showDividers="middle"
+                android:visibility="visible">
 
+                <ImageView
+                    android:id="@+id/pineCrane"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:contentDescription="@string/a20"
+                    android:src="@drawable/pinecrane"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/pinecrane" />
+
+                <ImageView
+                    android:id="@+id/pampasMoon"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:contentDescription="@string/h20"
+                    android:src="@drawable/pampasmoon"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/pampasmoon" />
+
+                <ImageView
+                    android:id="@+id/paulPhoenix"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:contentDescription="@string/l20"
+                    android:src="@drawable/paulphoenix"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/paulphoenix" />
+
+                <ImageView
+                    android:id="@+id/chrysTanzaku"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:contentDescription="@string/i05"
+                    android:src="@drawable/chrystanzaku"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/chrystanzaku" />
+
+                <ImageView
+                    android:id="@+id/plumNormalTwo"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:contentDescription="@string/b01"
+                    android:src="@drawable/plumnormaltwo"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/plumnormaltwo" />
+
+                <ImageView
+                    android:id="@+id/mapleNormalOne"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:contentDescription="@string/j01"
+                    android:src="@drawable/maplenormalone"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/maplenormalone" />
+
+                <ImageView
+                    android:id="@+id/cherryNormalTwo"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:contentDescription="@string/c01"
+                    android:src="@drawable/cherrynormaltwo"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/cherrynormaltwo" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/handTwo"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/regular_hand_divider"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                android:showDividers="middle"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/irisTanzaku"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:contentDescription="@string/e05"
+                    android:src="@drawable/iristanzaku"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/iristanzaku" />
+
+                <ImageView
+                    android:id="@+id/cloverNormalTwo"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:contentDescription="@string/g01"
+                    android:src="@drawable/clovernormaltwo"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/clovernormaltwo" />
+
+                <ImageView
+                    android:id="@+id/irisNormalTwo"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:contentDescription="@string/e01"
+                    android:src="@drawable/irisnormaltwo"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/irisnormaltwo" />
+
+                <ImageView
+                    android:id="@+id/wisteriaCuckoo"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:contentDescription="@string/d10"
+                    android:src="@drawable/wisteriacuckoo"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/wisteriacuckoo" />
+
+                <ImageView
+                    android:id="@+id/irisBridge"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:contentDescription="@string/e10"
+                    android:src="@drawable/irisbridge"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/irisbridge" />
+
+                <ImageView
+                    android:id="@+id/cloverNormalOne"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:contentDescription="@string/g01"
+                    android:src="@drawable/clovernormalone"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/clovernormalone" />
+
+                <ImageView
+                    android:id="@+id/irisNormalOne"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:contentDescription="@string/e01"
+                    android:src="@drawable/irisnormalone"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/irisnormalone" />
 
             </LinearLayout>
 
@@ -337,6 +502,8 @@
                 android:id="@+id/handThree"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:divider="@drawable/regular_hand_divider"
+                android:showDividers="middle"
                 android:orientation="horizontal"
                 android:visibility="gone">
 
@@ -361,69 +528,128 @@
             android:id="@+id/board"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
             android:visibility="visible"
+            android:divider="@drawable/regular_hand_divider"
+            android:showDividers="middle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+            <ImageView
+                android:id="@+id/pineTanzaku"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:contentDescription="@string/a05"
+                android:cropToPadding="false"
+                android:src="@drawable/pinetanzaku"
+                android:visibility="visible"
+                app:srcCompat="@drawable/pinetanzaku" />
+
+            <ImageView
+                android:id="@+id/wisteriaTanzaku"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:contentDescription="@string/d05"
+                android:src="@drawable/wisteriatanzaku"
+                android:visibility="visible"
+                app:srcCompat="@drawable/wisteriatanzaku" />
+
+            <ImageView
+                android:id="@+id/paulNormalTwo"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:contentDescription="@string/l01"
+                android:src="@drawable/paulnormaltwo"
+                android:visibility="visible"
+                app:srcCompat="@drawable/paulnormaltwo" />
+
+            <ImageView
+                android:id="@+id/wisteriaNormalOne"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:contentDescription="@string/d01"
+                android:src="@drawable/wisterianormalone"
+                android:visibility="visible"
+                app:srcCompat="@drawable/wisterianormalone" />
+
+            <ImageView
+                android:id="@+id/wisteriaNormalTwo"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:contentDescription="@string/d01"
+                android:src="@drawable/wisterianormaltwo"
+                android:visibility="visible"
+                app:srcCompat="@drawable/wisterianormaltwo" />
         </LinearLayout>
     </HorizontalScrollView>
 
     <TextView
         android:id="@+id/scoreStarter"
-        android:layout_width="wrap_content"
-        android:layout_height="25dp"
+        android:layout_width="87dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:paddingLeft="0dp"
-        android:text="Score: "
-        app:layout_constraintBottom_toTopOf="@+id/handScroll"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/table" />
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:paddingBottom="0dp"
+        android:text="@string/your_score"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintEnd_toStartOf="@+id/combosDisp"
+        app:layout_constraintStart_toEndOf="@+id/combosDisp"
+        app:layout_constraintTop_toBottomOf="@+id/playerNameMain" />
 
     <TextView
         android:id="@+id/score1"
         android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_weight="1"
+        android:gravity="bottom"
         android:text="@string/_0"
+        android:textColor="@android:color/darker_gray"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/handScroll"
-        app:layout_constraintStart_toEndOf="@+id/scoreStarter"
-        app:layout_constraintTop_toBottomOf="@+id/table" />
+        app:layout_constraintEnd_toStartOf="@+id/combosDisp"
+        app:layout_constraintStart_toEndOf="@+id/combosDisp"
+        app:layout_constraintTop_toBottomOf="@+id/scoreStarter" />
 
     <TextView
         android:id="@+id/score2"
         android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_weight="1"
+        android:gravity="bottom"
         android:text="@string/_0"
+        android:textColor="@android:color/darker_gray"
         android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/handScroll"
-        app:layout_constraintStart_toEndOf="@+id/scoreStarter"
-        app:layout_constraintTop_toBottomOf="@+id/table" />
+        app:layout_constraintEnd_toStartOf="@+id/combosDisp"
+        app:layout_constraintStart_toEndOf="@+id/combosDisp"
+        app:layout_constraintTop_toBottomOf="@+id/scoreStarter" />
 
     <TextView
         android:id="@+id/score3"
         android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_weight="1"
+        android:gravity="bottom"
         android:text="@string/_0"
+        android:textColor="@android:color/darker_gray"
         android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/handScroll"
-        app:layout_constraintStart_toEndOf="@+id/scoreStarter"
-        app:layout_constraintTop_toBottomOf="@+id/table" />
+        app:layout_constraintEnd_toStartOf="@+id/combosDisp"
+        app:layout_constraintStart_toEndOf="@+id/combosDisp"
+        app:layout_constraintTop_toBottomOf="@+id/scoreStarter" />
 
     <LinearLayout
         android:id="@+id/takenTricks"
@@ -502,16 +728,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:gravity="center_horizontal|center_vertical"
         android:orientation="horizontal"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/secondCard"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/playerNameMain"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498">
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/dispYou"
@@ -521,9 +744,8 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:text="Your Cards"
-            android:textColor="@color/colorPrimaryDark"
-            android:textColorLink="@color/colorPrimaryDark"
+            android:text="@string/your_cards"
+            android:textColor="@android:color/holo_blue_dark"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -537,8 +759,8 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:text="Two's Cards"
-            android:textColor="@color/colorPrimaryDark"
+            android:text="'s Cards"
+            android:textColor="@android:color/holo_blue_dark"
             android:textColorLink="@color/colorPrimaryDark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -553,8 +775,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:text="Three's Cards"
-            android:textColor="@color/colorPrimaryDark"
+            android:text="'s Cards"
+            android:textColor="@android:color/holo_blue_dark"
             android:textColorLink="@color/colorPrimaryDark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -580,11 +802,15 @@
 
     <TextView
         android:id="@+id/playerNameMain"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/score1"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="player name"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintEnd_toStartOf="@+id/scoreStarter"
+        app:layout_constraintStart_toEndOf="@+id/scoreStarter"
+        app:layout_constraintTop_toBottomOf="@+id/table" />
 
     <Button
         android:id="@+id/endTurn"
@@ -641,22 +867,17 @@
     </LinearLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/turnSplitter"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        android:id="@+id/turnSplitterLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
 
         <ImageView
             android:id="@+id/turnBack"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/turnback"
+            android:scaleType="centerCrop"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -664,7 +885,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@color/colorAccent" />
+            app:srcCompat="@drawable/irisbridge" />
 
         <Button
             android:id="@+id/nextTurn"
@@ -681,7 +902,9 @@
             android:id="@+id/nextPlayerAnnounce"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="8dp"
+            android:text="hggfhgfhg"
+            android:textColor="@android:color/background_light"
             app:layout_constraintBottom_toTopOf="@+id/nextTurn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
