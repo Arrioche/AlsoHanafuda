@@ -105,20 +105,19 @@ public class MainGame extends AppCompatActivity {
         getWindow().getDecorView().setBackgroundColor(Color.BLACK);
         //lock it in landscape mode
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        //get the intent that started the activity
+        methodBundle();
+    }
+    private void methodBundle(){
         Intent intention = getIntent();
-        //extract the bundle of data that came with it
         final Bundle bundle = intention.getExtras();
-        //pull all the data out of the bundle
-        //the bits that aren't scoresInit are assigned to global variables
         String[] scoresInit =bundleExtractor(bundle);
-        //sets up the card images and descriptions
         arraySetup();
         //sets up the listeners
         classSetUp(scoresInit);
         //draws the cards
         drawCards();
     }
+
     @Override
     public void onBackPressed() {
         //do nothing

@@ -36,6 +36,9 @@ public class Tutorial extends AppCompatActivity {
         names[1]="Player Two";
         names[2]="Player Three";
         arraySetup();
+        for (int i = 1; i < cards.size(); i++) {
+            cards.get(i).setAlpha((float)0.5);
+        }
         //classSetUp(scoresInit);
         //drawCards();
     }
@@ -55,34 +58,53 @@ public class Tutorial extends AppCompatActivity {
         //here we take each ImageView of each card and put them in an array for easy access
         //pine
         cards.add(findViewById(R.id.pineCrane));
+        cards.add(findViewById(R.id.pineNormalOne));
+        cards.add(findViewById(R.id.pineNormalTwo));
         cards.add(findViewById(R.id.pineTanzaku));
         //plum
         cards.add(findViewById(R.id.plumBird));
+        cards.add(findViewById(R.id.plumNormalOne));
+        cards.add(findViewById(R.id.plumNormalTwo));
         cards.add(findViewById(R.id.plumTanzaku));
         //cherry
         cards.add(findViewById(R.id.cherryCurtain));
+        cards.add(findViewById(R.id.cherryNormalOne));
+        cards.add(findViewById(R.id.cherryNormalTwo));
         cards.add(findViewById(R.id.cherryTanzaku));
         //wisteria
         cards.add(findViewById(R.id.wisteriaCuckoo));
+        cards.add(findViewById(R.id.wisteriaNormalOne));
+        cards.add(findViewById(R.id.wisteriaNormalTwo));
         cards.add(findViewById(R.id.wisteriaTanzaku));
         //iris
         cards.add(findViewById(R.id.irisBridge));
+        cards.add(findViewById(R.id.irisNormalOne));
         cards.add(findViewById(R.id.irisNormalTwo));
         cards.add(findViewById(R.id.irisTanzaku));
         //peony
         cards.add(findViewById(R.id.peonyButterfly));
+        cards.add(findViewById(R.id.peonyNormalOne));
+        cards.add(findViewById(R.id.peonyNormalTwo));
         cards.add(findViewById(R.id.peonyTanzaku));
         //clover
         cards.add(findViewById(R.id.cloverBoar));
+        cards.add(findViewById(R.id.cloverNormalOne));
+        cards.add(findViewById(R.id.cloverNormalTwo));
         cards.add(findViewById(R.id.cloverTanzaku));
         //pampas
         cards.add(findViewById(R.id.pampasGeese));
         cards.add(findViewById(R.id.pampasMoon));
+        cards.add(findViewById(R.id.pampasNormalOne));
+        cards.add(findViewById(R.id.pampasNormalTwo));
         //chrysanthemum
         cards.add(findViewById(R.id.chrysCup));
+        cards.add(findViewById(R.id.chrysNormalOne));
+        cards.add(findViewById(R.id.chrysNormalTwo));
         cards.add(findViewById(R.id.chrysTanzaku));
         //maple
         cards.add(findViewById(R.id.mapleDeer));
+        cards.add(findViewById(R.id.mapleNormalOne));
+        cards.add(findViewById(R.id.mapleNormalTwo));
         cards.add(findViewById(R.id.mapleTanzaku));
         //rain
         cards.add(findViewById(R.id.rainBird));
@@ -91,6 +113,8 @@ public class Tutorial extends AppCompatActivity {
         cards.add(findViewById(R.id.rainTanzaku));
         //paulownia
         cards.add(findViewById(R.id.paulNormalOne));
+        cards.add(findViewById(R.id.paulNormalTwo));
+        cards.add(findViewById(R.id.paulNormalThree));
         cards.add(findViewById(R.id.paulPhoenix));
     }
     /*

@@ -21,8 +21,6 @@ public class ComboDisplay extends AppCompatActivity {
         backs = findViewById(R.id.comboBack);
         backs.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent i = new Intent(ComboDisplay.this, StartScreen.class);
-                ComboDisplay.this.startActivity(i);
                 ComboDisplay.this.finish();
             }
         });
