@@ -894,7 +894,7 @@
         android:id="@+id/turnSplitterLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <ImageView
             android:id="@+id/turnBack"
@@ -913,9 +913,12 @@
 
         <Button
             android:id="@+id/nextTurn"
-            android:layout_width="164dp"
-            android:layout_height="71dp"
+            style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/next_turn"
+            android:textColor="@android:color/black"
+            android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -928,7 +931,8 @@
             android:layout_height="0dp"
             android:layout_marginBottom="8dp"
             android:text="hggfhgfhg"
-            android:textColor="@android:color/background_light"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/nextTurn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

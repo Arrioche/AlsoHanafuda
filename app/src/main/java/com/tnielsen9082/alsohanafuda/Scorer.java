@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +15,7 @@ public class Scorer extends AppCompatActivity {
     private String[] names = new String[3];
     private String[] scores= new String[3];
     private String[] bonus = new String[3];
+    private Handler mHandler = new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,19 +57,24 @@ public class Scorer extends AppCompatActivity {
         Button nextRound = findViewById(R.id.nextRound);
         nextRound.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //starts the cardInitializer
-                Intent myIntent = new Intent(Scorer.this, MainGame.class);
-                //you can put data in the intent
-                myIntent.putExtra("scoreOne", scores[0]);
-                myIntent.putExtra("scoreTwo", scores[1]);
-                myIntent.putExtra("scoreThree", scores[2]);
-                myIntent.putExtra("pOne",names[0]);
-                myIntent.putExtra("pTwo",names[1]);
-                myIntent.putExtra("pThree",names[2]);
-                myIntent.putExtra("rainStatus",(boolean)bundle.get("rainStatus"));
-                myIntent.putExtra("turnCounter",(int)bundle.get("turnCounter")+1);
-                Scorer.this.startActivity(myIntent);
-                Scorer.this.finish();
+                (findViewById(R.id.loadingLayout)).setVisibility(View.VISIBLE);
+                mHandler.postDelayed(new Runnable() {
+                    public void run() {
+                        //starts the cardInitializer
+                        Intent myIntent = new Intent(Scorer.this, MainGame.class);
+                        //you can put data in the intent
+                        myIntent.putExtra("scoreOne", scores[0]);
+                        myIntent.putExtra("scoreTwo", scores[1]);
+                        myIntent.putExtra("scoreThree", scores[2]);
+                        myIntent.putExtra("pOne",names[0]);
+                        myIntent.putExtra("pTwo",names[1]);
+                        myIntent.putExtra("pThree",names[2]);
+                        myIntent.putExtra("rainStatus",(boolean)bundle.get("rainStatus"));
+                        myIntent.putExtra("turnCounter",(int)bundle.get("turnCounter")+1);
+                        Scorer.this.startActivity(myIntent);
+                        Scorer.this.finish();
+                    }
+                }, 20);
             }
         });
     }
