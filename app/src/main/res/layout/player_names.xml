@@ -19,16 +19,17 @@
 
     <EditText
         android:id="@+id/playerOneName"
-        android:padding="8dp"
-        android:background="@android:color/darker_gray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:imeOptions="actionDone"
         android:layout_marginStart="32dp"
-        android:gravity="center"
         android:layout_marginTop="125dp"
+        android:autofillHints=""
+        android:background="@android:color/darker_gray"
         android:ems="10"
+        android:gravity="center"
+        android:imeOptions="actionDone"
         android:inputType="textPersonName"
+        android:padding="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Enter Name" />
@@ -47,34 +48,37 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Enter Name" />
+        tools:text="Enter Name"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/playerThreeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:gravity="center"
-        android:padding="8dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/darker_gray"
         android:ems="10"
+        android:gravity="center"
         android:imeOptions="actionDone"
         android:inputType="textPersonName"
+        android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerOneName"
         tools:text="Enter Name" />
 
     <TextView
         android:id="@+id/playerOneTitle"
-        android:padding="8dp"
-        android:background="@android:color/darker_gray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Player One"
+        android:background="@android:color/darker_gray"
+        android:padding="8dp"
+        android:text="Player One's Name"
         app:layout_constraintBottom_toTopOf="@+id/playerOneName"
         app:layout_constraintEnd_toStartOf="@+id/playerOneName"
         app:layout_constraintStart_toEndOf="@+id/playerOneName" />
@@ -96,31 +100,30 @@
 
     <TextView
         android:id="@+id/playerTwoTitle"
-        android:padding="8dp"
-        android:background="@android:color/darker_gray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Player Two"
+        android:background="@android:color/darker_gray"
+        android:padding="8dp"
+        android:text=" Player Two's Name"
         app:layout_constraintBottom_toTopOf="@+id/playerTwoName"
         app:layout_constraintEnd_toStartOf="@+id/playerTwoName"
         app:layout_constraintStart_toEndOf="@+id/playerTwoName" />
 
     <TextView
         android:id="@+id/playerThreeTitle"
-        android:padding="8dp"
-        android:background="@android:color/darker_gray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Player Three"
+        android:background="@android:color/darker_gray"
+        android:padding="8dp"
+        android:text="Player Three's Name"
         app:layout_constraintBottom_toTopOf="@+id/playerThreeName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/playerThreeName"
+        app:layout_constraintStart_toEndOf="@+id/playerThreeName" />
 
     <Button
         android:id="@+id/playersNamesDone"
@@ -128,7 +131,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:stateListAnimator="@null"
         android:text="Start Game"
@@ -136,14 +139,15 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/playerTwoName"
+        app:layout_constraintStart_toEndOf="@+id/playerTwoName"
         app:layout_constraintTop_toBottomOf="@+id/playerTwoName" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/loadingLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <ImageView
             android:id="@+id/loading"
@@ -160,17 +164,21 @@
             android:id="@+id/loadingText"
             android:layout_width="243dp"
             android:layout_height="119dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@android:color/holo_green_light"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="32dp"
             android:gravity="center"
+            android:padding="2dp"
+            android:shadowColor="@android:color/background_light"
+            android:shadowDx="7"
+            android:shadowDy="3"
+            android:shadowRadius="1"
             android:text="Loading"
             android:textAllCaps="true"
+            android:textColor="@android:color/black"
             android:textSize="50sp"
             app:layout_constraintBottom_toBottomOf="@+id/loading"
-            app:layout_constraintEnd_toEndOf="@+id/loading"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
+
     </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

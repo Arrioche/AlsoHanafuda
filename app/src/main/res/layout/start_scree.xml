@@ -96,17 +96,19 @@
             android:id="@+id/loadingTextStart"
             android:layout_width="243dp"
             android:layout_height="119dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@android:color/holo_green_light"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="32dp"
             android:gravity="center"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="7"
+            android:shadowDy="7"
+            android:shadowRadius="0.01"
             android:text="Loading"
             android:textAllCaps="true"
+            android:textColor="@android:color/background_light"
             android:textSize="50sp"
             app:layout_constraintBottom_toBottomOf="@+id/loadingStart"
-            app:layout_constraintEnd_toEndOf="@+id/loadingStart"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 
