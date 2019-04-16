@@ -110,6 +110,7 @@
     <string name="straight_wisteria">Straight Wisteria: 10 points. All four Wisteria cards.</string>
     <string name="straight_paulownia">Straight Paulownia: 10 points. All four Paulownia cards.</string>
     <string name="straight_rain">Straight Rain: 10 points. All four Rain cards.</string>
+    <string name="straight_rain_alt">Straight Rain: Negates everyone\'s combo points, including yours. All four Rain cards.</string>
 
     <string name="january_and_pine_tree">January: Pine Tree</string>
     <string name="february_and_plum_blossom">February: Plum Blossom</string>

@@ -58,6 +58,7 @@
         </intent-filter>
         </activity>
         <activity android:name=".Tutorial" />
+        <activity android:name=".SettingsMenu" />
 
         <meta-data
             android:name="preloaded_fonts"

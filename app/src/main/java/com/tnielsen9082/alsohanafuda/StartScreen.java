@@ -32,7 +32,7 @@ public class StartScreen extends AppCompatActivity {
                         StartScreen.this.startActivity(myIntent);
                         StartScreen.this.finish();
                     }
-                }, 10);
+                }, 100);
             }
         });
         Button rules = findViewById(R.id.rules);
@@ -53,7 +53,7 @@ public class StartScreen extends AppCompatActivity {
                         StartScreen.this.startActivity(myIntent);
                         StartScreen.this.finish();
                     }
-                }, 10);
+                }, 100);
             }
         });
         Button cardGallery = findViewById(R.id.cardIntro);
@@ -66,7 +66,7 @@ public class StartScreen extends AppCompatActivity {
                         StartScreen.this.startActivity(myIntent);
                         StartScreen.this.finish();
                     }
-                }, 10);
+                }, 100);
             }
         });
     }

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class ComboDisplay extends AppCompatActivity {
     @Override
@@ -24,6 +25,15 @@ public class ComboDisplay extends AppCompatActivity {
                 ComboDisplay.this.finish();
             }
         });
+        Intent intention = getIntent();
+        final Bundle bundle = intention.getExtras();
+        TextView rainText=findViewById(R.id.straightRainText);
+        if((boolean)bundle.get("rainStatus")){
+            rainText.setText(R.string.straight_rain_alt);
+        }
+        else{
+            rainText.setText(R.string.straight_rain);
+        }
     }
     @Override
     protected void onResume() {

@@ -909,7 +909,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/irisbridge" />
+            app:srcCompat="@drawable/backbridge" />
 
         <Button
             android:id="@+id/nextTurn"
@@ -917,7 +917,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/next_turn"
-            android:textColor="@android:color/black"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -931,7 +931,7 @@
             android:layout_height="0dp"
             android:layout_marginBottom="8dp"
             android:text="hggfhgfhg"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/holo_red_dark"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/nextTurn"
             app:layout_constraintEnd_toEndOf="parent"

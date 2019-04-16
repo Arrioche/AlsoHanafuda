@@ -64,6 +64,7 @@ public class FinalScorer extends AppCompatActivity {
                 myIntent.putExtra("pThree",names[2]);
                 myIntent.putExtra("rainStatus",(boolean)bundle.get("rainStatus"));
                 myIntent.putExtra("turnCounter",0);
+                myIntent.putExtra("turnTotal",(int)bundle.get("turnTotal"));
                 FinalScorer.this.startActivity(myIntent);
                 FinalScorer.this.finish();
             }

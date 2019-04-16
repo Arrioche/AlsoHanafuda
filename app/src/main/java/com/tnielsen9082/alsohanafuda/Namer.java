@@ -10,15 +10,12 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.Switch;
 
 public class Namer extends AppCompatActivity {
     String nameOne;
     String nameTwo;
     String nameThree;
-    boolean rain = false;
     private Handler mHandler = new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,18 +26,15 @@ public class Namer extends AppCompatActivity {
         //lock in landscape mode
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        Button done = findViewById(R.id.playersNamesDone);
+        Button done = findViewById(R.id.startGame);
         done.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 (findViewById(R.id.loadingLayout)).setVisibility(View.VISIBLE);
                 mHandler.postDelayed(new Runnable() {
                     public void run() {
                         //starts the cardInitializer
-                        Intent myIntent = new Intent(Namer.this, MainGame.class);
+                        Intent myIntent = new Intent(Namer.this, SettingsMenu.class);
                         //you can put data in the intent
-                        myIntent.putExtra("scoreOne",0);
-                        myIntent.putExtra("scoreTwo",0);
-                        myIntent.putExtra("scoreThree",0);
                         if(nameOne.length()!=0){
                             myIntent.putExtra("pOne",nameOne);
                         }
@@ -59,15 +53,13 @@ public class Namer extends AppCompatActivity {
                         else{
                             myIntent.putExtra("pThree","Player Three");
                         }
-                        myIntent.putExtra("rainStatus",rain);
-                        myIntent.putExtra("turnCounter",0);
                         Namer.this.startActivity(myIntent);
                         Namer.this.finish();
                     }
-                }, 20);
+                }, 100);
             }
         });
-        EditText playerOne = findViewById(R.id.playerOneName);
+        EditText playerOne = findViewById(R.id.turnNumberField);
         playerOne.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -81,7 +73,7 @@ public class Namer extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                nameOne=s+"";
+                nameTwo=s+"";
             }
         });
         EditText playerTwo = findViewById(R.id.playerTwoName);
@@ -98,7 +90,7 @@ public class Namer extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                nameTwo=s+"";
+                nameOne=s+"";
             }
         });
         EditText playerThree = findViewById(R.id.playerThreeName);
@@ -116,16 +108,6 @@ public class Namer extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 nameThree=s+"";
-            }
-        });
-        Switch toggle = findViewById(R.id.rainSwitch);
-        toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    rain =true;
-                } else {
-                    rain = false;
-                }
             }
         });
 

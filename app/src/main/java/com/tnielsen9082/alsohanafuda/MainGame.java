@@ -1,5 +1,6 @@
 package com.tnielsen9082.alsohanafuda;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
@@ -90,9 +91,10 @@ public class MainGame extends AppCompatActivity {
     private LinearLayout[] hands = new LinearLayout[3];
     //by default the rain combo is turned off
     //see countUp for more details
-    private boolean wipe =false;
+    private boolean rainStatus =false;
     //the number of turns
     private int turnCount;
+    private int turnTotal;
     //the method that triggers when the activity is created
     //it sets up the graphics
     //and calls all the other setting-up methods
@@ -160,9 +162,10 @@ public class MainGame extends AppCompatActivity {
                 scoresInit[i]=0+"";
             }
         }
-        wipe=(boolean)bundle.get("rainStatus");
+        rainStatus=(boolean)bundle.get("rainStatus");
         //gets the number of turns that it has been
         turnCount=(int)bundle.get("turnCounter");
+        turnTotal=(int)bundle.get("turnTotal");
         //return the scores
         return scoresInit;
 
@@ -172,17 +175,18 @@ public class MainGame extends AppCompatActivity {
     public void goToScore(){
         Intent myIntent;
         //end it at <11 to get 12 rounds
-        if(turnCount<1) {
+        if(turnCount<turnTotal-1) {
             //if there are still rounds remaining aim the intent to the regular scorer
             myIntent = new Intent(MainGame.this, Scorer.class);
         }
         else{
             //if it's the last round aim the intent to the final scorer
             myIntent = new Intent(MainGame.this, FinalScorer.class);
+            myIntent.putExtra("turnTotal",turnTotal);
         }
         //this counts the combos and returns an array of each player's points
         ComboCounter comboCounter = new ComboCounter();
-        int[] bonusPoints =comboCounter.countUp(tricks,wipe);
+        int[] bonusPoints =comboCounter.countUp(tricks,rainStatus);
         //you can put data in the intent
         //each player's score
         myIntent.putExtra("scoreOne",Integer.parseInt(String.valueOf((scores[0]).getText()))+bonusPoints[0]);
@@ -197,7 +201,7 @@ public class MainGame extends AppCompatActivity {
         myIntent.putExtra("pTwo",names[1]);
         myIntent.putExtra("pThree",names[2]);
         //whether or not the rain combo activates
-        myIntent.putExtra("rainStatus",wipe);
+        myIntent.putExtra("rainStatus",rainStatus);
         //how many turns it's been
         myIntent.putExtra("turnCounter",turnCount);
         //start the new activity
@@ -448,6 +452,7 @@ public class MainGame extends AppCompatActivity {
     //and then call the method "id" on the object
     //which has receptors for all the data that the object needs
     //it's called from onCreate in the same class
+    @SuppressLint("SetTextI18n")
     public void classSetUp(String[] scoresInit){
         //what hides the display cards
         CardDescDismisser dismisser = new CardDescDismisser();
@@ -502,7 +507,7 @@ public class MainGame extends AppCompatActivity {
         trickHider.id(this, tricks,turnRotator);
         endTurn.id(this,hands,trickHider, turnRotator);
         turnRotator.id(this,hands,scores,dragger,names,trickButtons);
-        comboButton.id(this);
+        comboButton.id(this,rainStatus);
 
         //assign various listeners to their spots
         findViewById(R.id.cardDisps).setOnTouchListener(dismisser);

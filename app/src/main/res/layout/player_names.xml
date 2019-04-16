@@ -15,19 +15,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/plumbird" />
+        app:srcCompat="@drawable/backbird" />
 
     <EditText
-        android:id="@+id/playerOneName"
+        android:id="@+id/playerTwoName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="125dp"
-        android:autofillHints=""
-        android:background="@android:color/darker_gray"
-        android:ems="10"
+        android:background="@android:color/background_light"
+        android:ems="7"
         android:gravity="center"
-        android:imeOptions="actionDone"
+        android:imeOptions="actionDone|flagNoExtractUi"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:padding="8dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,21 +35,21 @@
         tools:text="Enter Name" />
 
     <EditText
-        android:id="@+id/playerTwoName"
-        android:padding="8dp"
-        android:background="@android:color/darker_gray"
+        android:id="@+id/turnNumberField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:imeOptions="actionDone"
         android:layout_marginTop="125dp"
         android:layout_marginEnd="32dp"
+        android:autofillHints=""
+        android:background="@android:color/background_light"
+        android:ems="7"
         android:gravity="center"
-        android:ems="10"
+        android:imeOptions="actionDone|flagNoExtractUi"
         android:inputType="textPersonName"
+        android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Enter Name"
-        android:importantForAutofill="no" />
+        tools:text="Enter Name" />
 
     <EditText
         android:id="@+id/playerThreeName"
@@ -58,15 +58,15 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@android:color/darker_gray"
-        android:ems="10"
+        android:background="@android:color/background_light"
+        android:ems="7"
         android:gravity="center"
-        android:imeOptions="actionDone"
+        android:imeOptions="actionDone|flagNoExtractUi"
         android:inputType="textPersonName"
         android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playerOneName"
+        app:layout_constraintTop_toBottomOf="@+id/turnNumberField"
         tools:text="Enter Name" />
 
     <TextView
@@ -76,27 +76,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@android:color/darker_gray"
         android:padding="8dp"
-        android:text="Player One's Name"
-        app:layout_constraintBottom_toTopOf="@+id/playerOneName"
-        app:layout_constraintEnd_toStartOf="@+id/playerOneName"
-        app:layout_constraintStart_toEndOf="@+id/playerOneName" />
-
-    <Switch
-        android:id="@+id/rainSwitch"
-        android:padding="8dp"
-        android:background="@android:color/darker_gray"
-        android:layout_width="100dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Rain "
-        app:layout_constraintBottom_toBottomOf="@+id/background"
-        app:layout_constraintEnd_toEndOf="@+id/background"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/background" />
+        android:text="Player Two's Name"
+        android:textColor="?attr/colorError"
+        app:layout_constraintBottom_toTopOf="@+id/turnNumberField"
+        app:layout_constraintEnd_toStartOf="@+id/turnNumberField"
+        app:layout_constraintStart_toEndOf="@+id/turnNumberField" />
 
     <TextView
         android:id="@+id/playerTwoTitle"
@@ -105,9 +90,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@android:color/darker_gray"
         android:padding="8dp"
-        android:text=" Player Two's Name"
+        android:text=" Player One's Name"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toTopOf="@+id/playerTwoName"
         app:layout_constraintEnd_toStartOf="@+id/playerTwoName"
         app:layout_constraintStart_toEndOf="@+id/playerTwoName" />
@@ -118,36 +103,37 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@android:color/darker_gray"
         android:padding="8dp"
         android:text="Player Three's Name"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toTopOf="@+id/playerThreeName"
         app:layout_constraintEnd_toStartOf="@+id/playerThreeName"
         app:layout_constraintStart_toEndOf="@+id/playerThreeName" />
 
     <Button
-        android:id="@+id/playersNamesDone"
+        android:id="@+id/startGame"
         style="?android:attr/buttonBarButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:stateListAnimator="@null"
-        android:text="Start Game"
+        android:text="Next"
         android:textAllCaps="true"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/playerTwoName"
-        app:layout_constraintStart_toEndOf="@+id/playerTwoName"
+        app:layout_constraintEnd_toStartOf="@+id/turnNumberField"
+        app:layout_constraintStart_toEndOf="@+id/turnNumberField"
         app:layout_constraintTop_toBottomOf="@+id/playerTwoName" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/loadingLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <ImageView
             android:id="@+id/loading"
@@ -158,14 +144,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/peonytanzaku" />
+            app:srcCompat="@drawable/backpeony" />
 
         <TextView
             android:id="@+id/loadingText"
             android:layout_width="243dp"
             android:layout_height="119dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
             android:gravity="center"
             android:padding="2dp"
             android:shadowColor="@android:color/background_light"
@@ -176,8 +162,8 @@
             android:textAllCaps="true"
             android:textColor="@android:color/black"
             android:textSize="50sp"
-            app:layout_constraintBottom_toBottomOf="@+id/loading"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 
