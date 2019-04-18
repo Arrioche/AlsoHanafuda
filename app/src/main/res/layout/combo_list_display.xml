@@ -31,6 +31,7 @@
             android:showDividers="middle">
 
             <TextView
+                android:fontFamily="@font/alike_angular"
                 android:id="@+id/fiveBrightText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -80,6 +81,7 @@
             </LinearLayout>
 
             <TextView
+                android:fontFamily="@font/alike_angular"
                 android:id="@+id/fourBrightText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -123,6 +125,7 @@
             </LinearLayout>
 
             <TextView
+                android:fontFamily="@font/alike_angular"
                 android:id="@+id/threeBrightText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -159,6 +162,7 @@
             </LinearLayout>
 
             <TextView
+                android:fontFamily="@font/alike_angular"
                 android:id="@+id/sevenTanzakuText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -223,6 +227,7 @@
             </LinearLayout>
 
             <TextView
+                android:fontFamily="@font/alike_angular"
                 android:id="@+id/sixTanzakuText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -280,6 +285,7 @@
             </LinearLayout>
 
             <TextView
+                android:fontFamily="@font/alike_angular"
                 android:id="@+id/redLetteredText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -316,6 +322,7 @@
             </LinearLayout>
 
             <TextView
+                android:fontFamily="@font/alike_angular"
                 android:id="@+id/blueText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -352,6 +359,7 @@
             </LinearLayout>
 
             <TextView
+                android:fontFamily="@font/alike_angular"
                 android:id="@+id/grassText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -388,6 +396,7 @@
             </LinearLayout>
 
             <TextView
+                android:fontFamily="@font/alike_angular"
                 android:id="@+id/viewsText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -424,6 +433,7 @@
             </LinearLayout>
 
             <TextView
+                android:fontFamily="@font/alike_angular"
                 android:id="@+id/bdbText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -460,6 +470,7 @@
             </LinearLayout>
 
             <TextView
+                android:fontFamily="@font/alike_angular"
                 android:id="@+id/cpmText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -496,6 +507,7 @@
             </LinearLayout>
 
             <TextView
+                android:fontFamily="@font/alike_angular"
                 android:id="@+id/straightWisteriaText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -539,6 +551,7 @@
             </LinearLayout>
 
             <TextView
+                android:fontFamily="@font/alike_angular"
                 android:id="@+id/straightPaulText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -582,6 +595,7 @@
             </LinearLayout>
 
             <TextView
+                android:fontFamily="@font/alike_angular"
                 android:id="@+id/straightRainText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -638,6 +652,7 @@
         android:layout_height="35dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:fontFamily="@font/vollkorn"
         android:text="@string/back"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="14sp"
@@ -645,6 +660,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:fontFamily="@font/alike_angular"
         android:id="@+id/textView49"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

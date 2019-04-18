@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <Button
+        android:fontFamily="@font/vollkorn"
         android:id="@+id/combosDisp"
         style="?android:attr/buttonBarButtonStyle"
         android:layout_width="76dp"
@@ -593,6 +594,7 @@
     </HorizontalScrollView>
 
     <TextView
+        android:fontFamily="@font/alike_angular"
         android:id="@+id/scoreStarter"
         android:layout_width="87dp"
         android:layout_height="wrap_content"
@@ -608,6 +610,7 @@
         app:layout_constraintTop_toBottomOf="@+id/playerNameMain" />
 
     <TextView
+        android:fontFamily="@font/alike_angular"
         android:id="@+id/score1"
         android:layout_width="wrap_content"
         android:layout_height="18dp"
@@ -623,6 +626,7 @@
         app:layout_constraintTop_toBottomOf="@+id/scoreStarter" />
 
     <TextView
+        android:fontFamily="@font/alike_angular"
         android:id="@+id/score2"
         android:layout_width="wrap_content"
         android:layout_height="18dp"
@@ -638,6 +642,7 @@
         app:layout_constraintTop_toBottomOf="@+id/scoreStarter" />
 
     <TextView
+        android:fontFamily="@font/alike_angular"
         android:id="@+id/score3"
         android:layout_width="wrap_content"
         android:layout_height="18dp"
@@ -667,6 +672,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
+            android:fontFamily="@font/vollkorn"
             android:id="@+id/dismissal"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
@@ -738,6 +744,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
+            android:fontFamily="@font/vollkorn"
             android:id="@+id/dispYou"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
@@ -753,6 +760,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:fontFamily="@font/vollkorn"
             android:id="@+id/dispOne"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
@@ -767,6 +775,7 @@
             tools:layout_editor_absoluteX="104dp" />
 
         <Button
+            android:fontFamily="@font/vollkorn"
             android:id="@+id/dispTwo"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
@@ -825,6 +834,7 @@
     </LinearLayout>
 
     <TextView
+        android:fontFamily="@font/alike_angular"
         android:id="@+id/playerNameMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -837,6 +847,7 @@
         app:layout_constraintTop_toBottomOf="@+id/table" />
 
     <Button
+        android:fontFamily="@font/vollkorn"
         android:id="@+id/endTurn"
         style="?android:attr/buttonBarButtonStyle"
         android:layout_width="wrap_content"
@@ -879,7 +890,7 @@
             android:id="@+id/cardInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-smallcaps"
+            android:fontFamily="@font/alike_angular"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="hhh"
@@ -914,10 +925,15 @@
         <Button
             android:id="@+id/nextTurn"
             style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/buttongradient"
+            android:fontFamily="@font/vollkorn"
+            android:padding="8dp"
             android:text="@string/next_turn"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="#000000"
             android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -928,10 +944,16 @@
         <TextView
             android:id="@+id/nextPlayerAnnounce"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginBottom="8dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/buttongradient"
+            android:fontFamily="@font/alike_angular"
+            android:gravity="center_horizontal|center_vertical"
+            android:padding="5dp"
+            android:paddingStart="50dp"
+            android:paddingEnd="50dp"
             android:text="hggfhgfhg"
-            android:textColor="@android:color/holo_red_dark"
+            android:textColor="#000000"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/nextTurn"
             app:layout_constraintEnd_toEndOf="parent"

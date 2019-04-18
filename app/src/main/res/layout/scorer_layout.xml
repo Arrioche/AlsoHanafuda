@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/clovertanzaku" />
+        app:srcCompat="@drawable/backclover" />
 
     <Button
         android:id="@+id/nextRound"
@@ -25,6 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
+        android:fontFamily="@font/vollkorn"
+        android:singleLine="false"
         android:text="Next Round"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="36sp"
@@ -50,6 +52,7 @@
                 android:id="@+id/titleOne"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/vollkorn"
                 android:text="TextView"
                 android:textColor="@android:color/black"
                 app:layout_constraintBottom_toTopOf="@+id/scoreDisplay1"
@@ -94,6 +97,7 @@
                 android:id="@+id/titleTwo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/vollkorn"
                 android:text="TextView"
                 android:textColor="@android:color/black"
                 app:layout_constraintBottom_toTopOf="@+id/scoreDisplay2"
@@ -138,6 +142,7 @@
                 android:id="@+id/titleThree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/vollkorn"
                 android:text="TextView"
                 android:textColor="@android:color/black"
                 app:layout_constraintBottom_toTopOf="@+id/scoreDisplay3"

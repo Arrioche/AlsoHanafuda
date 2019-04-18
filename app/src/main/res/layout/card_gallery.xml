@@ -45,6 +45,7 @@
                 android:visibility="visible">
 
                 <TextView
+                    android:fontFamily="@font/alike_angular"
                     android:id="@+id/janTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -86,6 +87,7 @@
                         android:id="@+id/textView2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/alike_angular"
                         android:gravity="center"
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp"
@@ -113,6 +115,7 @@
                         app:srcCompat="@drawable/pinetanzaku" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -143,6 +146,7 @@
                         app:srcCompat="@drawable/pinenormalone" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -173,6 +177,7 @@
                         app:srcCompat="@drawable/pinenormaltwo" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -193,6 +198,7 @@
                 android:visibility="visible">
 
                 <TextView
+                    android:fontFamily="@font/alike_angular"
                     android:id="@+id/febTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -229,6 +235,7 @@
                         app:srcCompat="@drawable/plumbird" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -244,7 +251,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="top"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:id="@+id/cardG5"
@@ -259,6 +267,7 @@
                         app:srcCompat="@drawable/plumtanzaku" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -289,6 +298,7 @@
                         app:srcCompat="@drawable/plumnormaltwo" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -321,6 +331,7 @@
                         tools:layout_editor_absoluteY="160dp" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -342,6 +353,7 @@
                 android:visibility="visible">
 
                 <TextView
+                    android:fontFamily="@font/alike_angular"
                     android:id="@+id/marTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -379,6 +391,7 @@
                         app:srcCompat="@drawable/cherrycurtain" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView20"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -409,6 +422,7 @@
                         app:srcCompat="@drawable/cherrytanzaku" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView21"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -439,6 +453,7 @@
                         app:srcCompat="@drawable/cherrynormalone" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView22"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -470,6 +485,7 @@
                         tools:layout_editor_absoluteY="160dp" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView23"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -490,6 +506,7 @@
                 android:visibility="visible">
 
                 <TextView
+                    android:fontFamily="@font/alike_angular"
                     android:id="@+id/aprTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -513,7 +530,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center|top"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:id="@+id/cardG12"
@@ -527,6 +545,7 @@
                         app:srcCompat="@drawable/wisteriacuckoo" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView24"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -557,6 +576,7 @@
                         app:srcCompat="@drawable/wisteriatanzaku" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView25"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -586,6 +606,7 @@
                         app:srcCompat="@drawable/wisterianormalone" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView26"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -617,6 +638,7 @@
                         tools:layout_editor_absoluteY="160dp" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView27"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -637,6 +659,7 @@
                 android:visibility="visible">
 
                 <TextView
+                    android:fontFamily="@font/alike_angular"
                     android:id="@+id/mayTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -673,6 +696,7 @@
                         app:srcCompat="@drawable/irisbridge" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView28"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -703,6 +727,7 @@
                         app:srcCompat="@drawable/iristanzaku" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView29"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -732,6 +757,7 @@
                         app:srcCompat="@drawable/irisnormalone" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView30"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -763,6 +789,7 @@
                         tools:layout_editor_absoluteY="160dp" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView31"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -783,6 +810,7 @@
                 android:visibility="visible">
 
                 <TextView
+                    android:fontFamily="@font/alike_angular"
                     android:id="@+id/junTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -819,6 +847,7 @@
                         app:srcCompat="@drawable/peonybutterfly" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView32"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -849,6 +878,7 @@
                         app:srcCompat="@drawable/peonytanzaku" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView33"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -878,6 +908,7 @@
                         app:srcCompat="@drawable/peonynormalone" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView34"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -909,6 +940,7 @@
                         tools:layout_editor_absoluteY="160dp" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView35"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -929,6 +961,7 @@
                 android:visibility="visible">
 
                 <TextView
+                    android:fontFamily="@font/alike_angular"
                     android:id="@+id/julTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -965,6 +998,7 @@
                         app:srcCompat="@drawable/cloverboar" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView36"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -995,6 +1029,7 @@
                         app:srcCompat="@drawable/clovertanzaku" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView37"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1024,6 +1059,7 @@
                         app:srcCompat="@drawable/clovernormalone" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView38"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1055,6 +1091,7 @@
                         tools:layout_editor_absoluteY="160dp" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView39"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1075,6 +1112,7 @@
                 android:visibility="visible">
 
                 <TextView
+                    android:fontFamily="@font/alike_angular"
                     android:id="@+id/augTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -1111,6 +1149,7 @@
                         app:srcCompat="@drawable/pampasmoon" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView40"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1141,6 +1180,7 @@
                         app:srcCompat="@drawable/pampasgeese" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView41"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1170,6 +1210,7 @@
                         app:srcCompat="@drawable/pampasnormaltwo" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView42"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1201,6 +1242,7 @@
                         tools:layout_editor_absoluteY="160dp" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView43"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1221,6 +1263,7 @@
                 android:visibility="visible">
 
                 <TextView
+                    android:fontFamily="@font/alike_angular"
                     android:id="@+id/sepTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -1257,6 +1300,7 @@
                         app:srcCompat="@drawable/chryscup" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView44"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1289,6 +1333,7 @@
                         app:srcCompat="@drawable/chrystanzaku" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView45"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1318,6 +1363,7 @@
                         app:srcCompat="@drawable/chrysnormaltwo" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView46"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1349,6 +1395,7 @@
                         tools:layout_editor_absoluteY="160dp" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView47"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1369,6 +1416,7 @@
                 android:visibility="visible">
 
                 <TextView
+                    android:fontFamily="@font/alike_angular"
                     android:id="@+id/octTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -1405,6 +1453,7 @@
                         app:srcCompat="@drawable/mapledeer" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView9"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1435,6 +1484,7 @@
                         app:srcCompat="@drawable/mapletanzaku" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1464,6 +1514,7 @@
                         app:srcCompat="@drawable/maplenormalone" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1495,6 +1546,7 @@
                         tools:layout_editor_absoluteY="160dp" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView12"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1516,6 +1568,7 @@
                 android:visibility="visible">
 
                 <TextView
+                    android:fontFamily="@font/alike_angular"
                     android:id="@+id/novTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -1552,6 +1605,7 @@
                         app:srcCompat="@drawable/rainpoet" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView13"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1582,6 +1636,7 @@
                         app:srcCompat="@drawable/rainbird" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView14"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1611,6 +1666,7 @@
                         app:srcCompat="@drawable/raintanzaku" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView15"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1642,6 +1698,7 @@
                         tools:layout_editor_absoluteY="160dp" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView16"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1661,6 +1718,7 @@
                 android:gravity="center">
 
                 <TextView
+                    android:fontFamily="@font/alike_angular"
                     android:id="@+id/decTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -1698,6 +1756,7 @@
                         app:srcCompat="@drawable/paulphoenix" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView17"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1730,6 +1789,7 @@
                         app:srcCompat="@drawable/paulnormalone" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView18"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1761,6 +1821,7 @@
                         app:srcCompat="@drawable/paulnormaltwo" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView19"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1793,6 +1854,7 @@
                         tools:layout_editor_absoluteY="160dp" />
 
                     <TextView
+                        android:fontFamily="@font/alike_angular"
                         android:id="@+id/textView48"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1818,12 +1880,15 @@
     <Button
         android:id="@+id/galleryBack"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="64dp"
-        android:layout_height="35dp"
+        android:layout_width="72dp"
+        android:layout_height="37dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:fontFamily="@font/vollkorn"
+        android:gravity="right|top"
         android:text="@string/back"
         android:textSize="14sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -1835,6 +1900,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:fontFamily="@font/alike_angular"
         android:text="@string/card_gallery"
         android:textAllCaps="true"
         android:textColor="@android:color/background_dark"
