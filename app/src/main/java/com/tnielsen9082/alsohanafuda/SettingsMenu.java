@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -27,13 +28,28 @@ public class SettingsMenu extends AppCompatActivity {
         getWindow().getDecorView().setBackgroundColor(Color.LTGRAY);
         //lock in landscape mode
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        final View decorView = getWindow().getDecorView();
+        decorView.setOnSystemUiVisibilityChangeListener
+                (new View.OnSystemUiVisibilityChangeListener() {
+                     @Override
+                     public void onSystemUiVisibilityChange(int visibility) {
+                         // Note that system bars will only be "visible" if none of the
+                         // LOW_PROFILE, HIDE_NAVIGATION, or FULLSCREEN flags are set.
+                         if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                             int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+                             decorView.setSystemUiVisibility(uiOptions);
+                         }
+                     }
+                 }
+                );
+
         CheckBox toggle = findViewById(R.id.rainSwitch);
         toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 rain=isChecked;
             }
         });
-        EditText turnNumber = findViewById(R.id.turnNumberField);
+        EditText turnNumber = findViewById(R.id.playerTwoName);
         turnNumber.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -66,7 +82,7 @@ public class SettingsMenu extends AppCompatActivity {
                         myIntent.putExtra("scoreOne",0);
                         myIntent.putExtra("scoreTwo",0);
                         myIntent.putExtra("scoreThree",0);
-                        myIntent.putExtra("turnCounter",0);
+                        myIntent.putExtra("turnCounter",-1);
                         if(turns<=0){
                             myIntent.putExtra("turnTotal",12);
                         }

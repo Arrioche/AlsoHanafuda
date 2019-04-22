@@ -25,6 +25,20 @@ public class Namer extends AppCompatActivity {
         getWindow().getDecorView().setBackgroundColor(Color.WHITE);
         //lock in landscape mode
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        final View decorView = getWindow().getDecorView();
+        decorView.setOnSystemUiVisibilityChangeListener
+                (new View.OnSystemUiVisibilityChangeListener() {
+                     @Override
+                     public void onSystemUiVisibilityChange(int visibility) {
+                         // Note that system bars will only be "visible" if none of the
+                         // LOW_PROFILE, HIDE_NAVIGATION, or FULLSCREEN flags are set.
+                         if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                             int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+                             decorView.setSystemUiVisibility(uiOptions);
+                         }
+                     }
+                 }
+                );
 
         Button done = findViewById(R.id.startGame);
         done.setOnClickListener(new View.OnClickListener() {
@@ -59,7 +73,7 @@ public class Namer extends AppCompatActivity {
                 }, 100);
             }
         });
-        EditText playerOne = findViewById(R.id.turnNumberField);
+        EditText playerOne = findViewById(R.id.playerTwoName);
         playerOne.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -76,7 +90,7 @@ public class Namer extends AppCompatActivity {
                 nameTwo=s+"";
             }
         });
-        EditText playerTwo = findViewById(R.id.playerTwoName);
+        EditText playerTwo = findViewById(R.id.playerOneName);
         playerTwo.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

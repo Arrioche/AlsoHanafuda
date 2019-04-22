@@ -63,14 +63,7 @@ public class Scorer extends AppCompatActivity {
                         //starts the cardInitializer
                         Intent myIntent = new Intent(Scorer.this, MainGame.class);
                         //you can put data in the intent
-                        myIntent.putExtra("scoreOne", scores[0]);
-                        myIntent.putExtra("scoreTwo", scores[1]);
-                        myIntent.putExtra("scoreThree", scores[2]);
-                        myIntent.putExtra("pOne",names[0]);
-                        myIntent.putExtra("pTwo",names[1]);
-                        myIntent.putExtra("pThree",names[2]);
-                        myIntent.putExtra("rainStatus",(boolean)bundle.get("rainStatus"));
-                        myIntent.putExtra("turnCounter",(int)bundle.get("turnCounter")+1);
+                        myIntent.putExtras(bundle);
                         Scorer.this.startActivity(myIntent);
                         Scorer.this.finish();
                     }

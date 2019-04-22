@@ -22,13 +22,14 @@
         android:layout_width="wrap_content"
         android:layout_height="31dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="@android:color/holo_blue_dark"
-        android:paddingRight="5dp"
+        android:padding="5dp"
         android:text="Rain"
         app:layout_constraintBottom_toTopOf="@+id/startGame"
-        app:layout_constraintEnd_toEndOf="@+id/turnNumberField"
-        app:layout_constraintStart_toStartOf="@+id/turnNumberField"
-        app:layout_constraintTop_toBottomOf="@+id/startGame" />
+        app:layout_constraintEnd_toEndOf="@+id/playerTwoName"
+        app:layout_constraintStart_toStartOf="@+id/playerTwoName"
+        app:layout_constraintTop_toBottomOf="@+id/playerTwoName" />
 
     <TextView
         android:id="@+id/rainPrompt"
@@ -53,12 +54,12 @@
         android:text="Number of Turns:"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/turnNumberField"
-        app:layout_constraintEnd_toStartOf="@+id/turnNumberField"
-        app:layout_constraintStart_toEndOf="@+id/turnNumberField" />
+        app:layout_constraintBottom_toTopOf="@+id/playerTwoName"
+        app:layout_constraintEnd_toStartOf="@+id/playerTwoName"
+        app:layout_constraintStart_toEndOf="@+id/playerTwoName" />
 
     <EditText
-        android:id="@+id/turnNumberField"
+        android:id="@+id/playerTwoName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -75,20 +76,19 @@
     <Button
         android:id="@+id/startGame"
         style="?android:attr/buttonBarButtonStyle"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/buttongradient"
+        android:fontFamily="@font/vollkorn"
         android:stateListAnimator="@null"
         android:text="Start Game"
         android:textAllCaps="true"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="#000000"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/rainSwitch"
-        app:layout_constraintTop_toBottomOf="@+id/playerTwoName" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/loadingLayout"

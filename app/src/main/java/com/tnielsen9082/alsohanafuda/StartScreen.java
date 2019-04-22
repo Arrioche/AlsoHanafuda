@@ -20,6 +20,20 @@ public class StartScreen extends AppCompatActivity {
         setContentView(R.layout.start_scree);
         //locks it as landscape
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        final View decorView = getWindow().getDecorView();
+        decorView.setOnSystemUiVisibilityChangeListener
+                (new View.OnSystemUiVisibilityChangeListener() {
+                    @Override
+                    public void onSystemUiVisibilityChange(int visibility) {
+                        // Note that system bars will only be "visible" if none of the
+                        // LOW_PROFILE, HIDE_NAVIGATION, or FULLSCREEN flags are set.
+                        if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                            int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+                            decorView.setSystemUiVisibility(uiOptions);
+                        }
+                    }
+                }
+                );
 
         //creates the start button
         Button draw = findViewById(R.id.start);

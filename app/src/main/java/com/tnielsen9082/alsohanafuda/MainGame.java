@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -164,7 +165,7 @@ public class MainGame extends AppCompatActivity {
         }
         rainStatus=(boolean)bundle.get("rainStatus");
         //gets the number of turns that it has been
-        turnCount=(int)bundle.get("turnCounter");
+        turnCount=(int)bundle.get("turnCounter")+1;
         turnTotal=(int)bundle.get("turnTotal");
         //return the scores
         return scoresInit;
@@ -204,6 +205,8 @@ public class MainGame extends AppCompatActivity {
         myIntent.putExtra("rainStatus",rainStatus);
         //how many turns it's been
         myIntent.putExtra("turnCounter",turnCount);
+        //how many turns there will be
+        myIntent.putExtra("turnTotal",turnTotal);
         //start the new activity
         MainGame.this.startActivity(myIntent);
         //end this activity

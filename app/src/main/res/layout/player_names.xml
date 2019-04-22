@@ -17,117 +17,129 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/backbird" />
 
-    <EditText
-        android:id="@+id/playerTwoName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="125dp"
-        android:background="@android:color/background_light"
-        android:ems="7"
-        android:gravity="center"
-        android:imeOptions="actionDone|flagNoExtractUi"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:padding="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Enter Name" />
-
-    <EditText
-        android:id="@+id/turnNumberField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="125dp"
-        android:layout_marginEnd="32dp"
-        android:autofillHints=""
-        android:background="@android:color/background_light"
-        android:ems="7"
-        android:gravity="center"
-        android:imeOptions="actionDone|flagNoExtractUi"
-        android:inputType="textPersonName"
-        android:padding="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Enter Name" />
-
-    <EditText
-        android:id="@+id/playerThreeName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:color/background_light"
-        android:ems="7"
-        android:gravity="center"
-        android:imeOptions="actionDone|flagNoExtractUi"
-        android:inputType="textPersonName"
-        android:padding="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/turnNumberField"
-        tools:text="Enter Name" />
-
-    <TextView
-        android:id="@+id/playerOneTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:padding="8dp"
-        android:text="Player Two's Name"
-        android:textColor="?attr/colorError"
-        app:layout_constraintBottom_toTopOf="@+id/turnNumberField"
-        app:layout_constraintEnd_toStartOf="@+id/turnNumberField"
-        app:layout_constraintStart_toEndOf="@+id/turnNumberField" />
-
-    <TextView
-        android:id="@+id/playerTwoTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:padding="8dp"
-        android:text=" Player One's Name"
-        android:textColor="@android:color/black"
-        app:layout_constraintBottom_toTopOf="@+id/playerTwoName"
-        app:layout_constraintEnd_toStartOf="@+id/playerTwoName"
-        app:layout_constraintStart_toEndOf="@+id/playerTwoName" />
-
-    <TextView
-        android:id="@+id/playerThreeTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
-        android:padding="8dp"
-        android:text="Player Three's Name"
-        android:textColor="@android:color/black"
-        app:layout_constraintBottom_toTopOf="@+id/playerThreeName"
-        app:layout_constraintEnd_toStartOf="@+id/playerThreeName"
-        app:layout_constraintStart_toEndOf="@+id/playerThreeName" />
-
     <Button
         android:id="@+id/startGame"
         style="?android:attr/buttonBarButtonStyle"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/buttongradient"
+        android:fontFamily="@font/vollkorn"
         android:stateListAnimator="@null"
         android:text="Next"
         android:textAllCaps="true"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="#000000"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/turnNumberField"
-        app:layout_constraintStart_toEndOf="@+id/turnNumberField"
-        app:layout_constraintTop_toBottomOf="@+id/playerTwoName" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/nameLayout"
+        android:baselineAligned="false"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/background"
+        app:layout_constraintStart_toStartOf="@+id/background"
+        app:layout_constraintTop_toTopOf="@+id/background">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/playerOneTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/buttongradient"
+                android:fontFamily="@font/alike_angular"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text=" Player One's Name"
+                android:textColor="@android:color/black" />
+
+            <EditText
+                android:id="@+id/playerOneName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                android:ems="7"
+                android:gravity="center"
+                android:imeOptions="actionDone|flagNoExtractUi"
+                android:inputType="textPersonName"
+                tools:text="Enter Name" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/playerTwoTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/buttongradient"
+                android:fontFamily="@font/alike_angular"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Player Two's Name"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/playerTwoName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                android:ems="7"
+                android:gravity="center"
+                android:imeOptions="actionDone|flagNoExtractUi"
+                android:inputType="textPersonName"
+                tools:text="Enter Name" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center|center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/playerThreeTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/buttongradient"
+                android:fontFamily="@font/alike_angular"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Player Three's Name"
+                android:textColor="@android:color/black" />
+
+            <EditText
+                android:id="@+id/playerThreeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                android:ems="7"
+                android:gravity="center"
+                android:imeOptions="actionDone|flagNoExtractUi"
+                android:inputType="textPersonName"
+                tools:text="Enter Name" />
+
+        </LinearLayout>
+    </LinearLayout>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/loadingLayout"
@@ -148,22 +160,24 @@
 
         <TextView
             android:id="@+id/loadingText"
-            android:layout_width="243dp"
-            android:layout_height="119dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:gravity="center"
-            android:padding="2dp"
-            android:shadowColor="@android:color/background_light"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/loadinggradient"
+            android:fontFamily="@font/alike_angular"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="20dp"
+            android:shadowColor="@android:color/black"
             android:shadowDx="7"
-            android:shadowDy="3"
-            android:shadowRadius="1"
+            android:shadowDy="7"
+            android:shadowRadius="0.01"
             android:text="Loading"
             android:textAllCaps="true"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/background_light"
             android:textSize="50sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 
