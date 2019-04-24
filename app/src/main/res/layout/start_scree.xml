@@ -88,7 +88,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/rainlightning" />
+            app:srcCompat="@drawable/backlight" />
 
         <TextView
             android:id="@+id/loadingTextStart"

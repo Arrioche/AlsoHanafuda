@@ -96,6 +96,28 @@ public final class Dropper implements View.OnDragListener {
         owner = (ViewGroup) dragger.getParent();
         switch (event.getAction()) {
             case DragEvent.ACTION_DRAG_STARTED:
+                dragID = dragger.getContentDescription();
+                dropID = dropper.getContentDescription();
+                if(dropID!=null) {
+                    //get the ids of each card
+                    //which are hacked around via the ContentDescription
+                    //in a move that I am sure is programming crime
+                    //but it worked fine for solitaire, so
+                    container = (LinearLayout) dropper.getParent();
+                    //the month of the dragged card
+                    dragMonth = dragID.charAt(0);
+                    //the month of the receiving card
+                    //(returns null if the receiver is the layout)
+                    dropMonth = dropID.charAt(0);
+                    //the points of the dragged card
+                    dragPoints = Integer.parseInt(String.valueOf(dragID.subSequence(1, 3)));
+                    //the points of the dropped card
+                    //(returns null if the receiver is the layout)
+                    dropPoints = Integer.parseInt(String.valueOf(dropID.subSequence(1, 3)));
+                    if(container==board&&dropMonth!=dragMonth){
+                        drop.setAlpha((float)0.4);
+                    }
+                }
                 break;
             case DragEvent.ACTION_DRAG_ENTERED:
                 break;
@@ -112,18 +134,17 @@ public final class Dropper implements View.OnDragListener {
                     //which are hacked around via the ContentDescription
                     //in a move that I am sure is programming crime
                     //but it worked fine for solitaire, so
-                    container = (LinearLayout)dropper.getParent();
+                    container = (LinearLayout) dropper.getParent();
                     //the month of the dragged card
                     dragMonth = dragID.charAt(0);
                     //the month of the receiving card
                     //(returns null if the receiver is the layout)
                     dropMonth = dropID.charAt(0);
                     //the points of the dragged card
-                    dragPoints = Integer.parseInt(String.valueOf(dragID.subSequence(1,3)));
+                    dragPoints = Integer.parseInt(String.valueOf(dragID.subSequence(1, 3)));
                     //the points of the dropped card
                     //(returns null if the receiver is the layout)
                     dropPoints = Integer.parseInt(String.valueOf(dropID.subSequence(1, 3)));
-
                     //if you are not dropping in your own container
                     //and the suits are the same
                     if(container==board&&dropMonth==dragMonth) {
@@ -190,6 +211,7 @@ public final class Dropper implements View.OnDragListener {
                 break;
             case DragEvent.ACTION_DRAG_ENDED:
                 showCards();
+                drop.setAlpha((float)1);
                 break;
             default:
                 //stops if there is no more dragging

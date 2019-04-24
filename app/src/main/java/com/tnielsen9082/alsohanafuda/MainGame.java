@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -476,6 +477,7 @@ public class MainGame extends AppCompatActivity {
         Button combos =findViewById(R.id.combosDisp);
         TurnRotator turnRotator = new TurnRotator();
         ComboButton comboButton = new ComboButton();
+        View backdrop = findViewById(R.id.turnBack);
 
         //set up the array of player's hands
         hands[0]=findViewById(R.id.handOne);
@@ -519,6 +521,12 @@ public class MainGame extends AppCompatActivity {
         end.setOnClickListener(endTurn);
         turn.setOnClickListener(startTurn);
         combos.setOnClickListener(comboButton);
+        backdrop.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return true;
+            }
+        });
         for (int i = 0; i < trickButtons.length; i++) {
             //this one has to be made within the for loop because it uses i]
             trickButtons[i].setOnClickListener(new ShowTakenTricks(this, tricks,i, endTurn, names));

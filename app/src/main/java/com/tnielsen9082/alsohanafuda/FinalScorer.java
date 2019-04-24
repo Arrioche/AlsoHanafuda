@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,7 @@ public class FinalScorer extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private String[] scoresInit =new String[3];
     private String[] names= new String[3];
+    private Handler mHandler = new Handler();
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,28 +56,38 @@ public class FinalScorer extends AppCompatActivity {
         Button nextRound = findViewById(R.id.restart);
         nextRound.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //starts the cardInitializer
-                Intent myIntent = new Intent(FinalScorer.this, MainGame.class);
-                myIntent.putExtra("scoreOne",0);
-                myIntent.putExtra("scoreTwo",0);
-                myIntent.putExtra("scoreThree",0);
-                myIntent.putExtra("pOne",names[0]);
-                myIntent.putExtra("pTwo",names[1]);
-                myIntent.putExtra("pThree",names[2]);
-                myIntent.putExtra("rainStatus",(boolean)bundle.get("rainStatus"));
-                myIntent.putExtra("turnCounter",0);
-                myIntent.putExtra("turnTotal",(int)bundle.get("turnTotal"));
-                FinalScorer.this.startActivity(myIntent);
-                FinalScorer.this.finish();
+                (findViewById(R.id.loadingLayout)).setVisibility(View.VISIBLE);
+                mHandler.postDelayed(new Runnable() {
+                    public void run() {
+                        //starts the cardInitializer
+                        Intent myIntent = new Intent(FinalScorer.this, MainGame.class);
+                        myIntent.putExtra("scoreOne",0);
+                        myIntent.putExtra("scoreTwo",0);
+                        myIntent.putExtra("scoreThree",0);
+                        myIntent.putExtra("pOne",names[0]);
+                        myIntent.putExtra("pTwo",names[1]);
+                        myIntent.putExtra("pThree",names[2]);
+                        myIntent.putExtra("rainStatus",(boolean)bundle.get("rainStatus"));
+                        myIntent.putExtra("turnCounter",0);
+                        myIntent.putExtra("turnTotal",(int)bundle.get("turnTotal"));
+                        FinalScorer.this.startActivity(myIntent);
+                        FinalScorer.this.finish();
+                    }
+                }, 100);
             }
         });
         Button mainMenu = findViewById(R.id.mainMenu);
         mainMenu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //starts the cardInitializer
-                Intent myIntent = new Intent(FinalScorer.this, StartScreen.class);
-                FinalScorer.this.startActivity(myIntent);
-                FinalScorer.this.finish();
+                (findViewById(R.id.loadingLayout)).setVisibility(View.VISIBLE);
+                mHandler.postDelayed(new Runnable() {
+                    public void run() {
+                        //starts the cardInitializer
+                        Intent myIntent = new Intent(FinalScorer.this, StartScreen.class);
+                        FinalScorer.this.startActivity(myIntent);
+                        FinalScorer.this.finish();
+                    }
+                }, 100);
             }
         });
     }

@@ -93,7 +93,7 @@ public class SettingsMenu extends AppCompatActivity {
                         SettingsMenu.this.startActivity(myIntent);
                         SettingsMenu.this.finish();
                     }
-                }, 100);
+                }, 500);
             }
         });
     }

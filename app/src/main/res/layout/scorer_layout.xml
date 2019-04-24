@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/scorerback"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:adjustViewBounds="false"
@@ -16,22 +16,204 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/backclover" />
+        app:srcCompat="@drawable/backbridge" />
 
     <Button
         android:id="@+id/nextRound"
-        style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
-        android:layout_width="wrap_content"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        android:fontFamily="@font/alike_angular"
-        android:singleLine="false"
-        android:text="Next Round"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="36sp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/buttongradient"
+        android:padding="5dp"
+        android:fontFamily="@font/vollkorn"
+        android:stateListAnimator="@null"
+        android:text="Start Next Round"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/scorerback">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titleOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttongradient"
+                android:fontFamily="@font/alike_angular"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="TextView"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/scoreDisplay1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/buttongradient"
+                android:fontFamily="@font/alike_angular"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="TextView"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/bonusPoints1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/buttongradient"
+                android:fontFamily="@font/alike_angular"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="TextView"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toEndOf="@+id/scoreDisplay1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titleTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttongradient"
+                android:fontFamily="@font/vollkorn"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="TextView"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/scoreDisplay2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/buttongradient"
+                android:fontFamily="@font/alike_angular"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="TextView"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/bonusPoints2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/buttongradient"
+                android:fontFamily="@font/alike_angular"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="TextView"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toEndOf="@+id/scoreDisplay2"
+                app:layout_constraintTop_toBottomOf="@+id/bonusPoints1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titleThree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttongradient"
+                android:fontFamily="@font/vollkorn"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="TextView"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/scoreDisplay3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/buttongradient"
+                android:fontFamily="@font/alike_angular"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="TextView"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/bonusPoints3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/buttongradient"
+                android:fontFamily="@font/alike_angular"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="TextView"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toEndOf="@+id/scoreDisplay3"
+                app:layout_constraintTop_toBottomOf="@+id/bonusPoints2" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <TableLayout
         android:layout_width="wrap_content"
@@ -42,147 +224,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="left">
-
-            <TextView
-                android:id="@+id/titleOne"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/vollkorn"
-                android:text="TextView"
-                android:textColor="@android:color/black"
-                app:layout_constraintBottom_toTopOf="@+id/scoreDisplay1"
-                app:layout_constraintStart_toStartOf="parent" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="10dp"
-            android:gravity="center_vertical">
-
-            <TextView
-                android:id="@+id/scoreDisplay1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/vollkorn"
-                android:text="TextView"
-                android:textColor="@android:color/black"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/bonusPoints1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:fontFamily="@font/alike_angular"
-                android:text="TextView"
-                android:textColor="@android:color/black"
-                app:layout_constraintStart_toEndOf="@+id/scoreDisplay1"
-                app:layout_constraintTop_toTopOf="parent" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/titleTwo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/vollkorn"
-                android:text="TextView"
-                android:textColor="@android:color/black"
-                app:layout_constraintBottom_toTopOf="@+id/scoreDisplay2"
-                app:layout_constraintStart_toStartOf="parent" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="10dp"
-            android:gravity="center_vertical">
-
-            <TextView
-                android:id="@+id/scoreDisplay2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/alike_angular"
-                android:text="TextView"
-                android:textColor="@android:color/black"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/scoreDisplay1" />
-
-            <TextView
-                android:id="@+id/bonusPoints2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:fontFamily="@font/alike_angular"
-                android:text="TextView"
-                android:textColor="@android:color/black"
-                app:layout_constraintStart_toEndOf="@+id/scoreDisplay2"
-                app:layout_constraintTop_toBottomOf="@+id/bonusPoints1" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/titleThree"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/vollkorn"
-                android:text="TextView"
-                android:textColor="@android:color/black"
-                app:layout_constraintBottom_toTopOf="@+id/scoreDisplay3"
-                app:layout_constraintStart_toStartOf="parent" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical">
-
-            <TextView
-                android:id="@+id/scoreDisplay3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/alike_angular"
-                android:text="TextView"
-                android:textColor="@android:color/black"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/scoreDisplay2" />
-
-            <TextView
-                android:id="@+id/bonusPoints3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:fontFamily="@font/alike_angular"
-                android:text="TextView"
-                android:textColor="@android:color/black"
-                app:layout_constraintStart_toEndOf="@+id/scoreDisplay3"
-                app:layout_constraintTop_toBottomOf="@+id/bonusPoints2" />
-        </TableRow>
 
     </TableLayout>
 
@@ -201,7 +242,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/backpeony" />
+            app:srcCompat="@drawable/backchrys" />
 
         <TextView
             android:id="@+id/loadingText"

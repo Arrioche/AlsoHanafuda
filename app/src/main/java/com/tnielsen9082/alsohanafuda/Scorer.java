@@ -52,7 +52,7 @@ public class Scorer extends AppCompatActivity {
         for (int i = 0; i < 3; i++) {
             scoresDisplay[i].setText("Total Points: "+scores[i]);
             namesDisplay[i].setText(names[i]);
-            bonusDisplay[i].setText("Combo Points: "+bonus[i]);
+            bonusDisplay[i].setText("Points from Combos: "+bonus[i]);
         }
         Button nextRound = findViewById(R.id.nextRound);
         nextRound.setOnClickListener(new View.OnClickListener() {
@@ -67,7 +67,7 @@ public class Scorer extends AppCompatActivity {
                         Scorer.this.startActivity(myIntent);
                         Scorer.this.finish();
                     }
-                }, 20);
+                }, 100);
             }
         });
     }
