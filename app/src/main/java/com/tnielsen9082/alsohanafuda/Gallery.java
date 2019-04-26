@@ -14,7 +14,7 @@ public class Gallery extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //sets the display to the start screen
         setContentView(R.layout.card_gallery);
-        getWindow().getDecorView().setBackgroundColor(Color.GRAY);
+        getWindow().getDecorView().setBackgroundColor(Color.BLACK);
         //locks it as landscape
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         Button backs;

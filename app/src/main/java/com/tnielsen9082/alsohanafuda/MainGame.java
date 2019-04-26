@@ -97,6 +97,7 @@ public class MainGame extends AppCompatActivity {
     //the number of turns
     private int turnCount;
     private int turnTotal;
+    private float alpha;
     //the method that triggers when the activity is created
     //it sets up the graphics
     //and calls all the other setting-up methods
@@ -168,6 +169,7 @@ public class MainGame extends AppCompatActivity {
         //gets the number of turns that it has been
         turnCount=(int)bundle.get("turnCounter")+1;
         turnTotal=(int)bundle.get("turnTotal");
+        alpha = (float)bundle.get("alphaStatus");
         //return the scores
         return scoresInit;
 
@@ -208,6 +210,7 @@ public class MainGame extends AppCompatActivity {
         myIntent.putExtra("turnCounter",turnCount);
         //how many turns there will be
         myIntent.putExtra("turnTotal",turnTotal);
+        myIntent.putExtra("alphaStatus", alpha);
         //start the new activity
         MainGame.this.startActivity(myIntent);
         //end this activity
@@ -508,7 +511,7 @@ public class MainGame extends AppCompatActivity {
 
         //give all the data to all the things that need it
         dragger.id(this, hands,cardsDisp,cards,cardDescs);
-        dropper.id(this, tricks, scores,dragger,turnRotator,endTurn);
+        dropper.id(this, tricks, scores,dragger,turnRotator,endTurn,alpha);
         trickHider.id(this, tricks,turnRotator);
         endTurn.id(this,hands,trickHider, turnRotator);
         turnRotator.id(this,hands,scores,dragger,names,trickButtons);

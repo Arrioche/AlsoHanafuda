@@ -594,64 +594,64 @@
     </HorizontalScrollView>
 
     <TextView
-        android:fontFamily="@font/alike_angular"
         android:id="@+id/scoreStarter"
         android:layout_width="87dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
+        android:fontFamily="@font/alike_angular"
         android:gravity="center"
         android:paddingBottom="0dp"
         android:text="@string/your_score"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/combosDisp"
         app:layout_constraintStart_toEndOf="@+id/combosDisp"
         app:layout_constraintTop_toBottomOf="@+id/playerNameMain" />
 
     <TextView
-        android:fontFamily="@font/alike_angular"
         android:id="@+id/score1"
         android:layout_width="wrap_content"
         android:layout_height="18dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_weight="1"
+        android:fontFamily="@font/alike_angular"
         android:gravity="bottom"
         android:text="@string/_0"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="#FFFFFF"
         android:visibility="visible"
         app:layout_constraintEnd_toStartOf="@+id/combosDisp"
         app:layout_constraintStart_toEndOf="@+id/combosDisp"
         app:layout_constraintTop_toBottomOf="@+id/scoreStarter" />
 
     <TextView
-        android:fontFamily="@font/alike_angular"
         android:id="@+id/score2"
         android:layout_width="wrap_content"
         android:layout_height="18dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_weight="1"
+        android:fontFamily="@font/alike_angular"
         android:gravity="bottom"
         android:text="@string/_0"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="#FFFFFF"
         android:visibility="gone"
         app:layout_constraintEnd_toStartOf="@+id/combosDisp"
         app:layout_constraintStart_toEndOf="@+id/combosDisp"
         app:layout_constraintTop_toBottomOf="@+id/scoreStarter" />
 
     <TextView
-        android:fontFamily="@font/alike_angular"
         android:id="@+id/score3"
         android:layout_width="wrap_content"
         android:layout_height="18dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_weight="1"
+        android:fontFamily="@font/alike_angular"
         android:gravity="bottom"
         android:text="@string/_0"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="#FFFFFF"
         android:visibility="gone"
         app:layout_constraintEnd_toStartOf="@+id/combosDisp"
         app:layout_constraintStart_toEndOf="@+id/combosDisp"
@@ -672,15 +672,15 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:fontFamily="@font/vollkorn"
             android:id="@+id/dismissal"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
+            android:fontFamily="@font/vollkorn"
             android:text="Dismiss"
-            android:textColor="@android:color/holo_blue_dark"
+            android:textColor="#FFFFFF"
             android:visibility="gone" />
 
         <HorizontalScrollView
@@ -744,7 +744,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:fontFamily="@font/vollkorn"
             android:id="@+id/dispYou"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
@@ -752,15 +751,15 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
+            android:fontFamily="@font/vollkorn"
             android:text="@string/your_cards"
-            android:textColor="@android:color/holo_blue_dark"
+            android:textColor="#FFFFFF"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:fontFamily="@font/vollkorn"
             android:id="@+id/dispOne"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
@@ -768,14 +767,14 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:textColor="@android:color/holo_blue_dark"
+            android:fontFamily="@font/vollkorn"
+            android:textColor="#FFFFFF"
             android:textColorLink="@color/colorPrimaryDark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="104dp" />
 
         <Button
-            android:fontFamily="@font/vollkorn"
             android:id="@+id/dispTwo"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
@@ -784,7 +783,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:textColor="@android:color/holo_blue_dark"
+            android:fontFamily="@font/vollkorn"
+            android:textColor="#FFFFFF"
             android:textColorLink="@color/colorPrimaryDark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -834,14 +834,14 @@
     </LinearLayout>
 
     <TextView
-        android:fontFamily="@font/alike_angular"
         android:id="@+id/playerNameMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/alike_angular"
         android:gravity="center"
         android:text="player name"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/scoreStarter"
         app:layout_constraintStart_toEndOf="@+id/scoreStarter"
         app:layout_constraintTop_toBottomOf="@+id/table" />
@@ -895,7 +895,7 @@
             android:paddingRight="20dp"
             android:text="hhh"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="#FFFFFF"
             android:textSize="25sp"
             android:visibility="visible" />
 
@@ -945,14 +945,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:background="@drawable/buttongradient"
+            android:background="@drawable/textgradient"
             android:fontFamily="@font/alike_angular"
             android:gravity="center_horizontal|center_vertical"
             android:padding="5dp"
             android:paddingStart="60dp"
             android:paddingEnd="60dp"
             android:text="hggfhgfhg"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/nextTurn"
             app:layout_constraintEnd_toEndOf="parent"

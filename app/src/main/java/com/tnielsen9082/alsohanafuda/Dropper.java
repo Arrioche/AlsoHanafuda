@@ -62,8 +62,9 @@ public final class Dropper implements View.OnDragListener {
     private int dragPoints;
     private int dropPoints;
     private int sco;
+    private float alpha;
 
-    public void id(Activity activity,LinearLayout[] tricksTag,TextView[] scoreTag, Dragger dragTag,TurnRotator turnRotatorTag,TurnEnder turnEnderTag){
+    public void id(Activity activity,LinearLayout[] tricksTag,TextView[] scoreTag, Dragger dragTag,TurnRotator turnRotatorTag,TurnEnder turnEnderTag, float alphaTag){
         //initializing all those variables
         tricks = tricksTag;
         score = scoreTag;
@@ -73,6 +74,7 @@ public final class Dropper implements View.OnDragListener {
         second = activity.findViewById(R.id.secondCard);
         draw=activity.findViewById(R.id.drawPile);
         turnEnder = turnEnderTag;
+        alpha = alphaTag;
     }
     @Override
     //when a drag is started this activates
@@ -115,7 +117,7 @@ public final class Dropper implements View.OnDragListener {
                     //(returns null if the receiver is the layout)
                     dropPoints = Integer.parseInt(String.valueOf(dropID.subSequence(1, 3)));
                     if(container==board&&dropMonth!=dragMonth){
-                        drop.setAlpha((float)0.4);
+                        drop.setAlpha(alpha);
                     }
                 }
                 break;

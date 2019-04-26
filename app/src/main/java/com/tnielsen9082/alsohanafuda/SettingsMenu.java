@@ -5,6 +5,7 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -17,6 +18,7 @@ import android.widget.EditText;
 
 public class SettingsMenu extends AppCompatActivity {
     private boolean rain = false;
+    private float alpha = 1;
     private int turns=12;
     private Handler mHandler = new Handler();
     @Override
@@ -44,9 +46,22 @@ public class SettingsMenu extends AppCompatActivity {
                 );
 
         CheckBox toggle = findViewById(R.id.rainSwitch);
+        toggle.setTypeface(ResourcesCompat.getFont(this, R.font.vollkorn));
         toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 rain=isChecked;
+            }
+        });
+        CheckBox alphaCheck= findViewById(R.id.dimSwitch);
+        alphaCheck.setTypeface(ResourcesCompat.getFont(this, R.font.vollkorn));
+        alphaCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    alpha=(float)0.3;
+                }
+                else{
+                    alpha=1;
+                }
             }
         });
         EditText turnNumber = findViewById(R.id.playerTwoName);
@@ -90,6 +105,7 @@ public class SettingsMenu extends AppCompatActivity {
                             myIntent.putExtra("turnTotal",turns);
                         }
                         myIntent.putExtra("rainStatus",rain);
+                        myIntent.putExtra("alphaStatus",alpha);
                         SettingsMenu.this.startActivity(myIntent);
                         SettingsMenu.this.finish();
                     }
