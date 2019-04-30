@@ -13,9 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class Namer extends AppCompatActivity {
-    String nameOne;
-    String nameTwo;
-    String nameThree;
+    String nameOne="";
+    String nameTwo="";
+    String nameThree="";
     private Handler mHandler = new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {

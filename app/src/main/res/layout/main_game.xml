@@ -6,17 +6,19 @@
     android:layout_height="match_parent">
 
     <Button
-        android:fontFamily="@font/vollkorn"
         android:id="@+id/combosDisp"
         style="?android:attr/buttonBarButtonStyle"
-        android:layout_width="76dp"
-        android:layout_height="34dp"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/vollkorn"
         android:stateListAnimator="@null"
         android:text="@string/combos"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/score1" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/endTurn"
+        app:layout_constraintEnd_toStartOf="@+id/endTurn"
+        app:layout_constraintStart_toEndOf="@+id/endTurn" />
 
     <LinearLayout
         android:id="@+id/drawPile"
@@ -593,82 +595,88 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <TextView
-        android:id="@+id/scoreStarter"
-        android:layout_width="87dp"
+    <LinearLayout
+        android:id="@+id/scoreDisp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
-        android:fontFamily="@font/alike_angular"
         android:gravity="center"
-        android:paddingBottom="0dp"
-        android:text="@string/your_score"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toStartOf="@+id/combosDisp"
-        app:layout_constraintStart_toEndOf="@+id/combosDisp"
-        app:layout_constraintTop_toBottomOf="@+id/playerNameMain" />
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/handScroll"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/table">
 
-    <TextView
-        android:id="@+id/score1"
-        android:layout_width="wrap_content"
-        android:layout_height="18dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_weight="1"
-        android:fontFamily="@font/alike_angular"
-        android:gravity="bottom"
-        android:text="@string/_0"
-        android:textColor="#FFFFFF"
-        android:visibility="visible"
-        app:layout_constraintEnd_toStartOf="@+id/combosDisp"
-        app:layout_constraintStart_toEndOf="@+id/combosDisp"
-        app:layout_constraintTop_toBottomOf="@+id/scoreStarter" />
+        <TextView
+            android:id="@+id/playerNameMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike_angular"
+            android:gravity="center"
+            android:text="player name"
+            android:textColor="#FFFFFF"
+            android:visibility="visible" />
 
-    <TextView
-        android:id="@+id/score2"
-        android:layout_width="wrap_content"
-        android:layout_height="18dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_weight="1"
-        android:fontFamily="@font/alike_angular"
-        android:gravity="bottom"
-        android:text="@string/_0"
-        android:textColor="#FFFFFF"
-        android:visibility="gone"
-        app:layout_constraintEnd_toStartOf="@+id/combosDisp"
-        app:layout_constraintStart_toEndOf="@+id/combosDisp"
-        app:layout_constraintTop_toBottomOf="@+id/scoreStarter" />
+        <TextView
+            android:id="@+id/scoreStarter"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="none"
+            android:fontFamily="@font/alike_angular"
+            android:gravity="center"
+            android:maxLines="100"
+            android:scrollHorizontally="false"
+            android:text="@string/your_score"
+            android:textColor="#FFFFFF" />
 
-    <TextView
-        android:id="@+id/score3"
-        android:layout_width="wrap_content"
-        android:layout_height="18dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_weight="1"
-        android:fontFamily="@font/alike_angular"
-        android:gravity="bottom"
-        android:text="@string/_0"
-        android:textColor="#FFFFFF"
-        android:visibility="gone"
-        app:layout_constraintEnd_toStartOf="@+id/combosDisp"
-        app:layout_constraintStart_toEndOf="@+id/combosDisp"
-        app:layout_constraintTop_toBottomOf="@+id/scoreStarter" />
+        <TextView
+            android:id="@+id/score1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/alike_angular"
+            android:text="@string/_0"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/score2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/alike_angular"
+            android:text="@string/_0"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/score3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/alike_angular"
+            android:text="@string/_0"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:visibility="gone" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/takenTricks"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/secondCardBack"
-        app:layout_constraintStart_toEndOf="@+id/playerNameMain"
+        app:layout_constraintStart_toEndOf="@+id/scoreDisp"
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
@@ -740,7 +748,7 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/secondCardBack"
-        app:layout_constraintStart_toEndOf="@+id/playerNameMain"
+        app:layout_constraintStart_toEndOf="@+id/scoreDisp"
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
@@ -832,19 +840,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/table">
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/playerNameMain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/alike_angular"
-        android:gravity="center"
-        android:text="player name"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toStartOf="@+id/scoreStarter"
-        app:layout_constraintStart_toEndOf="@+id/scoreStarter"
-        app:layout_constraintTop_toBottomOf="@+id/table" />
 
     <Button
         android:id="@+id/endTurn"

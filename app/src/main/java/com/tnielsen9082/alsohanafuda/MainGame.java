@@ -107,7 +107,7 @@ public class MainGame extends AppCompatActivity {
         //set the xml layout file
         setContentView(R.layout.main_game);
         //set temporary background
-        getWindow().getDecorView().setBackgroundColor(Color.BLACK);
+        getWindow().getDecorView().setBackgroundColor(getResources().getColor(R.color.slate));
         //lock it in landscape mode
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         methodBundle();
