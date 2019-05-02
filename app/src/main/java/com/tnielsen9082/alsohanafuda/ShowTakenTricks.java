@@ -36,12 +36,18 @@ public class ShowTakenTricks implements View.OnClickListener{
         int handNum = turnEnder.getHandNum();
         takenTricks[(handNum+player+2)%3].setVisibility(View.VISIBLE);
         for (int i = 0; i < 3; i++) {
-            scores[i].setVisibility(View.INVISIBLE);
+            scores[i].setVisibility(View.GONE);
         }
         scores[(handNum+player+2)%3].setVisibility(View.VISIBLE);
         dismiss.setVisibility(View.VISIBLE);
         if((handNum+player)%3!=handNum){
-            scoreStarter.setText(names[(handNum+player+2)%3]+"'s Score:");
+            if((names[(handNum+player+2)%3].toLowerCase().charAt(names[(handNum+player+2)%3].length()-1))=="s".charAt(0)){
+                //and make sure they pluralize properly
+                scoreStarter.setText(names[(handNum+player+2)%3]+"' Score:");
+            }
+            else {
+                scoreStarter.setText(names[(handNum+player+2)%3]+"'s Score:");
+            }
         }
     }
 }

@@ -32,7 +32,7 @@ public class HideTakenTricks implements View.OnClickListener{
         buttons.setVisibility(View.VISIBLE);
         for (int i = 0; i < 3; i++) {
             takenTricks[i].setVisibility(View.GONE);
-            scores[i].setVisibility(View.INVISIBLE);
+            scores[i].setVisibility(View.GONE);
         }
         int handNum = turnRotator.getPlayerNum();
         scores[handNum].setVisibility(View.VISIBLE);

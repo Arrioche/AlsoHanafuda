@@ -491,16 +491,16 @@ public class MainGame extends AppCompatActivity {
         //set up the initial buttons to display tricks
         if((names[1].toLowerCase().charAt(names[1].length()-1))=="s".charAt(0)){
             //and make sure they pluralize properly
-            trickButtons[1].setText(names[1]+"' Cards");
+            trickButtons[1].setText(names[1]+"'\nCards");
         }
         else {
-            trickButtons[1].setText(names[1]+"'s Cards");
+            trickButtons[1].setText(names[1]+"'s\nCards");
         }
         if((names[2].toLowerCase().charAt(names[2].length()-1))=="s".charAt(0)){
             trickButtons[2].setText(names[2]+"' Cards");
         }
         else {
-            trickButtons[2].setText(names[2]+"'s Cards");
+            trickButtons[2].setText(names[2]+"'s\nCards");
         }
         //set the starting scores (this carries over between rounds)
         for (int i = 0; i < 3; i++) {
@@ -511,7 +511,7 @@ public class MainGame extends AppCompatActivity {
 
         //give all the data to all the things that need it
         dragger.id(this, hands,cardsDisp,cards,cardDescs);
-        dropper.id(this, tricks, scores,dragger,turnRotator,endTurn,alpha);
+        dropper.id(this, tricks, scores,dragger,turnRotator,endTurn,alpha, hands);
         trickHider.id(this, tricks,turnRotator);
         endTurn.id(this,hands,trickHider, turnRotator);
         turnRotator.id(this,hands,scores,dragger,names,trickButtons);

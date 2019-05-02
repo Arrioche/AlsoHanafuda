@@ -34,7 +34,6 @@ public class StartScreen extends AppCompatActivity {
                     }
                 }
                 );
-
         //creates the start button
         Button draw = findViewById(R.id.start);
         draw.setOnClickListener(new View.OnClickListener() {

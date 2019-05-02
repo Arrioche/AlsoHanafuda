@@ -11,8 +11,6 @@ import android.widget.TextView;
 public class TurnRotator extends Activity {
     //the array of player hands
     private LinearLayout[] hands;
-    //the screen that breaks up turns
-    private ConstraintLayout splitter;
     //displays the score
     private TextView[] score;
     //the place where names are displayed
@@ -33,7 +31,6 @@ public class TurnRotator extends Activity {
         drag=dragTag;
         names=nameTag;
         nameDisplaySplitter = activity.findViewById(R.id.nextPlayerAnnounce);
-        splitter=activity.findViewById(R.id.turnSplitterLayout);
         nameDisp=activity.findViewById(R.id.playerNameMain);
         trickButtons = trickButtonsTag;
     }
@@ -44,24 +41,28 @@ public class TurnRotator extends Activity {
     public void rotate() {
         nameDisplaySplitter.setText("Next Up: "+names[(playerNum+1)%3]);
         ((View)nameDisplaySplitter.getParent()).setVisibility(View.VISIBLE);
-
+        for (int i = 0; i < hands.length; i++) {
+            for (int j = 0; j < hands[i].getChildCount(); j++) {
+                hands[i].getChildAt(j).setAlpha((float)1);
+            }
+        }
         //hide the old hand
         hands[playerNum % 3].setVisibility(View.GONE);
         //hide the old score
-        score[playerNum % 3].setVisibility(View.INVISIBLE);
+        score[playerNum % 3].setVisibility(View.GONE);
         //rotate the dropper
         playerNum = (playerNum + 1) % 3;
         if((names[(playerNum+1)%3].toLowerCase().charAt(names[(playerNum+1)%3].length()-1))=="s".charAt(0)){
-            trickButtons[1].setText(names[(playerNum+1)%3]+"' Cards");
+            trickButtons[1].setText(names[(playerNum+1)%3]+"'\nCards");
         }
         else {
-            trickButtons[1].setText(names[(playerNum+1)%3]+"'s Cards");
+            trickButtons[1].setText(names[(playerNum+1)%3]+"'s\nCards");
         }
         if((names[(playerNum+2)%3].toLowerCase().charAt(names[(playerNum+2)%3].length()-1))=="s".charAt(0)){
-            trickButtons[2].setText(names[(playerNum+2)%3]+"' Cards");
+            trickButtons[2].setText(names[(playerNum+2)%3]+"'\nCards");
         }
         else {
-            trickButtons[2].setText(names[(playerNum+2)%3]+"'s Cards");
+            trickButtons[2].setText(names[(playerNum+2)%3]+"'s\nCards");
         }
         //rotate the names
         nameDisp.setText(names[playerNum]);

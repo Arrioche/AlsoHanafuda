@@ -63,8 +63,10 @@ public final class Dropper implements View.OnDragListener {
     private int dropPoints;
     private int sco;
     private float alpha;
+    private LinearLayout[] hands;
+    private double alphaSet =0.3;
 
-    public void id(Activity activity,LinearLayout[] tricksTag,TextView[] scoreTag, Dragger dragTag,TurnRotator turnRotatorTag,TurnEnder turnEnderTag, float alphaTag){
+    public void id(Activity activity,LinearLayout[] tricksTag,TextView[] scoreTag, Dragger dragTag,TurnRotator turnRotatorTag,TurnEnder turnEnderTag, float alphaTag, LinearLayout[] handsTag){
         //initializing all those variables
         tricks = tricksTag;
         score = scoreTag;
@@ -75,6 +77,7 @@ public final class Dropper implements View.OnDragListener {
         draw=activity.findViewById(R.id.drawPile);
         turnEnder = turnEnderTag;
         alpha = alphaTag;
+        hands=handsTag;
     }
     @Override
     //when a drag is started this activates
@@ -212,8 +215,10 @@ public final class Dropper implements View.OnDragListener {
                 }
                 break;
             case DragEvent.ACTION_DRAG_ENDED:
+                if(container==board){
+                    drop.setAlpha((float)1);
+                }
                 showCards();
-                drop.setAlpha((float)1);
                 break;
             default:
                 //stops if there is no more dragging
@@ -285,6 +290,13 @@ public final class Dropper implements View.OnDragListener {
             for (int i = 0; i < owner.getChildCount(); i++) {
                 owner.getChildAt(i).setVisibility(View.VISIBLE);
             }
+            if(drag.getAdvancer()!=0) {
+                for (LinearLayout hand : hands) {
+                    for (int j = 0; j < hand.getChildCount(); j++) {
+                        hand.getChildAt(j).setAlpha((float)alphaSet);
+                    }
+                }
+            }
         }
     }
     private void secondCard(){
@@ -292,9 +304,7 @@ public final class Dropper implements View.OnDragListener {
         View card;
         if(draw.getChildCount()!=0) {
             card = draw.getChildAt((int) (Math.random() * (draw.getChildCount() - 1)));
-            //remove it from the draw pile
             draw.removeView(card);
-            //put it in the current hand
             second.addView(card);
             drag.setAdvancer(1);
         }

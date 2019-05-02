@@ -57,7 +57,7 @@ public class SettingsMenu extends AppCompatActivity {
         alphaCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    alpha=(float)0.3;
+                    alpha=(float)0.5;
                 }
                 else{
                     alpha=1;
