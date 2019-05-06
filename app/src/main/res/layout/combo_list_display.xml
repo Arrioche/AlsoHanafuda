@@ -49,6 +49,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/a20"
                     app:srcCompat="@drawable/pinecrane" />
 
                 <ImageView
@@ -56,6 +57,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/c20"
                     app:srcCompat="@drawable/cherrycurtain" />
 
                 <ImageView
@@ -63,6 +65,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/h20"
                     app:srcCompat="@drawable/pampasmoon" />
 
                 <ImageView
@@ -70,6 +73,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/l20"
                     app:srcCompat="@drawable/paulphoenix" />
 
                 <ImageView
@@ -77,6 +81,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/k20"
                     app:srcCompat="@drawable/rainpoet" />
             </LinearLayout>
 
@@ -99,6 +104,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/a20"
                     app:srcCompat="@drawable/pinecrane" />
 
                 <ImageView
@@ -106,6 +112,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/c20"
                     app:srcCompat="@drawable/cherrycurtain" />
 
                 <ImageView
@@ -113,6 +120,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/h20"
                     app:srcCompat="@drawable/pampasmoon" />
 
                 <ImageView
@@ -120,6 +128,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/l20"
                     app:srcCompat="@drawable/paulphoenix" />
 
             </LinearLayout>
@@ -143,6 +152,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/a20"
                     app:srcCompat="@drawable/pinecrane" />
 
                 <ImageView
@@ -150,6 +160,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/b10"
                     app:srcCompat="@drawable/plumbird" />
 
                 <ImageView
@@ -157,6 +168,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/c20"
                     app:srcCompat="@drawable/cherrycurtain" />
 
             </LinearLayout>
@@ -180,27 +192,31 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/b05"
                     app:srcCompat="@drawable/plumtanzaku" />
-
-                <ImageView
-                    android:id="@+id/seventanzaku7"
-                    android:layout_width="75dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/chrystanzaku" />
 
                 <ImageView
                     android:id="@+id/seventanzaku2"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/cherrytanzaku" />
+                    android:contentDescription="@string/i05"
+                    app:srcCompat="@drawable/chrystanzaku" />
 
                 <ImageView
-                    android:id="@+id/seventanzaku"
+                    android:id="@+id/seventanzaku3"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/c05"
+                    app:srcCompat="@drawable/cherrytanzaku" />
+
+                <ImageView
+                    android:id="@+id/seventanzaku4"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/a05"
                     app:srcCompat="@drawable/pinetanzaku" />
 
                 <ImageView
@@ -208,20 +224,23 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/f05"
                     app:srcCompat="@drawable/peonytanzaku" />
 
                 <ImageView
-                    android:id="@+id/seventanzaku8"
+                    android:id="@+id/seventanzaku6"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/j05"
                     app:srcCompat="@drawable/mapletanzaku" />
 
                 <ImageView
-                    android:id="@+id/seventanzaku4"
+                    android:id="@+id/seventanzaku7"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/e05"
                     app:srcCompat="@drawable/iristanzaku" />
 
             </LinearLayout>
@@ -241,45 +260,51 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/seventanzaku11"
+                    android:id="@+id/sixtanzaku1"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/c05"
                     app:srcCompat="@drawable/cherrytanzaku" />
 
                 <ImageView
-                    android:id="@+id/seventanzaku17"
+                    android:id="@+id/sixtanzaku2"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/j05"
                     app:srcCompat="@drawable/mapletanzaku" />
 
                 <ImageView
-                    android:id="@+id/seventanzaku13"
+                    android:id="@+id/sixtanzaku3"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/e05"
                     app:srcCompat="@drawable/iristanzaku" />
 
                 <ImageView
-                    android:id="@+id/seventanzaku14"
+                    android:id="@+id/sixtanzaku4"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/f05"
                     app:srcCompat="@drawable/peonytanzaku" />
 
                 <ImageView
-                    android:id="@+id/seventanzaku15"
+                    android:id="@+id/sixtanzaku5"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/g05"
                     app:srcCompat="@drawable/clovertanzaku" />
 
                 <ImageView
-                    android:id="@+id/seventanzaku12"
+                    android:id="@+id/sixtanzaku6"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/d05"
                     app:srcCompat="@drawable/wisteriatanzaku" />
 
             </LinearLayout>
@@ -303,6 +328,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/a05"
                     app:srcCompat="@drawable/pinetanzaku" />
 
                 <ImageView
@@ -310,6 +336,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/b05"
                     app:srcCompat="@drawable/plumtanzaku" />
 
                 <ImageView
@@ -317,6 +344,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/c05"
                     app:srcCompat="@drawable/cherrytanzaku" />
 
             </LinearLayout>
@@ -340,6 +368,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/f05"
                     app:srcCompat="@drawable/peonytanzaku" />
 
                 <ImageView
@@ -347,6 +376,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/i05"
                     app:srcCompat="@drawable/chrystanzaku" />
 
                 <ImageView
@@ -354,6 +384,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/j05"
                     app:srcCompat="@drawable/mapletanzaku" />
 
             </LinearLayout>
@@ -377,6 +408,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/d05"
                     app:srcCompat="@drawable/wisteriatanzaku" />
 
                 <ImageView
@@ -384,6 +416,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/e05"
                     app:srcCompat="@drawable/iristanzaku" />
 
                 <ImageView
@@ -391,6 +424,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/g05"
                     app:srcCompat="@drawable/clovertanzaku" />
 
             </LinearLayout>
@@ -414,6 +448,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/h20"
                     app:srcCompat="@drawable/pampasmoon" />
 
                 <ImageView
@@ -421,6 +456,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/i10"
                     app:srcCompat="@drawable/chryscup" />
 
                 <ImageView
@@ -428,6 +464,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/c20"
                     app:srcCompat="@drawable/cherrycurtain" />
 
             </LinearLayout>
@@ -451,6 +488,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/g10"
                     app:srcCompat="@drawable/cloverboar" />
 
                 <ImageView
@@ -458,6 +496,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/j10"
                     app:srcCompat="@drawable/mapledeer" />
 
                 <ImageView
@@ -465,6 +504,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/f10"
                     app:srcCompat="@drawable/peonybutterfly" />
 
             </LinearLayout>
@@ -488,6 +528,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/a20"
                     app:srcCompat="@drawable/pinecrane" />
 
                 <ImageView
@@ -495,6 +536,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/l20"
                     app:srcCompat="@drawable/paulphoenix" />
 
                 <ImageView
@@ -502,6 +544,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/h20"
                     app:srcCompat="@drawable/pampasmoon" />
 
             </LinearLayout>
@@ -525,6 +568,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/d01"
                     app:srcCompat="@drawable/wisterianormalone" />
 
                 <ImageView
@@ -532,6 +576,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/d01"
                     app:srcCompat="@drawable/wisterianormaltwo" />
 
                 <ImageView
@@ -539,6 +584,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/d05"
                     app:srcCompat="@drawable/wisteriatanzaku" />
 
                 <ImageView
@@ -546,6 +592,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/d10"
                     app:srcCompat="@drawable/wisteriacuckoo" />
 
             </LinearLayout>
@@ -569,6 +616,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/l01"
                     app:srcCompat="@drawable/paulnormalone" />
 
                 <ImageView
@@ -576,6 +624,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/l01"
                     app:srcCompat="@drawable/paulnormaltwo" />
 
                 <ImageView
@@ -583,6 +632,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/l01"
                     app:srcCompat="@drawable/paulnormalthree" />
 
                 <ImageView
@@ -590,7 +640,9 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/paulphoenix" />
+                    android:contentDescription="@string/l20"
+                    app:srcCompat="@drawable/paulphoenix"
+                    tools:ignore="TooManyViews" />
 
             </LinearLayout>
 
@@ -609,7 +661,6 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
                 android:orientation="horizontal"
-                android:paddingEnd="10dp"
                 android:paddingBottom="10dp">
 
                 <ImageView
@@ -617,6 +668,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/k01"
                     app:srcCompat="@drawable/rainlightning" />
 
                 <ImageView
@@ -624,6 +676,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/k05"
                     app:srcCompat="@drawable/raintanzaku" />
 
                 <ImageView
@@ -631,6 +684,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/k10"
                     app:srcCompat="@drawable/rainbird" />
 
                 <ImageView
@@ -638,6 +692,7 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/k20"
                     app:srcCompat="@drawable/rainpoet" />
 
             </LinearLayout>
@@ -648,29 +703,31 @@
     <Button
         android:id="@+id/comboBack"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="64dp"
-        android:layout_height="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/vollkorn"
         android:text="@string/back"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="14sp"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:fontFamily="@font/alike_angular"
-        android:id="@+id/textView49"
+        android:id="@+id/comboTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:fontFamily="@font/alike_angular"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
         android:text="@string/combos"
         android:textAllCaps="true"
-        android:textColor="@android:color/background_light"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"

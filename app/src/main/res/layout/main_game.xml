@@ -15,6 +15,7 @@
         android:fontFamily="@font/vollkorn"
         android:stateListAnimator="@null"
         android:text="@string/combos"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/endTurn"
         app:layout_constraintEnd_toStartOf="@+id/endTurn"
@@ -612,7 +613,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/alike_angular"
             android:gravity="center"
-            android:text="player name"
+            android:text="@string/player_name"
             android:textColor="#FFFFFF"
             android:visibility="visible" />
 
@@ -683,7 +684,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/vollkorn"
-            android:text="Dismiss"
+            android:text="@string/dismiss"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:visibility="gone" />
@@ -805,9 +806,9 @@
         android:id="@+id/secondCardBack"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="10dp"
         android:background="@android:color/holo_purple"
         android:orientation="vertical"
         android:visibility="visible"
@@ -823,7 +824,7 @@
             android:contentDescription="@string/a01"
             android:src="@drawable/pinenormalone"
             android:visibility="invisible"
-            app:srcCompat="@drawable/pinenormalone"
+            app:srcCompat="@drawable/peonytanzaku"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="160dp" />
     </LinearLayout>
@@ -849,7 +850,9 @@
         android:fontFamily="@font/vollkorn"
         android:stateListAnimator="@null"
         android:text="@string/end_turn"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -888,7 +891,7 @@
             android:fontFamily="@font/alike_angular"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:text="hhh"
+            android:text="@string/a05desc"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="#FFFFFF"
             android:textSize="25sp"
@@ -946,7 +949,7 @@
             android:padding="5dp"
             android:paddingStart="60dp"
             android:paddingEnd="60dp"
-            android:text="hggfhgfhg"
+            android:text="@string/a20"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/nextTurn"

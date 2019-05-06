@@ -60,6 +60,7 @@ public class TurnEnder implements View.OnClickListener{
     void hasPlayed(){
         //turn the button on
         endTurn.setEnabled(true);
+        endTurn.setVisibility(View.VISIBLE);
     }
     int getHandNum(){
         return playerTurn;
@@ -80,6 +81,7 @@ public class TurnEnder implements View.OnClickListener{
                 playerTurn= (playerTurn+1)%3;
                 //disable itself
                 endTurn.setEnabled(false);
+                endTurn.setVisibility(View.INVISIBLE);
                 //if all the hands are out of cards it will change to the scoring screen at the end
                 boolean done = true;
                 for (int i = 0; i < 3; i++) {

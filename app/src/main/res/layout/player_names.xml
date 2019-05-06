@@ -10,6 +10,7 @@
         android:id="@+id/background"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:contentDescription="@string/back"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,10 +27,10 @@
         android:background="@drawable/buttongradient"
         android:fontFamily="@font/vollkorn"
         android:stateListAnimator="@null"
-        android:text="Next"
+        android:text="@string/next"
         android:textAllCaps="true"
         android:textColor="#000000"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -62,7 +63,9 @@
                 android:fontFamily="@font/alike_angular"
                 android:gravity="center"
                 android:padding="5dp"
-                android:text=" Player One's Name"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/player_one_s_name"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
 
@@ -73,14 +76,12 @@
                 android:ems="7"
                 android:fontFamily="@font/alike_angular"
                 android:gravity="center"
-                android:hint="Enter Name"
-                android:textCursorDrawable="@drawable/custom_edit_text_cursor"
-                android:backgroundTint="@color/black"
-                app:backgroundTint="@color/black"
+                android:hint="@string/enter_name"
                 android:imeOptions="actionDone|flagNoExtractUi"
                 android:inputType="textPersonName"
                 android:textColor="#FFFFFF"
-                android:textColorHint="#BBBBBB" />
+                android:textColorHint="#BBBBBB"
+                android:textCursorDrawable="@drawable/custom_edit_text_cursor" />
         </LinearLayout>
 
         <LinearLayout
@@ -99,7 +100,9 @@
                 android:fontFamily="@font/alike_angular"
                 android:gravity="center"
                 android:padding="5dp"
-                android:text="Player Two's Name"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/player_two_s_name"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
 
@@ -110,14 +113,12 @@
                 android:ems="7"
                 android:fontFamily="@font/alike_angular"
                 android:gravity="center"
-                android:hint="Enter Name"
-                android:textCursorDrawable="@drawable/custom_edit_text_cursor"
-                android:backgroundTint="@color/black"
-                app:backgroundTint="@color/black"
+                android:hint="@string/enter_name"
                 android:imeOptions="actionDone|flagNoExtractUi"
                 android:inputType="textPersonName"
                 android:textColor="#FFFFFF"
-                android:textColorHint="#BBBBBB" />
+                android:textColorHint="#BBBBBB"
+                android:textCursorDrawable="@drawable/custom_edit_text_cursor" />
         </LinearLayout>
 
         <LinearLayout
@@ -136,7 +137,9 @@
                 android:fontFamily="@font/alike_angular"
                 android:gravity="center"
                 android:padding="5dp"
-                android:text="Player Three's Name"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/player_three_s_name"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
 
@@ -147,14 +150,12 @@
                 android:ems="7"
                 android:fontFamily="@font/alike_angular"
                 android:gravity="center"
-                android:hint="Enter Name"
-                android:textCursorDrawable="@drawable/custom_edit_text_cursor"
-                android:backgroundTint="@color/black"
-                app:backgroundTint="@color/black"
+                android:hint="@string/enter_name"
                 android:imeOptions="actionDone|flagNoExtractUi"
                 android:inputType="textPersonName"
                 android:textColor="#FFFFFF"
-                android:textColorHint="#BBBBBB" />
+                android:textColorHint="#BBBBBB"
+                android:textCursorDrawable="@drawable/custom_edit_text_cursor" />
 
         </LinearLayout>
     </LinearLayout>
@@ -169,6 +170,7 @@
             android:id="@+id/loading"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:contentDescription="@string/six_tanzaku"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -183,19 +185,20 @@
             android:layout_marginBottom="32dp"
             android:background="@drawable/loadinggradient"
             android:fontFamily="@font/alike_angular"
-            android:gravity="left|center_vertical"
-            android:paddingLeft="20dp"
+            android:gravity="start|center_vertical"
+            android:paddingStart="20dp"
             android:shadowColor="@android:color/black"
             android:shadowDx="7"
             android:shadowDy="7"
             android:shadowRadius="0.01"
-            android:text="Loading"
+            android:text="@string/loading"
             android:textAllCaps="true"
             android:textColor="@android:color/background_light"
             android:textSize="50sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="RtlSymmetry" />
 
     </android.support.constraint.ConstraintLayout>
 
