@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class Tutorial extends AppCompatActivity {
+public class Tutorial extends MainGame{
     //the list of all the cards
     ArrayList<View> cards = new ArrayList<>();
     //in case I ever use logs
@@ -42,81 +42,6 @@ public class Tutorial extends AppCompatActivity {
         //classSetUp(scoresInit);
         //drawCards();
     }
-    @Override
-    public void onBackPressed() {
-        //do nothing
-    }
-    @Override
-    protected void onResume() {
-        super.onResume();
-        View decorView = getWindow().getDecorView();
-        // Hide the status bar.
-        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
-        decorView.setSystemUiVisibility(uiOptions);
-    }
-    public void arraySetup() {
-        //here we take each ImageView of each card and put them in an array for easy access
-        //pine
-        cards.add(findViewById(R.id.pineCrane));
-        cards.add(findViewById(R.id.pineNormalOne));
-        cards.add(findViewById(R.id.pineNormalTwo));
-        cards.add(findViewById(R.id.pineTanzaku));
-        //plum
-        cards.add(findViewById(R.id.plumBird));
-        cards.add(findViewById(R.id.plumNormalOne));
-        cards.add(findViewById(R.id.plumNormalTwo));
-        cards.add(findViewById(R.id.plumTanzaku));
-        //cherry
-        cards.add(findViewById(R.id.cherryCurtain));
-        cards.add(findViewById(R.id.cherryNormalOne));
-        cards.add(findViewById(R.id.cherryNormalTwo));
-        cards.add(findViewById(R.id.cherryTanzaku));
-        //wisteria
-        cards.add(findViewById(R.id.wisteriaCuckoo));
-        cards.add(findViewById(R.id.wisteriaNormalOne));
-        cards.add(findViewById(R.id.wisteriaNormalTwo));
-        cards.add(findViewById(R.id.wisteriaTanzaku));
-        //iris
-        cards.add(findViewById(R.id.irisBridge));
-        cards.add(findViewById(R.id.irisNormalOne));
-        cards.add(findViewById(R.id.irisNormalTwo));
-        cards.add(findViewById(R.id.irisTanzaku));
-        //peony
-        cards.add(findViewById(R.id.peonyButterfly));
-        cards.add(findViewById(R.id.peonyNormalOne));
-        cards.add(findViewById(R.id.peonyNormalTwo));
-        cards.add(findViewById(R.id.peonyTanzaku));
-        //clover
-        cards.add(findViewById(R.id.cloverBoar));
-        cards.add(findViewById(R.id.cloverNormalOne));
-        cards.add(findViewById(R.id.cloverNormalTwo));
-        cards.add(findViewById(R.id.cloverTanzaku));
-        //pampas
-        cards.add(findViewById(R.id.pampasGeese));
-        cards.add(findViewById(R.id.pampasMoon));
-        cards.add(findViewById(R.id.pampasNormalOne));
-        cards.add(findViewById(R.id.pampasNormalTwo));
-        //chrysanthemum
-        cards.add(findViewById(R.id.chrysCup));
-        cards.add(findViewById(R.id.chrysNormalOne));
-        cards.add(findViewById(R.id.chrysNormalTwo));
-        cards.add(findViewById(R.id.chrysTanzaku));
-        //maple
-        cards.add(findViewById(R.id.mapleDeer));
-        cards.add(findViewById(R.id.mapleNormalOne));
-        cards.add(findViewById(R.id.mapleNormalTwo));
-        cards.add(findViewById(R.id.mapleTanzaku));
-        //rain
-        cards.add(findViewById(R.id.rainBird));
-        cards.add(findViewById(R.id.rainLightning));
-        cards.add(findViewById(R.id.rainPoet));
-        cards.add(findViewById(R.id.rainTanzaku));
-        //paulownia
-        cards.add(findViewById(R.id.paulNormalOne));
-        cards.add(findViewById(R.id.paulNormalTwo));
-        cards.add(findViewById(R.id.paulNormalThree));
-        cards.add(findViewById(R.id.paulPhoenix));
-    }
     /*
     brights a20 c20 h20 k20 l20 -100
     brights a20 c20 h20 l20 -60
@@ -133,10 +58,5 @@ public class Tutorial extends AppCompatActivity {
     l20 l01 l01 l01 -10
     k20 k10 k05 k01 -10, may invalidate other combos
      */
-    public void goToScore(){
-        Intent myIntent = new Intent(Tutorial.this, StartScreen.class);
-        Tutorial.this.startActivity(myIntent);
-        Tutorial.this.finish();
-    }
 
 }

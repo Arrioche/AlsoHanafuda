@@ -1,5 +1,6 @@
 package com.tnielsen9082.alsohanafuda;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
@@ -10,11 +11,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class FinalScorer extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private String[] scoresInit =new String[3];
     private String[] names= new String[3];
     private Handler mHandler = new Handler();
+    @SuppressLint("SetTextI18n")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +57,16 @@ public class FinalScorer extends AppCompatActivity {
         ((TextView)findViewById(R.id.POneFSNum)).setText(scoresInit[0]);
         ((TextView)findViewById(R.id.PTwoFSNum)).setText(scoresInit[1]);
         ((TextView)findViewById(R.id.PThreeFSNum)).setText(scoresInit[2]);
+        int maxer = 0;
+        int counter=0;
+        for (int i = 0; i < scoresInit.length; i++) {
+            int score= Integer.parseInt(scoresInit[i]);
+            if(score>maxer){
+                maxer=score;
+                counter=i;
+            }
+        }
+        ((TextView)findViewById(R.id.winner)).setText(names[counter]+" wins!");
         Button nextRound = findViewById(R.id.restart);
         nextRound.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

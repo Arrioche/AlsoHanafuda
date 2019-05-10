@@ -186,6 +186,8 @@
     <string name="main_menu">Main Menu</string>
     <string name="play_again">Play Again</string>
     <string name="final_scores">Final Scores</string>
+    <string name="end_round">End Round</string>
+    <string name="winner">wins!</string>
 
 
 </resources>

@@ -65,6 +65,7 @@ public final class Dropper implements View.OnDragListener {
     private float alpha;
     private LinearLayout[] hands;
     private double alphaSet =0.3;
+    private View cardPile;
 
     public void id(Activity activity,LinearLayout[] tricksTag,TextView[] scoreTag, Dragger dragTag,TurnRotator turnRotatorTag,TurnEnder turnEnderTag, float alphaTag, LinearLayout[] handsTag){
         //initializing all those variables
@@ -78,6 +79,7 @@ public final class Dropper implements View.OnDragListener {
         turnEnder = turnEnderTag;
         alpha = alphaTag;
         hands=handsTag;
+        cardPile=activity.findViewById(R.id.cardPileBack);
     }
     @Override
     //when a drag is started this activates
@@ -311,6 +313,9 @@ public final class Dropper implements View.OnDragListener {
         else{
             drag.setAdvancer(3);
             turnEnder.hasPlayed();
+        }
+        if(draw.getChildCount()==0){
+            cardPile.setVisibility(View.INVISIBLE);
         }
     }
 }

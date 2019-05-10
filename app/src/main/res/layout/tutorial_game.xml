@@ -5,17 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/tutorialBack"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="false"
+        android:contentDescription="@string/filler"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/backtatami" />
+
     <Button
         android:id="@+id/combosDisp"
         style="?android:attr/buttonBarButtonStyle"
-        android:layout_width="76dp"
-        android:layout_height="34dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/vollkorn"
         android:stateListAnimator="@null"
         android:text="@string/combos"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/score1" />
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/endTurn"
+        app:layout_constraintEnd_toStartOf="@+id/endTurn"
+        app:layout_constraintStart_toEndOf="@+id/endTurn" />
 
     <LinearLayout
         android:id="@+id/drawPile"
@@ -26,14 +43,25 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/pineNormalTwo"
+            android:id="@+id/pineCrane"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:contentDescription="@string/a01"
-            android:src="@drawable/pinenormaltwo"
+            android:contentDescription="@string/a20"
+            android:src="@drawable/pinecrane"
             android:visibility="visible"
-            app:srcCompat="@drawable/pinenormaltwo" />
+            app:srcCompat="@drawable/pinecrane" />
+
+        <ImageView
+            android:id="@+id/pineTanzaku"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/a05"
+            android:cropToPadding="false"
+            android:src="@drawable/pinetanzaku"
+            android:visibility="visible"
+            app:srcCompat="@drawable/pinetanzaku" />
 
         <ImageView
             android:id="@+id/pineNormalOne"
@@ -46,6 +74,16 @@
             app:srcCompat="@drawable/pinenormalone"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="160dp" />
+
+        <ImageView
+            android:id="@+id/pineNormalTwo"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/a01"
+            android:src="@drawable/pinenormaltwo"
+            android:visibility="visible"
+            app:srcCompat="@drawable/pinenormaltwo" />
 
         <ImageView
             android:id="@+id/plumBird"
@@ -78,6 +116,16 @@
             app:srcCompat="@drawable/plumnormalone" />
 
         <ImageView
+            android:id="@+id/plumNormalTwo"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/b01"
+            android:src="@drawable/plumnormaltwo"
+            android:visibility="visible"
+            app:srcCompat="@drawable/plumnormaltwo" />
+
+        <ImageView
             android:id="@+id/cherryCurtain"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
@@ -108,6 +156,96 @@
             app:srcCompat="@drawable/cherrynormalone"
             tools:layout_editor_absoluteX="392dp"
             tools:layout_editor_absoluteY="86dp" />
+
+        <ImageView
+            android:id="@+id/cherryNormalTwo"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/c01"
+            android:src="@drawable/cherrynormaltwo"
+            android:visibility="visible"
+            app:srcCompat="@drawable/cherrynormaltwo" />
+
+        <ImageView
+            android:id="@+id/wisteriaCuckoo"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/d10"
+            android:src="@drawable/wisteriacuckoo"
+            android:visibility="visible"
+            app:srcCompat="@drawable/wisteriacuckoo" />
+
+        <ImageView
+            android:id="@+id/wisteriaTanzaku"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/d05"
+            android:src="@drawable/wisteriatanzaku"
+            android:visibility="visible"
+            app:srcCompat="@drawable/wisteriatanzaku" />
+
+        <ImageView
+            android:id="@+id/wisteriaNormalOne"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/d01"
+            android:src="@drawable/wisterianormalone"
+            android:visibility="visible"
+            app:srcCompat="@drawable/wisterianormalone" />
+
+        <ImageView
+            android:id="@+id/wisteriaNormalTwo"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/d01"
+            android:src="@drawable/wisterianormaltwo"
+            android:visibility="visible"
+            app:srcCompat="@drawable/wisterianormaltwo" />
+
+        <ImageView
+            android:id="@+id/irisBridge"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/e10"
+            android:src="@drawable/irisbridge"
+            android:visibility="visible"
+            app:srcCompat="@drawable/irisbridge" />
+
+        <ImageView
+            android:id="@+id/irisTanzaku"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/e05"
+            android:src="@drawable/iristanzaku"
+            android:visibility="visible"
+            app:srcCompat="@drawable/iristanzaku" />
+
+        <ImageView
+            android:id="@+id/irisNormalOne"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/e01"
+            android:src="@drawable/irisnormalone"
+            android:visibility="visible"
+            app:srcCompat="@drawable/irisnormalone" />
+
+        <ImageView
+            android:id="@+id/irisNormalTwo"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/e01"
+            android:src="@drawable/irisnormaltwo"
+            android:visibility="visible"
+            app:srcCompat="@drawable/irisnormaltwo" />
 
         <ImageView
             android:id="@+id/peonyButterfly"
@@ -160,6 +298,16 @@
             app:srcCompat="@drawable/chryscup" />
 
         <ImageView
+            android:id="@+id/chrysTanzaku"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/i05"
+            android:src="@drawable/chrystanzaku"
+            android:visibility="visible"
+            app:srcCompat="@drawable/chrystanzaku" />
+
+        <ImageView
             android:id="@+id/chrysNormalOne"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
@@ -168,6 +316,16 @@
             android:src="@drawable/chrysnormalone"
             android:visibility="visible"
             app:srcCompat="@drawable/chrysnormalone" />
+
+        <ImageView
+            android:id="@+id/chrysNormalTwo"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/i01"
+            android:src="@drawable/chrysnormaltwo"
+            android:visibility="visible"
+            app:srcCompat="@drawable/chrysnormaltwo" />
 
         <ImageView
             android:id="@+id/cloverBoar"
@@ -188,6 +346,36 @@
             android:src="@drawable/clovertanzaku"
             android:visibility="visible"
             app:srcCompat="@drawable/clovertanzaku" />
+
+        <ImageView
+            android:id="@+id/cloverNormalOne"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/g01"
+            android:src="@drawable/clovernormalone"
+            android:visibility="visible"
+            app:srcCompat="@drawable/clovernormalone" />
+
+        <ImageView
+            android:id="@+id/cloverNormalTwo"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/g01"
+            android:src="@drawable/clovernormaltwo"
+            android:visibility="visible"
+            app:srcCompat="@drawable/clovernormaltwo" />
+
+        <ImageView
+            android:id="@+id/pampasMoon"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/h20"
+            android:src="@drawable/pampasmoon"
+            android:visibility="visible"
+            app:srcCompat="@drawable/pampasmoon" />
 
         <ImageView
             android:id="@+id/pampasGeese"
@@ -239,6 +427,16 @@
             app:srcCompat="@drawable/mapletanzaku" />
 
         <ImageView
+            android:id="@+id/mapleNormalOne"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/j01"
+            android:src="@drawable/maplenormalone"
+            android:visibility="visible"
+            app:srcCompat="@drawable/maplenormalone" />
+
+        <ImageView
             android:id="@+id/mapleNormalTwo"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
@@ -267,16 +465,6 @@
             android:src="@drawable/rainbird"
             android:visibility="visible"
             app:srcCompat="@drawable/rainbird" />
-
-        <ImageView
-            android:id="@+id/chrysNormalTwo"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:contentDescription="@string/i01"
-            android:src="@drawable/chrysnormaltwo"
-            android:visibility="visible"
-            app:srcCompat="@drawable/chrysnormaltwo" />
 
         <ImageView
             android:id="@+id/rainTanzaku"
@@ -318,6 +506,26 @@
             android:visibility="visible"
             app:srcCompat="@drawable/paulnormalthree" />
 
+        <ImageView
+            android:id="@+id/paulNormalTwo"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/l01"
+            android:src="@drawable/paulnormaltwo"
+            android:visibility="visible"
+            app:srcCompat="@drawable/paulnormaltwo" />
+
+        <ImageView
+            android:id="@+id/paulPhoenix"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/l20"
+            android:src="@drawable/paulphoenix"
+            android:visibility="visible"
+            app:srcCompat="@drawable/paulphoenix" />
+
     </LinearLayout>
 
     <HorizontalScrollView
@@ -342,79 +550,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:divider="@drawable/regular_hand_divider"
-                android:orientation="horizontal"
                 android:showDividers="middle"
-                android:visibility="visible">
+                android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/pineCrane"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:contentDescription="@string/a20"
-                    android:src="@drawable/pinecrane"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/pinecrane" />
-
-                <ImageView
-                    android:id="@+id/pampasMoon"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:contentDescription="@string/h20"
-                    android:src="@drawable/pampasmoon"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/pampasmoon" />
-
-                <ImageView
-                    android:id="@+id/paulPhoenix"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:contentDescription="@string/l20"
-                    android:src="@drawable/paulphoenix"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/paulphoenix" />
-
-                <ImageView
-                    android:id="@+id/chrysTanzaku"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:contentDescription="@string/i05"
-                    android:src="@drawable/chrystanzaku"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/chrystanzaku" />
-
-                <ImageView
-                    android:id="@+id/plumNormalTwo"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:contentDescription="@string/b01"
-                    android:src="@drawable/plumnormaltwo"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/plumnormaltwo" />
-
-                <ImageView
-                    android:id="@+id/mapleNormalOne"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:contentDescription="@string/j01"
-                    android:src="@drawable/maplenormalone"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/maplenormalone" />
-
-                <ImageView
-                    android:id="@+id/cherryNormalTwo"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:contentDescription="@string/c01"
-                    android:src="@drawable/cherrynormaltwo"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/cherrynormaltwo" />
             </LinearLayout>
 
             <LinearLayout
@@ -422,79 +560,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:divider="@drawable/regular_hand_divider"
-                android:orientation="horizontal"
                 android:showDividers="middle"
-                android:visibility="visible">
-
-                <ImageView
-                    android:id="@+id/irisTanzaku"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:contentDescription="@string/e05"
-                    android:src="@drawable/iristanzaku"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/iristanzaku" />
-
-                <ImageView
-                    android:id="@+id/cloverNormalTwo"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:contentDescription="@string/g01"
-                    android:src="@drawable/clovernormaltwo"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/clovernormaltwo" />
-
-                <ImageView
-                    android:id="@+id/irisNormalTwo"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:contentDescription="@string/e01"
-                    android:src="@drawable/irisnormaltwo"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/irisnormaltwo" />
-
-                <ImageView
-                    android:id="@+id/wisteriaCuckoo"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:contentDescription="@string/d10"
-                    android:src="@drawable/wisteriacuckoo"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/wisteriacuckoo" />
-
-                <ImageView
-                    android:id="@+id/irisBridge"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:contentDescription="@string/e10"
-                    android:src="@drawable/irisbridge"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/irisbridge" />
-
-                <ImageView
-                    android:id="@+id/cloverNormalOne"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:contentDescription="@string/g01"
-                    android:src="@drawable/clovernormalone"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/clovernormalone" />
-
-                <ImageView
-                    android:id="@+id/irisNormalOne"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:contentDescription="@string/e01"
-                    android:src="@drawable/irisnormalone"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/irisnormalone" />
+                android:orientation="horizontal"
+                android:visibility="gone">
 
             </LinearLayout>
 
@@ -538,131 +606,87 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/pineTanzaku"
-                android:layout_width="65dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:contentDescription="@string/a05"
-                android:cropToPadding="false"
-                android:src="@drawable/pinetanzaku"
-                android:visibility="visible"
-                app:srcCompat="@drawable/pinetanzaku" />
-
-            <ImageView
-                android:id="@+id/wisteriaTanzaku"
-                android:layout_width="65dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:contentDescription="@string/d05"
-                android:src="@drawable/wisteriatanzaku"
-                android:visibility="visible"
-                app:srcCompat="@drawable/wisteriatanzaku" />
-
-            <ImageView
-                android:id="@+id/paulNormalTwo"
-                android:layout_width="65dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:contentDescription="@string/l01"
-                android:src="@drawable/paulnormaltwo"
-                android:visibility="visible"
-                app:srcCompat="@drawable/paulnormaltwo" />
-
-            <ImageView
-                android:id="@+id/wisteriaNormalOne"
-                android:layout_width="65dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:contentDescription="@string/d01"
-                android:src="@drawable/wisterianormalone"
-                android:visibility="visible"
-                app:srcCompat="@drawable/wisterianormalone" />
-
-            <ImageView
-                android:id="@+id/wisteriaNormalTwo"
-                android:layout_width="65dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:contentDescription="@string/d01"
-                android:src="@drawable/wisterianormaltwo"
-                android:visibility="visible"
-                app:srcCompat="@drawable/wisterianormaltwo" />
         </LinearLayout>
     </HorizontalScrollView>
 
-    <TextView
-        android:id="@+id/scoreStarter"
-        android:layout_width="87dp"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:id="@+id/scoreDisp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
         android:gravity="center"
-        android:paddingBottom="0dp"
-        android:text="@string/your_score"
-        android:textColor="@android:color/darker_gray"
-        app:layout_constraintEnd_toStartOf="@+id/combosDisp"
-        app:layout_constraintStart_toEndOf="@+id/combosDisp"
-        app:layout_constraintTop_toBottomOf="@+id/playerNameMain" />
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/handScroll"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/table">
 
-    <TextView
-        android:id="@+id/score1"
-        android:layout_width="wrap_content"
-        android:layout_height="18dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_weight="1"
-        android:gravity="bottom"
-        android:text="@string/_0"
-        android:textColor="@android:color/darker_gray"
-        android:visibility="visible"
-        app:layout_constraintEnd_toStartOf="@+id/combosDisp"
-        app:layout_constraintStart_toEndOf="@+id/combosDisp"
-        app:layout_constraintTop_toBottomOf="@+id/scoreStarter" />
+        <TextView
+            android:id="@+id/playerNameMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike_angular"
+            android:gravity="center"
+            android:text="@string/player_name"
+            android:textColor="#000000"
+            android:visibility="visible" />
 
-    <TextView
-        android:id="@+id/score2"
-        android:layout_width="wrap_content"
-        android:layout_height="18dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_weight="1"
-        android:gravity="bottom"
-        android:text="@string/_0"
-        android:textColor="@android:color/darker_gray"
-        android:visibility="gone"
-        app:layout_constraintEnd_toStartOf="@+id/combosDisp"
-        app:layout_constraintStart_toEndOf="@+id/combosDisp"
-        app:layout_constraintTop_toBottomOf="@+id/scoreStarter" />
+        <TextView
+            android:id="@+id/scoreStarter"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike_angular"
+            android:gravity="center"
+            android:scrollHorizontally="false"
+            android:text="@string/your_score"
+            android:textColor="#000000" />
 
-    <TextView
-        android:id="@+id/score3"
-        android:layout_width="wrap_content"
-        android:layout_height="18dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_weight="1"
-        android:gravity="bottom"
-        android:text="@string/_0"
-        android:textColor="@android:color/darker_gray"
-        android:visibility="gone"
-        app:layout_constraintEnd_toStartOf="@+id/combosDisp"
-        app:layout_constraintStart_toEndOf="@+id/combosDisp"
-        app:layout_constraintTop_toBottomOf="@+id/scoreStarter" />
+        <TextView
+            android:id="@+id/score1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike_angular"
+            android:gravity="center|top"
+            android:text="@string/_0"
+            android:textColor="#000000"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/score2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/alike_angular"
+            android:gravity="center"
+            android:text="@string/_0"
+            android:textColor="#000000"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/score3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/alike_angular"
+            android:gravity="center"
+            android:text="@string/_0"
+            android:textColor="#000000"
+            android:visibility="gone" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/takenTricks"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/secondCard"
-        app:layout_constraintStart_toEndOf="@+id/playerNameMain"
+        app:layout_constraintEnd_toStartOf="@+id/secondCardBack"
+        app:layout_constraintStart_toEndOf="@+id/scoreDisp"
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
@@ -672,8 +696,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
+            android:fontFamily="@font/vollkorn"
             android:text="@string/dismiss"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="#000000"
+            android:textSize="18sp"
             android:visibility="gone" />
 
         <HorizontalScrollView
@@ -732,8 +758,8 @@
         android:orientation="horizontal"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/secondCard"
-        app:layout_constraintStart_toEndOf="@+id/playerNameMain"
+        app:layout_constraintEnd_toStartOf="@+id/secondCardBack"
+        app:layout_constraintStart_toEndOf="@+id/scoreDisp"
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
@@ -744,8 +770,10 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
+            android:fontFamily="@font/vollkorn"
             android:text="@string/your_cards"
-            android:textColor="@android:color/holo_blue_dark"
+            android:textColor="#000000"
+            android:textSize="18sp"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -759,9 +787,10 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:text="@string/your_cards"
-            android:textColor="@android:color/holo_blue_dark"
+            android:fontFamily="@font/vollkorn"
+            android:textColor="#000000"
             android:textColorLink="@color/colorPrimaryDark"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="104dp" />
@@ -775,9 +804,10 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:text="@string/your_cards"
-            android:textColor="@android:color/holo_blue_dark"
+            android:fontFamily="@font/vollkorn"
+            android:textColor="#000000"
             android:textColorLink="@color/colorPrimaryDark"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/dispOne"
@@ -785,6 +815,31 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/secondCardBack"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/handScroll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/table">
+
+        <ImageView
+            android:id="@+id/cardPileBack"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:contentDescription="@string/a01"
+            android:src="@drawable/pinenormalone"
+            android:visibility="visible"
+            app:srcCompat="@drawable/peonytanzaku"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="160dp" />
+    </LinearLayout>
     <LinearLayout
         android:id="@+id/secondCard"
         android:layout_width="wrap_content"
@@ -797,29 +852,19 @@
         app:layout_constraintBottom_toTopOf="@+id/handScroll"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/table">
-
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/playerNameMain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="@string/player_name"
-        android:textColor="@android:color/darker_gray"
-        app:layout_constraintEnd_toStartOf="@+id/scoreStarter"
-        app:layout_constraintStart_toEndOf="@+id/scoreStarter"
-        app:layout_constraintTop_toBottomOf="@+id/table" />
 
     <Button
         android:id="@+id/endTurn"
         style="?android:attr/buttonBarButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/vollkorn"
         android:stateListAnimator="@null"
         android:text="@string/end_turn"
-        android:textSize="18sp"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -855,12 +900,12 @@
             android:id="@+id/cardInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-smallcaps"
+            android:fontFamily="@font/alike_angular"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:text="@string/a20"
+            android:text="@string/a05desc"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="#000000"
             android:textSize="25sp"
             android:visibility="visible" />
 
@@ -885,13 +930,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/irisbridge" />
+            app:srcCompat="@drawable/backiris" />
 
         <Button
             android:id="@+id/nextTurn"
-            android:layout_width="164dp"
-            android:layout_height="71dp"
+            style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/buttongradient"
+            android:fontFamily="@font/vollkorn"
+            android:padding="8dp"
             android:text="@string/next_turn"
+            android:textColor="#000000"
+            android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -901,10 +953,17 @@
         <TextView
             android:id="@+id/nextPlayerAnnounce"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginBottom="8dp"
-            android:text="@string/b05"
-            android:textColor="@android:color/background_light"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/textgradient"
+            android:fontFamily="@font/alike_angular"
+            android:gravity="center_horizontal|center_vertical"
+            android:padding="5dp"
+            android:paddingStart="60dp"
+            android:paddingEnd="60dp"
+            android:text="@string/a20"
+            android:textColor="#000000"
+            android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/nextTurn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

@@ -82,6 +82,15 @@ public class TurnEnder implements View.OnClickListener{
                 //disable itself
                 endTurn.setEnabled(false);
                 endTurn.setVisibility(View.INVISIBLE);
+                int oneTurnLeft = 0;
+                for (int i = 0; i < 3; i++) {
+                    if(hands[i].getChildCount()>=1){
+                        oneTurnLeft++;
+                    }
+                }
+                if(oneTurnLeft==1){
+                    endTurn.setText(R.string.end_round);
+                }
                 //if all the hands are out of cards it will change to the scoring screen at the end
                 boolean done = true;
                 for (int i = 0; i < 3; i++) {
