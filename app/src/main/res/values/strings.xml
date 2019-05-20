@@ -187,7 +187,7 @@
     <string name="play_again">Play Again</string>
     <string name="final_scores">Final Scores</string>
     <string name="end_round">End Round</string>
-    <string name="winner">wins!</string>
+    <string name="winner">Wins!</string>
 
 
 </resources>

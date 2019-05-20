@@ -163,6 +163,25 @@
         app:layout_constraintStart_toEndOf="@+id/pThreeFinalScore"
         app:layout_constraintTop_toBottomOf="@+id/pThreeFinalScore" />
 
+    <TextView
+        android:id="@+id/winner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/buttongradient"
+        android:fontFamily="@font/alike_angular"
+        android:padding="5dp"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp"
+        android:text="@string/winner"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/finalBack"
+        app:layout_constraintTop_toBottomOf="@+id/PTwoFSNum" />
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
@@ -250,24 +269,5 @@
             app:layout_constraintStart_toStartOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
-
-    <TextView
-        android:id="@+id/winner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/buttongradient"
-        android:fontFamily="@font/alike_angular"
-        android:padding="5dp"
-        android:paddingStart="30dp"
-        android:paddingEnd="30dp"
-        android:text="@string/winner"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/finalBack"
-        app:layout_constraintTop_toBottomOf="@+id/PTwoFSNum" />
 
 </android.support.constraint.ConstraintLayout>

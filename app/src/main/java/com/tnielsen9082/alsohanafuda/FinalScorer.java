@@ -66,7 +66,7 @@ public class FinalScorer extends AppCompatActivity {
                 counter=i;
             }
         }
-        ((TextView)findViewById(R.id.winner)).setText(names[counter]+" wins!");
+        ((TextView)findViewById(R.id.winner)).setText(names[counter]+" Wins!");
         Button nextRound = findViewById(R.id.restart);
         nextRound.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

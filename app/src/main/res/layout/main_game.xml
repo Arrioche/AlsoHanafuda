@@ -835,7 +835,7 @@
             android:layout_weight="0"
             android:contentDescription="@string/a01"
             android:src="@drawable/pinenormalone"
-            android:visibility="visible"
+            android:visibility="invisible"
             app:srcCompat="@drawable/peonytanzaku"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="160dp" />

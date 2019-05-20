@@ -538,7 +538,7 @@ public class MainGame extends AppCompatActivity {
             cards.get(i).setOnTouchListener(dragger);
             cards.get(i).setOnDragListener(dropper);
         }
-        findViewById(R.id.cardPileBack).setVisibility(View.VISIBLE);
+        //findViewById(R.id.cardPileBack).setVisibility(View.VISIBLE);
         end.setEnabled(false);
         end.setText(R.string.end_turn);
     }
