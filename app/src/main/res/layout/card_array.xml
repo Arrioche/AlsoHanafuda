@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/pineCrane2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/a20"
+                android:src="@drawable/pinecrane"
+                android:visibility="visible"
+                app:srcCompat="@drawable/pinecrane" />
+
+            <ImageView
+                android:id="@+id/pineTanzaku2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/a05"
+                android:cropToPadding="false"
+                android:src="@drawable/pinetanzaku"
+                android:visibility="visible"
+                app:srcCompat="@drawable/pinetanzaku" />
+
+            <ImageView
+                android:id="@+id/pineNormalTwo2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/a01"
+                android:src="@drawable/pinenormaltwo"
+                android:visibility="visible"
+                app:srcCompat="@drawable/pinenormaltwo" />
+
+            <ImageView
+                android:id="@+id/pineNormalOne2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/a01"
+                android:src="@drawable/pinenormalone"
+                android:visibility="visible"
+                app:srcCompat="@drawable/pinenormalone"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="160dp" />
+
+            <ImageView
+                android:id="@+id/plumBird2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/b10"
+                android:src="@drawable/plumbird"
+                android:visibility="visible"
+                app:srcCompat="@drawable/plumbird" />
+
+            <ImageView
+                android:id="@+id/plumTanzaku2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/b05"
+                android:src="@drawable/plumtanzaku"
+                android:visibility="visible"
+                app:srcCompat="@drawable/plumtanzaku" />
+
+            <ImageView
+                android:id="@+id/plumNormalTwo2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/b01"
+                android:src="@drawable/plumnormaltwo"
+                android:visibility="visible"
+                app:srcCompat="@drawable/plumnormaltwo" />
+
+            <ImageView
+                android:id="@+id/plumNormalOne2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/b01"
+                android:src="@drawable/plumnormalone"
+                android:visibility="visible"
+                app:srcCompat="@drawable/plumnormalone" />
+
+            <ImageView
+                android:id="@+id/cherryCurtain2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/c20"
+                android:src="@drawable/cherrycurtain"
+                android:visibility="visible"
+                app:srcCompat="@drawable/cherrycurtain" />
+
+            <ImageView
+                android:id="@+id/cherryNormalTwo2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/c01"
+                android:src="@drawable/cherrynormaltwo"
+                android:visibility="visible"
+                app:srcCompat="@drawable/cherrynormaltwo" />
+
+            <ImageView
+                android:id="@+id/cherryNormalOne2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/c01"
+                android:src="@drawable/cherrynormalone"
+                android:visibility="visible"
+                app:srcCompat="@drawable/cherrynormalone"
+                tools:layout_editor_absoluteX="392dp"
+                tools:layout_editor_absoluteY="86dp" />
+
+            <ImageView
+                android:id="@+id/cherryTanzaku2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/c05"
+                android:src="@drawable/cherrytanzaku"
+                android:visibility="visible"
+                app:srcCompat="@drawable/cherrytanzaku" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/wisteriaCuckoo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/d10"
+                android:src="@drawable/wisteriacuckoo"
+                android:visibility="visible"
+                app:srcCompat="@drawable/wisteriacuckoo" />
+
+            <ImageView
+                android:id="@+id/wisteriaTanzaku2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/d05"
+                android:src="@drawable/wisteriatanzaku"
+                android:visibility="visible"
+                app:srcCompat="@drawable/wisteriatanzaku" />
+
+            <ImageView
+                android:id="@+id/wisteriaNormalOne2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/d01"
+                android:src="@drawable/wisterianormalone"
+                android:visibility="visible"
+                app:srcCompat="@drawable/wisterianormalone" />
+
+            <ImageView
+                android:id="@+id/wisteriaNormalTwo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/d01"
+                android:src="@drawable/wisterianormaltwo"
+                android:visibility="visible"
+                app:srcCompat="@drawable/wisterianormaltwo" />
+
+            <ImageView
+                android:id="@+id/irisBridge2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/e10"
+                android:src="@drawable/irisbridge"
+                android:visibility="visible"
+                app:srcCompat="@drawable/irisbridge" />
+
+            <ImageView
+                android:id="@+id/irisTanzaku2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/e05"
+                android:src="@drawable/iristanzaku"
+                android:visibility="visible"
+                app:srcCompat="@drawable/iristanzaku" />
+
+            <ImageView
+                android:id="@+id/irisNormalTwo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/e01"
+                android:src="@drawable/irisnormaltwo"
+                android:visibility="visible"
+                app:srcCompat="@drawable/irisnormaltwo" />
+
+            <ImageView
+                android:id="@+id/irisNormalOne2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/e01"
+                android:src="@drawable/irisnormalone"
+                android:visibility="visible"
+                app:srcCompat="@drawable/irisnormalone" />
+
+            <ImageView
+                android:id="@+id/peonyButterfly2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/f10"
+                android:src="@drawable/peonybutterfly"
+                android:visibility="visible"
+                app:srcCompat="@drawable/peonybutterfly" />
+
+            <ImageView
+                android:id="@+id/peonyTanzaku2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/f05"
+                android:src="@drawable/peonytanzaku"
+                android:visibility="visible"
+                app:srcCompat="@drawable/peonytanzaku" />
+
+            <ImageView
+                android:id="@+id/peonyNormalTwo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/f01"
+                android:src="@drawable/peonynormaltwo"
+                android:visibility="visible"
+                app:srcCompat="@drawable/peonynormaltwo" />
+
+            <ImageView
+                android:id="@+id/peonyNormalOne2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/f01"
+                android:src="@drawable/peonynormalone"
+                android:visibility="visible"
+                app:srcCompat="@drawable/peonynormalone" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/cloverBoar2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/g10"
+                android:src="@drawable/cloverboar"
+                android:visibility="visible"
+                app:srcCompat="@drawable/cloverboar" />
+
+            <ImageView
+                android:id="@+id/cloverTanzaku2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/g05"
+                android:src="@drawable/clovertanzaku"
+                android:visibility="visible"
+                app:srcCompat="@drawable/clovertanzaku" />
+
+            <ImageView
+                android:id="@+id/cloverNormalOne2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/g01"
+                android:src="@drawable/clovernormalone"
+                android:visibility="visible"
+                app:srcCompat="@drawable/clovernormalone" />
+
+            <ImageView
+                android:id="@+id/cloverNormalTwo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/g01"
+                android:src="@drawable/clovernormaltwo"
+                android:visibility="visible"
+                app:srcCompat="@drawable/clovernormaltwo" />
+
+            <ImageView
+                android:id="@+id/pampasMoon2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/h20"
+                android:src="@drawable/pampasmoon"
+                android:visibility="visible"
+                app:srcCompat="@drawable/pampasmoon" />
+
+            <ImageView
+                android:id="@+id/pampasGeese2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/h10"
+                android:src="@drawable/pampasgeese"
+                android:visibility="visible"
+                app:srcCompat="@drawable/pampasgeese" />
+
+            <ImageView
+                android:id="@+id/pampasNormalTwo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/h01"
+                android:src="@drawable/pampasnormaltwo"
+                android:visibility="visible"
+                app:srcCompat="@drawable/pampasnormaltwo" />
+
+            <ImageView
+                android:id="@+id/pampasNormalOne2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/h01"
+                android:src="@drawable/pampasnormalone"
+                android:visibility="visible"
+                app:srcCompat="@drawable/pampasnormalone" />
+
+            <ImageView
+                android:id="@+id/chrysCup2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/i10"
+                android:src="@drawable/chryscup"
+                android:visibility="visible"
+                app:srcCompat="@drawable/chryscup" />
+
+            <ImageView
+                android:id="@+id/chrysTanzaku2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/i05"
+                android:src="@drawable/chrystanzaku"
+                android:visibility="visible"
+                app:srcCompat="@drawable/chrystanzaku" />
+
+            <ImageView
+                android:id="@+id/chrysNormalTwo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/i01"
+                android:src="@drawable/chrysnormaltwo"
+                android:visibility="visible"
+                app:srcCompat="@drawable/chrysnormaltwo" />
+
+            <ImageView
+                android:id="@+id/chrysNormalOne2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/i01"
+                android:src="@drawable/chrysnormalone"
+                android:visibility="visible"
+                app:srcCompat="@drawable/chrysnormalone" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/mapleDeer2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/j10"
+                android:src="@drawable/mapledeer"
+                android:visibility="visible"
+                app:srcCompat="@drawable/mapledeer" />
+
+            <ImageView
+                android:id="@+id/mapleTanzaku2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/j05"
+                android:src="@drawable/mapletanzaku"
+                android:visibility="visible"
+                app:srcCompat="@drawable/mapletanzaku" />
+
+            <ImageView
+                android:id="@+id/mapleNormalOne2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/j01"
+                android:src="@drawable/maplenormalone"
+                android:visibility="visible"
+                app:srcCompat="@drawable/maplenormalone" />
+
+            <ImageView
+                android:id="@+id/mapleNormalTwo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/j01"
+                android:src="@drawable/maplenormaltwo"
+                android:visibility="visible"
+                app:srcCompat="@drawable/maplenormaltwo" />
+
+            <ImageView
+                android:id="@+id/rainPoet2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/k20"
+                android:src="@drawable/rainpoet"
+                android:visibility="visible"
+                app:srcCompat="@drawable/rainpoet" />
+
+            <ImageView
+                android:id="@+id/rainBird2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/k10"
+                android:src="@drawable/rainbird"
+                android:visibility="visible"
+                app:srcCompat="@drawable/rainbird" />
+
+            <ImageView
+                android:id="@+id/rainTanzaku2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/k05"
+                android:src="@drawable/raintanzaku"
+                android:visibility="visible"
+                app:srcCompat="@drawable/raintanzaku" />
+
+            <ImageView
+                android:id="@+id/rainLightning2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/k01"
+                android:src="@drawable/rainlightning"
+                android:visibility="visible"
+                app:srcCompat="@drawable/rainlightning" />
+
+            <ImageView
+                android:id="@+id/paulPhoenix2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/l20"
+                android:src="@drawable/paulphoenix"
+                android:visibility="visible"
+                app:srcCompat="@drawable/paulphoenix" />
+
+            <ImageView
+                android:id="@+id/paulNormalTwo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/l01"
+                android:src="@drawable/paulnormaltwo"
+                android:visibility="visible"
+                app:srcCompat="@drawable/paulnormaltwo" />
+
+            <ImageView
+                android:id="@+id/paulNormalThree2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/l01"
+                android:src="@drawable/paulnormalthree"
+                android:visibility="visible"
+                app:srcCompat="@drawable/paulnormalthree" />
+
+            <ImageView
+                android:id="@+id/paulNormalOne2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/l01"
+                android:src="@drawable/paulnormalone"
+                android:visibility="visible"
+                app:srcCompat="@drawable/paulnormalone" />
+        </TableRow>
+
+    </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/rules0layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/custombordermain"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/rules"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike_angular"
+            android:gravity="center"
+            android:paddingLeft="100dp"
+            android:paddingTop="20dp"
+            android:paddingRight="100dp"
+            android:paddingBottom="20dp"
+            android:text="Welcome to Hanafuda!\n Hanafuda is a card game that was created in Japan in the 19th century. It has a deck of 48 cards divided into 12 suits. Each suit corresponds to both a month of the year and a plant. The cards also have different things on them, like animals or tanzaku (strips of paper that usually have poetry) that signify their point value."
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rules1layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/custombordermain"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/rules2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike_angular"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="Here are the cards. As you can see, each set of four has a drawing of a different plant on it."
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <LinearLayout
+        android:id="@+id/rules2layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/custombordermain"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/rules0layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/rules3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike_angular"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="For instance, \nevery card in the August suit here \nhas a drawing of pampas grass."
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/buttongradient"
+        android:fontFamily="@font/vollkorn"
+        android:text="@string/next"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

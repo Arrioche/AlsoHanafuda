@@ -48,7 +48,7 @@ public class StartScreen extends AppCompatActivity {
                 }, 100);
             }
         });
-        /*Button rules = findViewById(R.id.rules);
+        Button rules = findViewById(R.id.rules);
         rules.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 (findViewById(R.id.loadingLayoutStart)).setVisibility(View.VISIBLE);
@@ -68,7 +68,7 @@ public class StartScreen extends AppCompatActivity {
                     }
                 }, 100);
             }
-        });*/
+        });
         Button cardGallery = findViewById(R.id.cardIntro);
         cardGallery.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
