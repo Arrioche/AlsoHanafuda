@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -28,13 +29,25 @@ public class Tutorial extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //we definitely want to change the default contentView later
-        setContentView(R.layout.tutorial_game);
-        //and the color
+        setContentView(R.layout.card_array);
         getWindow().getDecorView().setBackgroundColor(Color.LTGRAY);
         //lock in landscape mode
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        ComboList comboList = new ComboList();
+        final View decorView = getWindow().getDecorView();
+        decorView.setOnSystemUiVisibilityChangeListener
+                (new View.OnSystemUiVisibilityChangeListener() {
+                     @Override
+                     public void onSystemUiVisibilityChange(int visibility) {
+                         // Note that system bars will only be "visible" if none of the
+                         // LOW_PROFILE, HIDE_NAVIGATION, or FULLSCREEN flags are set.
+                         if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                             int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+                             decorView.setSystemUiVisibility(uiOptions);
+                         }
+                     }
+                 }
+                );
+        /*ComboList comboList = new ComboList();
         String[] scoresInit = new String[3];
         scoresInit[0] = 0+"";
         scoresInit[1] = 0+"";
@@ -47,8 +60,20 @@ public class Tutorial extends AppCompatActivity{
             cards.get(i).setAlpha((float)0.5);
         }
         //classSetUp(scoresInit);
-        //drawCards();
+        //drawCards();*/
+        LinearLayout row1 = findViewById(R.id.rules0layout);
+        LinearLayout row2 = findViewById(R.id.rules1layout);
+        LinearLayout row3 = findViewById(R.id.rules2layout);
+        LinearLayout[] rows ={row1,row2,row3};
+        Button next = findViewById(R.id.nextButtonTutorial);
+        TutorialAdvancerButton button = new TutorialAdvancerButton();
+        button.id(this);
+        next.setOnClickListener(button);
     }
+    public void nextStep(){
+
+    }
+
     /*
     brights a20 c20 h20 k20 l20 -100
     brights a20 c20 h20 l20 -60
@@ -263,5 +288,16 @@ public class Tutorial extends AppCompatActivity{
         scores[2] = findViewById(R.id.score3);
 
     }
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        View decorView = getWindow().getDecorView();
+        // Hide the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+    }
+    @Override
+    public void onBackPressed() {
+        //do nothing
+    }
 }

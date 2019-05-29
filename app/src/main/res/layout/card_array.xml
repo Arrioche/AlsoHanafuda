@@ -6,6 +6,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/tutorialBack2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="false"
+        android:contentDescription="@string/filler"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/backtatami" />
+
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="match_parent"
@@ -21,6 +34,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
+            android:id="@+id/tableRow0"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -152,6 +166,7 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tableRow1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -279,6 +294,7 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tableRow2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -338,7 +354,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:contentDescription="@string/h10"
+                android:contentDescription="@string/h20"
                 android:src="@drawable/pampasgeese"
                 android:visibility="visible"
                 app:srcCompat="@drawable/pampasgeese" />
@@ -348,7 +364,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:contentDescription="@string/h01"
+                android:contentDescription="@string/h20"
                 android:src="@drawable/pampasnormaltwo"
                 android:visibility="visible"
                 app:srcCompat="@drawable/pampasnormaltwo" />
@@ -358,7 +374,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:contentDescription="@string/h01"
+                android:contentDescription="@string/h20"
                 android:src="@drawable/pampasnormalone"
                 android:visibility="visible"
                 app:srcCompat="@drawable/pampasnormalone" />
@@ -406,6 +422,7 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tableRow3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -538,13 +555,14 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/custombordermain"
         android:gravity="center"
         android:orientation="vertical"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/nextButtonTutorial"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -555,13 +573,13 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/alike_angular"
             android:gravity="center"
-            android:paddingLeft="100dp"
+            android:paddingLeft="70dp"
             android:paddingTop="20dp"
-            android:paddingRight="100dp"
+            android:paddingRight="70dp"
             android:paddingBottom="20dp"
-            android:text="Welcome to Hanafuda!\n Hanafuda is a card game that was created in Japan in the 19th century. It has a deck of 48 cards divided into 12 suits. Each suit corresponds to both a month of the year and a plant. The cards also have different things on them, like animals or tanzaku (strips of paper that usually have poetry) that signify their point value."
+            android:text="Welcome to Hanafuda!\n Hanafuda is a card game that was created in Japan in the 19th century. It has a deck of 48 cards divided into 12 suits. Each suit corresponds to both a month of the year and a plant, and the art for that suit is themed around that. The cards also have different things in their art, like animals or tanzaku (strips of paper with poetry on them), that signify their point value."
             android:textColor="#FFFFFF"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -628,7 +646,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/nextButtonTutorial"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
