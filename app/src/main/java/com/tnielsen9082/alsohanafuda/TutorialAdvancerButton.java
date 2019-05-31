@@ -29,7 +29,6 @@ public class TutorialAdvancerButton implements View.OnClickListener {
                     boxes[i+1].setVisibility(View.VISIBLE);
                 }
                 else{
-                    activity.setContentView(R.layout.tutorial_game);
                     ((Tutorial)activity).nextStep();
                 }
                 if(i==1){

@@ -47,20 +47,6 @@ public class Tutorial extends AppCompatActivity{
                      }
                  }
                 );
-        /*ComboList comboList = new ComboList();
-        String[] scoresInit = new String[3];
-        scoresInit[0] = 0+"";
-        scoresInit[1] = 0+"";
-        scoresInit[2] = 0+"";
-        names[0]="Player One";
-        names[1]="Player Two";
-        names[2]="Player Three";
-        arraySetup();
-        for (int i = 1; i < cards.size(); i++) {
-            cards.get(i).setAlpha((float)0.5);
-        }
-        //classSetUp(scoresInit);
-        //drawCards();*/
         LinearLayout row1 = findViewById(R.id.rules0layout);
         LinearLayout row2 = findViewById(R.id.rules1layout);
         LinearLayout row3 = findViewById(R.id.rules2layout);
@@ -71,25 +57,12 @@ public class Tutorial extends AppCompatActivity{
         next.setOnClickListener(button);
     }
     public void nextStep(){
-
+        setContentView(R.layout.tutorial_game);
+        Button next = findViewById(R.id.nextTwo);
+        NextTutorialAdvancerButton button = new NextTutorialAdvancerButton();
+        button.id(this);
+        next.setOnClickListener(button);
     }
-
-    /*
-    brights a20 c20 h20 k20 l20 -100
-    brights a20 c20 h20 l20 -60
-    seven of a05 b05 c05 d05 e05 f05 g05 i05 j05 -40
-    all three of a05 b05 c05 -40
-    all three of f05 i05 j05 -40
-    two or three of h20 i10 c20 -20/40
-    6 of a05 b05 c05 d05 e05 f05 g05 i05 j05 -30
-    a20 b10 c20 -30
-    a20 l20 h20 -20
-    g10 j10 f10 -20
-    d05 e05 g05 -20
-    d10 d05 d01 d01 -10
-    l20 l01 l01 l01 -10
-    k20 k10 k05 k01 -10, may invalidate other combos
-     */
     public void arraySetup(){
         //here we take each ImageView of each card and put them in an array for easy access
         //pine
@@ -129,8 +102,8 @@ public class Tutorial extends AppCompatActivity{
         cards.add(findViewById(R.id.cloverTanzaku));
         //pampas
         cards.add(findViewById(R.id.pampasGeese));
-        cards.add(findViewById(R.id.pampasMoon));
-        cards.add(findViewById(R.id.pampasNormalOne));
+        cards.add(findViewById(R.id.demoCardBoard));
+        cards.add(findViewById(R.id.demoCardHand));
         cards.add(findViewById(R.id.pampasNormalTwo));
         //chrysanthemum
         cards.add(findViewById(R.id.chrysCup));
@@ -144,7 +117,7 @@ public class Tutorial extends AppCompatActivity{
         cards.add(findViewById(R.id.mapleTanzaku));
         //rain
         cards.add(findViewById(R.id.rainBird));
-        cards.add(findViewById(R.id.rainLightning));
+        cards.add(findViewById(R.id.secondCardCard));
         cards.add(findViewById(R.id.rainPoet));
         cards.add(findViewById(R.id.rainTanzaku));
         //paulownia
@@ -288,6 +261,23 @@ public class Tutorial extends AppCompatActivity{
         scores[2] = findViewById(R.id.score3);
 
     }
+
+    /*
+    brights a20 c20 h20 k20 l20 -100
+    brights a20 c20 h20 l20 -60
+    seven of a05 b05 c05 d05 e05 f05 g05 i05 j05 -40
+    all three of a05 b05 c05 -40
+    all three of f05 i05 j05 -40
+    two or three of h20 i10 c20 -20/40
+    6 of a05 b05 c05 d05 e05 f05 g05 i05 j05 -30
+    a20 b10 c20 -30
+    a20 l20 h20 -20
+    g10 j10 f10 -20
+    d05 e05 g05 -20
+    d10 d05 d01 d01 -10
+    l20 l01 l01 l01 -10
+    k20 k10 k05 k01 -10, may invalidate other combos
+     */
     @Override
     protected void onResume() {
         super.onResume();

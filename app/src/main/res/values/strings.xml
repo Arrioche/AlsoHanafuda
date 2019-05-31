@@ -188,6 +188,13 @@
     <string name="final_scores">Final Scores</string>
     <string name="end_round">End Round</string>
     <string name="winner">Wins!</string>
+    <string name="tutorial_one">Here\'s the game layout.\nOn top, we have the board,\nwhich everyone can see.</string>
+    <string name="tutorial_two">Down here is your personal hand of cards.</string>
+    <string name="tutorial_three">If a card in your hand has the same suit\nas a card on the board, drag one to the other.\nYou will get the points that each card is worth.</string>
+    <string name="tutorial_four">In the actual game, you can tap on a card to see its details. Tap again to dismiss.</string>
+    <string name="tutorial_five">These two cards are both August.\nThe one in your hand is worth 1 point,\nand the one on the board is worth 20.</string>
+    <string name="tutorial_six">Now that you\'ve played a card from your hand,\nyou draw and play a second card,\nas you can see on the right side.</string>
+    <string name="tutorial_seven">Since this card has no matches, you place it on the board.\nThis happens if you have no matches in your hand, too;\npick a card and place it on the board.</string>
 
 
 </resources>
